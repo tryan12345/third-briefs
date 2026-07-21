@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creator Brief · Bolsetta · Quilt Snap-On Magnetic Phone Pouch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:660px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.rules{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:24px;}
+.rule{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px;}
+.rule .n{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--tomato);font-weight:600;}
+.rule h3{margin-top:8px;font-size:16px;font-weight:800;}
+.rule p{margin-top:8px;font-size:14px;color:#333;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.do{border-top:6px solid var(--c4);}
+.panel.dont{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.angles{margin-top:24px;display:grid;gap:14px;}
+.angle{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c6);border-radius:12px;padding:22px 24px;}
+.angle .atag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.angle h3{margin-top:6px;font-size:18px;font-weight:800;}
+.angle p{margin-top:8px;font-size:15px;color:#333;max-width:800px;}
+.angle .beats{margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--mid);}
+.hooks{margin-top:24px;}
+.hook{display:grid;grid-template-columns:110px 1fr;gap:18px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 24px;margin-top:12px;align-items:center;}
+.hook .rate{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;}
+.hook .rate small{display:block;font-size:11px;color:var(--mid);font-weight:400;margin-top:2px;}
+.hook .line{font-size:16px;font-weight:700;}
+.hook .src{margin-top:6px;font-size:13px;color:var(--mid);font-weight:400;}
+.hook.warn{border-left:6px solid var(--c8);}
+.hook.win{border-left:6px solid var(--c4);}
+.cheat{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.cheatcard{background:var(--ink);color:#fff;border-radius:14px;padding:28px;}
+.cheatcard .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.cheatcard h3{margin-top:10px;font-size:20px;font-weight:800;}
+.cheatcard p{margin-top:10px;font-size:15px;color:#DDDDDD;}
+.speclist{background:#fff;border:1.5px solid #E4E4E0;border-radius:14px;padding:28px;}
+.speclist ul{list-style:none;}
+.speclist li{padding:9px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.speclist li:first-child{border-top:none;}
+.speclist li b{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;color:var(--mid);display:block;}
+.objs{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.obj{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;}
+.obj .q{font-weight:800;font-size:16px;}
+.obj .a{margin-top:8px;font-size:14px;color:#333;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.logi{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;}
+.logi .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.logi .cell h3{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--c3);}
+.logi .cell p{margin-top:10px;font-size:15px;color:#DDDDDD;}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){.rules{grid-template-columns:1fr;}.twocol,.cheat,.objs,.logi{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">THIRD. · Bolsetta · Informed Creative Brief</div>
+    <h1>Bolsetta&trade; Quilt RFID Blocking Snap-On Magnetic Phone Pouch</h1>
+    <p class="sub">This brief is built from the videos that already sold Bolsetta on TikTok Shop. The Quilt is the shop's proven #1 SKU: $168K and 5,833 units since September, running $500 a day through May and under $100 a day in July. Your video is the re-ignition candidate.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">01 · The Winning Formula</div>
+    <h2>Non-negotiables</h2>
+    <p class="lede">Six rules from the converting record across both Bolsetta handles. Break these and the video gets views instead of orders. The proof: the best converting video did $25.00 per 1,000 views on 491K reach. The biggest video did 1.1M views and converted at $5.64 per 1,000. Reach is not the assignment. And FastMoss settles the traffic question: of the 43 Quilt videos in the last 90 days, the 38 with ad traffic carry effectively all the revenue.</p>
+    <div class="rules">
+      <div class="rule"><div class="n">01</div><h3>Snap it on in the first 3 seconds</h3><p>Waistband, one motion, on camera. The snap is the mechanic no fanny pack or MagSafe wallet can copy. A video without it is a generic pouch ad.</p></div>
+      <div class="rule"><div class="n">02</div><h3>Load it on camera</h3><p>Phone, cards, keys, cash, zip. "What fits" is the buyer's first question and the workhorse shot of every Bolsetta video that sold.</p></div>
+      <div class="rule"><div class="n">03</div><h3>Move in it</h3><p>Walk, bend, reach. The airport review sold it in one line: "not one time did it move." Prove that sentence with footage.</p></div>
+      <div class="rule"><div class="n">04</div><h3>Zip a big phone inside</h3><p>The #1 return reason on the TikTok listing is "my phone didn't fit," including an iPhone 15 Pro Max. Put a Pro Max class phone in, zip it shut, on camera, and name the model out loud. One shot kills the return.</p></div>
+      <div class="rule"><div class="n">05</div><h3>Say the price</h3><p>$37.62 on TikTok Shop, said out loud. Under $40 is the impulse line for this buyer, and free shipping closes the math. The price is an argument. Make it.</p></div>
+      <div class="rule"><div class="n">06</div><h3>Film it ad-clean</h3><p>Every Bolsetta video that made real money has ad spend on it. Original voice, minimal text overlay, no borrowed audio. Your video has to survive as an ad, because that is the plan for it.</p></div>
+    </div>
+
+    <div class="twocol">
+      <div class="panel do">
+        <h3>Do</h3>
+        <ul>
+          <li><b>Show it on snug leggings.</b> A reviewer confirms it "works super well with leggings" and another warns loose waistbands sag under the weight. Show the right way and say why.</li>
+          <li><b>Use the buyer's words.</b> "Very strong magnetic hold so it doesn't move." "It fits her giant phone." "I can even sit while wearing it." The reviews wrote the script.</li>
+          <li><b>Show two colorways.</b> Black plus one of Sandstone, Seafoam Teal, Lavender, or Navy. The quilt look is the reason this SKU exists.</li>
+          <li><b>Keep it 20 to 40 seconds.</b> One product, one point, out. The winners are tight demos, not vlogs.</li>
+        </ul>
+      </div>
+      <div class="panel dont">
+        <h3>Don't</h3>
+        <ul>
+          <li><b>Don't call it a fanny pack.</b> There is no belt. That is the entire point. Wrong word, wrong mental picture, lost sale.</li>
+          <li><b>Don't open with a greeting.</b> Every top converter opens on the product in motion, not a face saying hi.</li>
+          <li><b>Don't chase views without selling.</b> The 1.1M-view video converted at a fifth of the best rate. Demo first, entertainment second.</li>
+          <li><b>Don't skip the tag or the link.</b> Untagged videos sell zero units and cannot be boosted. No exceptions.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">02 · Content Angles</div>
+    <h2>Five angles, each aimed at a real objection</h2>
+    <div class="angles">
+      <div class="angle">
+        <div class="atag">Angle 1 · The Travel Test</div>
+        <h3>Through the whole airport</h3>
+        <p>Wear it through a real travel day: security, boarding, walking the terminal. Phone always reachable, hands always free. Close on the security line: RFID blocking and a zipper between your cards and the crowd. This is the top use case in the reviews and the strongest emotional driver.</p>
+        <div class="beats">BEATS: snap on → terminal walk → grab phone one-handed → zip shot → RFID line → price</div>
+      </div>
+      <div class="angle">
+        <div class="atag">Angle 2 · The Load-Out</div>
+        <h3>What actually fits</h3>
+        <p>Empty pouch on the table. Load it item by item: large phone, four cards, keys, lip balm, cash. Zip the pocket, snap it on. Ten seconds of footage answers her first question and doubles as the cheapest ad-test asset in this brief. Film several versions.</p>
+        <div class="beats">BEATS: empty → phone → cards → keys → zip → snap → wear → price</div>
+      </div>
+      <div class="angle">
+        <div class="atag">Angle 3 · The Phone Fit Test</div>
+        <h3>Pro Max goes in, zipper closes</h3>
+        <p>Take the #1 return reason head on. Name your phone model, slide it in, zip it shut, then add cards and keys on top. The listing measures 7.5" by 5" by 1" and reviewers with big phones are the ones returning it. The video that proves the fit on camera converts the buyers every other video loses and prevents the return after the sale.</p>
+        <div class="beats">BEATS: name the phone → slide in → zip shut → cards + keys → wear it → price</div>
+      </div>
+      <div class="angle">
+        <div class="atag">Angle 4 · The Dog Walk</div>
+        <h3>Both hands back</h3>
+        <p>Leash in one hand, ball in the other, phone snapped at your hip. Throw, bend, walk. The phone never moves. Close on the quilted texture: it reads as a mini bag, not gear. Straight from a five star review, and it is the everyday volume use case between trips.</p>
+        <div class="beats">BEATS: leash + ball → snap shot → throw → bend → quilt close-up → link</div>
+      </div>
+      <div class="angle">
+        <div class="atag">Angle 5 · The No-Pockets Fix</div>
+        <h3>Leggings, dress, done</h3>
+        <p>Start on a pocketless outfit. Snap the pouch on the waistband and get on with the day. A reviewer already confirmed it works on leggings, with one honest caveat: keep the waistband snug or the weight sags. Say that on camera. The biggest-reach Bolsetta video to date ran this exact premise, so pair its reach with a tighter demo and the honesty.</p>
+        <div class="beats">BEATS: outfit with no pockets → snap on snug waistband → move → magnet holds → the caveat → price</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">03 · Opening Hooks</div>
+    <h2>Hooks ranked by sales per 1,000 views</h2>
+    <p class="lede">Conversion rates below are from actual Bolsetta videos across both handles. The lines are adapted for the Quilt. Rate is GMV per 1,000 views on the source video.</p>
+    <div class="hooks">
+      <div class="hook win">
+        <div class="rate">$25.00<small>per 1K views</small></div>
+        <div><div class="line">"No belt. No clip. It just snaps."</div><div class="src">Source pattern: @mousegirl412, $12.3K on 491K views. The best conversion in the Bolsetta record. Mechanic first, everything else second.</div></div>
+      </div>
+      <div class="hook win">
+        <div class="rate">$19.11<small>per 1K views</small></div>
+        <div><div class="line">"Everything I carry fits in this little pouch."</div><div class="src">Source pattern: @ashtruely, the best Quilt video to date at $520 on 27.2K views. The load-out open. Highest rate on this exact SKU.</div></div>
+      </div>
+      <div class="hook win">
+        <div class="rate">$14.89<small>per 1K views</small></div>
+        <div><div class="line">"I wore this through the whole airport and it never moved."</div><div class="src">Source pattern: @ashtruely on the QVC listing, $4.5K on 303K views. The travel-proof open, straight from the review language.</div></div>
+      </div>
+      <div class="hook win">
+        <div class="rate">$8.00<small>per 1K views</small></div>
+        <div><div class="line">"If your leggings have no pockets, watch this."</div><div class="src">Source pattern: @ashtruely's biggest jtb video, $11.2K on 1.4M views. The problem-first open. Massive reach, mid conversion. Tighten the demo to raise the rate.</div></div>
+      </div>
+      <div class="hook warn">
+        <div class="rate">$5.64<small>per 1K views</small></div>
+        <div><div class="line">The cautionary one: 1.1M views, $6.2K.</div><div class="src">@ashtruely's biggest QVC video converted at a fifth of the top rate. Reach without a tight sell leaves orders on the table. Sell first.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">04 · Product Cheat Sheet</div>
+    <h2>The #1 buyer question, answered</h2>
+    <div class="cheat">
+      <div class="cheatcard">
+        <div class="tag">The Question Every Comment Section Asks</div>
+        <h3>"Will my phone fit, and will it stay on?"</h3>
+        <p>The pouch is 7.5" long, 5" high, 1" deep. Reviewers fit "giant" phones plus cards, keys, and lip balm, and the returns come from buyers who never saw a big phone go in. So show it: name the model, slide it in, zip it shut. Then the second half: the magnetic flap grips the waistband and holds while you walk, bend, and sit.</p>
+        <p>By style it reads as a quilted mini bag, a "waistlet" in one reviewer's word, and it hides under an untucked shirt. That is the Quilt pitch: the security of a pouch, the look of an accessory.</p>
+      </div>
+      <div class="speclist">
+        <ul>
+          <li><b>PRICE</b>$37.62 on TikTok Shop, $31.99 on bolsetta.com, free shipping</li>
+          <li><b>SIZE</b>7.5" L x 5" H x 1" D</li>
+          <li><b>COLORS</b>Black, Sandstone, Seafoam Teal, Lavender, Navy quilt</li>
+          <li><b>ATTACHMENT</b>Snaplock&trade; magnetic snap-on. No belt, clip, or strap</li>
+          <li><b>SECURITY</b>RFID blocking for cards and key fobs, zippered pocket</li>
+          <li><b>PROOF</b>4.6 rating across 689 TikTok Shop reviews, 6K+ units in stock</li>
+          <li><b>COMMISSION</b>10% on the TikTok Shop listing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">05 · Objections To Answer On Camera</div>
+    <h2>Say it before the comments do</h2>
+    <div class="objs">
+      <div class="obj"><div class="q">"Will my phone fit?"</div><div class="a">This is the #1 return reason on the listing. Name your model, slide it in, zip it shut. Reviewers fit "giant" phones; a Pro Max buyer returned hers without seeing it proven. Prove it.</div></div>
+      <div class="obj"><div class="q">"Will it hold on leggings?"</div><div class="a">A reviewer confirms it "works super well with leggings" with one caveat: snug waistbands, or the weight sags. Demo it on thin fabric and say the caveat before the comments do.</div></div>
+      <div class="obj"><div class="q">"Will my phone fall out when I bend over?"</div><div class="a">Bend, reach, and sit on camera. A reviewer settled it: "I can even sit while wearing it." Your footage is the proof.</div></div>
+      <div class="obj"><div class="q">"Why not a $15 MagSafe wallet?"</div><div class="a">A card wallet holds cards. This carries her phone, cards, and keys hands free, with RFID blocking and a zipper. Different purchase. Say it in one line.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-kicker">06 · Specs &amp; Logistics</div>
+    <h2>Shooting and posting</h2>
+    <div class="logi">
+      <div class="cell"><h3>Format</h3><p>9:16 vertical, 20 to 40 seconds. Clean natural light. Minimal text overlay and original voice, so the video clears ad usage without edits.</p></div>
+      <div class="cell"><h3>Tagging</h3><p>Attach the Bolsetta&trade; Quilt RFID Blocking Snap-On Magnetic Phone Pouch product link from the jtb products shop. Untagged videos earn nothing and cannot be boosted.</p></div>
+      <div class="cell"><h3>Timing</h3><p>Post within two weeks of receiving your sample, and hold one variation for the next platform sale window. The top seller's steady earners ride those windows (Mother's Day, Deals For You Days). When a video moves units, film the follow-up inside ten days. The winners get ad spend behind them.</p></div>
+      <div class="cell"><h3>Questions</h3><p>Reply in your Third creator thread and the team will get back to you.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>THIRD. · Bolsetta</span>
+    <span>Data: Cruva + FastMoss marketplace intelligence + TikTok Shop and bolsetta.com reviews · July 21, 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

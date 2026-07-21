@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Persona · Bolsetta Quilt RFID Blocking Snap-On Magnetic Phone Pouch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+section.alt .stat{background:#fff;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.quote{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px;font-size:15px;}
+.quote .who{margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.creators{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.creator{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.creator .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.creator.a .ctag{background:var(--c1);} .creator.b .ctag{background:var(--c6);} .creator.c .ctag{background:var(--c7);} .creator.d .ctag{background:var(--c9);}
+.creator h3{margin-top:14px;font-size:19px;font-weight:800;}
+.creator .say{margin-top:10px;font-size:15px;font-style:italic;color:#333;}
+.creator .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:14px;color:var(--mid);}
+.creator .row b{color:var(--ink);}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.cta{margin-top:34px;text-align:center;}
+.btn{display:inline-block;background:var(--tomato);color:#fff;font-weight:700;font-size:16px;padding:15px 30px;border-radius:9px;text-decoration:none;}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){.stats{grid-template-columns:1fr 1fr;}.twocol,.creators{grid-template-columns:1fr;}.quotes{grid-template-columns:1fr;}.dark .grid3{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">THIRD. · Bolsetta · Buyer + Commerce Creator Persona</div>
+    <h1>Bolsetta&trade; Quilt RFID Blocking Snap-On Magnetic Phone Pouch</h1>
+    <p class="sub">Built from a live survey of Bolsetta's two TikTok Shop handles, the full FastMoss marketplace record on the Quilt listing, ad-flag checks on every top-selling video, and verified buyer reviews on TikTok Shop and bolsetta.com. Pulled July 21, 2026.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">01 · The Buyer</div>
+    <h2>She buys it for herself</h2>
+    <p class="lede">The reviews are women describing their own days: airports, dog walks, errands, basketball games. Her phone is too big for her pockets, and she is done carrying a purse for three items. She is proven at scale: the Quilt listing alone has sold 5,833 units and $168K since its September 2025 launch. Bolsetta sells to her twice on TikTok Shop, through its own handle (jtb products) and through a QVC, Inc listing of the same pouch. The QVC association tells you exactly who she is. One more thing the reviews settle: she multiplies. She buys one, then buys for her daughters and sisters. One reviewer bought four for Christmas.</p>
+
+    <div class="statement">
+      <div class="tag">Buyer Statement</div>
+      <p>A woman 35 to 60 who carries a large phone, cards, and keys, and wants both hands back. She will pay under $40 on the spot if one video proves the magnet snaps on without a belt and holds while she moves. Her fear is not the price. It is buying a pouch that slides, sags, or turns out bigger than it looked on camera.</p>
+      <p class="detail">Price position matters. $37.62 on TikTok Shop and $31.99 on bolsetta.com, both under the $40 impulse line. The cheap alternative is a $15 MagSafe card wallet that holds no phone. The bulky alternative is a fanny pack she has already rejected. The pouch wins if the video shows the snap and proves her phone fits.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="num">$301K</div><div class="lbl">jtb products lifetime GMV, 11,156 units. FastMoss all-channel record.</div></div>
+      <div class="stat"><div class="num">$168K</div><div class="lbl">Quilt listing lifetime GMV, 5,833 units since the September 2025 launch.</div></div>
+      <div class="stat"><div class="num">35&ndash;54</div><div class="lbl">Top audience age band of every top-converting Bolsetta creator. Female across the board.</div></div>
+      <div class="stat"><div class="num">4.6&#9733;</div><div class="lbl">Rating across 689 reviews on the TikTok Shop Quilt listing.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">02 · Purchase Psychology</div>
+    <h2>What makes her buy. What makes her scroll.</h2>
+    <div class="twocol">
+      <div class="panel trig">
+        <h3>Buy Triggers</h3>
+        <ul>
+          <li><b>The snap.</b> No belt, no clip, no strap. One motion onto the waistband. Every winning video shows it inside the first seconds, because it is the one mechanic a fanny pack cannot copy.</li>
+          <li><b>Travel security.</b> RFID blocking plus a zippered pocket reads as protection in an airport or a crowd. TikTok reviewers add the detail that sells it: it hides under an untucked shirt, and it got one buyer through the fast line at a basketball game.</li>
+          <li><b>It reads as an accessory.</b> The Quilt buyer specifically wants it to look like a mini bag, not gear. A TikTok reviewer coined the word for it: a "waistlet," like a wristlet for your waistband.</li>
+          <li><b>She gifts it.</b> Daughters, sisters, Christmas. One reviewer bought four for her daughters and came back for her own. The gift multiple is real and it peaks in Q4.</li>
+        </ul>
+      </div>
+      <div class="panel obj">
+        <h3>Objections</h3>
+        <ul>
+          <li><b>Phone fit.</b> The #1 return reason on the TikTok listing. Three of the four lowest reviews are the same story: "my phone didn't fit," one an iPhone 15 Pro Max. The pouch is 7.5" x 5" x 1". A video that zips a big phone inside on camera prevents the return.</li>
+          <li><b>The sag.</b> A five star reviewer still warned: on loose leggings the weight pulls the waistband down. Snug waistbands are the honest answer, and honesty here beats a comment section finding out.</li>
+          <li><b>The bend test.</b> She pictures her phone on the floor of the terminal. A reviewer settled it: "I can even sit while wearing it." Bend, reach, and sit on camera.</li>
+          <li><b>The $15 lookalike.</b> MagSafe card wallets flood the category at $15. Content has to make the case: those hold cards, this carries her phone, cards, and keys with RFID and a zip.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">03 · Buyer Language</div>
+    <h2>How the buyer talks when she is happy</h2>
+    <p class="lede">Verbatim from the TikTok Shop listing reviews and bolsetta.com. This is the language creators should mirror on camera, including the third one, which is the return your video exists to prevent.</p>
+    <div class="quotes">
+      <div class="quote">"I love this little 'waistlet.' It has a very strong magnetic hold so it doesn't move. It holds all your essentials, and I like that it's fashionable but can also be hidden under an untucked shirt!"<div class="who">TikTok Shop review · Sandstone Quilt</div></div>
+      <div class="quote">"I purchased 4 for my daughters and was so impressed I'm going to order myself one. The flap has a really strong magnet that keeps the bag clipped on your waistband."<div class="who">TikTok Shop review · Seafoam Teal Quilt</div></div>
+      <div class="quote">"Actually a great idea and the magnet was strong. I only returned because my phone didn't fit. I had an iPhone 15 Pro Max for reference."<div class="who">TikTok Shop review · the objection to kill</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">04 · The Commerce Creator</div>
+    <h2>Who actually sells Bolsetta on TikTok Shop</h2>
+    <p class="lede">We pulled every creator who sold Bolsetta across both handles over the last 180 days. Nobody who matters is over 15K followers. The one big account in the roster, 244K followers, sold $482. The sellers are small women-run demo and finds accounts, and ads decide the winners. FastMoss confirms it at the marketplace level: of the 43 Quilt videos in the last 90 days, the 38 with ad traffic carry effectively all the revenue, and the best organic video earned $24.99. There is also a channel the video data misses: 55 live streams linked to the Quilt in the same 90 days.</p>
+
+    <div class="creators">
+      <div class="creator a">
+        <span class="ctag">Archetype 1 · The Money Profile</span>
+        <h3>The Everyday Demo Seller</h3>
+        <p class="say">"No belt. It just snaps on."</p>
+        <div class="row">Model: <b>@ashtruely</b>, 7.4K followers, female, 30s, accessories niche, audience female 35 to 54. $26.0K on the jtb handle plus nearly all 134 videos on the QVC listing. Her heroes: $6.2K on 1.1M views and $4.5K on 303K views, both ad-backed. She reposts near-identical demo cuts, times them to platform sale windows (Mother's Day, Deals For You Days), and lets the brand's spend find the one that holds.</div>
+      </div>
+      <div class="creator b">
+        <span class="ctag">Archetype 2 · The One-Video Winner</span>
+        <h3>The Finds Reviewer</h3>
+        <p class="say">"This snaps right onto your waistband."</p>
+        <div class="row">Model: <b>@mousegirl412</b>, 10.4K followers, female, 20s, beauty and bags. One ad-backed Hip Pouch video did $12.3K on 491K views. That is $25.00 per 1,000 views, the best conversion in the entire Bolsetta record, and 28% of the jtb handle's 180-day GMV from a single post.</div>
+      </div>
+      <div class="creator c">
+        <span class="ctag">Archetype 3 · The Deals Account</span>
+        <h3>The 55+ Whisperer</h3>
+        <p class="say">"You do not need a belt for this."</p>
+        <div class="row">Model: <b>@tutuba110</b> ("great dealss"), 5.9K followers, audience female 55+. Top seller on the QVC side of the catalog. This archetype reaches the QVC-native buyer where she already shops on TikTok, in plain deal-explainer delivery.</div>
+      </div>
+      <div class="creator d">
+        <span class="ctag">Archetype 4 · The Open Lane</span>
+        <h3>The Spanish-Language Seller</h3>
+        <p class="say">"Sin cinturón. Solo se abrocha."</p>
+        <div class="row">Model: <b>@maryyauner</b>, 11.2K followers, Spanish-language. $4.0K on the jtb handle and the only meaningful non-English seller in the roster. One creator proved the lane exists. Nobody else is in it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-kicker">05 · How The Two Connect</div>
+    <h2>The playbook the Quilt already proved, and then let stall</h2>
+    <p class="lede">This is not a cold SKU. The Quilt did $168K and 5,833 units in ten months, ran $500 a day through May, and has decayed to under $100 a day in July, with several zero days. The demand is proven, the creative is stale, and the Q4 gifting wave the reviews describe (daughters, sisters, Christmas multiples) is one quarter away. The buyer persona sets what every video must show: the snap, the phone fit, the movement test. The creator archetypes are who films it. Ads are what scales it. The job is re-ignition before the gift window opens.</p>
+    <div class="grid3">
+      <div class="cell"><div class="num">6x</div><div class="lbl">Decay from the May run rate (about $500/day) to July (under $100/day). The re-ignition clock is running.</div></div>
+      <div class="cell"><div class="num">38 of 43</div><div class="lbl">Quilt videos in the last 90 days carrying ad traffic, and effectively all the revenue. Ads are the multiplier, not a bonus.</div></div>
+      <div class="cell"><div class="num">$25.00</div><div class="lbl">GMV per 1,000 views on the best converting Bolsetta video. The conversion ceiling to brief against.</div></div>
+    </div>
+    <div class="cta">
+      <a class="btn" href="brief-bolsetta.html">Read the Informed Creative Brief →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>THIRD. · Bolsetta</span>
+    <span>Data: Cruva + FastMoss marketplace intelligence + TikTok Shop and bolsetta.com reviews · July 21, 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
