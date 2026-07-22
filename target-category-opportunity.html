@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Shop Category Opportunity Analysis · Target</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tomato:#FF5A3E;
+    --ink:#141414;
+    --paper:#FFFFFF;
+    --soft:#F6F5F2;
+    --line:#E4E1DB;
+    --mute:#6B6660;
+    --green:#1E7A46;
+    --red:#C22F2F;
+    --amber:#B37700;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;font-size:15px}
+  .mono{font-family:'IBM Plex Mono',monospace}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  .hero{background:var(--tomato);color:#fff;padding:52px 0 44px}
+  .hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;margin-bottom:14px}
+  .hero h1{font-size:40px;line-height:1.08;font-weight:800;letter-spacing:-0.02em;max-width:820px}
+  .hero .sub{margin-top:16px;font-size:16px;max-width:720px;opacity:.95}
+  .hero .meta{margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;display:flex;gap:28px;flex-wrap:wrap;opacity:.92}
+
+  .strip{display:grid;grid-template-columns:repeat(9,1fr);height:10px}
+  .strip span:nth-child(1){background:#141414}
+  .strip span:nth-child(2){background:#FF5A3E}
+  .strip span:nth-child(3){background:#FFB03A}
+  .strip span:nth-child(4){background:#F5E663}
+  .strip span:nth-child(5){background:#5FBF77}
+  .strip span:nth-child(6){background:#2E8C6A}
+  .strip span:nth-child(7){background:#4E8DE8}
+  .strip span:nth-child(8){background:#7A5FD0}
+  .strip span:nth-child(9){background:#E86FA4}
+
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--tomato);font-weight:600;margin-bottom:10px}
+  h2{font-size:26px;font-weight:800;letter-spacing:-0.015em;margin-bottom:14px}
+  h3{font-size:17px;font-weight:700;margin:26px 0 8px}
+  p{max-width:760px;margin-bottom:12px}
+  p.tight{margin-bottom:6px}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0 6px;font-size:13.5px}
+  th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;text-align:left;color:var(--mute);border-bottom:2px solid var(--ink);padding:8px 10px;white-space:nowrap}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  td.num{font-family:'IBM Plex Mono',monospace;font-size:13px;white-space:nowrap}
+  tr.hl td{background:#FFF3F0}
+  .up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--amber)}
+  .catname{font-weight:600}
+
+  .note{background:var(--soft);border-left:4px solid var(--tomato);padding:14px 18px;max-width:760px;margin:14px 0;font-size:14px}
+  .note strong{font-weight:700}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:8px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
+  @media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}.hero h1{font-size:30px}}
+
+  .card{border:1px solid var(--line);padding:18px 18px 12px}
+  .card h4{font-size:14px;font-weight:700;margin-bottom:2px}
+  .card .cm{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--mute);margin-bottom:10px}
+  ol.sellers{list-style:none;counter-reset:s}
+  ol.sellers li{counter-increment:s;display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px dashed var(--line);font-size:13px}
+  ol.sellers li:last-child{border-bottom:none}
+  ol.sellers li::before{content:counter(s,decimal-leading-zero);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mute);min-width:22px;padding-top:2px}
+  ol.sellers .nm{flex:1}
+  ol.sellers .gv{font-family:'IBM Plex Mono',monospace;font-size:12.5px;white-space:nowrap}
+  .struck{text-decoration:line-through;color:var(--mute)}
+
+  .rank{display:flex;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+  .rank:last-child{border-bottom:none}
+  .rank .pos{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);min-width:34px}
+  .rank .rname{font-weight:700;min-width:230px}
+  .rank .score{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:600;min-width:56px}
+  .rank .why{color:var(--mute);font-size:13px;flex:1}
+  .bar{height:8px;background:var(--soft);margin-top:6px;position:relative}
+  .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--tomato)}
+
+  dl.gloss{max-width:820px}
+  dl.gloss dt{font-weight:700;margin-top:16px;font-size:14.5px}
+  dl.gloss dt .m{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;color:var(--tomato);margin-left:8px}
+  dl.gloss dd{margin-top:3px;color:#333;max-width:760px}
+
+  .anchors{font-size:13px}
+  .anchors td:first-child{font-family:'IBM Plex Mono',monospace;white-space:nowrap;font-weight:600}
+
+  footer{background:var(--ink);color:#fff;padding:30px 0;font-family:'IBM Plex Mono',monospace;font-size:12px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .small{font-size:12px;color:var(--mute)}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">Third · Commerce Intelligence</div>
+    <h1>TikTok Shop Category Opportunity Analysis</h1>
+    <p class="sub">Seven categories sized, scored, and pressure-tested across two independent data systems. Built to answer one question: where should Target enter first, and why.</p>
+    <div class="meta">
+      <span>PREPARED FOR: TARGET</span>
+      <span>PERIOD: JUNE 2026 · US</span>
+      <span>SOURCES: FASTMOSS + CRUVA</span>
+      <span>DATE: JULY 21, 2026</span>
+    </div>
+  </div>
+</div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">01 · How to read this</div>
+    <h2>Two data systems, one month, no single-source claims</h2>
+    <p>Every number here comes from June 2026, the last completed calendar month. Market sizing, growth, and seller rankings come from FastMoss, which tracks total shop GMV across TikTok Shop. We then rebuilt the same month in Cruva social intelligence, which tracks only the GMV attributed to creator content. Where the two systems disagreed, we investigated and say so in the pressure test section.</p>
+    <p>The two lenses answer different questions. FastMoss tells you how big a category is. Cruva tells you how much of it an affiliate program can actually reach. Both numbers appear throughout, labeled.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">02 · Category scorecard</div>
+    <h2>The seven categories, June 2026</h2>
+    <table>
+      <thead><tr>
+        <th>Category</th><th>Monthly GMV</th><th>Units</th><th>ASP</th><th>GMV YoY</th><th>Units YoY</th><th>Sellers &gt;$100K/mo</th><th>Top 10 share</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="catname">Beauty &amp; Personal Care</td><td class="num">$432.7M</td><td class="num">16.9M</td><td class="num">$25.62</td><td class="num up">+4.2%</td><td class="num flat">-0.5%</td><td class="num">500+</td><td class="num">~23%</td></tr>
+        <tr><td class="catname">Womenswear &amp; Underwear</td><td class="num">$341.8M</td><td class="num">12.0M</td><td class="num">$28.57</td><td class="num down">-2.6%</td><td class="num down">-7.2%</td><td class="num">500+</td><td class="num">~12%</td></tr>
+        <tr><td class="catname">Health</td><td class="num">$142.2M</td><td class="num">4.6M</td><td class="num">$30.80</td><td class="num down">-3.5%</td><td class="num down">-4.4%</td><td class="num">~192</td><td class="num">~31%</td></tr>
+        <tr><td class="catname">Home Supplies</td><td class="num">$93.5M</td><td class="num">4.7M</td><td class="num">$19.99</td><td class="num down">-3.1%</td><td class="num down">-9.2%</td><td class="num">~138</td><td class="num">~17%</td></tr>
+        <tr><td class="catname">Toys &amp; Hobbies</td><td class="num">$49.0M</td><td class="num">2.2M</td><td class="num">$22.56</td><td class="num down">-4.3%</td><td class="num down">-12.4%</td><td class="num">~87</td><td class="num">~14%</td></tr>
+        <tr><td class="catname">Pet Supplies</td><td class="num">$30.8M</td><td class="num">1.1M</td><td class="num">$28.17</td><td class="num down">-9.1%</td><td class="num down">-8.5%</td><td class="num">~61</td><td class="num">~23%</td></tr>
+        <tr><td class="catname">Baby &amp; Maternity</td><td class="num">$22.1M</td><td class="num">644K</td><td class="num">$34.35</td><td class="num up">+4.9%</td><td class="num down">-13.2%</td><td class="num">~36</td><td class="num">~36%</td></tr>
+      </tbody>
+    </table>
+    <p class="small">Sellers &gt;$100K/mo for Beauty and Womenswear are floors. The ranking system caps at 500 shops and rank #500 in both categories still cleared $100K in June. Definitions for every column are in section 07.</p>
+
+    <h3>The growth read</h3>
+    <p>Beauty and Baby are the only two categories growing year over year. Beauty grew on flat units, so price mix carried it. Baby grew on units down 13%, which means the category is premiumizing. It has the highest selling price on the board at $34, driven by hardware like pumps and monitors rather than consumables. Womenswear, Health, and Home are down low single digits. Toys and Pet are shrinking, with Pet down 9% as the worst performer. One near-term counterpoint: weekly unit volume inside June was climbing in Beauty, Home, and Health, so the short-term trend reads better than the annual comparison.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">03 · Where the sales come from</div>
+    <h2>Sales by creator follower tier</h2>
+    <p>TikTok Shop does not publish buyer demographics at category level. What the data does show is which size of creator drives the sales, and that tells you what kind of program wins in each category. Percentages are share of June category GMV.</p>
+    <table>
+      <thead><tr><th>Category</th><th>&lt;10K followers</th><th>10K to 100K</th><th>100K to 1M</th><th>1M+</th><th>Program shape</th></tr></thead>
+      <tbody>
+        <tr><td class="catname">Beauty</td><td class="num">21.6%</td><td class="num">50.2%</td><td class="num">23.2%</td><td class="num">5.1%</td><td>Micro-led with real mid-tier</td></tr>
+        <tr><td class="catname">Womenswear</td><td class="num">24.5%</td><td class="num">51.5%</td><td class="num">22.4%</td><td class="num">1.6%</td><td>Micro-led, try-on driven</td></tr>
+        <tr><td class="catname">Health</td><td class="num">24.5%</td><td class="num">51.5%</td><td class="num">20.6%</td><td class="num">3.4%</td><td>Micro-led</td></tr>
+        <tr><td class="catname">Home Supplies</td><td class="num">42.1%</td><td class="num">43.7%</td><td class="num">12.7%</td><td class="num">1.6%</td><td>Split nano and micro</td></tr>
+        <tr><td class="catname">Toys</td><td class="num">35.2%</td><td class="num">50.4%</td><td class="num">12.6%</td><td class="num">1.8%</td><td>Micro-led with nano base</td></tr>
+        <tr><td class="catname">Pet</td><td class="num">61.1%</td><td class="num">29.6%</td><td class="num">8.4%</td><td class="num">0.9%</td><td>Nano-dominated</td></tr>
+        <tr class="hl"><td class="catname">Baby</td><td class="num">63.3%</td><td class="num">31.0%</td><td class="num">5.0%</td><td class="num">0.7%</td><td>Nano-dominated</td></tr>
+      </tbody>
+    </table>
+    <p>Two market structures exist here. Beauty, Womenswear, and Health run on creators with 10K to 100K followers. Baby and Pet run on creators under 10K. In Baby, the average nano creator generated $1,089 in June, more than the average creator one tier up. Real parents with small followings are the sales engine. That favors a sample-and-volume program over a mid-tier talent buy.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">04 · Top sellers by category</div>
+    <h2>Top 10 shops by June GMV</h2>
+    <p class="small" style="margin-bottom:6px">FastMoss total shop GMV, June 2026. Percentages in parentheses are month-over-month GMV growth where notable.</p>
+    <div class="grid2">
+      <div class="card">
+        <h4>Beauty &amp; Personal Care</h4><div class="cm">$432.7M category · Korean skincare owns the top</div>
+        <ol class="sellers">
+          <li><span class="nm">medicube US Store</span><span class="gv">$32.9M (+14%)</span></li>
+          <li><span class="nm">Dr.Melaxin</span><span class="gv">$16.4M</span></li>
+          <li><span class="nm">BASED</span><span class="gv">$11.3M</span></li>
+          <li><span class="nm">Tarte Cosmetics</span><span class="gv">$11.0M</span></li>
+          <li><span class="nm">BellaVitashop</span><span class="gv">$4.75M</span></li>
+          <li><span class="nm">Bare Anatomy Haircare</span><span class="gv">$4.46M</span></li>
+          <li><span class="nm">The you</span><span class="gv">$4.41M (+169%)</span></li>
+          <li><span class="nm">Color Wow Hair</span><span class="gv">$4.41M (+61%)</span></li>
+          <li><span class="nm">wavytalk</span><span class="gv">$4.11M</span></li>
+          <li><span class="nm">Bask and Lather Co</span><span class="gv">$3.74M</span></li>
+        </ol>
+      </div>
+      <div class="card">
+        <h4>Womenswear &amp; Underwear</h4><div class="cm">$341.8M category · no durable leader</div>
+        <ol class="sellers">
+          <li><span class="nm">FeelinGirl</span><span class="gv">$4.53M</span></li>
+          <li><span class="nm">OEAK Apparel</span><span class="gv">$4.00M</span></li>
+          <li><span class="nm">Comfrt</span><span class="gv">$3.98M (+34%)</span></li>
+          <li><span class="nm">Hsia-Bras</span><span class="gv">$3.85M</span></li>
+          <li><span class="nm">Edikted</span><span class="gv">$3.72M</span></li>
+          <li><span class="nm">Pacsun</span><span class="gv">$3.62M</span></li>
+          <li><span class="nm">Chic Nostalgia</span><span class="gv">$3.36M</span></li>
+          <li><span class="nm">YIANNA</span><span class="gv">$3.28M</span></li>
+          <li><span class="nm">PrettyGarden</span><span class="gv">$3.24M</span></li>
+          <li><span class="nm struck">AVA LANE (excluded, see 06)</span><span class="gv struck">$8.17M</span></li>
+        </ol>
+      </div>
+      <div class="card">
+        <h4>Health</h4><div class="cm">$142.2M category · supplements top to bottom</div>
+        <ol class="sellers">
+          <li><span class="nm">Toplux Nutrition</span><span class="gv">$8.92M</span></li>
+          <li><span class="nm">Micro Ingredients</span><span class="gv">$6.38M</span></li>
+          <li><span class="nm">MaryRuth's</span><span class="gv">$6.25M</span></li>
+          <li><span class="nm">Goli Nutrition</span><span class="gv">$4.54M</span></li>
+          <li><span class="nm">Physician's Choice</span><span class="gv">$4.22M</span></li>
+          <li><span class="nm">NeoCell Collagen</span><span class="gv">$3.36M</span></li>
+          <li><span class="nm">Bella All Natural</span><span class="gv">$3.02M</span></li>
+          <li><span class="nm">Cata-Kor USA</span><span class="gv">$2.47M</span></li>
+          <li><span class="nm">Snap Supplements</span><span class="gv">$2.46M</span></li>
+          <li><span class="nm">Leefar US</span><span class="gv">$2.41M</span></li>
+        </ol>
+      </div>
+      <div class="card">
+        <h4>Home Supplies</h4><div class="cm">$93.5M category · QVC proves retailers can move fast</div>
+        <ol class="sellers">
+          <li><span class="nm">Gubercen</span><span class="gv">$3.96M (+1,311%)</span></li>
+          <li><span class="nm">QVC, Inc</span><span class="gv">$2.47M (+137%)</span></li>
+          <li><span class="nm">R &amp; W Co.</span><span class="gv">$2.30M</span></li>
+          <li><span class="nm">UFORU NEST</span><span class="gv">$1.35M</span></li>
+          <li><span class="nm">Maple Living</span><span class="gv">$1.31M</span></li>
+          <li><span class="nm">Vacbird</span><span class="gv">$911K</span></li>
+          <li><span class="nm">Scentiment</span><span class="gv">$849K (+90%)</span></li>
+          <li><span class="nm">First Saturday Lime</span><span class="gv">$778K</span></li>
+          <li><span class="nm">CEDAFIR Shop</span><span class="gv">$751K</span></li>
+          <li><span class="nm">Mavwicks Fragrances</span><span class="gv">$723K</span></li>
+        </ol>
+      </div>
+      <div class="card">
+        <h4>Toys &amp; Hobbies</h4><div class="cm">$49.0M category · nobody has built the Q4 machine</div>
+        <ol class="sellers">
+          <li><span class="nm">Spreetail</span><span class="gv">$1.32M</span></li>
+          <li><span class="nm">Sloosh (JOYIN)</span><span class="gv">$1.15M</span></li>
+          <li><span class="nm">POP MART US Local</span><span class="gv">$688K</span></li>
+          <li><span class="nm">Aouerbeng</span><span class="gv">$627K</span></li>
+          <li><span class="nm">JOYIN</span><span class="gv">$550K</span></li>
+          <li><span class="nm">woderLab</span><span class="gv">$549K</span></li>
+          <li><span class="nm">POPMART US Shop</span><span class="gv">$541K</span></li>
+          <li><span class="nm">Relatable</span><span class="gv">$487K</span></li>
+          <li><span class="nm">Dripex Baby</span><span class="gv">$416K</span></li>
+          <li><span class="nm">Garvee JoyRide</span><span class="gv">$382K</span></li>
+        </ol>
+      </div>
+      <div class="card">
+        <h4>Pet Supplies</h4><div class="cm">$30.8M category · smallest and shrinking</div>
+        <ol class="sellers">
+          <li><span class="nm">PetPivot</span><span class="gv">$1.58M</span></li>
+          <li><span class="nm">Wild Wolf Bully Sticks</span><span class="gv">$873K</span></li>
+          <li><span class="nm">Dreamcat.Official</span><span class="gv">$786K</span></li>
+          <li><span class="nm">Warcat Pro</span><span class="gv">$686K</span></li>
+          <li><span class="nm">HapawPet</span><span class="gv">$608K (+78%)</span></li>
+          <li><span class="nm">dogfriendlyco</span><span class="gv">$548K</span></li>
+          <li><span class="nm">Lesure Pet</span><span class="gv">$541K (+59%)</span></li>
+          <li><span class="nm">Zesty Paws</span><span class="gv">$525K</span></li>
+          <li><span class="nm">Ruff Liners</span><span class="gv">$390K (+66%)</span></li>
+          <li><span class="nm">King Lou</span><span class="gv">$353K</span></li>
+        </ol>
+      </div>
+      <div class="card">
+        <h4>Baby &amp; Maternity</h4><div class="cm">$22.1M category · one brand is 16% of it</div>
+        <ol class="sellers">
+          <li><span class="nm">Momcozy</span><span class="gv">$3.02M (+136%)</span></li>
+          <li><span class="nm">Baby Trend Inc</span><span class="gv">$1.28M</span></li>
+          <li><span class="nm">eufyOfficial</span><span class="gv">$532K (+75%)</span></li>
+          <li><span class="nm">Harppababy.us</span><span class="gv">$531K (+58%)</span></li>
+          <li><span class="nm">Bullseye Deals</span><span class="gv">$513K</span></li>
+          <li><span class="nm">Momcozy US</span><span class="gv">$509K</span></li>
+          <li><span class="nm">Grownsy</span><span class="gv">$434K</span></li>
+          <li><span class="nm">FENUN Baby Sharkk</span><span class="gv">$398K</span></li>
+          <li><span class="nm">Baby Brezza</span><span class="gv">$359K (+31%)</span></li>
+          <li><span class="nm">Bear Baby Appliance</span><span class="gv">$279K</span></li>
+        </ol>
+      </div>
+      <div class="card" style="background:var(--soft);border-color:var(--soft)">
+        <h4>What the affiliate lens adds</h4><div class="cm">Cruva creator-attributed leaders, June</div>
+        <p class="tight" style="font-size:13.5px">Womenswear by creator GMV ranks differently: Pacsun $4.9M, Comfrt $4.7M, Fashion Nova $3.2M, Cider $2.8M. In Baby, the creator-attributed leader is Baby Trend at $1.04M, not Momcozy. Both reorderings matter for program design and both are covered in section 06.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">05 · Opportunity ranking</div>
+    <h2>Composite opportunity scores for Target</h2>
+    <p>Each category is scored 1 to 10 on five factors, then weighted into a composite. The factors, weights, and scoring anchors are defined in full in section 07. Short version: size counts most, then growth, whitespace, and fit equally, with creator supply as the smallest input.</p>
+
+    <div style="margin-top:10px">
+      <div class="rank"><span class="pos">1</span><span class="rname">Beauty &amp; Personal Care</span><span class="score">7.6</span><span class="why">The revenue engine. Biggest market, still growing, richest creator supply. Also the hardest fight on the board.</span></div>
+      <div class="rank"><span class="pos">2</span><span class="rname">Womenswear &amp; Underwear</span><span class="score">6.7</span><span class="why">The fragmentation play. $342M a month and the best durable brand holds under 1.5% of it.</span></div>
+      <div class="rank"><span class="pos">3</span><span class="rname">Home Supplies</span><span class="score">6.2</span><span class="why">Signature Target strength. QVC grew 137% in one month, proving a legacy retailer can take share fast.</span></div>
+      <div class="rank"><span class="pos">4</span><span class="rname">Health</span><span class="score">6.1</span><span class="why">Solid mid-size market, but supplement-dominated and a weaker fit for Target's assortment.</span></div>
+      <div class="rank"><span class="pos">5</span><span class="rname">Baby &amp; Maternity</span><span class="score">5.9</span><span class="why">Small today, growing, highest prices, thinnest competition. The best speed-to-leadership bet on the board.</span></div>
+      <div class="rank"><span class="pos">6</span><span class="rname">Toys &amp; Hobbies</span><span class="score">5.5</span><span class="why">Soft in June, but June is the wrong month to judge toys. Nobody owns Q4 yet.</span></div>
+      <div class="rank"><span class="pos">7</span><span class="rname">Pet Supplies</span><span class="score">4.6</span><span class="why">Smallest market, steepest decline, most labor-intensive creator base. Revisit if the category turns.</span></div>
+    </div>
+
+    <h3>Factor scores</h3>
+    <table>
+      <thead><tr><th>Category</th><th>Size (30%)</th><th>Growth (20%)</th><th>Whitespace (20%)</th><th>Target fit (20%)</th><th>Creator supply (10%)</th><th>Composite</th></tr></thead>
+      <tbody>
+        <tr><td class="catname">Beauty</td><td class="num">10</td><td class="num">7</td><td class="num">3</td><td class="num">8</td><td class="num">10</td><td class="num"><strong>7.6</strong></td></tr>
+        <tr><td class="catname">Womenswear</td><td class="num">9</td><td class="num">4</td><td class="num">4</td><td class="num">8</td><td class="num">8</td><td class="num"><strong>6.7</strong></td></tr>
+        <tr><td class="catname">Home Supplies</td><td class="num">6</td><td class="num">4</td><td class="num">6</td><td class="num">9</td><td class="num">6</td><td class="num"><strong>6.2</strong></td></tr>
+        <tr><td class="catname">Health</td><td class="num">7</td><td class="num">4</td><td class="num">6</td><td class="num">6</td><td class="num">8</td><td class="num"><strong>6.1</strong></td></tr>
+        <tr><td class="catname">Baby</td><td class="num">3</td><td class="num">6</td><td class="num">8</td><td class="num">9</td><td class="num">4</td><td class="num"><strong>5.9</strong></td></tr>
+        <tr><td class="catname">Toys</td><td class="num">4</td><td class="num">3</td><td class="num">7</td><td class="num">9</td><td class="num">5</td><td class="num"><strong>5.5</strong></td></tr>
+        <tr><td class="catname">Pet</td><td class="num">3</td><td class="num">2</td><td class="num">7</td><td class="num">7</td><td class="num">5</td><td class="num"><strong>4.6</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="note"><strong>How to use the ranking.</strong> The composite answers "where is the most weighted opportunity." It does not answer "where can Target become a category leader fastest." Those are different questions with different answers. Beauty wins the first. Baby wins the second: roughly 36 sellers clear $100K a month, one brand is 16% of the category, and Target owns the baby registry moment in American retail. Our recommendation pairs one revenue category with one leadership category rather than entering by rank order.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">06 · Pressure test</div>
+    <h2>What survived a second data system, and what did not</h2>
+    <p>We rebuilt June 2026 in Cruva social intelligence, which measures only creator-attributed GMV, and compared it against the FastMoss totals above. Three findings changed the story. The rest confirmed it.</p>
+
+    <h3>Confirmed</h3>
+    <p class="tight"><strong>The Beauty leaderboard.</strong> medicube is #1 by more than double in both systems: $32.9M total, $22.2M creator-attributed. Dr.Melaxin, Tarte, BellaVitashop, Bare Anatomy, and Color Wow appear in both top lists.</p>
+    <p class="tight"><strong>Beauty depth.</strong> 238 beauty brands cleared $100K in June on creator-attributed GMV alone. Since that is a subset of total GMV, the 500+ figure for total GMV is credible.</p>
+    <p class="tight"><strong>Baby shallowness.</strong> About 9 baby brands cleared $100K in creator-attributed GMV and 26 cleared $50K. Both lenses agree the field is tiny.</p>
+    <p><strong>Womenswear fragmentation.</strong> The durable top 10 by creator GMV runs $1.7M to $4.9M. No leader.</p>
+
+    <h3>Removed</h3>
+    <p><strong>AVA LANE is out of the Womenswear top 10.</strong> FastMoss showed it as the category #1 at $8.17M with growth above 9,000% in a single month. Cruva shows the same seller with $2,018 of creator-attributed GMV, 5 creators, and 4 videos. That revenue is paid traffic, self-operated live, or a data artifact. It is not durable creator-driven competition. Removing it strengthens the fragmentation case: the best durable womenswear brand does under $5M a month in a $342M monthly category.</p>
+
+    <h3>Sharpened</h3>
+    <p><strong>Momcozy's Baby lead is paid-amplified, not creator-built.</strong> Creators account for roughly $1.09M of Momcozy's $3.5M June across its two shops, about 31%. Its 136% June growth came mostly from paid amplification on top of about 2,900 creator videos a month. The creator-attributed leader in Baby is Baby Trend at $1.04M, running about 81% creator-driven. Nobody has built a dominant creator machine in Baby. A retailer that builds the content flywheel first and layers paid second attacks the category leader at its weakest layer.</p>
+    <p><strong>Creator-attributed share varies widely by brand.</strong> Measured June ratios: Baby Trend 81%, medicube 68%, Toplux 36%, Momcozy 31%, BASED 16%. Category totals include paid, self-operated live, and product card revenue an affiliate program never touches. Every sizing figure in this document should be read alongside its creator-attributable slice.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">07 · Definitions and scoring methodology</div>
+    <h2>What every term means and how we scored</h2>
+
+    <h3>Metric definitions</h3>
+    <dl class="gloss">
+      <dt>GMV <span class="m">gross merchandise value</span></dt>
+      <dd>Total dollar value of goods sold through TikTok Shop before refunds, fees, and discount adjustments. Category GMV figures are FastMoss totals for June 2026 and include every sales channel: creator video, creator live, paid ads, self-operated live, and shoppers browsing product cards.</dd>
+      <dt>ASP <span class="m">average selling price</span></dt>
+      <dd>Category GMV divided by units sold. This is a per-unit price, not average order value. Neither data system reports basket-level orders at category scale, so a shopper buying three items counts as three units here. We use ASP instead of AOV to avoid overstating basket sizes.</dd>
+      <dt>GMV YoY / Units YoY</dt>
+      <dd>June 2026 versus June 2025, per FastMoss. When GMV grows while units shrink, average prices are rising, which usually means the category is shifting toward higher-priced products.</dd>
+      <dt>Sellers over $100K/mo <span class="m">seller depth</span></dt>
+      <dd>The count of shops that generated at least $100,000 of total GMV in the category in June. We measure it by walking the category sales ranking until shop GMV drops below the threshold. It answers how many businesses are already succeeding at meaningful scale, which is the most honest single measure of how contested a category is. The ranking caps at 500 shops, so Beauty and Womenswear are reported as floors.</dd>
+      <dt>Top 10 share <span class="m">concentration</span></dt>
+      <dd>Combined GMV of the ten largest shops divided by category GMV. Low concentration (Womenswear at 12%) means the market is fragmented and no one owns it. High concentration (Baby at 36%) means one or two brands dominate, and displacing them is the game.</dd>
+      <dt>Creator tier</dt>
+      <dd>Creators grouped by follower count: nano (under 10K), micro (10K to 100K), mid (100K to 1M), macro and mega (1M+). The tier mix in section 03 shows where each category's sales actually originate, which determines recruiting strategy, sample budgets, and cost per dollar of GMV.</dd>
+      <dt>Creator-attributed GMV <span class="m">affiliate lens</span></dt>
+      <dd>Revenue Cruva ties to a specific creator's video or live. It excludes paid ad conversions, brand-run livestreams, and product card purchases. The gap between total GMV and creator-attributed GMV is revenue an affiliate program cannot claim, which is why we quote both.</dd>
+      <dt>Cross-border / fully-managed shop</dt>
+      <dd>Shops operated from outside the US, mostly China. Fully-managed means TikTok handles logistics and the merchant supplies product. Their density in a category's ranking tail signals price-driven competition with structurally lower content quality, which is beatable competition for a brand with owned creative.</dd>
+      <dt>GMV Max</dt>
+      <dd>TikTok's automated ad product that amplifies existing shoppable content. It needs a content pool to learn from, which is why paid works as a multiplier on a creator program rather than a substitute for one. Momcozy in section 06 is the live example.</dd>
+    </dl>
+
+    <h3>Scoring factors and weights</h3>
+    <p>Composite = Size × 0.30 + Growth × 0.20 + Whitespace × 0.20 + Target fit × 0.20 + Creator supply × 0.10. Each factor is scored 1 to 10. Size carries the most weight because a small share of a big market beats a big share of a tiny one. Creator supply carries the least because supply gaps can be built through recruiting while market size cannot.</p>
+    <table class="anchors">
+      <thead><tr><th>Factor</th><th>What it measures</th><th>Scoring anchors</th></tr></thead>
+      <tbody>
+        <tr><td>Size (30%)</td><td>June 2026 total category GMV.</td><td>10 = above $400M/mo · 9 = $300M+ · 7 = $100M to $200M · 6 = around $90M · 4 = $40M to $60M · 3 = below $35M</td></tr>
+        <tr><td>Growth (20%)</td><td>GMV YoY, adjusted for unit trend and the direction of weekly volume inside June.</td><td>7 = growing on a large base · 6 = growing with soft units · 4 = down low single digits · 3 = down with double-digit unit erosion · 2 = down high single digits or worse</td></tr>
+        <tr><td>Whitespace (20%)</td><td>How realistic it is for a new entrant to reach the top 10. Built from seller depth, top 10 concentration, and the quality of the competition in the ranking tail.</td><td>8 = under 40 six-figure sellers and a beatable leader · 7 = under 90 · 6 = 130 to 200 · 4 = 500+ but fragmented with no durable leader · 3 = 500+ with entrenched leaders</td></tr>
+        <tr><td>Target fit (20%)</td><td>Judgment score on Target's private label strength, category authority, seasonal or registry moats, and shopper trust in the category. The only factor not derived from platform data, and marked as such.</td><td>9 = identity category with owned brands and a structural moat · 8 = strong assortment and credibility · 7 = solid but not differentiated · 6 = assortment exists but the category is dominated by product types Target does not lead</td></tr>
+        <tr><td>Creator supply (10%)</td><td>Count of creators who generated sales in the category in June, per FastMoss. Measures whether affiliate supply exists to staff a program at house content velocity.</td><td>10 = 1M+ selling creators · 8 = 300K to 1.2M · 6 = around 300K · 5 = 100K to 200K · 4 = under 100K</td></tr>
+      </tbody>
+    </table>
+    <p class="small">Weights are Third's standard for retail entrants. Change the question and the weights should change with it. A pure speed-to-leadership screen would weight whitespace at 40% and rank Baby first.</p>
+
+    <h3>Known limits of this analysis</h3>
+    <p class="tight">One month of data plus year-over-year deltas, so single-month spikes can distort shop ranks. That is exactly how AVA LANE was caught, and why the pressure test exists.</p>
+    <p class="tight">YoY growth figures are FastMoss-only. Cruva's lookback caps at 180 days, so annual growth has no second source.</p>
+    <p class="tight">Shops selling in multiple categories appear in each category's ranking with their in-category GMV. No double counting inside a category, but a shop can hold ranks in several.</p>
+    <p>June understates Toys. The category concentrates in Q4 and should be re-sized in September before any holiday decision.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>THIRD · COMMERCE GROWTH</span>
+    <span>SOURCES: FASTMOSS (TOTAL GMV) + CRUVA (CREATOR-ATTRIBUTED GMV) · JUNE 2026 · US</span>
+  </div>
+</footer>
+
+</body>
+</html>
