@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strategy · PerfectTed × TikTok Shop US</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">Strategy &middot; TikTok Shop US</div>
+    <h1>PerfectTed &times; TikTok Shop US</h1>
+    <p class="sub">Twelve weeks of exclusive selling before Target opens, used to build the content pool that January runs on.</p>
+  </div>
+</div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">01 &middot; The position</div>
+    <h2>The window before Target is the strategy</h2>
+    <p class="lede">PerfectTed goes live on TikTok Shop mid-October. Target and Sprouts land in January. That leaves about twelve weeks where TikTok Shop is the only place an American can buy the product.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">12 wks</div><div class="lbl">Exclusive selling before retail</div></div>
+      <div class="stat"><div class="num">1,200</div><div class="lbl">Target doors from January</div></div>
+      <div class="stat"><div class="num">600</div><div class="lbl">Shop videos needed for GMV Max</div></div>
+      <div class="stat"><div class="num">$23.7K</div><div class="lbl">What a US matcha cold start reaches by month five</div></div>
+    </div>
+
+    <p class="body-p">Three things have to be true by the time the first Target shelf is stocked. A content pool big enough for GMV Max to spend well, which is around 600 shop videos or 50 per hero product. A creator base that has already bought the product and posted about it, so retail launch content is a second wave. And enough TikTok search volume against the brand name that in-store discovery has something behind it.</p>
+    <p class="body-p">Hit those and January amplifies. Miss them and TikTok Shop spends Q1 2027 catching up to a launch that already happened.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">02 &middot; What the data says</div>
+    <h2>Three cold starts, tracked from first sale</h2>
+    <p class="lede">We pulled full trading history on the three US matcha products that matter, month by month from launch. FastMoss, to 27 July 2026.</p>
+
+    <table class="tbl">
+      <tr><th>Gworld Kyoto Uji</th><th>Nov</th><th>Dec</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th></tr>
+      <tr><td>Launched Nov 2025 &middot; 74% ads</td><td class="n">$3.2K</td><td class="n">$9.2K</td><td class="n">$11.8K</td><td class="n">$12.2K</td><td class="n">$20.0K</td><td class="n">$42.7K</td><td class="n">$63.0K</td><td class="n">$29.8K</td><td class="n">$33K</td></tr>
+    </table>
+
+    <table class="tbl">
+      <tr><th>Naoki Superior Ceremonial</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th></tr>
+      <tr><td>Launched 15 Mar 2026 &middot; 70% ads</td><td class="n">$0.3K</td><td class="n">$0.9K</td><td class="n">$9.7K</td><td class="n">$11.1K</td><td class="n">$23.7K</td></tr>
+    </table>
+
+    <table class="tbl">
+      <tr><th>ZENS giftset</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th></tr>
+      <tr><td>31% ads, 69% organic</td><td class="n">$5.2K</td><td class="n">$2.3K</td><td class="n">$1.9K</td><td class="n">$4.9K</td><td class="n">$8.8K</td><td class="n">$3.2K</td><td class="n">$8.9K</td><td class="n">$5.2K</td><td class="n">$14.5K</td><td class="n">$16.2K</td><td class="n">$13.4K</td><td class="n">$10.2K</td></tr>
+    </table>
+
+    <div class="statement">
+      <div class="tag">The correction that matters</div>
+      <p>The category is not dying. Gworld spiked and retraced. Naoki launched in March and has scaled to $23.7K by month five. The giftset is up 2.6x since August.</p>
+      <p class="detail">One product's curve is not the category. An earlier read of this data called a category collapse. Tracking all three from first sale shows a category rotating, with new entrants scaling while older ones fade.</p>
+    </div>
+
+    <div class="twocol">
+      <div class="panel trig">
+        <h3>What the curves show</h3>
+        <ul>
+          <li><b>Cold start lands at $20K to $24K a month by month five.</b> Both powder products hit that from zero, with no brand and no retail.</li>
+          <li><b>December is a giftset peak.</b> $4.9K November to $8.8K December, up 79%.</li>
+          <li><b>February is the second peak.</b> Valentine's brought the giftset back to $8.9K with average order value up to $49.</li>
+          <li><b>The giftset converts organically.</b> 31% ad dependency against 70% and 74% for the powders.</li>
+        </ul>
+      </div>
+      <div class="panel obj">
+        <h3>What they warn about</h3>
+        <ul>
+          <li><b>January is a giftset trough.</b> $8.8K December to $3.2K January, down 64%.</li>
+          <li><b>Powder needs paid.</b> Nobody has built a US matcha powder business on organic.</li>
+          <li><b>Leadership rotates fast.</b> Matcha Sunday led in February and is now marginal.</li>
+          <li><b>Discounting is the default response.</b> Gworld has cut average order value from $22.05 to $16.06.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:34px;">PerfectTed's own UK numbers</h3>
+    <p class="body-p">$67,476 GMV in the last 30 days, 5,195 creators attached, 2,329 videos, averaging about $29 per video. The GMV comes from cans. Matcha Protein Latte White Chocolate did $19,345 from 24 creators.</p>
+    <p class="body-p">The powder attracts creators and does not convert. Ceremonial 30g at $9.49 has 1,687 creators attached and produced $3,319. That is $1.97 per creator against $806 for the White Chocolate can. Their giftset is the exception, appearing in top UK videos at $113 to $180 each.</p>
+
+    <div class="callout">
+      <div class="ct">The gap we would raise directly</div>
+      <p>PerfectTed's positioning goal is an everyday energy matcha brand and their UK revenue is RTD-led. Functional energy SKUs in the US run $75,000 to $785,000 a month each. Matcha SKUs run $11,000 to $24,000. The October assortment contains the smaller half of that proposition.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">03 &middot; Assortment and pricing</div>
+    <h2>Retail parity is a range question, not a price question</h2>
+    <p class="lede">TikTok Shop discounts constantly through platform coupons, affiliate commission and campaign events. Nobody can hold strict parity on an identical SKU against Target and Sprouts. An agency that promises it will break the promise by week six. So we do not sell the same thing.</p>
+
+    <div class="tiers">
+      <div class="tier a">
+        <span class="ctag">Tier 1 &middot; Hero</span>
+        <h3>Giftset</h3>
+        <div class="price">$49.99&ndash;$59.99</div>
+        <p>Matcha, bamboo whisk, scoop, ceramic holder, bowl. TikTok Shop exclusive, so no like-for-like comparison exists for a shopper or a buyer.</p>
+        <div class="row">Carries <b>paid media</b>. Peaks in December.</div>
+      </div>
+      <div class="tier b">
+        <span class="ctag">Tier 2 &middot; Volume</span>
+        <h3>Bundles and multipacks</h3>
+        <div class="price">$29.99&ndash;$36.99</div>
+        <p>Powder plus sachet box, two-tin refills, starter plus refill. Also channel-exclusive and outside the parity conversation.</p>
+        <div class="row">The <b>repeat purchase</b> engine</div>
+      </div>
+      <div class="tier c">
+        <span class="ctag">Tier 3 &middot; Parity</span>
+        <h3>Single tins and sachets</h3>
+        <div class="price">$13.99&ndash;$19.99</div>
+        <p>Listed at retail price for search capture and simple repeat buying. Discounting happens through platform-funded mechanics only.</p>
+        <div class="row">Leads <b>January</b> when giftset demand drops</div>
+      </div>
+    </div>
+
+    <p class="body-p">List price on Tier 3 does not drop below retail. That is a parity commitment we can hold, and it is the one their buyers will audit. Worth telling PerfectTed directly: TikTok Shop pricing shows up in Google Shopping and retail buyers look. List price is what gets checked. Promotional price gets far less scrutiny because every channel promotes.</p>
+    <p class="body-p">This matches what already works for them. Their own read is that bundles and merch kits perform strongly and that TikTok does not need to be cheapest.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">04 &middot; Affiliates</div>
+    <h2>Depth, not roster size. The 1,000 target moves to day 60.</h2>
+    <p class="lede">The brief asks for 1,000 affiliates creating content by end of month one. We want to move that, and the argument comes from their numbers rather than our preference.</p>
+    <p class="body-p">Their UK model is earned-first and community-driven, with the same creators engaged repeatedly. That is depth and it works. 1,000 creators in 30 days is breadth, and breadth is what produced 1,687 creators generating $3,319 on their ceremonial powder.</p>
+    <p class="body-p">The comparators agree. Naoki runs 120 creators and 167 videos at $23.7K a month. Nobody in this category wins on roster size. There is also a logistics constraint: one approved sample yields roughly 1.5 videos landing two to six weeks after delivery, so 1,000 creators posting in October means samples delivered in September.</p>
+
+    <table class="tbl">
+      <tr><th>Milestone</th><th>Target</th><th>Basis</th></tr>
+      <tr><td>Month 1 posting creators</td><td class="n">300</td><td>House cold-start benchmark, 50 videos a week</td></tr>
+      <tr><td>Month 1 repeat-poster rate</td><td class="n">25%+</td><td>Replaces raw creator count</td></tr>
+      <tr><td>Day 60 posting creators</td><td class="n">1,000</td><td>Client target, moved 30 days</td></tr>
+      <tr><td>Month 3 onward</td><td class="n">1,200&ndash;1,500 videos/mo</td><td>House performing-brand benchmark is 2,000+</td></tr>
+      <tr><td>GMV per posting creator</td><td class="n">$100+</td><td>Category median sits nearer $30</td></tr>
+    </table>
+
+    <h3 style="margin-top:34px;">The sample ladder is the community programme</h3>
+    <div class="tiers">
+      <div class="tier a">
+        <span class="ctag">Tier A &middot; Broad</span>
+        <h3>Sachets</h3>
+        <p>Low landed cost, ships flat, shows the ritual on camera. Goes out at volume against basic criteria.</p>
+        <div class="row">This <b>recruits</b></div>
+      </div>
+      <div class="tier b">
+        <span class="ctag">Tier B &middot; Earned</span>
+        <h3>Giftset</h3>
+        <p>Costs real money to seed so it is not given on request. Unlocked by posting, by a sales threshold, or by community invitation.</p>
+        <div class="row">This <b>retains</b></div>
+      </div>
+      <div class="tier c">
+        <span class="ctag">Tier C &middot; Cohort</span>
+        <h3>Founder group</h3>
+        <p>Product early, founder access, event invitations. Plugs into their existing UK community-event model.</p>
+        <div class="row">This produces <b>repeat posters</b></div>
+      </div>
+    </div>
+    <p class="body-p">Recruit on post rate, not follower count. The best-performing giftset video in the US category came from an account with 4,625 followers whose average video does 685 views. That video did 74,700. Her post rate is 85%.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">05 &middot; Paid media</div>
+    <h2>Paid buys distribution for content the community already made</h2>
+    <p class="lede">PerfectTed has not spent meaningfully on paid and built the UK on earned. We are not arguing against that and we are not opening with paid.</p>
+    <p class="body-p">Every leader in this category spends. Gworld takes 74% of GMV from ads, Naoki 70%, Chamberlain 54%. What they buy is creator organic content that already worked, at $25 to $50 a creative, returning 3.4x to 4.2x. Nano creators in this category average under 700 views. Winners reach 20,000 to 75,000 because someone paid to put them there.</p>
+    <p class="body-p">Paid cannot lead a cold start. GMV Max learns from creative and conversion signal and on day one there is neither. Spending into an empty pool produced a $271 cost per order on a $79 product elsewhere in our portfolio, at 0.23 return.</p>
+
+    <table class="tbl">
+      <tr><th>Phase</th><th>Activity</th></tr>
+      <tr><td class="n">Weeks 1&ndash;2</td><td>No paid. Content and shop health only.</td></tr>
+      <tr><td class="n">Weeks 3&ndash;8</td><td>Spark Ads on individual organic winners as they emerge. Small budgets, fast kills.</td></tr>
+      <tr><td class="n">Month 2, late</td><td>GMV Max readiness check against the 600-video threshold.</td></tr>
+      <tr><td class="n">Month 3</td><td>GMV Max live at scale on Max Delivery.</td></tr>
+      <tr><td class="n">Months 4&ndash;6</td><td>Scale against CPO ceiling. Creative feedback loop into affiliate briefs.</td></tr>
+    </table>
+
+    <div class="callout">
+      <div class="ct">Benchmarks and one creative call</div>
+      <p>Category ROAS on working Spark creatives runs 3.4x to 4.2x with GPM between 45 and 75. We measure cost per order rather than ROAS, per house standard, with the ceiling set against giftset AOV. On creative: the highest-returning hooks are contrarian openers that read as complaints, topping out at 4.17x. They work and they sit badly with a premium brand. We would run the objection-led variant as the house hook, which still returns 3.43x, and test the harder version in a controlled slice.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">06 &middot; Live and shop operations</div>
+    <h2>Live sits in phase two. Shop health starts on day one.</h2>
+    <div class="twocol">
+      <div class="panel trig">
+        <h3>Live shopping</h3>
+        <ul>
+          <li>PerfectTed has already cut UK live back to a few hours a week and is not seeing returns from volume. We agree.</li>
+          <li>Some TikTok campaign periods gate participation on live activity. We run a minimum cadence to stay eligible.</li>
+          <li>The giftset is a demonstration product. That is the case for revisiting live around month three or four.</li>
+          <li><b>Floor:</b> $4 GMV per hour, $6 target. Below $4 we would tell them to stop.</li>
+        </ul>
+      </div>
+      <div class="panel obj">
+        <h3>Shop operations</h3>
+        <ul>
+          <li><b>Seller score to 4.5 or above.</b> It gates GMV Max eligibility, campaign participation and organic distribution.</li>
+          <li><b>Violations resolved inside 24 hours</b>, with 24/7 coverage. Food and caffeine claims draw uneven enforcement.</li>
+          <li><b>PDP as a revenue lever.</b> Product card and search are now 46.9% of Drinks GMV and rising while video share falls.</li>
+          <li><b>Promotion calendar</b> built against platform moments and the Tier 3 parity commitment.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">07 &middot; Fulfilment</div>
+    <h2>Oxygen is the right call. The timing is the risk.</h2>
+    <p class="lede">PerfectTed has selected Oxygen with Nashville and LA nodes, live around October. Two nodes on that split covers most of the US inside two days. We would not change it. Third does not hold inventory and works through the 3PL.</p>
+    <p class="body-p">The risk is timing. Oxygen goes live around October and the shop launches mid-October. There is no buffer. TikTok order flow behaves differently from DTC, with different label requirements, different dispatch SLAs and spikes driven by single videos. A 3PL that is clean on DTC can stumble in its first TikTok week. Late dispatch in the opening weeks damages seller score, and seller score gates GMV Max. A fulfilment problem in October becomes a paid media problem in January.</p>
+
+    <div class="callout">
+      <div class="ct">Recommendation</div>
+      <p>Soft launch two to three weeks ahead of the commercial push. Shop live and taking real orders at low volume with seeded creators driving a trickle. That gives Oxygen a shakeout on real TikTok order flow and gives us dispatch data before anything is at stake.</p>
+    </div>
+
+    <p class="body-p"><b>The giftset needs a packaging spec.</b> A ceramic bowl and whisk holder in a standard mailer will break. Damage hits seller score and product rating, and the hero SKU rating is what paid runs against. Validate on live carrier routes before volume.</p>
+    <p class="body-p"><b>FBT is a Q2 2027 question.</b> Splitting inventory during the period when stockouts hurt most is the wrong trade. Worth evaluating later for sachets and tins. Giftsets stay with Oxygen because FBT packaging is not built for fragile goods.</p>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-kicker">08 &middot; Launch plan</div>
+    <h2>Samples delivered in September are the dependency behind every October number</h2>
+    <p class="lede">Compressing pre-launch is the main way this fails.</p>
+
+    <div class="phases">
+      <div class="phase">
+        <div class="when">Phase 0 &middot; September to mid-October</div>
+        <h3>Pre-launch</h3>
+        <p>Shop entity setup, seller verification, category approvals. Catalog build across all three tiers with PDP content. Oxygen integration, label testing, end-to-end test orders. Giftset packaging validated on live carrier routes. Informed Creative Brief built from US category video and comment analysis. Affiliate CRM and segments built in Cruva. Sample inventory landed. Seeding wave one opens six weeks out. TikTok account team engaged for subsidies and matchmaking events.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Week 1</div>
+        <h3>Soft launch</h3>
+        <p>Shop live at low volume to validate Oxygen on real TikTok orders. First seeded content publishes. Affiliate programme opens publicly. Brand handle cadence begins. Daily dispatch monitoring starts.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Week 2</div>
+        <h3>Volume on</h3>
+        <p>Outreach automation at full rate. Sample approvals scale against Tier A criteria. First content wave lands. Baseline reads on view-through and conversion by format. Seller score watch.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Week 3</div>
+        <h3>First optimization loop</h3>
+        <p>Hook analysis on the opening wave. Creative feedback to posting creators. Sample criteria tightened against actual post rates. PDP adjustments from early review signal. First Spark Ads behind emerging winners.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Week 4</div>
+        <h3>Community layer</h3>
+        <p>Repeat-poster programme launches. Tier B giftset unlock goes live. Founder cohort invitations out. Month one reporting. Content pool checked against the GMV Max path.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Month 2 &middot; Nov to Dec</div>
+        <h3>Gifting peak</h3>
+        <p>Black Friday, Cyber and holiday gifting. The giftset is the hero and December is its month. Scale to 1,000 posting creators by day 60. Content pool toward 1,300 cumulative videos. First TikTok platform moment. GMV Max readiness check late in the month.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Month 3 &middot; Dec to Jan</div>
+        <h3>January trough, paid on</h3>
+        <p>Plan for a dip. The comparator giftset fell 64% from December to January. Lead January with powders and sachets against New Year wellness intent and pull the giftset back. GMV Max goes live at scale on Max Delivery. Live pilot runs against the $4 floor.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Months 4 to 6 &middot; Jan to Apr</div>
+        <h3>Retail live, Valentine&rsquo;s, review</h3>
+        <p>Month 4: Target and Sprouts open, content pivots to shelf-find and in-store discovery, and Valentine&rsquo;s is the second giftset peak with comparator average order value rising to $49. Month 5: paid scaling and CPO optimization, subscription mechanics on Tier 2. Month 6: Super Target preparation, full review, break-option decision, RTD recommendation for Q2.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">09 &middot; Measurement</div>
+    <h2>What we report and how often</h2>
+    <div class="twocol">
+      <div class="panel trig">
+        <h3>Leading indicators</h3>
+        <ul>
+          <li><b>Shop health.</b> Seller score against 4.5, dispatch SLA, violations, hero SKU rating, giftset damage rate.</li>
+          <li><b>Affiliate.</b> Posting creators, repeat-poster rate, videos per week, GMV per posting creator, sample-to-post conversion.</li>
+          <li><b>Content.</b> Views, GMV per video, hook performance by sales per thousand views, pool against the 600 threshold.</li>
+        </ul>
+      </div>
+      <div class="panel obj">
+        <h3>Commercial indicators</h3>
+        <ul>
+          <li><b>Paid.</b> Cost per order, spend, ad-attributed GMV, blended CPO, creative win rate.</li>
+          <li><b>Commercial.</b> GMV, units, AOV, new against repeat, mix by assortment tier.</li>
+          <li><b>Live, once active.</b> GMV per hour against the $4 floor, watch time, conversion rate.</li>
+        </ul>
+      </div>
+    </div>
+    <table class="tbl">
+      <tr><th>Cadence</th><th>Covers</th></tr>
+      <tr><td class="n">Daily</td><td>Dashboard on shop health, order flow and GMV</td></tr>
+      <tr><td class="n">Weekly</td><td>Performance call with written summary</td></tr>
+      <tr><td class="n">Monthly</td><td>Business review against targets and forecast</td></tr>
+      <tr><td class="n">Quarterly</td><td>Strategy review, first aligned to the three-month break option</td></tr>
+    </table>
+    <p class="note">Tools: Cruva for affiliate CRM, outreach, briefs, sampling and discovery. FastMoss for competitor and category intelligence. TikTok Seller Center for operations and compliance. TikTok Ads Manager and GMV Max for paid.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">10 &middot; Volume forecast</div>
+    <h2>Built against the three cold-start curves</h2>
+    <p class="lede">Assumes the October assortment as briefed, with no RTD. Blended average order value of roughly $42 in months one to three when giftsets dominate, settling to about $36 once retail is live.</p>
+
+    <table class="tbl">
+      <tr><th>Month</th><th>Base GMV</th><th>Base units</th><th>Stretch GMV</th><th>Stretch units</th></tr>
+      <tr><td>M1 &middot; Oct&ndash;Nov</td><td class="n">$12,000</td><td class="n">290</td><td class="n">$18,000</td><td class="n">430</td></tr>
+      <tr><td>M2 &middot; Nov&ndash;Dec</td><td class="n">$28,000</td><td class="n">670</td><td class="n">$42,000</td><td class="n">1,000</td></tr>
+      <tr><td>M3 &middot; Dec&ndash;Jan</td><td class="n">$22,000</td><td class="n">520</td><td class="n">$33,000</td><td class="n">790</td></tr>
+      <tr><td>M4 &middot; Jan&ndash;Feb</td><td class="n">$35,000</td><td class="n">970</td><td class="n">$52,000</td><td class="n">1,440</td></tr>
+      <tr><td>M5 &middot; Feb&ndash;Mar</td><td class="n">$45,000</td><td class="n">1,250</td><td class="n">$68,000</td><td class="n">1,890</td></tr>
+      <tr><td>M6 &middot; Mar&ndash;Apr</td><td class="n">$58,000</td><td class="n">1,610</td><td class="n">$87,000</td><td class="n">2,420</td></tr>
+      <tr class="total"><td>Six-month total</td><td class="n">$200,000</td><td class="n">5,310</td><td class="n">$300,000</td><td class="n">7,970</td></tr>
+      <tr><td>Months 7&ndash;12</td><td class="n">$420,000</td><td class="n">12,400</td><td class="n">$670,000</td><td class="n">19,700</td></tr>
+      <tr class="total"><td>Twelve-month total</td><td class="n">$620,000</td><td class="n">17,700</td><td class="n">$970,000</td><td class="n">27,700</td></tr>
+    </table>
+
+    <div class="callout">
+      <div class="ct">The month three dip is deliberate</div>
+      <p>Every earlier version of this forecast had January rising. The giftset comparator fell 64% from December to January. Gifting demand collapses after Christmas and the hero SKU is a gift. January is the month Target opens and it is also the month the giftset stops selling. Lead the retail launch with powders and sachets against New Year wellness intent, and hold giftset inventory for Valentine&rsquo;s in month four.</p>
+    </div>
+
+    <p class="body-p"><b>Why not higher.</b> Both comparators reached $20K to $24K a month by month five from a standing start. We have PerfectTed at $45K in month five, roughly double, on the basis of brand recognition, pre-launch seeding, agency support and 1,200 Target doors from month four. That is already an aggressive claim. Their mature UK shop, with RTD and full domestic awareness, does $67,476 a month.</p>
+
+    <h3 style="margin-top:34px;">Stock recommendation</h3>
+    <table class="tbl">
+      <tr><th>Line</th><th>Six months</th><th>Basis</th></tr>
+      <tr><td>Giftset, sellable</td><td class="n">~4,400</td><td>Stock to stretch. Hero stockout in December costs more than carrying.</td></tr>
+      <tr><td>Tier 2 and 3, sellable</td><td class="n">~5,700</td><td>Stock to base. Easier to replenish.</td></tr>
+      <tr><td>Sachet sample packs</td><td class="n">~7,100</td><td>800 needed in September, before launch. Hard dependency.</td></tr>
+      <tr><td>Giftsets for seeding</td><td class="n">~1,130</td><td>About $35,000 of product over twelve months at $18 landed.</td></tr>
+    </table>
+    <p class="body-p">Weight giftset stock to October and November. The December peak and January collapse mean inventory arriving in January sits until February.</p>
+
+    <div class="callout">
+      <div class="ct">What changes with RTD</div>
+      <p>These numbers are held down by the assortment, not by the plan. Functional energy SKUs run $75,000 to $785,000 a month each against $11,000 to $24,000 for matcha, and PerfectTed&rsquo;s UK GMV is RTD-led. If cans land by Q2 2027, months seven to twelve should be modelled separately and materially higher.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-kicker">11 &middot; Risks</div>
+    <h2>What could break this</h2>
+    <div class="risks">
+      <div class="risk">
+        <div class="rt">Highest probability</div>
+        <p><b>Oxygen and launch timing collide.</b> No buffer between 3PL go-live and shop launch. Mitigated by the soft launch window.</p>
+      </div>
+      <div class="risk">
+        <div class="rt">Commercial constraint</div>
+        <p><b>No RTD in the US assortment.</b> Energy SKUs run three to thirty times what matcha SKUs run, their UK revenue is RTD-led, and their positioning is an energy brand.</p>
+      </div>
+      <div class="risk">
+        <div class="rt">Timing</div>
+        <p><b>January is a giftset trough.</b> The hero SKU stops selling in the month retail opens. Mitigated by leading January with powders and holding giftset stock for Valentine&rsquo;s.</p>
+      </div>
+      <div class="risk">
+        <div class="rt">Competitive</div>
+        <p><b>Leadership rotates fast.</b> Matcha Sunday led in February and is now marginal. Chamberlain entered from nothing and took the top slot in five months. Naoki launched in March and is already third.</p>
+      </div>
+      <div class="risk">
+        <div class="rt">Operational</div>
+        <p><b>Giftset breakage and sample lead time.</b> Ceramic in transit hits seller score and hero rating. September seeding is a hard dependency for October content.</p>
+      </div>
+      <div class="risk">
+        <div class="rt">Coordination</div>
+        <p><b>Moscow Group holds Minneapolis and Target.</b> Pricing architecture and promo calendar only work if someone owns the view across both channels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>THIRD. &middot; PerfectTed &times; TikTok Shop US &middot; Strategy</span>
+    <span>July 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
