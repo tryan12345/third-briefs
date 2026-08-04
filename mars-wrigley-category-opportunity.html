@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Shop Category Opportunity Analysis · Mars Wrigley</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tomato:#FF5A3E; --ink:#141414; --paper:#FFFFFF; --soft:#F6F5F2;
+    --line:#E4E1DB; --mute:#6B6660; --green:#1E7A46; --red:#C22F2F; --amber:#B37700;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;font-size:15px}
+  .mono{font-family:'IBM Plex Mono',monospace}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  .hero{background:var(--tomato);color:#fff;padding:64px 0 52px}
+  .hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-bottom:18px}
+  .hero h1{font-size:44px;line-height:1.08;font-weight:800;letter-spacing:-.02em;max-width:20ch}
+  .hero .sub{margin-top:18px;font-size:18px;font-weight:400;max-width:64ch;opacity:.95}
+  .hero .meta{margin-top:28px;font-family:'IBM Plex Mono',monospace;font-size:12px;opacity:.85}
+
+  .strip{display:flex;height:8px}
+  .strip span{flex:1}
+
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:0}
+  h2{font-size:13px;font-family:'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:14px}
+  h3{font-size:24px;font-weight:700;letter-spacing:-.01em;margin-bottom:14px;max-width:36ch}
+  h4{font-size:17px;font-weight:700;margin:26px 0 8px}
+  p{margin-bottom:14px;max-width:76ch}
+  p:last-child{margin-bottom:0}
+  .lede{font-size:18px;max-width:70ch}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:26px}
+  .stat{background:var(--paper);padding:18px 16px}
+  .stat .n{font-family:'IBM Plex Mono',monospace;font-size:25px;font-weight:600;letter-spacing:-.02em}
+  .stat .l{font-size:12px;color:var(--mute);margin-top:4px;line-height:1.35}
+  .neg{color:var(--red)}
+
+  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px}
+  th{background:var(--ink);color:#fff;text-align:left;padding:11px 12px;font-size:11px;font-family:'IBM Plex Mono',monospace;letter-spacing:.09em;text-transform:uppercase;font-weight:500;vertical-align:bottom}
+  td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even) td{background:var(--soft)}
+  td.num,th.num{text-align:right;font-family:'IBM Plex Mono',monospace;white-space:nowrap}
+  .rank{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--tomato)}
+  .score{font-family:'IBM Plex Mono',monospace;font-weight:600}
+  .name{font-weight:600}
+  tr.dead td{color:var(--mute)}
+
+  .tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:2px;font-weight:500}
+  .t-go{background:#E4F1EA;color:var(--green)}
+  .t-hold{background:#FBF0DC;color:var(--amber)}
+  .t-no{background:#F9E5E5;color:var(--red)}
+
+  /* six-month bar chart */
+  .chart{margin-top:26px;border:1px solid var(--line);padding:22px 20px 16px}
+  .chart .ct{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:18px}
+  .bars{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;align-items:end;height:190px}
+  .bcol{display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:2px}
+  .bstack{display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+  .b1{background:var(--tomato)}
+  .b2{background:#3B4A5A}
+  .bval{font-family:'IBM Plex Mono',monospace;font-size:11px;text-align:center;margin-bottom:5px}
+  .blab{font-family:'IBM Plex Mono',monospace;font-size:11px;text-align:center;color:var(--mute);margin-top:7px;border-top:1px solid var(--line);padding-top:6px}
+  .legend{display:flex;gap:18px;margin-top:14px;font-size:12px;color:var(--mute);flex-wrap:wrap}
+  .legend i{display:inline-block;width:11px;height:11px;margin-right:6px;vertical-align:-1px}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:24px}
+  .card{background:var(--paper);padding:22px 20px}
+  .card .hd{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:4px}
+  .card h4{margin:0;font-size:17px}
+  .card .sc{font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:600;color:var(--tomato)}
+  .card .fig{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mute);margin-bottom:10px}
+  .card p{font-size:14px;margin-bottom:10px}
+
+  .callout{border-left:3px solid var(--tomato);background:var(--soft);padding:20px 22px;margin-top:24px}
+  .callout p{margin-bottom:10px}
+  .callout p:last-child{margin-bottom:0}
+
+  ul{margin:0 0 14px 18px;max-width:76ch}
+  li{margin-bottom:7px}
+
+  .foot{background:var(--ink);color:#fff;padding:34px 0 40px;font-size:13px}
+  .foot .mono{color:#9C9791;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  .foot p{max-width:76ch;margin-top:10px;color:#DAD6D0}
+
+  @media (max-width:820px){
+    .hero h1{font-size:32px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .cards{grid-template-columns:1fr}
+    table{font-size:12.5px}
+    th,td{padding:9px 7px}
+    .bars{height:150px;gap:6px}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow mono">Third · Commerce Intelligence</div>
+    <h1>TikTok Shop Category Opportunity Analysis</h1>
+    <p class="sub">Six snacking categories sized and ranked, and a six-month read on the two shops Mars Wrigley already operates.</p>
+    <div class="meta mono">Prepared for Mars Wrigley &nbsp;·&nbsp; February to July 2026, US &nbsp;·&nbsp; Sources: FastMoss + Cruva &nbsp;·&nbsp; August 4, 2026</div>
+  </div>
+</div>
+<div class="strip">
+  <span style="background:#FF5A3E"></span><span style="background:#E8453C"></span><span style="background:#C2352F"></span>
+  <span style="background:#B37700"></span><span style="background:#D9A441"></span><span style="background:#1E7A46"></span>
+  <span style="background:#2E6B6B"></span><span style="background:#3B4A5A"></span><span style="background:#141414"></span>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>1 · The finding</h2>
+    <h3>Mars Wrigley has already proven it can sell here, then let it go</h3>
+    <p class="lede">Mars operates two shops on TikTok Shop US. Both are running at a fraction of what they did in March, and neither is paying a commission.</p>
+    <p>Mars Snacking and Hotel Chocolat USA together did $264,847 over the six months from February through July 2026. That is 0.103% of the $257.2M that moved through Food and Beverages in the same window. March alone accounted for 58.6% of the six-month total across both shops. Since then both have fallen off a cliff.</p>
+    <p>This is not a question of whether Mars can sell on the platform. Five discontinued Mars SKUs have real lifetime GMV behind them, including a freeze-dried M&amp;M'S product that did $131,232. The question is why a company with proven sellers is running seven active listings, zero commission, and no owned content.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">$264,847</div><div class="l">Combined six-month GMV, both Mars shops</div></div>
+      <div class="stat"><div class="n">0.103%</div><div class="l">Share of Food and Beverages GMV</div></div>
+      <div class="stat"><div class="n neg">&minus;85%</div><div class="l">Mars Snacking, July against March</div></div>
+      <div class="stat"><div class="n neg">&minus;91%</div><div class="l">Hotel Chocolat, July against March</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>2 · The two shops, six months</h2>
+    <h3>One spike each, then decay</h3>
+
+    <div class="chart">
+      <div class="ct">Monthly GMV, February to July 2026</div>
+      <div class="bars">
+        <div class="bcol"><div class="bval">$28.1K</div><div class="bstack"><div class="b1" style="height:9%"></div><div class="b2" style="height:9.2%"></div></div></div>
+        <div class="bcol"><div class="bval">$155.3K</div><div class="bstack"><div class="b1" style="height:70%"></div><div class="b2" style="height:30%"></div></div></div>
+        <div class="bcol"><div class="bval">$22.7K</div><div class="bstack"><div class="b1" style="height:0.9%"></div><div class="b2" style="height:13.7%"></div></div></div>
+        <div class="bcol"><div class="bval">$30.7K</div><div class="bstack"><div class="b1" style="height:5.7%"></div><div class="b2" style="height:14.1%"></div></div></div>
+        <div class="bcol"><div class="bval">$7.7K</div><div class="bstack"><div class="b1" style="height:1%"></div><div class="b2" style="height:4%"></div></div></div>
+        <div class="bcol"><div class="bval">$20.3K</div><div class="bstack"><div class="b1" style="height:10.4%"></div><div class="b2" style="height:2.7%"></div></div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px">
+        <div class="blab">FEB</div><div class="blab">MAR</div><div class="blab">APR</div><div class="blab">MAY</div><div class="blab">JUN</div><div class="blab">JUL</div>
+      </div>
+      <div class="legend">
+        <span><i style="background:#FF5A3E"></i>Mars Snacking</span>
+        <span><i style="background:#3B4A5A"></i>Hotel Chocolat USA</span>
+        <span>Bars scaled to the March combined peak of $155,276</span>
+      </div>
+    </div>
+
+    <table>
+      <thead><tr><th>Month</th><th class="num">Mars Snacking</th><th class="num">Hotel Chocolat</th><th class="num">Combined</th></tr></thead>
+      <tbody>
+        <tr><td>February</td><td class="num">$13,929</td><td class="num">$14,209</td><td class="num">$28,138</td></tr>
+        <tr><td>March</td><td class="num">$108,599</td><td class="num">$46,677</td><td class="num">$155,276</td></tr>
+        <tr><td>April</td><td class="num">$1,437</td><td class="num">$21,307</td><td class="num">$22,744</td></tr>
+        <tr><td>May</td><td class="num">$8,852</td><td class="num">$21,854</td><td class="num">$30,706</td></tr>
+        <tr><td>June</td><td class="num">$1,514</td><td class="num">$6,163</td><td class="num">$7,677</td></tr>
+        <tr><td>July</td><td class="num">$16,159</td><td class="num">$4,146</td><td class="num">$20,306</td></tr>
+        <tr><td class="name">Six-month total</td><td class="num">$150,491</td><td class="num">$114,356</td><td class="num">$264,847</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Shop profiles</h4>
+    <table>
+      <thead><tr><th>Measure</th><th class="num">Mars Snacking</th><th class="num">Hotel Chocolat USA</th></tr></thead>
+      <tbody>
+        <tr><td>Lifetime GMV</td><td class="num">$676,565</td><td class="num">$1,141,219</td></tr>
+        <tr><td>Lifetime units</td><td class="num">48,043</td><td class="num">17,771</td></tr>
+        <tr><td>Six-month ASP</td><td class="num">$12.87</td><td class="num">$31.89</td></tr>
+        <tr><td>Active listings</td><td class="num">7</td><td class="num">39</td></tr>
+        <tr><td>Listings ever</td><td class="num">12</td><td class="num">112</td></tr>
+        <tr><td>Linked creators</td><td class="num">943</td><td class="num">363</td></tr>
+        <tr><td>Creators selling on live</td><td class="num">19</td><td class="num">18</td></tr>
+        <tr><td>Shop rating</td><td class="num">4.4</td><td class="num">3.1</td></tr>
+        <tr><td class="name">Commission rate</td><td class="num">0%</td><td class="num">0%</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:18px">Both shops post a commission floor and ceiling of zero. House benchmark for an affiliate program in this category is 10% to 20%. The 943 creators attached to Mars Snacking and the 363 attached to Hotel Chocolat are working for nothing, which is why almost none of them post twice.</p>
+
+    <h4>Where the sales actually come from</h4>
+    <table>
+      <thead><tr><th>Channel, trailing 90 days</th><th class="num">Mars Snacking</th><th class="num">Hotel Chocolat</th></tr></thead>
+      <tbody>
+        <tr><td>Affiliate</td><td class="num">61.5%</td><td class="num">31.6%</td></tr>
+        <tr><td>Product card</td><td class="num">38.5%</td><td class="num">68.4%</td></tr>
+        <tr><td class="name">Shop-owned content</td><td class="num">0%</td><td class="num">0%</td></tr>
+        <tr><td>Live</td><td class="num">8.4%</td><td class="num">0.1%</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:18px">Neither shop has produced a single dollar from its own account. Hotel Chocolat sells two thirds of its volume off the product card, which is people finding the listing on their own. Live is 0.1% of their GMV, $40 across two units, despite 599 linked live sessions.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>3 · The SKUs Mars stopped selling</h2>
+    <h3>Five products with real lifetime volume are now at zero</h3>
+    <p>Mars Snacking has twelve listings in its history and seven active. In the last 90 days only two of them sold anything, and one of those did $131. Everything below has meaningful lifetime GMV and is currently dead.</p>
+    <table>
+      <thead><tr><th>Mars Snacking listing</th><th class="num">Price</th><th class="num">Lifetime GMV</th><th class="num">Lifetime units</th><th class="num">Last 90 days</th></tr></thead>
+      <tbody>
+        <tr class="dead"><td>M&amp;M'S Pop'd Caramel Freeze-Dried Candy, 2&nbsp;pack</td><td class="num">$11.99</td><td class="num">$131,232</td><td class="num">10,584</td><td class="num">$0</td></tr>
+        <tr class="dead"><td>TWIX Cookie Collection, 12&nbsp;piece</td><td class="num">$32.76</td><td class="num">$130,543</td><td class="num">4,358</td><td class="num">$0</td></tr>
+        <tr class="dead"><td>Skittles Gummies Variety Pack with Fuego</td><td class="num">$14.17</td><td class="num">$104,987</td><td class="num">9,553</td><td class="num">$0</td></tr>
+        <tr class="dead"><td>TWIX Bits Share Size, 8&nbsp;oz</td><td class="num">$11.99</td><td class="num">$81,564</td><td class="num">6,306</td><td class="num">$0</td></tr>
+        <tr class="dead"><td>M&amp;M'S Variety Pack Snack Box, 30&nbsp;pk</td><td class="num">$39.04</td><td class="num">$15,092</td><td class="num">625</td><td class="num">$0</td></tr>
+        <tr><td class="name">Dove Chocolate Variety Large Bars Gift Bundle</td><td class="num">$16.99</td><td class="num">$75,374</td><td class="num">4,233</td><td class="num">$23,495</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <p><strong>The M&amp;M'S Pop'd result is the one to look at.</strong> It is a freeze-dried candy at $11.99 and it is the highest-unit product Mars has ever run on this platform at 10,584 units. Freeze-dried and sour formats are exactly what the independent leaders in Candy are winning with right now. Mars built the correct product for this platform, sold ten thousand units of it, and delisted it.</p>
+    </div>
+    <p style="margin-top:22px">Hotel Chocolat shows a different version of the same problem. Its single biggest product ever is the Velvetiser, a $212 hot chocolate machine, at $486,427 lifetime. That is 43% of everything the shop has ever sold. The chocolate itself is a long tail of $6 and $11 boxes. Their top seller of the last 90 days was the Easter Sleekster at $45, which did $23,478 and then stopped, because Easter ended.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>4 · The pattern this fits</h2>
+    <h3>National CPG brands spike and fade here. Platform-native brands compound.</h3>
+    <p>Mars is not an outlier. Frito-Lay ran $718,157 in Snacks in February, growing 4,659% year over year. By May they had dropped out of the category top ten, and they were still out in July. The tenth-place shop in May did $246,440, so the fall was at least 66%.</p>
+    <p>Set that against the shops that were built on the platform. These are Snacks GMV figures for the same three months.</p>
+    <table>
+      <thead><tr><th>Shop</th><th class="num">February</th><th class="num">May</th><th class="num">July</th><th>Shape</th></tr></thead>
+      <tbody>
+        <tr><td class="name">El Ranchito Jerky</td><td class="num">$1,332,777</td><td class="num">$1,349,120</td><td class="num">$1,477,777</td><td><span class="tag t-go">Compounding</span></td></tr>
+        <tr><td class="name">Drizzilicious</td><td class="num">$381,460</td><td class="num">$581,354</td><td class="num">$735,885</td><td><span class="tag t-go">Compounding</span></td></tr>
+        <tr><td class="name">Built Bar</td><td class="num">$986,127</td><td class="num">$1,178,771</td><td class="num">$744,846</td><td><span class="tag t-hold">Holding</span></td></tr>
+        <tr><td class="name">Papá Nicho's Carne Seca</td><td class="num">$371,155</td><td class="num">$323,085</td><td class="num">$327,387</td><td><span class="tag t-hold">Holding</span></td></tr>
+        <tr><td class="name">Frito-Lay Shop</td><td class="num">$718,157</td><td class="num">out of top 10</td><td class="num">out of top 10</td><td><span class="tag t-no">Faded</span></td></tr>
+        <tr><td class="name">Mars Snacking</td><td class="num">$13,929</td><td class="num">$8,852</td><td class="num">$16,159</td><td><span class="tag t-no">Never scaled</span></td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:20px">The brands that hold are the ones running continuous affiliate programs with paid commission and a steady content floor. El Ranchito carries 6,670 linked creators and 60 products with sales. Built Bar carries 19,720 creators. Mars Snacking carries 943 creators and 7 listings at zero commission.</p>
+
+    <h4>The category is also moving away from the channel Mars is not using</h4>
+    <table>
+      <thead><tr><th>Snacks, month</th><th class="num">Units</th><th class="num">Video GMV share</th><th class="num">Live GMV share</th><th class="num">Top-50 product share</th></tr></thead>
+      <tbody>
+        <tr><td>February</td><td class="num">1,117,814</td><td class="num">64.2%</td><td class="num">5.9%</td><td class="num">33.5%</td></tr>
+        <tr><td>March</td><td class="num">1,223,037</td><td class="num">66.2%</td><td class="num">6.1%</td><td class="num">35.5%</td></tr>
+        <tr><td>April</td><td class="num">931,429</td><td class="num">54.0%</td><td class="num">10.9%</td><td class="num">28.2%</td></tr>
+        <tr><td>May</td><td class="num">938,451</td><td class="num">49.6%</td><td class="num">11.8%</td><td class="num">25.2%</td></tr>
+        <tr><td>June</td><td class="num">885,455</td><td class="num">47.6%</td><td class="num">11.2%</td><td class="num">29.4%</td></tr>
+        <tr><td>July</td><td class="num">933,311</td><td class="num">46.7%</td><td class="num">9.9%</td><td class="num">27.9%</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:20px">Creator video fell from 66.2% of Snacks GMV in March to 46.7% in July, a 19.5 point drop in five months. Live nearly doubled over the same period. Product card and search picked up the rest, moving from 27.7% to 43.4%. A plan built only on affiliate video is chasing a shrinking share of the category, and Mars currently runs no live and no owned content at all.</p>
+    <p>Concentration fell too. The top 50 products held 35.5% of Snacks units in March and 27.9% in July. The category is fragmenting, which is the condition an entrant wants.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>5 · The scorecard</h2>
+    <h3>Six categories, ranked on Third's CPG entrant weights</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:32px">#</th><th>Category</th><th class="num">Score</th><th class="num">Monthly GMV</th>
+          <th class="num">Size<br>30%</th><th class="num">Momentum<br>20%</th><th class="num">Whitespace<br>20%</th><th class="num">Mars proof<br>20%</th><th class="num">Creators<br>10%</th><th>Call</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank">1</td><td class="name">Chocolate &amp; Sweets</td><td class="num score">8.60</td><td class="num">$6,925,000</td><td class="num">10</td><td class="num">8</td><td class="num">6</td><td class="num">10</td><td class="num">8</td><td><span class="tag t-go">Launch</span></td></tr>
+        <tr><td class="rank">2</td><td class="name">Savory Snacks</td><td class="num score">6.20</td><td class="num">$3,736,000</td><td class="num">8</td><td class="num">10</td><td class="num">4</td><td class="num">3</td><td class="num">4</td><td><span class="tag t-no">No right to play</span></td></tr>
+        <tr><td class="rank">3</td><td class="name">Gum &amp; Mints</td><td class="num score">6.10</td><td class="num">$977,000</td><td class="num">5</td><td class="num">3</td><td class="num">9</td><td class="num">8</td><td class="num">6</td><td><span class="tag t-hold">Watch</span></td></tr>
+        <tr><td class="rank">4</td><td class="name">Fruit, Nut, Energy &amp; Protein Bars</td><td class="num score">6.00</td><td class="num">$2,222,000</td><td class="num">7</td><td class="num">6</td><td class="num">3</td><td class="num">6</td><td class="num">9</td><td><span class="tag t-hold">Second wave</span></td></tr>
+        <tr><td class="rank">5</td><td class="name">Biscuits, Cookies &amp; Wafers</td><td class="num score">5.60</td><td class="num">$661,000</td><td class="num">4</td><td class="num">5</td><td class="num">8</td><td class="num">5</td><td class="num">8</td><td><span class="tag t-hold">Second wave</span></td></tr>
+        <tr><td class="rank">6</td><td class="name">Popcorn &amp; Snack Pastries</td><td class="num score">4.90</td><td class="num">$799,000</td><td class="num">4</td><td class="num">6</td><td class="num">8</td><td class="num">2</td><td class="num">5</td><td><span class="tag t-no">Defer</span></td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:20px">Chocolate and Sweets is the only clear answer. It is the largest category in the set at $6.93M a month, it is running above its own 90-day average, and it is the one place where Mars has already shown it can sell. Nothing else scores above 6.2.</p>
+    <p>The second slot is genuinely contested and the scorecard should not be read as picking one. Savory Snacks ranks second on size and momentum alone, and Mars has nothing to sell there beyond Combos. Gum and Mints has the best whitespace in the set and real brand authority, but its own category leader is fading. Bars has the deepest creator supply and the worst whitespace. Pick the second category on portfolio and supply chain, not on this ranking.</p>
+    <div class="callout">
+      <p><strong>Size of the prize.</strong> The six categories together run $15.3M a month, or $91.9M over six months. Mars is currently at $20,306 a month across both shops, which is 0.133% of that pool.</p>
+      <p class="mono" style="font-size:14px">0.5% share &nbsp;→&nbsp; $76,600 / month &nbsp;·&nbsp; $919,000 / year &nbsp;·&nbsp; 3.8x current<br>
+      1.0% share &nbsp;→&nbsp; $153,200 / month &nbsp;·&nbsp; $1,838,000 / year &nbsp;·&nbsp; 7.5x current<br>
+      1.5% share &nbsp;→&nbsp; $229,800 / month &nbsp;·&nbsp; $2,757,000 / year &nbsp;·&nbsp; 11.3x current</p>
+      <p>For reference, Mars already hit $155,276 in a single month in March across both shops. The 1.0% case is roughly that month, sustained.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>6 · Category detail</h2>
+    <h3>What the product-level data shows</h3>
+    <div class="cards">
+      <div class="card">
+        <div class="hd"><h4>1. Chocolate &amp; Sweets</h4><div class="sc">8.60</div></div>
+        <div class="fig mono">$6.93M/mo · 730 SKUs over $1K · 215 over $5K · 28 over $25K · momentum 1.20</div>
+        <p>Two nodes: Chocolate and Chocolate Snacks, and Candy. Almost all the money is in Candy, which has 637 products over $1,000 led by a Sour Kings bundle at $286,635 and Shameless Snacks at $163,025. The winning format is freeze-dried and sour, in variety boxes at $10 to $50, with commission from 12% to 50%.</p>
+        <p>Chocolate itself is thin. Only two products clear $25,000 in 28 days and the leader is a protein candy bar at $48,494. But it is running at 1.40 against its 90-day average, the second strongest reading in the set.</p>
+        <p>This is the one category where Mars has receipts. M&amp;M'S Pop'd, TWIX Cookie Collection, and Skittles Gummies each did over $100,000 lifetime. Dove is still selling today at $23,495 over 90 days with no commission and no content.</p>
+      </div>
+
+      <div class="card">
+        <div class="hd"><h4>2. Savory Snacks</h4><div class="sc">6.20</div></div>
+        <div class="fig mono">$3.74M/mo · 246 SKUs over $1K · 81 over $5K · 20 over $25K · momentum 1.60</div>
+        <p>Strongest momentum in the set at 1.60 and the second largest category. Drizzilicious leads with mini rice cakes at $320,937 on a single 6-pack, and holds two more slots in the top ten. Papá Nicho's Carne Seca and El Ranchito Jerky take the rest.</p>
+        <p>This is where Frito-Lay tried and faded. It is also where the most durable independent operators live, and El Ranchito has grown in every month sampled.</p>
+        <p>Mars scores a 3 on right to play. Combos is the only asset and it is not a platform-shaped product. Two listings here look like paid or self-operated spikes, covered in section 8.</p>
+      </div>
+
+      <div class="card">
+        <div class="hd"><h4>3. Gum &amp; Mints</h4><div class="sc">6.10</div></div>
+        <div class="fig mono">$977K/mo · 107 SKUs over $1K · 30 over $5K · 4 over $25K · momentum 0.80</div>
+        <p>Functional oral care has taken the category. The number one product is a remineralizing nano-hydroxyapatite gum at $255,759 over 28 days, selling for $36.80 to $45.00 with 6,757 linked creators and 10,992 videos. Three of the top four SKUs are dental gums.</p>
+        <p>It is also the weakest momentum reading in the set at 0.80, and that is driven by the leader. Its most recent month is running well below its own 90-day pace. The category is softening, which cuts both ways for an entrant.</p>
+        <p>Extra, Orbit, Eclipse, and Altoids give Mars a real claim on oral health, and the $37 price ceiling is proven. Neither Mars shop has ever listed a single gum product.</p>
+      </div>
+
+      <div class="card">
+        <div class="hd"><h4>4. Fruit, Nut, Energy &amp; Protein Bars</h4><div class="sc">6.00</div></div>
+        <div class="fig mono">$2.22M/mo · 227 SKUs over $1K · 82 over $5K · 19 over $25K · momentum 1.07</div>
+        <p>Built Bar holds six of the top ten SKUs, with Prime Bites taking two and Barebells one. Built carried 19,720 linked creators in May. Their lead SKU alone has 10,733 creators and 8,782 videos.</p>
+        <p>The category sells on protein and collagen, not fruit and nut. Every leading SKU is a 12-count box between $29.99 and $44.44. KIND and Nature's Bakery would be entering against a claim they do not currently make.</p>
+        <p>Deepest creator supply in the set at roughly 29,000 across the top ten. Worst whitespace at 3.</p>
+      </div>
+
+      <div class="card">
+        <div class="hd"><h4>5. Biscuits, Cookies &amp; Wafers</h4><div class="sc">5.60</div></div>
+        <div class="fig mono">$661K/mo · 119 SKUs over $1K · 29 over $5K · 2 over $25K · momentum 0.94</div>
+        <p>Flattest category here. The leader is a Chocbox Dubai chocolate kit at $32,803 and nothing else clears $28,000. No brand has taken it, which is why whitespace scores an 8.</p>
+        <p>Mars proof is partial. The TWIX Cookie Collection did $130,543 lifetime, which is a cookie product in everything but its category assignment. That is the only relevant evidence.</p>
+        <p>National brands appear here only through curators. SnackWorks sells an OREO and Sour Patch Kids pack, and it is the fifth-largest listing in the node.</p>
+      </div>
+
+      <div class="card">
+        <div class="hd"><h4>6. Popcorn &amp; Snack Pastries</h4><div class="sc">4.90</div></div>
+        <div class="fig mono">$799K/mo · 132 SKUs over $1K · 30 over $5K · 3 over $25K · momentum 1.11</div>
+        <p>Two nodes combined and neither works for a confectioner. Popcorn is the smallest node measured anywhere in this report, with 19 products over $1,000 and nothing over $25,000. The leader is a Farmer Jon's pack sold by QVC at $12,452.</p>
+        <p>Snack Cakes and Pastries is larger but the top sellers are Asian snack boxes and mystery boxes. Tribeca Curations runs a Hostess and Little Debbie mystery box at $23,471.</p>
+        <p>Mars owns nothing in either node. Ranked last on right to play and last overall.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Price is the constraint that shows up in every node.</strong> Winning SKUs sell between $20 and $45 as multipacks, variety boxes, and 12-count cases. Mars Snacking already knows this: 100% of its 90-day GMV sat in the $15 to $30 band. The two Mars SKUs that moved the most units were $11.99 each. A checkout-lane price point has no path here, and the commission has to be funded against the basket.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>7 · Who actually sells Mars product</h2>
+    <h3>The affiliate base is deal accounts and mid-tier creators, not food creators</h3>
+    <p>Both shops show the same creator shape, and it is not the one a confectionery brand would design.</p>
+    <table>
+      <thead><tr><th>Follower tier</th><th class="num">Mars Snacking creators</th><th class="num">GMV</th><th class="num">Hotel Chocolat creators</th><th class="num">GMV</th></tr></thead>
+      <tbody>
+        <tr><td>1K to 5K</td><td class="num">47</td><td class="num">$2,785</td><td class="num">28</td><td class="num">$4,320</td></tr>
+        <tr><td>5K to 10K</td><td class="num">153</td><td class="num">$44,441</td><td class="num">57</td><td class="num">$94,882</td></tr>
+        <tr><td class="name">10K to 50K</td><td class="num">447</td><td class="num">$239,261</td><td class="num">174</td><td class="num">$479,132</td></tr>
+        <tr><td>50K to 100K</td><td class="num">145</td><td class="num">$68,518</td><td class="num">46</td><td class="num">$58,641</td></tr>
+        <tr><td>Over 100K</td><td class="num">150</td><td class="num">$225,163</td><td class="num">56</td><td class="num">$163,044</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:20px">The 10K to 50K tier is 47.4% of Mars Snacking's roster and 48.1% of Hotel Chocolat's, and it drives the most GMV in both. For Hotel Chocolat that single tier is 60% of all creator-attributed sales. Two independent shops landing on the same answer is a strong signal for how to staff a program here.</p>
+    <p>The category mix is stranger. On Mars Snacking, Beauty creators generated $126,418 against $86,503 from Food and Beverage creators. On Hotel Chocolat, the 18 Food and Beverage creators produced nothing at all, while 83 Home and Furniture creators produced $306,568. Hotel Chocolat's top three creators are Daddy Dealest Home, Joelle at Home, and Rich Got The Deals. A premium British chocolate brand is being sold by discount accounts.</p>
+    <p>One bright spot sits inside Mars Snacking. The @skittles brand account, with 710,823 followers, drove $48,983 across 243 videos and 45.0M plays. That is the single largest creator contribution to the shop, and it is Mars talking to its own audience.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>8 · Method, pressure test, and limits</h2>
+    <h3>What is measured, what is modeled, and what did not survive</h3>
+
+    <h4>Window</h4>
+    <p>Shop performance covers 1 February to 31 July 2026 at daily resolution, which is the full range FastMoss returns. Category totals cover the same six months at monthly resolution. Product-level competitive reads use trailing 28-day and 90-day figures, which are the longest per-product windows the platform exposes.</p>
+
+    <h4>Scoring</h4>
+    <table>
+      <thead><tr><th style="width:150px">Factor</th><th>What it measures</th><th style="width:36%">Bands</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Market size<br><span class="mono" style="color:var(--mute);font-size:11px">30%</span></td><td>Modeled monthly GMV. See the model note below.</td><td>10 = above $5M. 8 = $3M to $5M. 7 = $2M to $3M. 5 = $900K to $1.2M. 4 = under $900K.</td></tr>
+        <tr><td class="name">Momentum<br><span class="mono" style="color:var(--mute);font-size:11px">20%</span></td><td>Trailing 28-day GMV annualized to 90 days, divided by actual trailing 90-day GMV, across the top ten SKUs. A reading of 1.00 means the last month matched the quarter's pace.</td><td>10 = 1.50 or better. 8 = 1.15 to 1.49. 6 = 1.00 to 1.14. 5 = 0.90 to 0.99. 3 = below 0.85.</td></tr>
+        <tr><td class="name">Whitespace<br><span class="mono" style="color:var(--mute);font-size:11px">20%</span></td><td>Products clearing $25,000 in 28 days, plus whether one brand controls the top across the February, May, and July leaderboards.</td><td>9 = under 5 products over $25K and no confectionery incumbent. 8 = under 5 and a fragmented top. 6 = 20 to 30 with no single owner. 4 = entrenched multi-month leaders. 3 = one brand holds half the top ten.</td></tr>
+        <tr><td class="name">Mars proof<br><span class="mono" style="color:var(--mute);font-size:11px">20%</span></td><td>Owned brands plus documented Mars performance on this platform. Replaces the judgment-only brand fit score used before the two shops were identified.</td><td>10 = owned power brands with proven platform sales. 8 = owned brands, no listings yet. 6 = portfolio fit, no listings. 5 = adjacent proof only. 2 to 3 = no owned brand.</td></tr>
+        <tr><td class="name">Creator supply<br><span class="mono" style="color:var(--mute);font-size:11px">10%</span></td><td>Linked creators across the top ten SKUs in the category.</td><td>9 = above 25,000. 8 = 15,000 to 25,000. 6 = 8,000 to 15,000. 5 = 4,000 to 8,000. 4 = under 4,500.</td></tr>
+      </tbody>
+    </table>
+
+    <h4>The GMV model</h4>
+    <p>FastMoss reports category GMV at level 1 only. For each level-3 node we counted products clearing $1,000, $5,000, and $25,000 in trailing 28-day GMV, then fitted a log-uniform distribution across those bands with the observed category maximum as the ceiling. The model covers products doing $1,000 or more in 28 days, so every figure is a floor. Summed across the six categories it returns 37% of reported Food and Beverages GMV, against Snacks accounting for 42% of category units. Those two numbers sitting close is the check that it holds.</p>
+
+    <h4>Pressure test</h4>
+    <p>The Mars shop identification was checked from both directions. A shop search on the parent company name returns nothing, which is what produced the wrong answer in the first pass of this analysis. Searching the operating names returns both shops immediately. Separately, 28 Mars-branded listings exist under unaffiliated resellers such as CandyLucky 1990s and Snack Bliss Zone, all reporting zero GMV, zero creators, and zero videos. Those are noise, not Mars.</p>
+    <p>Two listings in Savory Snacks look like paid or self-operated spikes rather than durable competition. A DOBYONE product reports $200,715 over 28 days under the title "Carefully packaged, promptly shipped, please contact customer service" with zero creators and zero videos, and a duplicate jerky listing from Project Torque reports $152,038 with the same profile. Both are excluded from the competitive read and inflate Savory's count over $25,000 by two out of twenty. A third, EdgeJetty550, held second place in Snacks in February at $1,137,379 on a single product with zero linked creators and a zero shop rating, then vanished.</p>
+
+    <h4>Known limits</h4>
+    <ul>
+      <li>FastMoss accepts a 90-day GMV filter on product search but does not apply it. Every threshold returns the same capped row count, so a 90-day category size model is not possible. Category sizes therefore rest on a 28-day base even though the rest of this report runs on six months.</li>
+      <li>Product search caps result counts at 2,000, so any band wide enough to exceed that returns an unusable number. All bands used here sit below the cap.</li>
+      <li>Category sizes are modeled, not reported. Every input is measured, but the totals are estimates.</li>
+      <li>Cruva could not validate at level 3. Its category tree stops at Snacks, so there is no second system reading the same window at the same depth.</li>
+      <li>Mints have no node in the taxonomy and sit inside Candy. Gum and Mints understates the real Mars opportunity and Chocolate and Sweets overstates its own by the same amount.</li>
+      <li>Popcorn and Snack Cakes and Pastries were combined to match the requested category set. They behave differently and should be split before any decision on either.</li>
+      <li>Savory Snacks maps to Crisps and Puffed Snacks. Nuts, Seeds, Seaweed, and Dried Snacks sit in separate nodes and are not counted.</li>
+      <li>March is inflated across the whole category by pre-Easter buying, with Easter falling on 5 April 2026. Category GMV peaked at $49.9M in March against a six-month average of $42.9M. Read the Mars March spike against that backdrop rather than as a campaign result.</li>
+      <li>Frito-Lay's decline is bounded, not measured. They are absent from the May and July top ten, so the fall is at least 66%, but the exact figure was not pulled.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>9 · Definitions</h2>
+    <table>
+      <thead><tr><th style="width:210px">Term</th><th>What it means here</th></tr></thead>
+      <tbody>
+        <tr><td class="name">GMV</td><td>Gross merchandise value. Dollar value of goods sold through the platform before returns, fees, or commission.</td></tr>
+        <tr><td class="name">ASP</td><td>Average selling price. GMV divided by units sold.</td></tr>
+        <tr><td class="name">Level 1, 2, 3</td><td>TikTok Shop's category tree. Food and Beverages is level 1, Snacks is level 2, Candy is level 3.</td></tr>
+        <tr><td class="name">Linked creators</td><td>Creators who have added a product to their storefront and are eligible to earn commission on it. A proxy for affiliate roster size.</td></tr>
+        <tr><td class="name">Product card</td><td>Sales from the listing itself through search, the shop tab, or the product page. No creator and no ad involved.</td></tr>
+        <tr><td class="name">Shop-owned content</td><td>GMV from video or live posted by the brand's own account rather than an affiliate.</td></tr>
+        <tr><td class="name">Seller depth</td><td>Number of products clearing a GMV threshold in 28 days. Measures how many real competitors exist rather than how big the biggest is.</td></tr>
+        <tr><td class="name">Momentum</td><td>Trailing 28-day GMV annualized to 90 days, divided by actual trailing 90-day GMV, across the top ten products.</td></tr>
+        <tr><td class="name">Whitespace</td><td>Room for a new entrant. High whitespace means few products are winning and no brand has locked the category across months.</td></tr>
+        <tr><td class="name">Club-pack unit</td><td>A multipack, variety box, or case-count SKU built to hit $20 to $45 rather than a single-serve retail price.</td></tr>
+        <tr><td class="name">FastMoss</td><td>Third-party analytics tracking total shop and product GMV across TikTok Shop.</td></tr>
+        <tr><td class="name">Cruva</td><td>Social commerce intelligence tracking GMV attributed to creator content specifically.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="foot">
+  <div class="wrap">
+    <div class="mono">Third · Commerce Intelligence</div>
+    <p>Prepared for Mars Wrigley. Shop data covers 1 February to 31 July 2026 in the US market at daily resolution. Category data covers the same six months at monthly resolution. Pulled 4 August 2026 from FastMoss, with Cruva used for creator-attributed validation at the Snacks level. Category sizes are modeled per section 8 and should be read as estimates with a documented method, not as reported figures.</p>
+    <p>Mars Snacking shop ID 7495902099160205675. Hotel Chocolat USA shop ID 7496250953125825088.</p>
+  </div>
+</div>
+
+</body>
+</html>
