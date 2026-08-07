@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Informed Creative Brief · Hotel Chocolat Velvetiser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+</style>
+<style>
+.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
+section.alt .companions{background:#fff;}
+.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.companions ul{list-style:none;margin-top:12px;}
+.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
+.companions li:first-child{border-top:none;}
+.companions li b{font-weight:700;color:var(--ink);}
+.hooks{margin-top:22px;display:grid;gap:12px;}
+.hook{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;}
+.hook .rank{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);}
+.hook .quote{font-size:16px;font-weight:700;line-height:1.35;}
+.hook .meta{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.hook .why{margin-top:9px;font-size:14px;color:#333;}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.dodont .panel.do{border-top:6px solid var(--c4);}
+.dodont .panel.dont{border-top:6px solid var(--c8);}
+.quotebox{margin-top:20px;display:grid;gap:10px;}
+.qb{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c5);border-radius:12px;padding:16px 20px;font-size:15px;color:#333;}
+.qb .src{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+.qb.neg{border-left-color:var(--c8);}
+.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--ink);color:#fff;padding:7px 12px;border-radius:6px;}
+.chip.alt2{background:var(--c6);} .chip.alt3{background:var(--c7);} .chip.alt4{background:var(--c4);color:var(--ink);}
+.gate{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;margin-top:12px;border-left:6px solid var(--c5);}
+.gate .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gate h3{margin-top:8px;font-size:17px;}
+.gate p{margin-top:9px;font-size:14px;color:#333;}
+@media(max-width:760px){.dodont{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;gap:8px;}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">THIRD. &middot; Hotel Chocolat &middot; Informed Creative Brief</div>
+    <h1>Velvetiser Hot Chocolate Maker</h1>
+    <p class="sub">Every hook and angle here comes from a video that actually sold. Nothing in this brief is invented.</p>
+  </div>
+</div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">01 &middot; The winning formula</div>
+    <h2>Non-negotiables</h2>
+    <p class="lede">Four things appear in every Velvetiser video that cleared $3,000. Miss one and the video underperforms.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">$7,178</div><div class="lbl">Top single Velvetiser video</div></div>
+      <div class="stat"><div class="num">11.4%</div><div class="lbl">Its click-through rate</div></div>
+      <div class="stat"><div class="num">$165</div><div class="lbl">Average order value on machine-led videos</div></div>
+      <div class="stat"><div class="num">2.9&ndash;4.1</div><div class="lbl">Ad ROI range on top creatives</div></div>
+    </div>
+
+    <div class="dodont">
+      <div class="panel do">
+        <h3>Do</h3>
+        <ul>
+          <li><b>Show the full make, start to finish.</b> Milk in, flakes in, whisk running, pour. No cuts that skip the process.</li>
+          <li><b>Land the pour shot.</b> Slow, thick, frothy, into the glass. This is the conversion moment in every top video.</li>
+          <li><b>Say "real chocolate flakes, not powder."</b> The single most repeated proof point across winners.</li>
+          <li><b>Show the box contents.</b> Machine, base, hot glass, cold glass, 10-serving variety pack. Buyers do not know what they get.</li>
+          <li><b>Name the flavors out loud.</b> Salted caramel, hazelnut, vanilla white, mint, Black Forest, creme brulee. Flavor lists drive comments.</li>
+          <li><b>Handle the machine.</b> Pick it up. It reads heavier and more substantial than it looks in photos.</li>
+          <li><b>Address heat directly.</b> Say it comes out at the right temperature and ready to drink.</li>
+        </ul>
+      </div>
+      <div class="panel dont">
+        <h3>Don't</h3>
+        <ul>
+          <li><b>Don't open on the brand name.</b> "Hotel Chocolat" means nothing to a US scroller. Open on the outcome or the problem.</li>
+          <li><b>Don't call it a hot chocolate machine first.</b> Against packets, $212 is absurd. Frame it as a countertop appliance.</li>
+          <li><b>Don't skip the price.</b> Videos that named a stacked discount converted above 12%. Hiding the price does not help.</li>
+          <li><b>Don't sell it as winter-only.</b> It makes cold chocolate and ships with a cold glass.</li>
+          <li><b>Don't show a half-filled or thin pour.</b> Thin liquid reads as expensive powdered cocoa.</li>
+          <li><b>Don't stack it with the chocolate boxes.</b> Different buyer, different price point. Separate videos.</li>
+          <li><b>Don't overclaim the size of a serving.</b> It is single-serve. Say so before the comments do.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">02 &middot; Content angles</div>
+    <h2>Five angles, each aimed at a real objection</h2>
+
+    <div class="tiers">
+      <div class="tier a">
+        <div class="ctag">Angle 01</div>
+        <h3>The impossible person</h3>
+        <p>For the person who already has everything. This is the highest-revenue angle on record and it produced the two top Velvetiser videos of November 2025.</p>
+        <div class="row"><b>Answers:</b> "will they actually like it"</div>
+        <div class="row"><b>Best for:</b> Archetype A, October through December</div>
+      </div>
+      <div class="tier b">
+        <div class="ctag">Angle 02</div>
+        <h3>Flakes, not powder</h3>
+        <p>Open on a packet of instant cocoa, cut to the flakes going in. Explain the vortex whisk and the ridged interior. This is the price justification.</p>
+        <div class="row"><b>Answers:</b> "$212 for hot chocolate?"</div>
+        <div class="row"><b>Best for:</b> Archetype A, year-round</div>
+      </div>
+      <div class="tier c">
+        <div class="ctag">Angle 03</div>
+        <h3>Iced chocolate for summer</h3>
+        <p>Lead with the cold drink. It ships with a cold glass. Two July 2026 videos on this angle converted at 12.6% and 15.2%, the highest rates in the 2026 dataset. Post this in a concentrated push, not a slow drip.</p>
+        <div class="row"><b>Answers:</b> "will I use it after February"</div>
+        <div class="row"><b>Best for:</b> Archetype A, April through September</div>
+      </div>
+      <div class="tier a">
+        <div class="ctag">Angle 04</div>
+        <h3>Where it came from</h3>
+        <p>Own cacao farms in Ghana and Saint Lucia. Gentle farming. Designed by chocolatiers with a ceramic artist to mimic a chocolatier's pot. This gives the buyer permission to spend.</p>
+        <div class="row"><b>Answers:</b> "is this just an expensive gadget"</div>
+        <div class="row"><b>Best for:</b> Archetype A, gifting season</div>
+      </div>
+      <div class="tier b">
+        <div class="ctag">Angle 05</div>
+        <h3>Stacked discount</h3>
+        <p>Sale plus coupon plus free shipping, with a deadline. Short and hard. Reserve for real price events. Every top-converting deal video in the set names the exact stack.</p>
+        <div class="row"><b>Answers:</b> "should I wait"</div>
+        <div class="row"><b>Best for:</b> Archetype B, promo windows only</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="ct">Angle to test</div>
+      <p>Buyers report using their own chocolate powder in the machine. That answers the biggest unspoken fear about proprietary refills and nobody has said it on camera. Worth a test video from one Archetype A creator.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">03 &middot; Opening hooks</div>
+    <h2>Hooks ranked by what they earned</h2>
+    <p class="lede">All pulled from real Velvetiser videos with recorded GMV. Use them as written or as close to it as your voice allows.</p>
+
+    <div class="hooks">
+      <div class="hook">
+        <div class="rank">01</div>
+        <div>
+          <div class="quote">"For the person who's impossible to shop for..."</div>
+          <div class="meta">$7,178 GMV &middot; 42 units &middot; 11.4% CTR &middot; 2.88 ad ROI &middot; @shopjoelle</div>
+          <div class="why">Names a problem the viewer has right now. The highest-earning Velvetiser hook on record, and a second creator ran a near-identical version to $5,423.</div>
+        </div>
+      </div>
+      <div class="hook">
+        <div class="rank">02</div>
+        <div>
+          <div class="quote">"This is a bougie hot chocolate maker."</div>
+          <div class="meta">$6,398 GMV &middot; 38 units &middot; 4.57% engagement &middot; @influencedqueens</div>
+          <div class="why">Self-aware about the price rather than defensive about it. The same video opened on "I love when other adults have adult money," which is the buyer's own language.</div>
+        </div>
+      </div>
+      <div class="hook">
+        <div class="rank">03</div>
+        <div>
+          <div class="quote">"For the person who is impossible to shop for, and it's on sale."</div>
+          <div class="meta">$5,423 GMV &middot; 33 units &middot; 4.11 ad ROI &middot; @sarastolemyname</div>
+          <div class="why">Combines the gifting problem with a deadline. Highest ad ROI of any Velvetiser creative in the peak window.</div>
+        </div>
+      </div>
+      <div class="hook">
+        <div class="rank">04</div>
+        <div>
+          <div class="quote">"It's one of the best hot chocolate I've ever tried in my life."</div>
+          <div class="meta">$4,627 GMV &middot; 28 units &middot; 1.34 ad ROI &middot; @promocodepal</div>
+          <div class="why">Delivered as a taste reaction mid-video rather than a claim at the top. Works because it lands on camera after the pour.</div>
+        </div>
+      </div>
+      <div class="hook">
+        <div class="rank">05</div>
+        <div>
+          <div class="quote">"You're not just putting powder in there, you're putting chocolate flakes to make real hot chocolate."</div>
+          <div class="meta">Highest-scoring line in the transcript set &middot; @influencedqueens</div>
+          <div class="why">The clearest statement of what the buyer is paying for. Works in the first three seconds or as the payoff after the pour.</div>
+        </div>
+      </div>
+      <div class="hook">
+        <div class="rank">06</div>
+        <div>
+          <div class="quote">"It's basically your at-home barista, but for hot chocolate."</div>
+          <div class="meta">$5,423 GMV video &middot; @sarastolemyname</div>
+          <div class="why">Moves the product out of the cocoa aisle and into the espresso machine price bracket. Best available answer to the price objection.</div>
+        </div>
+      </div>
+      <div class="hook">
+        <div class="rank">07</div>
+        <div>
+          <div class="quote">"I never found hot chocolate anywhere that tastes this good."</div>
+          <div class="meta">$3,629 GMV &middot; 28 units &middot; 3.18 ad ROI &middot; @megansue100</div>
+          <div class="why">Personal and specific rather than promotional. Pairs with the sourcing story in the same video.</div>
+        </div>
+      </div>
+      <div class="hook">
+        <div class="rank">08</div>
+        <div>
+          <div class="quote">"I didn't wait for winter. It also makes cold chocolate, perfect for summer."</div>
+          <div class="meta">12.6% conversion rate &middot; 7.4% CTR &middot; July 2026 &middot; @sandra1628</div>
+          <div class="why">The off-season hook. Highest conversion rate in the 2026 set. Reason given for buying early: it sold out last winter.</div>
+        </div>
+      </div>
+      <div class="hook">
+        <div class="rank">09</div>
+        <div>
+          <div class="quote">"This is so much better than the powdered packets."</div>
+          <div class="meta">1.32 ad ROI &middot; April 2026 &middot; @sydney.shops</div>
+          <div class="why">Shortest version of the flakes angle. Works as an on-screen text hook with no voiceover.</div>
+        </div>
+      </div>
+      <div class="hook">
+        <div class="rank">10</div>
+        <div>
+          <div class="quote">"This is way bigger than it looks in the picture."</div>
+          <div class="meta">54.7% conversion rate on a small-view video &middot; @roxtalksshow</div>
+          <div class="why">Handles the substance objection before it forms. Best used in the first unboxing beat, holding the machine.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">04 &middot; Product cheat sheet</div>
+    <h2>The #1 buyer question, answered</h2>
+
+    <div class="statement">
+      <div class="tag">The question that decides the sale</div>
+      <p>"Why is this $212 when hot chocolate is $4 a box?"</p>
+      <p class="detail">Because it is not making hot chocolate from powder. It heats and vortex-whisks real chocolate flakes into a drink you would otherwise pay for at a cafe. It also makes iced chocolate, ships with a hot glass and a cold glass, and the chocolate comes from farms the company owns in Ghana and Saint Lucia. Price it against an espresso machine, not against cocoa.</p>
+    </div>
+
+    <table class="tbl">
+      <tr><th>Fact</th><th>Detail</th></tr>
+      <tr><td>Hero SKU</td><td>Velvetiser with 10-serving variety pack, $212</td></tr>
+      <tr><td>In the box</td><td>Machine, heating base, hot glass, cold glass, 10 servings of drinking chocolate</td></tr>
+      <tr><td>How it works</td><td>Milk to the fill line, add flakes, choose hot or cold, patented vortex whisk runs automatically</td></tr>
+      <tr><td>Hot vs cold</td><td>Red for hot, blue for cold. Both modes on the hero SKU</td></tr>
+      <tr><td>Flavors</td><td>Classic 70%, milky 50%, salted caramel, hazelnut, vanilla white, mint, coconut white, orange, Black Forest, creme brulee</td></tr>
+      <tr><td>Sourcing</td><td>Own cacao farms in Ghana and Saint Lucia. Gentle farming practices</td></tr>
+      <tr><td>Design</td><td>Shaped after a chocolatier's melting pot. Developed with a ceramic artist</td></tr>
+      <tr><td>Serving size</td><td>Single serve per cycle</td></tr>
+      <tr class="total"><td>Other SKUs</td><td>40-serving starter kit $285 &middot; Classic intro pack $162 &middot; Summer Iced bundle $212 &middot; colorways in Pebble, Chalk, Pewter</td></tr>
+    </table>
+
+    <p class="body-p">Point every video at the $212 hero SKU unless a specific promotion says otherwise. It carries the variety pack, both glasses, and hot plus cold. The other SKUs create decision paralysis in the comments.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">05 &middot; Objections to answer on camera</div>
+    <h2>Say it before the comments do</h2>
+    <p class="lede">These come from actual buyer reviews on the hero SKU. Each one has a line that handles it.</p>
+
+    <table class="tbl">
+      <tr><th>What buyers say</th><th>How to handle it on camera</th></tr>
+      <tr><td>"It barely gets warm."</td><td>Show the pour and say the temperature is right and ready to drink immediately. Start with cold milk from the fridge and let the machine run the full cycle. Do not cut the cycle short in the edit.</td></tr>
+      <tr><td>"It makes a small amount for the price."</td><td>Name it. Single serve, made fresh, the way you would order it. Compare it to a $7 cafe drink rather than to a mug of powder.</td></tr>
+      <tr><td>"What happens when the chocolate runs out?"</td><td>Refills are sold separately in 10-serving boxes, and buyers report using their own chocolate in it too. Do not leave this unanswered.</td></tr>
+      <tr><td>"Which one do I buy?"</td><td>Say the SKU name out loud and point at the linked one. Do not list all the colorways and bundles.</td></tr>
+      <tr><td>"Will I use it after winter?"</td><td>Show the cold glass and make an iced chocolate in the same video. It ships in the box.</td></tr>
+      <tr><td>"Is it real chocolate or fancy powder?"</td><td>Show the flakes in your hand before they go in. This is the strongest single visual in the whole product.</td></tr>
+      <tr class="total"><td>"Does it look cheap in person?"</td><td>Pick it up on camera. Buyers consistently say it is heavier and larger than it appears in photos.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">06 &middot; Specs &amp; logistics</div>
+    <h2>Shooting and posting</h2>
+
+    <div class="twocol">
+      <div class="panel trig">
+        <h3>Shoot</h3>
+        <ul>
+          <li><b>Length:</b> 30 to 60 seconds. Top performers ran 45 to 55.</li>
+          <li><b>Setting:</b> a real kitchen counter with natural light. Not a desk, not a studio.</li>
+          <li><b>Format:</b> vertical 9:16, 1080x1920 minimum.</li>
+          <li><b>Audio:</b> your own voice. Every top-earning video is voiceover, not trending audio.</li>
+          <li><b>Required shots:</b> flakes in hand, milk pouring in, whisk running, the slow pour, the first sip reaction.</li>
+          <li><b>Hook window:</b> first 3 seconds. Product visible by second 2.</li>
+        </ul>
+      </div>
+      <div class="panel obj">
+        <h3>Post</h3>
+        <ul>
+          <li><b>Link:</b> the $212 hero SKU unless a promo brief says otherwise.</li>
+          <li><b>Disclosure:</b> #hcpartner is required on every post.</li>
+          <li><b>Tags:</b> @Hotel Chocolat USA in the caption.</li>
+          <li><b>Hashtags:</b> #hotelchocolat #velvetiser #hotchocolatemaker plus one seasonal tag.</li>
+          <li><b>Cadence:</b> the creators who earn most on this product post it weekly across a full season, not once.</li>
+          <li><b>Going LIVE:</b> brew on camera and take temperature and size questions in real time. This is the highest-value format on a $212 appliance.</li>
+          <li><b>Comments:</b> answer temperature and serving-size questions in the first 24 hours. They convert.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="companions">
+      <div class="ct">Companion documents</div>
+      <ul>
+        <li><b>Strategy Doc</b> &middot; the commercial case, the comp set and the phased rebuild plan.</li>
+        <li><b>Buyer Persona</b> &middot; the triggers and objections this brief is built from.</li>
+        <li><b>Commerce Creator Persona</b> &middot; the three archetypes referenced in the angles above.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>THIRD. &middot; Hotel Chocolat &middot; Informed Creative Brief</span>
+    <span>Data: Cruva first-party video and transcript analysis + FastMoss TikTok Shop reviews &middot; August 7, 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

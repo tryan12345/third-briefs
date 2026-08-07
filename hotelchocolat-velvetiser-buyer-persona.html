@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Buyer Persona · Hotel Chocolat Velvetiser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+</style>
+<style>
+.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
+section.alt .companions{background:#fff;}
+.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.companions ul{list-style:none;margin-top:12px;}
+.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
+.companions li:first-child{border-top:none;}
+.companions li b{font-weight:700;color:var(--ink);}
+.hooks{margin-top:22px;display:grid;gap:12px;}
+.hook{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;}
+.hook .rank{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);}
+.hook .quote{font-size:16px;font-weight:700;line-height:1.35;}
+.hook .meta{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.hook .why{margin-top:9px;font-size:14px;color:#333;}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.dodont .panel.do{border-top:6px solid var(--c4);}
+.dodont .panel.dont{border-top:6px solid var(--c8);}
+.quotebox{margin-top:20px;display:grid;gap:10px;}
+.qb{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c5);border-radius:12px;padding:16px 20px;font-size:15px;color:#333;}
+.qb .src{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+.qb.neg{border-left-color:var(--c8);}
+.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--ink);color:#fff;padding:7px 12px;border-radius:6px;}
+.chip.alt2{background:var(--c6);} .chip.alt3{background:var(--c7);} .chip.alt4{background:var(--c4);color:var(--ink);}
+.gate{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;margin-top:12px;border-left:6px solid var(--c5);}
+.gate .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gate h3{margin-top:8px;font-size:17px;}
+.gate p{margin-top:9px;font-size:14px;color:#333;}
+@media(max-width:760px){.dodont{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;gap:8px;}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">THIRD. &middot; Hotel Chocolat &middot; Buyer Persona</div>
+    <h1>Who buys the Velvetiser</h1>
+    <p class="sub">Built from purchase-side data: 2,714 units sold, TikTok Shop reviews, and the language in the videos that actually converted.</p>
+  </div>
+</div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">01 &middot; The buyer</div>
+    <h2>She is buying a gift, and she is buying it for someone who already has everything</h2>
+    <p class="lede">The single most repeated phrase across the top-converting Velvetiser videos is some version of "for the person who is impossible to shop for." It appears in the two highest-GMV Velvetiser videos of the entire November peak.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">$121.75</div><div class="lbl">November average order value</div></div>
+      <div class="stat"><div class="num">$165</div><div class="lbl">Typical AOV on Velvetiser-led videos</div></div>
+      <div class="stat"><div class="num">Nov 13&ndash;29</div><div class="lbl">The 17 days that produced most machine sales</div></div>
+      <div class="stat"><div class="num">4.4</div><div class="lbl">Shop rating</div></div>
+    </div>
+
+    <p class="body-p">She is a woman, roughly 30 to 55, who shops TikTok for gifts in November and treats herself the rest of the year. She has discretionary income and describes it that way. The word that keeps showing up in the winning creative is "adult money." She does not think of herself as wealthy. She thinks of herself as someone who has finally reached the point where she can buy the nice version.</p>
+    <p class="body-p">She already owns kitchen appliances she loves. One creator said it directly while selling: "obviously, I love my kitchen machines and this is just an add-on that I absolutely love." That is the shelf the Velvetiser lands on. Next to the espresso machine, the CREAMi, the SodaStream.</p>
+    <p class="body-p">Crucially, she buys twice. The Black Friday framing that worked best was "one for them, one for me." She is not choosing between herself and the recipient.</p>
+
+    <div class="chips">
+      <span class="chip">Gift-first buyer</span>
+      <span class="chip alt2">Owns other countertop appliances</span>
+      <span class="chip alt3">Discovers on FYP, buys same session</span>
+      <span class="chip alt4">Buys two</span>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">02 &middot; Purchase psychology</div>
+    <h2>What makes her buy. What makes her scroll.</h2>
+
+    <div class="twocol">
+      <div class="panel trig">
+        <h3>Triggers</h3>
+        <ul>
+          <li><b>Real chocolate, not powder.</b> The strongest single proof point in every top video. She is not buying a hot chocolate machine. She is buying an upgrade away from packets.</li>
+          <li><b>It looks expensive.</b> Designed to mimic a chocolatier's pot, made with a ceramic artist. She wants it visible on the counter.</li>
+          <li><b>The texture shot.</b> Thick, frothy, poured. Every high-GMV video contains a slow pour. This is the moment the sale happens.</li>
+          <li><b>Solves a specific gifting problem.</b> The person who already has everything. She has one of those on her list every year.</li>
+          <li><b>Discount stacking.</b> Sale plus coupon plus free shipping. Videos naming a stacked discount hit conversion rates above 12%.</li>
+          <li><b>Ethical sourcing.</b> Own cacao farms in Ghana and Saint Lucia, gentle farming. It closes the loop on paying $212.</li>
+          <li><b>It is bigger than it looks.</b> Buyers say this unprompted. It reads as substantial, which justifies the price.</li>
+        </ul>
+      </div>
+      <div class="panel obj">
+        <h3>Objections</h3>
+        <ul>
+          <li><b>"It is not actually hot."</b> The dominant complaint. Three of six sub-five-star reviews. One buyer wrote that it barely gets warm.</li>
+          <li><b>"It only makes a small amount."</b> Single-serve capacity read against a $212 price. This is the second objection and it compounds the first.</li>
+          <li><b>"$212 for hot chocolate?"</b> The category framing is the enemy. Priced against packets it is absurd. Priced against an espresso machine it is reasonable.</li>
+          <li><b>"What happens when the chocolate runs out?"</b> A real fear about proprietary refills. One creator built a whole video on it.</li>
+          <li><b>"Which one do I buy?"</b> Pebble, Chalk, Pewter, Copper, Classic, plus four bundle tiers from $150 to $297. The lineup is genuinely confusing.</li>
+          <li><b>"Will I actually use it?"</b> Seasonal appliance anxiety. She has been burned by a waffle maker.</li>
+          <li><b>Fulfillment risk.</b> Reviews show wrong color shipped and the wrong chocolate selection sent, with an exchange refused.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="ct">The objection that costs the most</div>
+      <p>Temperature and portion size are the same complaint wearing two hats. A small drink that arrives lukewarm feels like a bad $212. Any creator selling this product needs to address heat on camera, and the brand needs a real answer about preheating and milk temperature to hand them.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">03 &middot; Buyer language</div>
+    <h2>How she talks when she is happy, and when she is not</h2>
+    <p class="lede">Pulled from TikTok Shop reviews on the hero SKU and from comments on the highest-performing videos.</p>
+
+    <div class="quotebox">
+      <div class="qb">Bought it as a Christmas gift for a sister who now brings it up any time a hot drink is mentioned. It also works with homemade chocolate powder.<span class="src">5-star review &middot; Jan 3, 2026</span></div>
+      <div class="qb">Ordered the variety pack to sample flavors and liked all of them. Easy to use, and the temperature is right every time.<span class="src">5-star review &middot; Jan 6, 2026</span></div>
+      <div class="qb">Worth the money for anyone who loves hot chocolate. The only wish is for a milkier option.<span class="src">5-star review &middot; Dec 2, 2025</span></div>
+      <div class="qb neg">Very pretty, but it makes a small amount at a time, so it is not worth the price.<span class="src">1-star review &middot; Nov 27, 2025</span></div>
+      <div class="qb neg">Barely gets warm. Would not recommend buying it and would return it given the choice.<span class="src">2-star review &middot; Nov 18, 2025</span></div>
+      <div class="qb neg">Flavor and quality are great, but only for someone who enjoys mildly warm hot chocolate.<span class="src">2-star review &middot; Nov 25, 2025</span></div>
+      <div class="qb neg">Upgraded specifically for the hot and cold variety pack and received the hot selection instead. Customer care said they had run out and refused to exchange.<span class="src">3-star review &middot; Nov 22, 2025</span></div>
+    </div>
+
+    <p class="body-p">The positive language is about the experience and the gift outcome. She talks about what the recipient said, not about specifications. The negative language is always about heat, size or fulfillment. Nobody complains about flavor.</p>
+    <p class="body-p">One detail matters for creative. Buyers report using their own chocolate in it. That answers the proprietary-refill objection and nobody is saying it on camera.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">04 &middot; The two buying occasions</div>
+    <h2>November is a gift. July is a treat.</h2>
+    <p class="lede">The buyer looks different depending on the month, and the shop has only ever sold to one of them. The goal is not a year-round buyer. It is a second concentrated window.</p>
+
+    <div class="twocol">
+      <div class="panel trig">
+        <h3>Q4 gifting buyer &middot; proven</h3>
+        <ul>
+          <li>Shopping for someone else, often a mother, sister or partner.</li>
+          <li>Buys inside a discount window. Black Friday framing drove the top videos.</li>
+          <li>AOV $121 to $165. Frequently buys two.</li>
+          <li>Needs permission to spend. Sourcing story and craft details do that work.</li>
+          <li>Time-boxed. November 13 to 29 was the whole window last year.</li>
+          <li>Reached through creators seeded the month before. 162 samples went out in October, only 65 across November and December.</li>
+        </ul>
+      </div>
+      <div class="panel obj">
+        <h3>Summer iced buyer &middot; untested</h3>
+        <ul>
+          <li>Buying for herself. No gift framing needed.</li>
+          <li>Two July 2026 videos on the cold-drink angle converted at 12.6% and 15.2%.</li>
+          <li>One buyer's stated reason: it sold out last winter and she did not want to miss it again.</li>
+          <li>A Summer Iced Chocolate bundle already exists at $212 with 3,183 units in stock and 2 sold.</li>
+          <li>Spanish-language creative is over-indexing here and has no program behind it.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="statement">
+      <div class="tag">What this means for creative</div>
+      <p>The machine has been sold as a winter object. It makes cold drinks and comes with a cold glass in the box.</p>
+      <p class="detail">Every unit of the hero SKU ships with both a hot glass and a cold glass. The summer buyer exists and is converting at a higher rate than the winter buyer, on almost no content volume. The category leader proves the model: Ninja put 85% of six months of CREAMi revenue into a single 30-day window in June. The summer opportunity here is a second event, not a smooth baseline.</p>
+    </div>
+
+    <div class="companions">
+      <div class="ct">Companion documents</div>
+      <ul>
+        <li><b>Strategy Doc</b> &middot; the commercial case, the comp set and the phased rebuild plan.</li>
+        <li><b>Commerce Creator Persona</b> &middot; who sells this product on TikTok Shop and how they post.</li>
+        <li><b>Informed Creative Brief</b> &middot; the hooks and angles built from the triggers and objections in this document.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>THIRD. &middot; Hotel Chocolat &middot; Buyer Persona</span>
+    <span>Data: Cruva first-party shop data + FastMoss TikTok Shop reviews + top-video transcripts &middot; August 7, 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

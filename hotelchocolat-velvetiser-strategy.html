@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strategy · Hotel Chocolat Velvetiser × TikTok Shop US</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+</style>
+<style>
+.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
+section.alt .companions{background:#fff;}
+.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.companions ul{list-style:none;margin-top:12px;}
+.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
+.companions li:first-child{border-top:none;}
+.companions li b{font-weight:700;color:var(--ink);}
+.hooks{margin-top:22px;display:grid;gap:12px;}
+.hook{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;}
+.hook .rank{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);}
+.hook .quote{font-size:16px;font-weight:700;line-height:1.35;}
+.hook .meta{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.hook .why{margin-top:9px;font-size:14px;color:#333;}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.dodont .panel.do{border-top:6px solid var(--c4);}
+.dodont .panel.dont{border-top:6px solid var(--c8);}
+.quotebox{margin-top:20px;display:grid;gap:10px;}
+.qb{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c5);border-radius:12px;padding:16px 20px;font-size:15px;color:#333;}
+.qb .src{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+.qb.neg{border-left-color:var(--c8);}
+.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--ink);color:#fff;padding:7px 12px;border-radius:6px;}
+.chip.alt2{background:var(--c6);} .chip.alt3{background:var(--c7);} .chip.alt4{background:var(--c4);color:var(--ink);}
+.gate{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;margin-top:12px;border-left:6px solid var(--c5);}
+.gate .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gate h3{margin-top:8px;font-size:17px;}
+.gate p{margin-top:9px;font-size:14px;color:#333;}
+@media(max-width:760px){.dodont{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;gap:8px;}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">THIRD. &middot; Hotel Chocolat &middot; Strategy</div>
+    <h1>The Velvetiser &times; TikTok Shop US</h1>
+    <p class="sub">One product carried 81% of this shop's lifetime GMV in eight weeks. The cold start that produced it took one month. That month is October.</p>
+  </div>
+</div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">01 &middot; The position</div>
+    <h2>A proven product on a decaying shop</h2>
+    <p class="lede">Hotel Chocolat USA has done $1,139,924 on TikTok Shop across 17,744 units. Roughly $921,000 of that is the Velvetiser family. The shop opened in October 2025, so the entire history is ten months long.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">$705K</div><div class="lbl">Nov 1 &ndash; Dec 31, 2025 GMV</div></div>
+      <div class="stat"><div class="num">$505K</div><div class="lbl">November alone</div></div>
+      <div class="stat"><div class="num">$4,955</div><div class="lbl">Current monthly run rate</div></div>
+      <div class="stat"><div class="num">81%</div><div class="lbl">Share of lifetime GMV from the Velvetiser family</div></div>
+    </div>
+
+    <p class="body-p">Last seven days: $450 on 9 units. That is a 98% drawdown from the peak on a product with no meaningful competition and 22,749 units of the hero SKU sitting in stock.</p>
+    <p class="body-p">This is not a demand problem. It is a content-supply problem that was never rebuilt after the holiday.</p>
+
+    <div class="statement">
+      <div class="tag">The read</div>
+      <p>November 2025 was not a campaign. It was a seasonal accident that worked, and nobody built the machine to repeat it.</p>
+      <p class="detail">Zero GMV Max campaigns have ever run on this shop. The brand account has 5,861 followers and has produced $0 in shop-account GMV. 68% of the last 90 days of revenue came from product cards, which is residual search demand created by creators eight months ago.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">02 &middot; The full curve</div>
+    <h2>Ten months, one month of seeding, one spike, a long slide</h2>
+    <p class="lede">The shop's entire life fits in one table. Reading it end to end changes what the rebuild plan should look like.</p>
+
+    <table class="tbl">
+      <tr><th>Period</th><th>Total GMV</th><th>Units</th><th>AOV</th><th>Videos</th><th>Creators</th><th>Lives</th><th>Samples out</th></tr>
+      <tr><td>Aug &ndash; Sep 2025</td><td class="n">$537</td><td class="n">5</td><td class="n">&mdash;</td><td class="n">8</td><td class="n">8</td><td class="n">0</td><td class="n">0</td></tr>
+      <tr><td>Oct 2025 &middot; seeding</td><td class="n">$18,171</td><td class="n">399</td><td class="n">$109.66</td><td class="n">193</td><td class="n">68</td><td class="n">57</td><td class="n">162</td></tr>
+      <tr><td>Nov 2025 &middot; the spike</td><td class="n">$505,253</td><td class="n">5,496</td><td class="n">$121.75</td><td class="n">761</td><td class="n">157</td><td class="n">382</td><td class="n">&mdash;</td></tr>
+      <tr><td>Dec 2025</td><td class="n">$199,941</td><td class="n">7,979</td><td class="n">$57.62</td><td class="n">462</td><td class="n">166</td><td class="n">354</td><td class="n">65 (Nov+Dec)</td></tr>
+      <tr><td>Jan &ndash; Apr 2026</td><td class="n">$84,613</td><td class="n">2,759</td><td class="n">$70.39</td><td class="n">504</td><td class="n">126</td><td class="n">200</td><td class="n">94</td></tr>
+      <tr class="total"><td>May 1 &ndash; Aug 7, 2026</td><td class="n">$16,350</td><td class="n">1,201</td><td class="n">$70.43</td><td class="n">261</td><td class="n">98</td><td class="n">87</td><td class="n">120</td></tr>
+    </table>
+
+    <p class="body-p">Three things fall out of this that are not visible from the peak window alone.</p>
+
+    <p class="body-p"><b>The cold start took one month.</b> August and September produced $537. October produced $18,171 on 193 videos from 68 creators, every one of them a first-time poster, with 162 samples delivered. Then November did $505K. There was no long ramp. There was a single intense seeding month immediately before the season.</p>
+
+    <p class="body-p"><b>Sampling front-loaded the peak.</b> 162 samples went out in October. Only 65 went out across November and December combined. The seeding happens before the window, not during it.</p>
+
+    <p class="body-p"><b>The current number is not a floor.</b> January through April ran at $21,153 a month. May through August is running at $4,955. The line is still falling. Treating $5K as a baseline understates how fast the residual demand is decaying.</p>
+
+    <div class="callout">
+      <div class="ct">The detail that reframes the plan</div>
+      <p>October 2025 was LIVE-driven. Of the $18,171 the shop did that month, $11,494 came from live streams. That is 63%. By November live had fallen to 4.7% of GMV and video carried the spike. The cold start and the harvest ran on two different mechanics, and only one of them was ever rebuilt.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">03 &middot; The comp set</div>
+    <h2>The Velvetiser does not compete with chocolate</h2>
+    <p class="lede">At $212 it competes for the same buyer and the same creator as every other countertop experience appliance on TikTok Shop. That is where the benchmark should come from.</p>
+
+    <table class="tbl">
+      <tr><th>Product</th><th>Price</th><th>GMV</th><th>Units</th><th>Creators</th></tr>
+      <tr><td>Ninja CREAMi XL Deluxe (NC501)</td><td class="n">$249.99</td><td class="n">$2,306,376</td><td class="n">9,213</td><td class="n">454</td></tr>
+      <tr><td>Ninja CREAMi Scoop &amp; Swirl (NC701)</td><td class="n">$349.99</td><td class="n">$885,763</td><td class="n">2,126</td><td class="n">269</td></tr>
+      <tr><td>Ninja Crispi Pro glass air fryer</td><td class="n">$299.99</td><td class="n">$623,903</td><td class="n">2,078</td><td class="n">247</td></tr>
+      <tr><td>COWSAR nugget ice maker</td><td class="n">$405.00</td><td class="n">$422,741</td><td class="n">1,057</td><td class="n">504</td></tr>
+      <tr><td>Ninja SLUSHi frozen drink maker</td><td class="n">$319.99</td><td class="n">$178,319</td><td class="n">557</td><td class="n">1,000</td></tr>
+      <tr><td>SodaStream Art</td><td class="n">$129.99</td><td class="n">$282,440</td><td class="n">2,467</td><td class="n">182</td></tr>
+      <tr class="total"><td>Velvetiser (10-serving variety pack)</td><td class="n">$212.00</td><td class="n">$8,329</td><td class="n">16</td><td class="n">159</td></tr>
+    </table>
+    <p class="note">Marketplace intelligence, May 1 &ndash; Aug 6, 2026. Velvetiser row covers Feb 8 &ndash; Aug 6, 2026 to capture a comparable trading window.</p>
+
+    <p class="body-p">Ninja CREAMi XL is the closest structural match. Same price band, same countertop footprint, same demo-driven creative, same razor-and-blade economics with the pint containers.</p>
+
+    <div class="statement">
+      <div class="tag">The correction</div>
+      <p>The category leader is more concentrated than the Velvetiser, not less. Ninja does not run a baseline. Ninja runs events.</p>
+      <p class="detail">Across 180 days the CREAMi XL did $3,067,796. $2,618,958 of it landed between June 12 and July 11. That is 85% of six months of revenue inside 30 days. Daily GMV went from a $1,695 average in the three weeks prior to a peak of $239,740 on June 28, a 141x move. By July 24 it was back to zero and has stayed there.</p>
+    </div>
+
+    <p class="body-p">This matters because the obvious read on Hotel Chocolat is that they need to stop being a Q4 business. The comp data says otherwise. The best-performing appliance in this category is a four-week business with a long tail of product-card demand. The problem is not that the Velvetiser spikes. The problem is that it spiked once.</p>
+
+    <p class="body-p">The gap in creators is real, and it is breadth rather than depth. CREAMi XL has 1,246 creators attached across its life. The Velvetiser has 227.</p>
+
+    <table class="tbl">
+      <tr><th>Follower tier</th><th>Ninja CREAMi XL</th><th>Velvetiser</th><th>Gap</th></tr>
+      <tr><td>1K &ndash; 5K</td><td class="n">213</td><td class="n">16</td><td class="n">13.3x</td></tr>
+      <tr><td>5K &ndash; 10K</td><td class="n">347</td><td class="n">46</td><td class="n">7.5x</td></tr>
+      <tr><td>10K &ndash; 50K</td><td class="n">459</td><td class="n">105</td><td class="n">4.4x</td></tr>
+      <tr><td>50K &ndash; 100K</td><td class="n">82</td><td class="n">25</td><td class="n">3.3x</td></tr>
+      <tr><td>100K+</td><td class="n">144</td><td class="n">34</td><td class="n">4.2x</td></tr>
+      <tr class="total"><td>Total creators</td><td class="n">1,246</td><td class="n">227</td><td class="n">5.5x</td></tr>
+    </table>
+
+    <p class="body-p">Ninja's best creator posted 207 videos on that single SKU. The Velvetiser's best posted 175. At the top the two products behave identically. The difference is the 560 creators Ninja has under 10K followers against Hotel Chocolat's 62.</p>
+
+    <p class="note">Limitation worth stating: marketplace and competitive data is capped at 180 days on both Cruva and FastMoss, so Q4 2025 comp performance cannot be retrieved. The seasonality read above is inferred from the summer event, not measured against a matched Q4 window.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">04 &middot; The mechanic gap</div>
+    <h2>The comp's biggest event ran on LIVE. Hotel Chocolat has one live seller.</h2>
+
+    <table class="tbl">
+      <tr><th>Measure</th><th>Ninja CREAMi XL</th><th>Velvetiser / Hotel Chocolat</th></tr>
+      <tr><td>Linked videos on hero SKU</td><td class="n">1,733</td><td class="n">227 creators, 765 shop videos YTD</td></tr>
+      <tr><td>Linked lives on hero SKU</td><td class="n">2,450</td><td class="n">784 shop lives, Oct&ndash;Dec 2025</td></tr>
+      <tr><td>Lives per video</td><td class="n">1.41</td><td class="n">Below 1</td></tr>
+      <tr><td>Best single live</td><td class="n">&mdash;</td><td class="n">$2,187</td></tr>
+      <tr><td>Live sellers in top 10 sessions</td><td class="n">&mdash;</td><td class="n">2</td></tr>
+      <tr class="total"><td>LIVE share of peak-month GMV</td><td class="n">Majority of June spike</td><td class="n">4.7% of Nov 2025</td></tr>
+    </table>
+
+    <p class="body-p">Ninja ran more live sessions than videos on the CREAMi XL. That is the mechanic behind the June spike. On a $250 appliance where the objections are tactile, live is where the questions get answered.</p>
+    <p class="body-p">Hotel Chocolat's live business is one creator. Of the ten highest-GMV live streams the shop ran between October and December 2025, nine belong to @roxtalksshow. The best one did $2,187. @flowersnbirdies is the only other name in that top ten.</p>
+    <p class="body-p">This is the largest structural difference between the shop and its comp set, and it is the cheapest one to close. It also matches what October 2025 already proved on this exact product, when live carried 63% of the seeding month.</p>
+
+    <div class="callout">
+      <div class="ct">The lane nobody is in</div>
+      <p>@ninjakitchen sells on its own handle to 2,035,630 followers and drove $134,950 on the CREAMi XL through 37 LIVE sessions. @hotelchocolatusa has 5,861 followers and $0 in shop-account GMV across the last 90 days. Every dollar this shop earns is borrowed from someone else's audience.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">05 &middot; Where the revenue comes from now</div>
+    <h2>The shop is coasting on demand it created in November</h2>
+
+    <table class="tbl">
+      <tr><th>Channel, last 90 days</th><th>GMV</th><th>Share</th><th>Units</th></tr>
+      <tr><td>Product card (search and shop tab)</td><td class="n">$20,917</td><td class="n">68.2%</td><td class="n">713</td></tr>
+      <tr><td>Affiliate video</td><td class="n">$9,712</td><td class="n">31.7%</td><td class="n">486</td></tr>
+      <tr><td>LIVE</td><td class="n">$40</td><td class="n">0.1%</td><td class="n">2</td></tr>
+      <tr class="total"><td>Shop account</td><td class="n">$0</td><td class="n">0.0%</td><td class="n">0</td></tr>
+    </table>
+
+    <p class="body-p">Two thirds of current revenue is people searching for a product they already know about. That search volume was manufactured by 1,223 creator videos in November and December. It decays, and the January-to-August curve shows it decaying at roughly 77% across the year.</p>
+    <p class="body-p">Refill attach makes the same point. The Velvetiser hero SKU did $16,861 in 2026 to date. Every drinking chocolate refill combined did roughly $2,100. There are 2,714 machines in American kitchens from this shop and almost none of them are reordering through TikTok Shop.</p>
+
+    <div class="statement">
+      <div class="tag">The second event</div>
+      <p>The Velvetiser makes cold chocolate. The brand has never sold it that way at scale.</p>
+      <p class="detail">Two videos posted in July 2026 led with iced chocolate. They converted at 12.6% and 15.2%, well above the shop's own baseline, on almost no views. A Summer Iced Chocolate bundle already exists in the catalog at $212 with 3,183 units in stock and 2 units sold. Ninja's whole year is a June event. This is the Velvetiser's version of one.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-kicker">06 &middot; The plan</div>
+    <h2>Two events a year, seeded one month out, run on LIVE</h2>
+    <p class="lede">November 13 to November 29 is when the machine sold last year. October is when the roster that sold it was built. The plan works backward from both.</p>
+
+    <div class="phases">
+      <div class="phase">
+        <div class="when">Aug 11 &ndash; Sep 15 &middot; Phase 1</div>
+        <h3>Fix outreach and build the LIVE roster first</h3>
+        <p>Outreach is running at a 0.61% reply rate on 27,575 DMs. Rewrite the offer around the appliance, not the chocolate. Recruit live sellers ahead of video creators, because October 2025 already proved live carries a cold start on this product and the comp set's biggest event ran on 2,450 live sessions. Target 15 active live sellers against the one the shop has today.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Aug 11 &ndash; Sep 30 &middot; Phase 2</div>
+        <h3>Run the iced chocolate event</h3>
+        <p>Treat late August as a real event, not filler. Push the Summer Iced Chocolate bundle with a concentrated two-week creator push rather than a slow drip. The two July videos on this angle converted at 12.6% and 15.2%. This is the test of whether the product supports a second season, and the content it generates becomes ad inventory either way.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Oct 1 &ndash; Oct 31 &middot; Phase 3</div>
+        <h3>Repeat the October seeding sprint at 3x</h3>
+        <p>October 2025 put 162 samples out and produced 68 first-time posters, and that was enough to trigger a $505K November. Run the same motion at three times the volume. Target 500 samples out and 200 first-time posters inside the month. This is the highest-leverage window in the plan and it has a proven conversion rate behind it.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Oct 1 &ndash; Oct 15 &middot; Phase 4</div>
+        <h3>Turn on GMV Max before the traffic arrives</h3>
+        <p>House floor for a cold start is 50 affiliate videos a week. Current rate is 18.5. GMV Max readiness is roughly 50 videos per hero product or 600 total shop videos. Launch on Max Delivery in the first week of October so the campaign finishes learning before Black Friday. Creative-level ROI on this product has already printed 2.1 to 3.6 with no campaign behind it.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Oct 15 &ndash; Dec 24 &middot; Phase 5</div>
+        <h3>Harvest with the November creative</h3>
+        <p>The hooks that sold the machine last year are documented and they are gifting hooks. Rebuild around them from October 15. Run the Velvetiser and the box collections as two separate creator tracks with separate briefs, because they sell to different buyers at different price points.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Jan 2027 onward &middot; Phase 6</div>
+        <h3>Convert the install base to refills</h3>
+        <p>By January there should be several thousand machines placed through this shop. Refill GMV needs to be the January and February story. This is the only genuine baseline available on this product, and it is the thing the comp set does not have.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">07 &middot; Targets</div>
+    <h2>What good looks like by month</h2>
+    <p class="lede">The shop is at $4,955 a month and still falling. October is the month that decides November.</p>
+
+    <table class="tbl">
+      <tr><th>Month</th><th>Videos / wk</th><th>Active live sellers</th><th>Samples out</th><th>GMV</th><th>Paid</th></tr>
+      <tr><td>Aug 2026</td><td class="n">25</td><td class="n">5</td><td class="n">120</td><td class="n">$12K</td><td class="n">Not yet</td></tr>
+      <tr><td>Sep 2026</td><td class="n">40</td><td class="n">10</td><td class="n">200</td><td class="n">$25K</td><td class="n">Not yet</td></tr>
+      <tr><td>Oct 2026</td><td class="n">60</td><td class="n">15</td><td class="n">500</td><td class="n">$60K</td><td class="n">Max Delivery, learning</td></tr>
+      <tr><td>Nov 2026</td><td class="n">90</td><td class="n">15</td><td class="n">100</td><td class="n">$650K</td><td class="n">CPO target set</td></tr>
+      <tr><td>Dec 2026</td><td class="n">70</td><td class="n">12</td><td class="n">50</td><td class="n">$280K</td><td class="n">Scaled</td></tr>
+      <tr class="total"><td>Jan 2027</td><td class="n">50</td><td class="n">8</td><td class="n">100</td><td class="n">$55K</td><td class="n">Refill-weighted</td></tr>
+    </table>
+
+    <p class="body-p">November 2026 at $650K is a 29% lift on last year. That is more aggressive than a flat rebuild because the October input is three times larger than the one that produced $505K, and because paid media and live are both additive rather than replacements.</p>
+    <p class="body-p">The number that matters most in this table is not November. It is the 500 samples in October. Every other line follows from it.</p>
+
+    <div class="companions">
+      <div class="ct">Companion documents</div>
+      <ul>
+        <li><b>Buyer Persona</b> &middot; who buys the Velvetiser, what triggers the purchase, what stops it. Built from purchase-side data.</li>
+        <li><b>Commerce Creator Persona</b> &middot; who actually sells it on TikTok Shop, and the posting behavior that separates the top from the rest.</li>
+        <li><b>Informed Creative Brief</b> &middot; the hooks, angles and non-negotiables creators work from, matched to buyer triggers.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-kicker">08 &middot; Risks</div>
+    <h2>What could break this</h2>
+
+    <div class="risks">
+      <div class="risk">
+        <div class="rt">Product</div>
+        <p>Temperature is the dominant complaint in reviews. Three of the six sub-five-star reviews say the drink comes out warm rather than hot. One buyer said it barely gets warm. This is a review-score problem that gets worse as volume scales, and it needs a scripted answer on camera plus a real answer from the brand.</p>
+      </div>
+      <div class="risk">
+        <div class="rt">Sampling economics</div>
+        <p>The plan calls for 500 samples in October on a $212 machine. At full retail that is over $100,000 of product. Refundable samples or a paid seeding model is not optional here, it is what makes the October sprint affordable. This needs a decision from the brand before September.</p>
+      </div>
+      <div class="risk">
+        <div class="rt">Single-season concentration</div>
+        <p>81% of lifetime GMV sits in one product family and roughly 70% of it landed in eight weeks. The comp set is worse on this measure, not better, so the answer is not a year-round baseline. The answer is a second event and a refill business. Both are unproven on this shop and both start in this plan.</p>
+      </div>
+      <div class="risk">
+        <div class="rt">Data limits</div>
+        <p>Competitive data is capped at 180 days across both platforms, so no matched Q4 2025 comp window is available. The seasonality argument rests on Hotel Chocolat's own first-party history plus a summer event from the category leader. Re-run the comp read in November when a Q4 window becomes visible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>THIRD. &middot; Hotel Chocolat &middot; Velvetiser Strategy</span>
+    <span>Data: Cruva first-party shop data (Aug 2025 &ndash; Aug 2026) + Cruva and FastMoss marketplace intelligence &middot; August 7, 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

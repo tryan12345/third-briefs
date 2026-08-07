@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Commerce Creator Persona · Hotel Chocolat Velvetiser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+</style>
+<style>
+.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
+section.alt .companions{background:#fff;}
+.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.companions ul{list-style:none;margin-top:12px;}
+.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
+.companions li:first-child{border-top:none;}
+.companions li b{font-weight:700;color:var(--ink);}
+.hooks{margin-top:22px;display:grid;gap:12px;}
+.hook{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;}
+.hook .rank{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);}
+.hook .quote{font-size:16px;font-weight:700;line-height:1.35;}
+.hook .meta{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.hook .why{margin-top:9px;font-size:14px;color:#333;}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.dodont .panel.do{border-top:6px solid var(--c4);}
+.dodont .panel.dont{border-top:6px solid var(--c8);}
+.quotebox{margin-top:20px;display:grid;gap:10px;}
+.qb{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c5);border-radius:12px;padding:16px 20px;font-size:15px;color:#333;}
+.qb .src{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+.qb.neg{border-left-color:var(--c8);}
+.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--ink);color:#fff;padding:7px 12px;border-radius:6px;}
+.chip.alt2{background:var(--c6);} .chip.alt3{background:var(--c7);} .chip.alt4{background:var(--c4);color:var(--ink);}
+.gate{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;margin-top:12px;border-left:6px solid var(--c5);}
+.gate .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gate h3{margin-top:8px;font-size:17px;}
+.gate p{margin-top:9px;font-size:14px;color:#333;}
+@media(max-width:760px){.dodont{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;gap:8px;}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">THIRD. &middot; Hotel Chocolat &middot; Commerce Creator Persona</div>
+    <h1>Who actually sells the Velvetiser</h1>
+    <p class="sub">Built from seller-side data: 227 creators attached to the hero SKU, benchmarked against the 1,246 attached to Ninja CREAMi XL.</p>
+  </div>
+</div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">01 &middot; The pattern</div>
+    <h2>Small following, high posting frequency, deal-adjacent content</h2>
+    <p class="lede">The single best-performing creator on this product has 6,758 followers and has driven $70,168 across 144 videos on the Velvetiser alone. Follower count is close to irrelevant here. Posting frequency is not.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">227</div><div class="lbl">Creators attached to the hero SKU</div></div>
+      <div class="stat"><div class="num">105</div><div class="lbl">Of them in the 10K&ndash;50K band</div></div>
+      <div class="stat"><div class="num">144</div><div class="lbl">Videos the top creator posted on this one SKU</div></div>
+      <div class="stat"><div class="num">$22.55</div><div class="lbl">Peak GPM, Dec 2025</div></div>
+    </div>
+
+    <table class="tbl">
+      <tr><th>Creator</th><th>Followers</th><th>Product GMV</th><th>Videos on SKU</th><th>Lives</th><th>Content lane</th></tr>
+      <tr><td>@shopjoelle</td><td class="n">6,758</td><td class="n">$70,168</td><td class="n">144</td><td class="n">0</td><td>Home finds</td></tr>
+      <tr><td>@megansue100</td><td class="n">35,266</td><td class="n">$55,490</td><td class="n">118</td><td class="n">0</td><td>Lifestyle</td></tr>
+      <tr><td>@realmombestie</td><td class="n">27,500</td><td class="n">$30,485</td><td class="n">102</td><td class="n">9</td><td>Beauty and home</td></tr>
+      <tr><td>@promocodepal</td><td class="n">263,522</td><td class="n">$27,566</td><td class="n">55</td><td class="n">0</td><td>Deals</td></tr>
+      <tr><td>@roxtalksshow</td><td class="n">39,999</td><td class="n">$23,654</td><td class="n">119</td><td class="n">121</td><td>Home and appliances</td></tr>
+      <tr><td>@influencedqueens</td><td class="n">511,881</td><td class="n">$21,838</td><td class="n">66</td><td class="n">0</td><td>Fashion and lifestyle</td></tr>
+      <tr><td>@hotpinkandglitter</td><td class="n">832,758</td><td class="n">$20,406</td><td class="n">48</td><td class="n">0</td><td>Plus-size fashion</td></tr>
+      <tr><td>@flowersnbirdies</td><td class="n">53,675</td><td class="n">$18,315</td><td class="n">21</td><td class="n">84</td><td>Home and appliances</td></tr>
+      <tr><td>@cynthiabeaumont</td><td class="n">449,178</td><td class="n">$13,842</td><td class="n">60</td><td class="n">14</td><td>Entertainment</td></tr>
+      <tr class="total"><td>@goodnesshavens</td><td class="n">20,575</td><td class="n">$13,407</td><td class="n">175</td><td class="n">0</td><td>Health and wellness</td></tr>
+    </table>
+
+    <p class="body-p">Read the follower column against the GMV column. There is no relationship. @hotpinkandglitter has 123 times the audience of @shopjoelle and produced 29% of the revenue. The creators who win here post the same product dozens of times across a season and let the algorithm find the buyer.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">02 &middot; The archetypes</div>
+    <h2>Three creator types sell this machine</h2>
+
+    <div class="tiers">
+      <div class="tier a">
+        <div class="ctag">Archetype A</div>
+        <h3>The Home Demonstrator</h3>
+        <div class="price">5K &ndash; 50K followers</div>
+        <p>Films in her own kitchen. Shows the full make: milk in, flakes in, whisk running, slow pour. Talks about texture and temperature. Posts the same product weekly for months.</p>
+        <div class="row"><b>Examples:</b> @shopjoelle, @megansue100, @goodnesshavens</div>
+        <div class="row"><b>Why she works:</b> the pour shot is the conversion moment, and she reshoots it endlessly.</div>
+        <div class="row"><b>Recruit:</b> heaviest volume. This is 60% of the target roster.</div>
+      </div>
+      <div class="tier b">
+        <div class="ctag">Archetype B</div>
+        <h3>The Deal Announcer</h3>
+        <div class="price">40K &ndash; 300K followers</div>
+        <p>Leads with the discount, not the product. Short videos, stacked coupon language, hard urgency. Converts on price events rather than on desire.</p>
+        <div class="row"><b>Examples:</b> @promocodepal, @nateshopstealz, @daddydealesthome</div>
+        <div class="row"><b>Why she works:</b> owns Black Friday. Highest conversion rates in the dataset sit here.</div>
+        <div class="row"><b>Recruit:</b> activate against price events only. Dead weight outside a promo window.</div>
+      </div>
+      <div class="tier c">
+        <div class="ctag">Archetype C</div>
+        <h3>The LIVE Seller</h3>
+        <div class="price">20K &ndash; 60K followers</div>
+        <p>Runs long sessions with the machine on the desk, brewing on camera. @roxtalksshow ran 121 lives against this product. @flowersnbirdies ran 84. This is the archetype the comp set is built on and the one this shop is shortest of.</p>
+        <div class="row"><b>Examples:</b> @roxtalksshow, @flowersnbirdies</div>
+        <div class="row"><b>Why she works:</b> the objection about heat and portion size gets answered live, in real time.</div>
+        <div class="row"><b>Recruit:</b> highest priority. Nine of the shop’s ten best-ever lives belong to one creator. LIVE produced $54.99 in the last 99 days.</div>
+      </div>
+    </div>
+
+    <p class="body-p">Archetype A drives the base. Archetype B drives the spike. Archetype C is the only one that can answer objections in real time on a $212 appliance, and it is currently the emptiest lane on the shop.</p>
+    <p class="body-p">Two pieces of evidence say Archetype C should be recruited first rather than last. October 2025 was the shop’s cold-start month and live carried 63% of its GMV. And on Ninja CREAMi XL, the closest comp, there are 2,450 linked lives against 1,733 linked videos. More lives than videos on the hero SKU.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">03 &middot; The benchmark</div>
+    <h2>Same shape as Ninja CREAMi, one fifth the size</h2>
+    <p class="lede">Ninja CREAMi XL is the closest structural comp in the category: same price band, same countertop demo, same seasonal spike in the opposite half of the year.</p>
+
+    <table class="tbl">
+      <tr><th>Follower tier</th><th>Ninja CREAMi XL</th><th>Velvetiser</th><th>Gap</th></tr>
+      <tr><td>1K &ndash; 5K</td><td class="n">213</td><td class="n">16</td><td class="n">13.3x</td></tr>
+      <tr><td>5K &ndash; 10K</td><td class="n">347</td><td class="n">46</td><td class="n">7.5x</td></tr>
+      <tr><td>10K &ndash; 50K</td><td class="n">459</td><td class="n">105</td><td class="n">4.4x</td></tr>
+      <tr><td>50K &ndash; 100K</td><td class="n">82</td><td class="n">25</td><td class="n">3.3x</td></tr>
+      <tr><td>100K+</td><td class="n">144</td><td class="n">34</td><td class="n">4.2x</td></tr>
+      <tr class="total"><td>Total</td><td class="n">1,246</td><td class="n">227</td><td class="n">5.5x</td></tr>
+    </table>
+
+    <p class="body-p">The gap is widest at the bottom. Ninja has 560 creators under 10K followers on that single SKU. The Velvetiser has 62. That band is cheap to recruit and it is where @shopjoelle came from.</p>
+    <p class="body-p">At the top the two products behave identically. Ninja's best creator posted 207 videos on one SKU and drove $564,757. The Velvetiser's best posted 144 and drove $70,168. Same behavior, smaller product, smaller season.</p>
+
+    <div class="callout">
+      <div class="ct">The lane nobody is in</div>
+      <p>@ninjakitchen sells on its own handle to 2,035,630 followers and drove $134,950 on the CREAMi XL through 37 LIVE sessions. @hotelchocolatusa has 5,861 followers and has produced $0 in shop-account GMV over the last 90 days. Every dollar this shop earns is borrowed from someone else's audience.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">04 &middot; Recruiting</div>
+    <h2>What the current outreach is doing wrong</h2>
+
+    <table class="tbl">
+      <tr><th>Funnel stage, May 1 &ndash; Aug 7, 2026</th><th>Creators</th><th>Conversion</th></tr>
+      <tr><td>Reached by DM</td><td class="n">15,415</td><td class="n">&mdash;</td></tr>
+      <tr><td>Requested a sample</td><td class="n">377</td><td class="n">2.4%</td></tr>
+      <tr><td>Sample approved</td><td class="n">94</td><td class="n">24.9%</td></tr>
+      <tr><td>Posted</td><td class="n">98</td><td class="n">&mdash;</td></tr>
+      <tr class="total"><td>Produced a sale</td><td class="n">21</td><td class="n">21.4%</td></tr>
+    </table>
+
+    <p class="body-p">27,575 DMs produced 169 replies across the same window. That is a 0.61% reply rate. The offer is not landing, and the likely reason is that it reads as a chocolate offer to creators whose audience buys appliances.</p>
+    <p class="body-p">The approval gate is the second leak. Three quarters of sample requests are declined. On a $212 unit that caution is understandable, but it caps the roster at a size that cannot produce 50 videos a week.</p>
+
+    <div class="twocol">
+      <div class="panel trig">
+        <h3>Target profile for recruitment</h3>
+        <ul>
+          <li><b>5K to 50K followers.</b> 151 of the current 227 sit here and they carry the revenue.</li>
+          <li><b>Home, kitchen, appliance or deal-finder lane.</b> Not food. Not chocolate.</li>
+          <li><b>History of repeat posting on one SKU.</b> Look for 30+ videos on a single product in their history.</li>
+          <li><b>Already posts other countertop appliances.</b> CREAMi, SLUSHi, SodaStream, espresso machines.</li>
+          <li><b>Shoots in a real kitchen.</b> The pour shot needs a counter, not a desk.</li>
+        </ul>
+      </div>
+      <div class="panel obj">
+        <h3>Fixes to run first</h3>
+        <ul>
+          <li><b>Rewrite the DM around the appliance.</b> Lead with the machine and the $212 price point, not the chocolate.</li>
+          <li><b>Move to refundable samples.</b> Creator buys, gets refunded on post. Protects unit economics and lets the roster scale.</li>
+          <li><b>Raise the approval rate.</b> 25% cannot support the content volume the season requires.</li>
+          <li><b>Build a LIVE roster.</b> Two creators account for essentially all live activity on this product.</li>
+          <li><b>Recruit Spanish-language creators.</b> Two July videos in Spanish converted at 12.6% and 15.2% with no program behind them.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="companions">
+      <div class="ct">Companion documents</div>
+      <ul>
+        <li><b>Strategy Doc</b> &middot; the commercial case, the comp set and the phased rebuild plan.</li>
+        <li><b>Buyer Persona</b> &middot; who buys the machine, what triggers the purchase and what stops it.</li>
+        <li><b>Informed Creative Brief</b> &middot; the hooks and angles matching these creator archetypes to buyer triggers.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>THIRD. &middot; Hotel Chocolat &middot; Commerce Creator Persona</span>
+    <span>Data: Cruva first-party shop data + Cruva and FastMoss marketplace intelligence &middot; August 7, 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
