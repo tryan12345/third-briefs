@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Informed Creative Brief &middot; Merrell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+</style>
+<style>
+.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
+section.alt .companions{background:#fff;}
+.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.companions ul{list-style:none;margin-top:12px;}
+.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
+.companions li:first-child{border-top:none;}
+.companions li b{font-weight:700;color:var(--ink);}
+.hooks{margin-top:22px;display:grid;gap:12px;}
+.hook{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;}
+.hook .rank{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);}
+.hook .quote{font-size:16px;font-weight:700;line-height:1.35;}
+.hook .meta{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.hook .why{margin-top:9px;font-size:14px;color:#333;}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.dodont .panel.do{border-top:6px solid var(--c4);}
+.dodont .panel.dont{border-top:6px solid var(--c8);}
+.quotebox{margin-top:20px;display:grid;gap:10px;}
+.qb{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c5);border-radius:12px;padding:16px 20px;font-size:15px;color:#333;}
+.qb .src{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+.qb.neg{border-left-color:var(--c8);}
+.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--ink);color:#fff;padding:7px 12px;border-radius:6px;}
+.chip.alt2{background:var(--c6);} .chip.alt3{background:var(--c7);} .chip.alt4{background:var(--c4);color:var(--ink);}
+.gate{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;margin-top:12px;border-left:6px solid var(--c5);}
+.gate .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gate h3{margin-top:8px;font-size:17px;}
+.gate p{margin-top:9px;font-size:14px;color:#333;}
+@media(max-width:760px){.dodont{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;gap:8px;}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">THIRD. &middot; Merrell &middot; Informed Creative Brief</div>
+    <h1>Moab 3 Waterproof</h1>
+    <p class="sub">Every hook and angle here comes from a video that actually sold. Nothing in this brief is invented.</p>
+  </div>
+</div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">01 &middot; The winning formula</div>
+    <h2>Non-negotiables</h2>
+    <p class="lede">Every rule below comes from a video that sold. The reference set is the top converting outdoor and comfort footwear on TikTok Shop US, 30 days ending August 14, 2026.</p>
+    <div class="dodont">
+      <div class="panel do">
+        <h3>Do</h3>
+        <ul>
+          <li><b>Open on the water hitting the shoe.</b> Not on your face, not on the box.</li>
+          <li><b>Keep it between 10 and 40 seconds.</b> Every top performer in the set sits in that range.</li>
+          <li><b>Say your normal size and the size you are wearing</b> out loud, in the first 15 seconds.</li>
+          <li><b>Shoot somewhere ordinary.</b> A creek on a normal walk, a wet parking lot, a rainy morning.</li>
+          <li><b>Say the price.</b> The buyer is comparing to a $62 boot whether you mention it or not.</li>
+          <li><b>Show the shoe after the water.</b> Wet on the outside, dry inside, sock off.</li>
+        </ul>
+      </div>
+      <div class="panel dont">
+        <h3>Don't</h3>
+        <ul>
+          <li><b>Don't read the spec sheet on camera.</b> Vibram and Kinetic Fit belong at the end, as backup.</li>
+          <li><b>Don't shoot a summit.</b> The buyer is walking a trail on a Saturday.</li>
+          <li><b>Don't say waterproof without showing water.</b> The claim is the demonstration.</li>
+          <li><b>Don't open with an unboxing.</b> The claim comes before the reveal.</li>
+          <li><b>Don't use a trending sound</b> that buries the audio of the water.</li>
+          <li><b>Don't skip sizing.</b> Every unanswered sizing question turns into a return.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">02 &middot; Content angles</div>
+    <h2>Four angles, each aimed at a real objection</h2>
+    <div class="tiers">
+      <div class="tier a">
+        <span class="ctag">Angle 01</span>
+        <h3>The water test</h3>
+        <p><b>Answers:</b> is it actually waterproof or just water resistant.</p>
+        <p>Walk into moving water. Hold. Come out. Pull the shoe off and show a dry sock.</p>
+        <div class="row">Proof &middot; <b>the highest reach video in this category is exactly this.</b> 920,600 views, $7,019.</div>
+      </div>
+      <div class="tier b">
+        <span class="ctag">Angle 02</span>
+        <h3>The all-day count</h3>
+        <p><b>Answers:</b> can I wear these when I am not hiking.</p>
+        <p>Timestamped day. Trail, then errands, then evening, then the next morning. Same shoe throughout.</p>
+        <div class="row">Proof &middot; <b>bestselling hiking apparel on the platform sells on comfort and everyday wear</b>, not performance.</div>
+      </div>
+      <div class="tier c">
+        <span class="ctag">Angle 03</span>
+        <h3>The sizing verdict</h3>
+        <p><b>Answers:</b> do I size up, and what about wide feet.</p>
+        <p>Straight to camera. Your normal size, the size you ordered, how it fits with a thick sock.</p>
+        <div class="row">Proof &middot; <b>an 11 second sandal video returned $13.47 per thousand views</b> doing exactly this.</div>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="ct">Angle 04 &middot; The reply</div>
+      <p>Reply to a comment as the video premise. Answer the question plainly and demonstrate while you talk. This produced the highest GMV per thousand views in the entire reference set, $20.93, on a 0.13% interaction rate. It also solves the perennial problem of what to post next, because the comments write the brief for you.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">03 &middot; Opening hooks</div>
+    <h2>Hooks ranked by what they earned</h2>
+    <p class="lede">Real openings from videos that sold outdoor and comfort footwear in the last 30 days. Ranked by GMV per thousand views. View counts are listed because the two do not move together.</p>
+    <div class="hooks">
+      <div class="hook">
+        <div class="rank">01</div>
+        <div>
+          <div class="quote">A reply to a commenter, then straight into comfort, weight, grip and toe protection.</div>
+          <div class="meta">$20.93 per 1K views &middot; $4,939 GMV &middot; 236,000 views &middot; 37 sec &middot; Spanish &middot; @santianariba</div>
+          <div class="why">Lowest engagement in the set at 0.13% and the highest conversion. The reply format gives the video a reason to exist and the answer arrives in the first two seconds.</div>
+        </div>
+      </div>
+      <div class="hook">
+        <div class="rank">02</div>
+        <div>
+          <div class="quote">"Love these so much and yes true to size."</div>
+          <div class="meta">$13.47 per 1K views &middot; $403 GMV &middot; 29,900 views &middot; 11 sec &middot; @greenreaper.xo</div>
+          <div class="why">Sizing volunteered in the opening line, before any product description. Removes the single biggest blocker in footwear inside the first three seconds.</div>
+        </div>
+      </div>
+      <div class="hook">
+        <div class="rank">03</div>
+        <div>
+          <div class="quote">"Actually walking through a creek and having totally dry feet."</div>
+          <div class="meta">$7.63 per 1K views &middot; $7,019 GMV &middot; 920,600 views &middot; 21 sec &middot; @im_thaliaaa</div>
+          <div class="why">Lowest rate in the set and by far the largest reach and total GMV. The word "actually" does the work, because it acknowledges she does not believe the claim yet.</div>
+        </div>
+      </div>
+      <div class="hook">
+        <div class="rank">04</div>
+        <div>
+          <div class="quote">"Obsessing over my new Timberlands for fall."</div>
+          <div class="meta">$4.08 per 1K views &middot; $742 GMV &middot; 182,000 views &middot; 10 sec &middot; @twiedekind</div>
+          <div class="why">Highest interaction rate in the set at 2.25% and the weakest conversion. Style framing builds reach. Use it for the lifestyle SKUs, not for Moab.</div>
+        </div>
+      </div>
+    </div>
+    <p class="note">Read this as a portfolio. Hook 03 is the reach play and hook 01 is the efficiency play. A roster needs both.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">04 &middot; Product cheat sheet</div>
+    <h2>The #1 buyer question, answered</h2>
+    <p class="lede">Buyers want to know whether the waterproofing is real. Everything here supports that answer, in the order you should reach for it on camera.</p>
+    <table class="tbl">
+      <tr><th>What she asks</th><th>What you say</th><th>Why it works</th></tr>
+      <tr><td>Does water actually stay out</td><td>A waterproof membrane behind a suede and mesh upper</td><td>Use the word membrane. Buyers know a coating wears off and will ask.</td></tr>
+      <tr><td>Will I slip</td><td>Vibram TC5+ outsole</td><td>If you say one technical word on camera, say Vibram. It is the one buyers already recognize.</td></tr>
+      <tr><td>Do I have to break them in</td><td>Air Cushion heel, Super Rebound Compound midsole, removable Kinetic Fit insole</td><td>Translate as no break-in period, and you can swap in your own orthotic.</td></tr>
+      <tr class="total"><td>Which one do I buy</td><td>Moab 3 comes as standard, Waterproof, Mid Waterproof and GTX</td><td>Confirm the official price before filming. Reseller listings run $97.95 to $173.00 for the same shoe.</td></tr>
+    </table>
+    <p class="note">These specs are taken from live TikTok Shop listing copy. Confirm against Merrell's own sheet before this brief goes to creators.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">05 &middot; Objections to answer on camera</div>
+    <h2>Say it before the comments do</h2>
+    <p class="lede">Pick two per video. Trying to cover all six turns a 20 second demonstration into a two minute review, and the review does not sell.</p>
+    <div class="twocol">
+      <div class="panel obj">
+        <h3>Fit and sizing</h3>
+        <ul>
+          <li>Do I order my normal size, and what if I am between sizes</li>
+          <li>Do these work for wide feet</li>
+          <li>How do they feel out of the box, before any break-in</li>
+        </ul>
+      </div>
+      <div class="panel trig">
+        <h3>Claim and price</h3>
+        <ul>
+          <li>Is it waterproof or water resistant, and for how long</li>
+          <li>Can I wear these all day if I am not hiking</li>
+          <li>Why is this worth $150 when there is a $62 waterproof boot on the same page</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">06 &middot; Specs &amp; logistics</div>
+    <h2>Shooting and posting</h2>
+    <div class="twocol">
+      <div class="panel trig">
+        <h3>Shoot</h3>
+        <ul>
+          <li><b>Length:</b> 10 to 40 seconds. The four reference winners run 10, 11, 21 and 37.</li>
+          <li><b>Setting:</b> a real creek, a wet parking lot, a rainy morning. Not a studio, not a summit.</li>
+          <li><b>Format:</b> vertical 9:16, 1080x1920 minimum. Shot on a phone.</li>
+          <li><b>Audio:</b> your own voice over ambient sound. Keep the water audible.</li>
+          <li><b>Required shots:</b> water hitting the shoe, the walk through, the shoe coming off, the dry sock.</li>
+          <li><b>Hook window:</b> first 2 seconds. The demonstration starts immediately, with no intro or greeting.</li>
+        </ul>
+      </div>
+      <div class="panel obj">
+        <h3>Post</h3>
+        <ul>
+          <li><b>Link:</b> Moab 3 Waterproof unless a promo brief says otherwise.</li>
+          <li><b>Tags:</b> tag the Merrell product in the video before posting.</li>
+          <li><b>Lighting:</b> daylight. Overcast is fine and suits the wet weather angle.</li>
+          <li><b>Cadence:</b> the creators who earn most in this category post weekly across a full season, not once.</li>
+          <li><b>Comments:</b> answer sizing questions in the first 24 hours. Those replies are your next video.</li>
+          <li><b>Questions:</b> go to your Third account lead.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="companions">
+      <div class="ct">Companion documents</div>
+      <ul>
+        <li><b>Strategy Doc</b> &middot; the commercial case, the Timberland comp and the phased launch plan.</li>
+        <li><b>Buyer Persona</b> &middot; the triggers and objections this brief is built from.</li>
+        <li><b>Commerce Creator Persona</b> &middot; the four archetypes referenced in the angles above.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>THIRD. &middot; Merrell &middot; Informed Creative Brief</span>
+    <span>Data: Cruva and FastMoss TikTok Shop US marketplace intelligence &middot; 30 days ending August 14, 2026</span>
+  </div>
+</footer>
+</body>
+</html>

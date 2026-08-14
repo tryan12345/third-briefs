@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Commerce Creator Persona &middot; Merrell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+</style>
+<style>
+.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
+section.alt .companions{background:#fff;}
+.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.companions ul{list-style:none;margin-top:12px;}
+.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
+.companions li:first-child{border-top:none;}
+.companions li b{font-weight:700;color:var(--ink);}
+.hooks{margin-top:22px;display:grid;gap:12px;}
+.hook{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;}
+.hook .rank{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);}
+.hook .quote{font-size:16px;font-weight:700;line-height:1.35;}
+.hook .meta{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.hook .why{margin-top:9px;font-size:14px;color:#333;}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.dodont .panel.do{border-top:6px solid var(--c4);}
+.dodont .panel.dont{border-top:6px solid var(--c8);}
+.quotebox{margin-top:20px;display:grid;gap:10px;}
+.qb{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c5);border-radius:12px;padding:16px 20px;font-size:15px;color:#333;}
+.qb .src{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+.qb.neg{border-left-color:var(--c8);}
+.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--ink);color:#fff;padding:7px 12px;border-radius:6px;}
+.chip.alt2{background:var(--c6);} .chip.alt3{background:var(--c7);} .chip.alt4{background:var(--c4);color:var(--ink);}
+.gate{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;margin-top:12px;border-left:6px solid var(--c5);}
+.gate .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gate h3{margin-top:8px;font-size:17px;}
+.gate p{margin-top:9px;font-size:14px;color:#333;}
+@media(max-width:760px){.dodont{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;gap:8px;}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">THIRD. &middot; Merrell &middot; Commerce Creator Persona</div>
+    <h1>Who actually sells outdoor footwear</h1>
+    <p class="sub">Built from seller-side data: the rosters behind $640,066 a month at NORTIV 8, $9.3M at Crocs, and $37,043 at Timberland.</p>
+  </div>
+</div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">01 &middot; The pattern</div>
+    <h2>Follower count does not predict sales in this category</h2>
+    <p class="lede">These are the creators currently moving outdoor footwear on TikTok Shop, pulled from the roster of the highest volume operator in the category. Read the two columns together before building any target list.</p>
+    <table class="tbl">
+      <tr><th>Creator</th><th>Followers</th><th>Brand GMV</th><th>Platform GMV (30d)</th></tr>
+      <tr><td>@santianariba</td><td class="n">18,539</td><td class="n">$2,585,935</td><td class="n">$320,847</td></tr>
+      <tr><td>@dariusunboxed</td><td class="n">5,996</td><td class="n">$152,873</td><td class="n">$7,090</td></tr>
+      <tr><td>@olivia59905</td><td class="n">1,788</td><td class="n">$69,794</td><td class="n">$26,261</td></tr>
+      <tr class="total"><td>@luiseltigree</td><td class="n">366,481</td><td class="n">$93,190</td><td class="n">$167,726</td></tr>
+    </table>
+    <p class="body-p">The bottom row has twenty times the audience of the top row and 3.6% of the sales. @santianariba has posted 1,608 videos and runs a 0.13% interaction rate on his best selling one.</p>
+    <p class="body-p">Selection criteria for outdoor footwear should be posting cadence, format discipline, category history and whether they have sold a shoe above $80 before. Follower count belongs nowhere in the first filter.</p>
+    <div class="chips">
+      <span class="chip">Posts daily, not weekly</span>
+      <span class="chip alt2">Low engagement, high conversion</span>
+      <span class="chip alt3">Spanish language lane is uncontested</span>
+      <span class="chip alt4">Has sold footwear above $80</span>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">02 &middot; The archetypes</div>
+    <h2>Four creator types sell outdoor footwear</h2>
+    <p class="lede">Weight the roster toward the first two. The second pair covers the slip-on and style lanes and carries less GMV per video.</p>
+    <div class="tiers">
+      <div class="tier a">
+        <span class="ctag">Archetype 1</span>
+        <h3>The Demonstrator</h3>
+        <div class="price">$7.63 / 1K</div>
+        <p>Puts the claim through a physical test on camera. Walks into water. Stands in a hose. Wears them twelve hours and reports back. Highest reach in the set.</p>
+        <div class="row">Proof &middot; <b>@im_thaliaaa</b>, 445,229 followers, 2,197 videos. One 21 second creek video took $7,019 on 920,600 views.</div>
+        <div class="row">Use for &middot; <b>Moab 3 Waterproof and GTX</b></div>
+      </div>
+      <div class="tier b">
+        <span class="ctag">Archetype 2</span>
+        <h3>The Utility Seller</h3>
+        <div class="price">$20.93 / 1K</div>
+        <p>Posts constantly in a plain format. Frequently replies to a commenter's question as the video premise. Often Spanish language. Best efficiency in the set.</p>
+        <div class="row">Proof &middot; <b>@santianariba</b>, 37 second reply covering comfort, weight, slip resistance and toe protection. $4,939 on 236,000 views.</div>
+        <div class="row">Use for &middot; <b>Moab 3, work adjacent SKUs</b></div>
+      </div>
+      <div class="tier c">
+        <span class="ctag">Archetype 3</span>
+        <h3>The Style Poster</h3>
+        <div class="price">$4.08 / 1K</div>
+        <p>Ten seconds, on feet, seasonal framing. Outdoor product treated as a fashion object. High engagement, weaker as a pure sales unit.</p>
+        <div class="row">Proof &middot; <b>@twiedekind</b>, 26,677 followers, 2,410 videos. A Timberland fall styling video at 2.25% interaction, $742 on 182,000 views.</div>
+        <div class="row">Use for &middot; <b>Alpine 83, Wrapt, 1TRL, Lonely Ghost</b></div>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="ct">Archetype 4 &middot; The Comfort Reviewer</div>
+      <p>Short verdict videos. Names the fit, names the feel, confirms sizing without being asked. @greenreaper.xo, 35,692 followers, 1,737 videos, returned $13.47 per thousand views on an 11 second sandal video at a 0.36% interaction rate. Use for Hydro Moc and Jungle Moc against Crocs and HeyDude. This archetype is the sizing answer, so brief them to state it every time.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">03 &middot; The benchmark</div>
+    <h2>What the working programs actually run</h2>
+    <p class="lede">Three reference points from the same category and the same month. Roster size is similar in order of magnitude. Roster activity is not.</p>
+    <table class="tbl">
+      <tr><th>Brand</th><th>Creators</th><th>Videos (30d)</th><th>GMV (30d)</th></tr>
+      <tr><td>Crocs US Shop</td><td class="n">18,481</td><td class="n">17,634</td><td class="n">$9,304,174</td></tr>
+      <tr><td>NORTIV 8</td><td class="n">4,972</td><td class="n">n/a</td><td class="n">$640,066</td></tr>
+      <tr class="total"><td>Timberland</td><td class="n">1,272</td><td class="n">832</td><td class="n">$37,043</td></tr>
+    </table>
+    <p class="body-p">Crocs runs roughly one video per creator per month at massive width. Timberland has a roster of 1,272 producing 832 videos, which is well under one each. NORTIV 8 gets 593 videos out of a single SKU with 2,096 creators attached to it.</p>
+    <p class="body-p">House cold start benchmark is 50 videos per week. Performing brands run 2,000 per month. Timberland sits at 832 with a roster that should support several times that.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">04 &middot; Commission and recruiting</div>
+    <h2>Where to set the rate and where to find them</h2>
+    <table class="tbl">
+      <tr><th>Brand</th><th>Rate</th><th>What it buys</th></tr>
+      <tr><td>Timberland</td><td class="n">16%</td><td>Heritage brand paying up to attract a roster it has not activated. The rate is not the problem there.</td></tr>
+      <tr><td>WateLves</td><td class="n">12%</td><td>Mid-market outdoor sandal. Sits between brand pull and pure volume economics.</td></tr>
+      <tr><td>NORTIV 8</td><td class="n">8%</td><td>Lowest rate in the set and the highest output. Volume creators accept less when the product converts.</td></tr>
+      <tr class="total"><td>Merrell, recommended opening</td><td class="n">12 to 15%</td><td>Real name recognition, so it does not need Timberland's 16%. No roster yet, so it cannot open at 8%.</td></tr>
+    </table>
+    <div class="twocol">
+      <div class="panel trig">
+        <h3>Sourcing rules</h3>
+        <ul>
+          <li><b>Pull from existing rosters.</b> NORTIV 8, WateLves and Timberland creators have already sold outdoor footwear and do not need to be taught the category.</li>
+          <li><b>Filter on recent posting, not followers.</b> A creator with 1,788 followers and a posting habit outperforms one with 366,481 and no habit.</li>
+          <li><b>Recruit Spanish language creators deliberately.</b> The highest earning creator in outdoor footwear works in Spanish and this lane is uncontested.</li>
+          <li><b>Size the sampling plan first.</b> Outreach and approval throughput is the constraint on every program we have run.</li>
+        </ul>
+      </div>
+      <div class="panel obj">
+        <h3>What not to screen on</h3>
+        <ul>
+          <li><b>Interaction rate.</b> The best converting creator in the set runs 0.13%. Screening on engagement removes the utility sellers.</li>
+          <li><b>Follower floors.</b> A 5,000 follower minimum would have excluded a creator who drove $69,794.</li>
+          <li><b>Outdoor niche only.</b> The converting roster is deals and finds accounts, not hiking accounts.</li>
+          <li><b>Polish.</b> Studio quality output underperforms phone footage in this category.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="companions">
+      <div class="ct">Companion documents</div>
+      <ul>
+        <li><b>Strategy Doc</b> &middot; the commercial case, the Timberland comp and the phased launch plan.</li>
+        <li><b>Buyer Persona</b> &middot; the two buyers these archetypes are reaching.</li>
+        <li><b>Informed Creative Brief</b> &middot; the format and hook bank these four archetypes will work from.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>THIRD. &middot; Merrell &middot; Commerce Creator Persona</span>
+    <span>Data: Cruva and FastMoss TikTok Shop US marketplace intelligence &middot; 30 days ending August 14, 2026</span>
+  </div>
+</footer>
+</body>
+</html>

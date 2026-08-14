@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strategy &middot; Merrell &times; TikTok Shop US</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+</style>
+<style>
+.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
+section.alt .companions{background:#fff;}
+.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.companions ul{list-style:none;margin-top:12px;}
+.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
+.companions li:first-child{border-top:none;}
+.companions li b{font-weight:700;color:var(--ink);}
+.hooks{margin-top:22px;display:grid;gap:12px;}
+.hook{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;}
+.hook .rank{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);}
+.hook .quote{font-size:16px;font-weight:700;line-height:1.35;}
+.hook .meta{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.hook .why{margin-top:9px;font-size:14px;color:#333;}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.dodont .panel.do{border-top:6px solid var(--c4);}
+.dodont .panel.dont{border-top:6px solid var(--c8);}
+.quotebox{margin-top:20px;display:grid;gap:10px;}
+.qb{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c5);border-radius:12px;padding:16px 20px;font-size:15px;color:#333;}
+.qb .src{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+.qb.neg{border-left-color:var(--c8);}
+.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--ink);color:#fff;padding:7px 12px;border-radius:6px;}
+.chip.alt2{background:var(--c6);} .chip.alt3{background:var(--c7);} .chip.alt4{background:var(--c4);color:var(--ink);}
+.gate{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;margin-top:12px;border-left:6px solid var(--c5);}
+.gate .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gate h3{margin-top:8px;font-size:17px;}
+.gate p{margin-top:9px;font-size:14px;color:#333;}
+@media(max-width:760px){.dodont{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;gap:8px;}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">THIRD. &middot; Merrell &middot; Strategy</div>
+    <h1>Merrell &times; TikTok Shop US</h1>
+    <p class="sub">Merrell has $3,096 of gray-market GMV on TikTok Shop and no shop to receive it. No outdoor footwear brand runs a managed presence. The lane is open.</p>
+  </div>
+</div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">01 &middot; The position</div>
+    <h2>Demand exists and there is nothing to receive it</h2>
+    <p class="lede">People search Merrell on TikTok Shop and buy. The orders go to resellers. There is no Merrell shop, no affiliate roster, and no control over price or sizing information.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">$3,096</div><div class="lbl">Total Merrell GMV across every listing, 30 days</div></div>
+      <div class="stat"><div class="num">$2,903</div><div class="lbl">Of that, from one pair of collab shorts</div></div>
+      <div class="stat"><div class="num">$106</div><div class="lbl">The only portion a creator video produced</div></div>
+      <div class="stat"><div class="num">$0</div><div class="lbl">Managed outdoor footwear anywhere in the top 25</div></div>
+    </div>
+    <p class="body-p">Twenty-plus separate reseller listings carry the Merrell name. Several show a $0.00 price, which means the listing is broken and the buyer sees nothing. The same Moab 3 appears at $97.95, $141.35, $151.51, $170.00 and $173.00 depending on which seller the buyer lands on.</p>
+    <p class="body-p">The Lonely Ghost x Merrell sweat shorts did $2,903 on 55 units at $53.10. One video, 5,561 views, produced $106 of it. The other $2,797 came through the product card. Apparel currently outsells every Merrell shoe on the platform combined.</p>
+    <div class="statement">
+      <div class="tag">The read</div>
+      <p>Merrell already has search demand on TikTok Shop. It has no store to point that demand at, so a reseller collects it and sets the price.</p>
+      <p class="detail">The only brand entity registered under the Merrell name is "MerrellCD," which has $0 GMV and is filed under Phones &amp; Electronics. Columbia does $121 a month unmanaged. Salomon does not appear in the brand registry at all. No hiking or outdoor specialist appears in the top 25 shoe brands.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">02 &middot; The comparable</div>
+    <h2>Timberland shows what a shop without a program looks like</h2>
+    <p class="lede">Timberland is the closest thing to a heritage outdoor brand operating on TikTok Shop. It opened in June 2025 and has taken $2,826,799 since. Last 30 days it took $37,043. The shape of that revenue is the part worth studying.</p>
+    <table class="tbl">
+      <tr><th>Channel</th><th>90-day GMV</th><th>Share</th><th>What it means</th></tr>
+      <tr><td>Product card</td><td class="n">$241,559</td><td class="n">69.5%</td><td>People searching the brand and buying off the listing. No creator involved.</td></tr>
+      <tr><td>Affiliate</td><td class="n">$105,816</td><td class="n">30.5%</td><td>1,272 attached creators. The roster exists on paper and produces very little.</td></tr>
+      <tr><td>Live</td><td class="n">$1,134</td><td class="n">0.3%</td><td>1,066 live sessions in 90 days. Live is running and returning nothing.</td></tr>
+      <tr class="total"><td>Shop account</td><td class="n">$0</td><td class="n">0%</td><td>778,156 followers on the brand account, unconnected to the store.</td></tr>
+    </table>
+    <p class="body-p">Timberland ranks 76th in Shoes. Shop rating is 4.7 with a 93% positive feedback rate and 90% delivery, so the operational side is sound. The revenue mix is the issue.</p>
+    <div class="callout">
+      <div class="ct">Why this matters for Merrell</div>
+      <p>Opening a shop converts the search demand on day one. That is the 69.5% line, and it is available without any content. It is also where Timberland stopped. Everything above that number has to be built.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">03 &middot; What a working program produces</div>
+    <h2>Same category, three programs, three very different numbers</h2>
+    <p class="lede">GMV per video is the cleanest way to compare one brand's creator engine to another. These three run in the same category at overlapping price points. What separates them is how the program is run.</p>
+    <table class="tbl">
+      <tr><th>Program</th><th>Videos (30d)</th><th>GMV (30d)</th><th>GMV per video</th></tr>
+      <tr><td>Timberland, all products</td><td class="n">832</td><td class="n">$37,043</td><td class="n">$44.52</td></tr>
+      <tr><td>NORTIV 8 women's waterproof hiking boot</td><td class="n">344</td><td class="n">$38,555</td><td class="n">$112.08</td></tr>
+      <tr class="total"><td>NORTIV 8 Metrostrike men's tactical shoe</td><td class="n">593</td><td class="n">$363,056</td><td class="n">$612.24</td></tr>
+    </table>
+    <p class="body-p">The bottom two rows are the same brand in the same month. One SKU produces fourteen times the GMV per video of Timberland's entire catalog. NORTIV 8 runs 4,972 creators and $640,066 a month on a catalog with no brand recognition at all.</p>
+    <p class="body-p">Merrell brings name recognition that NORTIV 8 does not have. None of it is currently connected to a shop.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">04 &middot; Where Merrell fits</div>
+    <h2>Two lanes are already proven and Merrell has product in both</h2>
+    <div class="tiers">
+      <div class="tier a">
+        <span class="ctag">Lane one</span>
+        <h3>Waterproof, demonstrated</h3>
+        <div class="price">$129.99</div>
+        <p>A 21 second video of a creator walking through a creek with dry feet took $7,019 on 920,600 views for a $62 NORTIV 8 boot. Merrell's claim is stronger and the demonstration is identical.</p>
+        <div class="row">Hero SKU &middot; <b>Moab 3 Waterproof and GTX</b></div>
+      </div>
+      <div class="tier b">
+        <span class="ctag">Lane two</span>
+        <h3>Slip-on comfort</h3>
+        <div class="price">$80 to $90</div>
+        <p>Crocs takes $9.3M a month with clogs at $80.34, $82.49 and $89.37. HeyDude adds $3.0M, Cushionaire $1.3M. Premium clog pricing is established and this is not a discount lane.</p>
+        <div class="row">Hero SKU &middot; <b>Hydro Moc and Jungle Moc</b></div>
+      </div>
+      <div class="tier c">
+        <span class="ctag">Lane three</span>
+        <h3>Heritage style</h3>
+        <div class="price">$70 to $140</div>
+        <p>Timberland's best converting women's product is a platform boat shoe sold as a fall styling piece. Real lane, third in priority behind the two above.</p>
+        <div class="row">Hero SKU &middot; <b>Alpine 83, Wrapt, 1TRL</b></div>
+      </div>
+    </div>
+    <div class="twocol">
+      <div class="panel trig">
+        <h3>What the category rewards</h3>
+        <ul>
+          <li><b>Demonstrable claims.</b> Waterproofing shown on camera, not stated in a caption.</li>
+          <li><b>Creator count in the thousands.</b> Crocs runs 18,481 creators a month.</li>
+          <li><b>Price between $45 and $140.</b> Proven at volume across clogs, boots and sneakers.</li>
+          <li><b>Small creators posting constantly.</b> Follower count does not predict GMV here.</li>
+          <li><b>Comfort framing for women, work framing for men.</b> Both convert.</li>
+        </ul>
+      </div>
+      <div class="panel obj">
+        <h3>What it does not</h3>
+        <ul>
+          <li><b>Spec language.</b> Nobody buys a midsole compound on this platform.</li>
+          <li><b>A shop with no affiliate program.</b> Timberland has 1,272 creators and $37K a month.</li>
+          <li><b>Summit imagery as the default setting.</b> The buyer is walking, not summiting.</li>
+          <li><b>Reseller pricing.</b> $88 to $174 for the same shoe tells the buyer nothing is official.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">05 &middot; Where the revenue would come from</div>
+    <h2>The mix Merrell should be aiming to invert</h2>
+    <p class="lede">Timberland's channel split is what a heritage outdoor brand gets by default on this platform. It is also the thing a program is supposed to change.</p>
+    <table class="tbl">
+      <tr><th>Channel</th><th>Timberland today</th><th>What Merrell should target</th><th>What moves it</th></tr>
+      <tr><td>Product card</td><td class="n">69.5%</td><td class="n">Under 40%</td><td>Nothing. This is the base and it arrives on its own once the shop opens.</td></tr>
+      <tr><td>Affiliate video</td><td class="n">30.5%</td><td class="n">50% or better</td><td>Roster size and posting cadence. This is the whole build.</td></tr>
+      <tr><td>Live</td><td class="n">0.3%</td><td class="n">Test only</td><td>Timberland ran 1,066 sessions for $1,134. Do not open with live.</td></tr>
+      <tr class="total"><td>Shop account</td><td class="n">0%</td><td class="n">Small but not zero</td><td>Merrell has an existing audience. Timberland has 778,156 followers driving nothing.</td></tr>
+    </table>
+    <p class="body-p">The product card share falls as a percentage even while it grows in absolute terms. That is the correct shape. A shop where product card share stays above two thirds after six months has a roster problem, not a demand problem.</p>
+    <div class="callout">
+      <div class="ct">The number to hold the plan to</div>
+      <p>Observed GMV per video in this category runs from $44.52 at Timberland to $612.24 on NORTIV 8's best SKU. At the house cold start rate of 50 videos per week, that range brackets roughly $24,000 to $132,000 a month once the roster is posting. The spread is wide because it depends entirely on creative discipline, which is what the brief exists to control.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-kicker">06 &middot; The plan</div>
+    <h2>Four moves, in this order</h2>
+    <p class="lede">The sequence matters. Product card revenue is available on day one and requires no content. Everything after that is built.</p>
+    <div class="phases">
+      <div class="phase">
+        <div class="when">Move 01 &middot; Weeks 1 to 4</div>
+        <h3>Open the shop and consolidate the catalog</h3>
+        <p>The search demand already converts. Timberland gets 69.5% of its revenue this way and Merrell currently gets none of it. This also ends the $88 to $174 price spread and the broken $0.00 listings.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Move 02 &middot; Weeks 2 to 12</div>
+        <h3>Build the roster against the waterproof demonstration</h3>
+        <p>Moab 3 Waterproof is the hero. House cold start target is 50 videos per week, moving to 2,000 per month once the formula holds. Sampling throughput is the constraint. Creator supply is not.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Move 03 &middot; Weeks 6 to 16</div>
+        <h3>Run Hydro Moc into the Crocs lane</h3>
+        <p>Different creator set, different buyer, same shop. It gives the roster a sub-$100 entry product while Moab carries margin.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Move 04 &middot; Week 12 onward</div>
+        <h3>Hold paid media until the content base exists</h3>
+        <p>GMV Max needs roughly 50 videos per hero product or 600 shop videos before it has anything to optimize against. Timberland ran 1,066 live sessions in 90 days for $1,134.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">07 &middot; Targets</div>
+    <h2>What good looks like by month</h2>
+    <p class="lede">These are leading indicators, not a forecast. GMV targets need Merrell's gross margin and the monthly sampling ceiling, and neither is confirmed yet.</p>
+    <table class="tbl">
+      <tr><th>Month</th><th>Videos</th><th>Active creators</th><th>Samples out</th><th>Gate</th></tr>
+      <tr><td>Month 1</td><td class="n">200</td><td class="n">60</td><td class="n">150</td><td>Shop live, catalog consolidated, first 50 creators posting</td></tr>
+      <tr><td>Month 2</td><td class="n">400</td><td class="n">150</td><td class="n">250</td><td>Water-test format validated, top three hooks identified</td></tr>
+      <tr><td>Month 3</td><td class="n">800</td><td class="n">300</td><td class="n">300</td><td>Affiliate share above 40%, Hydro Moc roster opened</td></tr>
+      <tr class="total"><td>Month 4</td><td class="n">1,200+</td><td class="n">450</td><td class="n">350</td><td>600 shop videos cleared, GMV Max eligible</td></tr>
+    </table>
+    <p class="body-p">The video column assumes the house cold start rate of 50 per week ramping to the 2,000 per month that performing brands run. The sample column is the binding constraint, and footwear carries size variance that a consumable does not, so it should be pressure tested before these numbers are committed.</p>
+    <div class="companions">
+      <div class="ct">Companion documents</div>
+      <ul>
+        <li><b>Buyer Persona</b> &middot; the two buyers behind these numbers, their price tolerance and the four objections that stop the sale.</li>
+        <li><b>Commerce Creator Persona</b> &middot; the four archetypes that convert outdoor footwear, and how to source them.</li>
+        <li><b>Informed Creative Brief</b> &middot; the hooks, angles and non-negotiables for Moab 3 Waterproof, matched to buyer triggers.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-kicker">08 &middot; Risks</div>
+    <h2>What could break this</h2>
+    <div class="risks">
+      <div class="risk">
+        <div class="rt">Catalog control</div>
+        <p>Merrell needs to confirm whether it can enforce takedowns on the existing reseller listings, or whether the official shop runs alongside them. Twenty-plus listings currently price the same Moab 3 between $97.95 and $173.00. That spread undercuts every price statement a creator makes on camera.</p>
+      </div>
+      <div class="risk">
+        <div class="rt">Sampling capacity</div>
+        <p>Footwear sampling carries size variance, which raises cost per sample against a typical consumable and complicates returns. The monthly sample ceiling sets the entire video forecast and is not yet known. Every program we have run is constrained here rather than on creator supply.</p>
+      </div>
+      <div class="risk">
+        <div class="rt">Seasonality against the launch window</div>
+        <p>The waterproof demonstration is strongest in wet and cold weather. A launch that lands after the autumn window loses the most persuasive version of the hero creative and has to carry the shop on the slip-on lane instead.</p>
+      </div>
+      <div class="risk">
+        <div class="rt">No first-party data</div>
+        <p>Every figure in this document is marketplace evidence and gray-market signal. FastMoss returns zero reviews across the reference set, so there is no mined buyer language behind the persona work. The first 60 days of shop data should be treated as the real baseline and these assumptions revisited against it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>THIRD. &middot; Merrell &middot; Strategy</span>
+    <span>Data: Cruva and FastMoss TikTok Shop US marketplace intelligence &middot; 30 days ending August 14, 2026</span>
+  </div>
+</footer>
+</body>
+</html>
