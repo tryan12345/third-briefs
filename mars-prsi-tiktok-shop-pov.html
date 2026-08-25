@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRSI Measurement Framework: TikTok Shop POV | Third</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tomato:#FF5A3E;
+    --c1:#FF5A3E; --c2:#FF8C42; --c3:#FFC145; --c4:#7FB800; --c5:#00A6A6;
+    --c6:#0F7173; --c7:#2E4057; --c8:#6C4B8B; --c9:#E0446D;
+    --ink:#16181D;
+    --ink-soft:#4A5059;
+    --rule:#E3E5E9;
+    --paper:#FFFFFF;
+    --wash:#F7F8FA;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif; font-size:16.5px; line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 32px}
+
+  /* Hero */
+  .hero{background:var(--tomato);color:#fff;padding:64px 0 56px}
+  .hero .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;
+    text-transform:uppercase;opacity:.9;margin:0 0 20px
+  }
+  .hero h1{font-size:47px;line-height:1.08;font-weight:800;letter-spacing:-.02em;margin:0 0 18px;max-width:19ch}
+  .hero .sub{font-size:19px;font-weight:500;max-width:62ch;opacity:.96;margin:0}
+  .meta{
+    display:flex;flex-wrap:wrap;gap:28px;margin-top:36px;padding-top:24px;
+    border-top:1px solid rgba(255,255,255,.32);
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em
+  }
+  .meta span{display:block;opacity:.78;text-transform:uppercase;font-size:10.5px;letter-spacing:.14em;margin-bottom:5px}
+
+  .strip{display:flex;height:9px}
+  .strip i{flex:1}
+
+  /* Sections */
+  section{padding:52px 0;border-bottom:1px solid var(--rule)}
+  section:last-of-type{border-bottom:none}
+  .snum{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--tomato);font-weight:600;margin:0 0 12px
+  }
+  h2{font-size:31px;line-height:1.18;font-weight:800;letter-spacing:-.018em;margin:0 0 8px;max-width:26ch}
+  h3{font-size:20px;font-weight:700;letter-spacing:-.01em;margin:34px 0 10px}
+  h4{font-size:15px;font-weight:700;margin:24px 0 8px}
+  p{margin:0 0 15px;max-width:74ch}
+  .lede{font-size:18.5px;color:var(--ink-soft);max-width:70ch;margin-bottom:26px}
+  ul,ol{max-width:74ch;padding-left:20px;margin:0 0 15px}
+  li{margin-bottom:9px}
+  strong{font-weight:650}
+
+  /* Landing points */
+  .land{border-left:3px solid var(--tomato);padding:2px 0 2px 22px;margin:0 0 26px}
+  .land h4{margin:0 0 6px;font-size:16.5px}
+  .land p{margin:0;color:var(--ink-soft)}
+
+  /* Tables */
+  .tbl{width:100%;border-collapse:collapse;margin:22px 0 8px;font-size:14.5px}
+  .tbl th{
+    text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);
+    font-weight:600;padding:0 12px 10px 0;border-bottom:2px solid var(--ink)
+  }
+  .tbl td{padding:13px 12px 13px 0;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.5}
+  .tbl td:first-child{font-weight:600;width:26%}
+  .tbl td:last-child{color:var(--ink-soft)}
+  .grp td{
+    background:var(--wash);font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:var(--ink);
+    padding:8px 12px 8px 10px !important
+  }
+
+  .badge{
+    display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+    padding:3px 9px;border-radius:3px;white-space:nowrap
+  }
+  .b-adopt{background:#E6F4E1;color:#37701F}
+  .b-adapt{background:#FFF1D6;color:#8A5A00}
+  .b-rebuild{background:#EFE6F6;color:#5B3585}
+  .b-drop{background:#EEF0F3;color:#5A6069}
+
+  /* Formula */
+  .formula{
+    background:var(--ink);color:#fff;border-radius:5px;padding:26px 28px;margin:24px 0;
+    font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:.01em;
+    overflow-x:auto
+  }
+  .formula .eq{font-weight:600;white-space:nowrap}
+  .formula .note{
+    display:block;margin-top:14px;font-family:'Inter',sans-serif;
+    font-size:14px;opacity:.72;letter-spacing:0;white-space:normal
+  }
+
+  /* Callout */
+  .callout{background:var(--wash);border-radius:5px;padding:24px 26px;margin:26px 0}
+  .callout h4{margin-top:0}
+  .callout p:last-child,.callout ul:last-child{margin-bottom:0}
+
+  /* Four numbers */
+  .four{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);margin:26px 0;border:1px solid var(--rule)}
+  .four > div{background:var(--paper);padding:22px 24px}
+  .four .k{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--tomato);font-weight:600;margin-bottom:8px
+  }
+  .four .n{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-bottom:6px}
+  .four .d{font-size:14.5px;color:var(--ink-soft);line-height:1.5}
+
+  footer{background:var(--ink);color:#fff;padding:44px 0 40px;margin-top:0}
+  footer p{color:rgba(255,255,255,.68);font-size:14px;max-width:74ch}
+  footer .fmeta{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;
+    color:rgba(255,255,255,.5);margin-top:22px;padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.16)
+  }
+
+  @media (max-width:680px){
+    .wrap{padding:0 20px}
+    .hero{padding:44px 0 40px}
+    .hero h1{font-size:33px}
+    .hero .sub{font-size:17px}
+    h2{font-size:25px}
+    .four{grid-template-columns:1fr}
+    .tbl{font-size:13.5px}
+    .tbl td:first-child{width:32%}
+    .formula{font-size:13px;padding:20px}
+  }
+  @media print{
+    .hero{background:var(--tomato) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    section{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Strategy Doc / Third x Mars Snacking</p>
+    <h1>PRSI Measurement on TikTok Shop</h1>
+    <p class="sub">Our read on which PRSI KPIs work on TikTok Shop, and what the framework still needs before it can measure a shoppable channel.</p>
+    <div class="meta">
+      <div><span>Prepared for</span>Mars Snacking measurement leads</div>
+      <div><span>Source document</span>PRSI Snacking KPIs + Measurement Framework, May 2026</div>
+      <div><span>Prepared by</span>Third</div>
+      <div><span>Date</span>August 2026</div>
+    </div>
+  </div>
+</div>
+<div class="strip">
+  <i style="background:var(--c1)"></i><i style="background:var(--c2)"></i><i style="background:var(--c3)"></i>
+  <i style="background:var(--c4)"></i><i style="background:var(--c5)"></i><i style="background:var(--c6)"></i>
+  <i style="background:var(--c7)"></i><i style="background:var(--c8)"></i><i style="background:var(--c9)"></i>
+</div>
+
+<div class="wrap">
+
+<section>
+  <p class="snum">Where we land</p>
+  <h2>Four answers before the detail</h2>
+  <p class="lede">We read the framework against what TikTok Shop Seller Center actually reports. Here is the short version of our POV on each of your four questions.</p>
+
+  <div class="land">
+    <h4>1. About half the set ports.</h4>
+    <p>The reaction and engagement metrics carry over well. Anything denominated in reach or followers does not, because Seller Center reports neither. The earned media inputs like outlet inclusion and headline inclusion have no TikTok equivalent.</p>
+  </div>
+
+  <div class="land">
+    <h4>2. The PRSI Quality Score cannot be calculated from Seller Center.</h4>
+    <p>Five of its inputs have no source on TikTok. Its denominators do not exist in the platform. Run it on what is left and the output cannot be compared to a PR score, even though it will look like it can.</p>
+  </div>
+
+  <div class="land">
+    <h4>3. TikTok Shop already reports the metric you are arguing for.</h4>
+    <p>GPM is gross revenue per 1,000 views. The "320 impressions to sell one pack of M&amp;Ms" figure on slides 16 and 19 is that same ratio, inverted.</p>
+  </div>
+
+  <div class="land">
+    <h4>4. The framework has no slot for the things social commerce runs on.</h4>
+    <p>Sample seeding yield, GMV decay, new to brand share, LIVE watch time, and the ad assisted split are all missing. Some of them connect the executional layer straight to your business outcomes.</p>
+  </div>
+</section>
+
+<section>
+  <p class="snum">01 / The structural difference</p>
+  <h2>Why the framework needs different treatment here</h2>
+
+  <p>PRSI measurement exists to solve a proof problem. Earned coverage produces an impression and then the trail goes cold. The reach deflators on slides 17 and 18, the quality composite, and the virality multiplier all exist to reconstruct what happened after that impression.</p>
+
+  <p>TikTok Shop does not have that problem. The view, the product click, the order, the delivery, and the refund all carry the same video ID. The loop closes inside one system, at the level of the individual video.</p>
+
+  <p>That changes what measurement is for here. The useful question on TikTok Shop is what an exposure was worth per unit of attention.</p>
+
+  <div class="callout">
+    <h4>One practical consequence for your roll-up</h4>
+    <p>Do not run TikTok Shop views through the comprehensive exposure deflation model. That model is right for online news and podcast listenership, where a UVM figure badly overstates readership. Applied to TikTok Shop it discounts the one channel that can already prove the sale, and it converts a hard number into a modeled one.</p>
+    <p>Report TikTok Shop in its own metrics. Reconcile with the rest of PESO at the GMV line inside MMM, not at the reach line.</p>
+  </div>
+</section>
+
+<section>
+  <p class="snum">02 / Question one</p>
+  <h2>Which executional and diagnostic KPIs are relevant</h2>
+  <p class="lede">Verdict on every metric in the executional and diagnostic sets. Adopt means it works as written. Adapt means the idea holds but the calculation changes. Rebuild means the concept is right and the construction is wrong. Drop means there is no version of it worth reporting here.</p>
+
+  <table class="tbl">
+    <thead>
+      <tr><th>Metric</th><th>Verdict</th><th>Reasoning</th></tr>
+    </thead>
+    <tbody>
+      <tr class="grp"><td colspan="3">Executional / Impact</td></tr>
+      <tr>
+        <td>Brand Lift</td>
+        <td><span class="badge b-drop">Drop at shop level</span></td>
+        <td>TikTok Brand Lift Studies run inside Ads Manager against paid inventory and carry spend minimums. Seller Center has no holdout capability. Keep the metric at total PESO level and source it from the ads side, not from Shop.</td>
+      </tr>
+      <tr>
+        <td>Sales Lift</td>
+        <td><span class="badge b-adapt">Adapt</span></td>
+        <td>Seller Center reports attributed sales, not incremental sales. Replace campaign level lift with attributed GMV, then run one geo or matched market holdout per year to calibrate an incrementality factor you apply to the attributed number.</td>
+      </tr>
+
+      <tr class="grp"><td colspan="3">Executional / Quantity</td></tr>
+      <tr>
+        <td>PRSI Reach</td>
+        <td><span class="badge b-adapt">Adapt</span></td>
+        <td>TikTok reports views, counted at first frame. There is no deduplicated reach figure anywhere in Seller Center and no way to derive one. Substitute Shoppable Views, split organic and ad delivered, and label it as impressions rather than reach.</td>
+      </tr>
+
+      <tr class="grp"><td colspan="3">Executional / Quality</td></tr>
+      <tr>
+        <td>PRSI Quality Score</td>
+        <td><span class="badge b-rebuild">Rebuild</span></td>
+        <td>Concept is sound and the construction does not survive the platform. Full treatment in section 03.</td>
+      </tr>
+      <tr>
+        <td>SI Reach Rate<br>(reach / followers)</td>
+        <td><span class="badge b-drop">Drop</span></td>
+        <td>The For You Page distributes to non followers by default, so follower reach measures the wrong thing. It is a weak signal on TikTok generally and a misleading one on Shop, where creators in the low thousands routinely out sell creators with millions. Seller Center also does not attach follower counts to affiliate video rows.</td>
+      </tr>
+
+      <tr class="grp"><td colspan="3">Executional / Reaction</td></tr>
+      <tr>
+        <td>PRSI Virality Multiplier</td>
+        <td><span class="badge b-adopt">Adopt</span></td>
+        <td>The strongest carryover in the set. Instigated earned content has a clean TikTok equivalent in non commissioned creator posts and UGC. Change the denominator from total reach to total product tagged views and it works. Note that Seller Center only sees content with the product tagged, so untagged brand mentions still need Talkwalker or Pulsar.</td>
+      </tr>
+      <tr>
+        <td>SI Qualified<br>Engagement Rate</td>
+        <td><span class="badge b-adapt">Adapt</span></td>
+        <td>Rebase the denominator from SI reach to views. The share weighting is directionally right for commerce, since shares and saves predict purchase better than comments do. Treat it as a content diagnostic and read it alongside GPM rather than on its own.</td>
+      </tr>
+
+      <tr class="grp"><td colspan="3">Diagnostic</td></tr>
+      <tr>
+        <td>Share of Voice</td>
+        <td><span class="badge b-adapt">Adapt</span></td>
+        <td>Useful once redefined. Mention share does not mean much in a shoppable feed. Share of category GMV and share of category video volume both do, and both are available from competitive tooling.</td>
+      </tr>
+      <tr>
+        <td>Social Net Sentiment</td>
+        <td><span class="badge b-adapt">Adapt</span></td>
+        <td>Not native to Seller Center. Feasible through comment export and classification, which is a pipeline we already run at volume. Worth reframing from sentiment to objection and intent, because that output changes what creators say on camera next month.</td>
+      </tr>
+      <tr>
+        <td>Weighted Social<br>Net Sentiment</td>
+        <td><span class="badge b-drop">Drop</span></td>
+        <td>The half weighting on neutral adds precision the underlying classification cannot support. Keep the unweighted version.</td>
+      </tr>
+      <tr>
+        <td>Comment Net Sentiment</td>
+        <td><span class="badge b-adapt">Adapt</span></td>
+        <td>Earns its place here more than it does elsewhere in PESO. Comments under shoppable video are mostly purchase questions, so the comment set works as an objection log.</td>
+      </tr>
+      <tr>
+        <td>SI Engagement Rate</td>
+        <td><span class="badge b-adapt">Adapt</span></td>
+        <td>Same follower denominator problem as SI Reach Rate. Rebase to views and it becomes a usable content diagnostic.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <p class="snum">03 / Question two</p>
+  <h2>Why the Quality Score does not calculate, and what replaces it</h2>
+
+  <p>You flagged this one yourselves, and the concern is right. Three things break when the score meets Seller Center.</p>
+
+  <h4>The inputs do not exist</h4>
+  <p>Earned Key Message Pull Through, Brand Headline Inclusion, Target Outlet Inclusion, PR Net Sentiment, and LLM Narrative Alignment are all earned media constructs. TikTok Shop has no outlets, no headlines, and no press pickup. Five of the score's inputs have no source, and any proxy would be invented.</p>
+
+  <h4>The denominators do not exist</h4>
+  <p>Organic Engagement Rate and the reaction inputs are denominated in reach or followers. Seller Center reports views and does not carry follower counts on video rows. Every ratio in the quality set needs a different bottom half before it can be computed.</p>
+
+  <h4>The index stops being comparable</h4>
+  <p>A composite indexed to 100 needs stable benchmarks on every input. Run it on a partial input set and a 100 from TikTok Shop means something different from a 100 on a PR program. Rolled together in a Snacking level report, the two would misstate the total, and nobody reading the roll-up would be able to spot it.</p>
+
+  <div class="callout">
+    <h4>Where the fix comes from</h4>
+    <p>The framework's own definition of quality is the thing blocking you. TikTok Shop attaches the conversion event to the impression, which no other PESO channel does. Define quality by what the impression did and the score becomes calculable.</p>
+  </div>
+
+  <h3>Proposed: Commerce Quality Score</h3>
+  <p>Same shape as the PRSI Quality Score so it sits alongside it in reporting. Indexed to 100, benchmarks met or missed, over 100 means you beat expectation. Different inputs. Every one of them available in Seller Center with no additional instrumentation.</p>
+
+  <table class="tbl">
+    <thead>
+      <tr><th>Input</th><th>Calculation</th><th>What it answers</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Product CTR</td><td>Product clicks / video views</td><td>Did the impression create intent</td></tr>
+      <tr><td>Click to order rate</td><td>Orders / product clicks</td><td>Did the intent survive the product page</td></tr>
+      <tr><td>GPM</td><td>(GMV / views) x 1,000</td><td>What the attention was worth</td></tr>
+      <tr><td>Watch retention</td><td>Average watch time / video length. Average watch time for LIVE.</td><td>Did anyone stay</td></tr>
+      <tr><td>Sale durability</td><td>1 minus refund rate, read with post purchase rating</td><td>Did the sale hold</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Method</h4>
+  <ul>
+    <li>Index each input against a trailing 90 day benchmark for that shop and that category. Equal weight across the five.</li>
+    <li>Compute at video level, then weight by views to reach a campaign figure. Averaging video level scores unweighted will let a 400 view test post move the campaign number.</li>
+    <li>Refresh benchmarks quarterly. Category and price point move these figures more than creative does, and a benchmark set in Q1 will not survive Q4 seasonality.</li>
+  </ul>
+
+  <p>Two inputs need a caveat. Refund rate lags the sale by weeks, so sale durability should be reported on a trailing basis and the campaign score restated once. Watch retention is reported differently for in feed video and LIVE, so the two should be benchmarked separately rather than pooled.</p>
+</section>
+
+<section>
+  <p class="snum">04 / Question three</p>
+  <h2>Our POV on the calculations, and how to simplify</h2>
+
+  <p>The executional and diagnostic sets carry more than twenty metrics between them. That is defensible for PR, where no single number closes the loop and each metric covers a gap the others cannot. On TikTok Shop most of these metrics decompose into one another. Reporting all of them means reporting the same fact several times.</p>
+
+  <p>The simplification comes out of an arithmetic identity.</p>
+
+  <div class="formula">
+    <span class="eq">GPM = Product CTR &nbsp;x&nbsp; Click to order rate &nbsp;x&nbsp; AOV &nbsp;x&nbsp; 1,000</span>
+    <span class="note">Views cancel out. Revenue per 1,000 views is the product of the three levers that produce it, so the headline number carries its own diagnostic layer.</span>
+  </div>
+
+  <p>When GPM falls you already know where to look. Low product CTR is a hook and tagging problem. Low click to order is a listing, price, or review problem. Falling AOV is a bundle or SKU mix problem. No extra reporting is required to run that diagnosis, because the three components come out of the same Seller Center export as the headline.</p>
+
+  <h3>Four numbers per campaign</h3>
+  <p>This is what we would put in front of a Snacking measurement lead, and everything else sits underneath it as diagnostic.</p>
+
+  <div class="four">
+    <div>
+      <div class="k">Scale</div>
+      <div class="n">Shoppable Views</div>
+      <div class="d">Views on product tagged video and LIVE, split organic and ad delivered. Labeled as impressions, never as reach.</div>
+    </div>
+    <div>
+      <div class="k">Quality</div>
+      <div class="n">GPM</div>
+      <div class="d">Gross revenue per 1,000 views. Your quality impressions metric. Native to the platform and comparable across creators and formats.</div>
+    </div>
+    <div>
+      <div class="k">Reaction</div>
+      <div class="n">Non Affiliate Content Share</div>
+      <div class="d">Views on product tagged content from creators we did not commission, over total product tagged views. The virality multiplier, rebuilt for this platform.</div>
+    </div>
+    <div>
+      <div class="k">Outcome</div>
+      <div class="n">Attributed GMV</div>
+      <div class="d">Split by surface. Video, LIVE, product card, and affiliate against shop owned.</div>
+    </div>
+  </div>
+
+  <p>These map onto your three jobs to be done, with one addition. How many people saw it is Shoppable Views. Was it any good is GPM. Did anyone care is Non Affiliate Content Share. The fourth question is whether it sold, and TikTok Shop answers that one in the same report.</p>
+</section>
+
+<section>
+  <p class="snum">05 / Question four</p>
+  <h2>What social commerce needs that the framework does not have</h2>
+  <p class="lede">Grouped by the job each one does. All of these are reportable from Seller Center or from the affiliate and sample modules alongside it.</p>
+
+  <h3>Conversion core</h3>
+  <ul>
+    <li><strong>GPM.</strong> Covered above. This is the single most important addition.</li>
+    <li><strong>Attributed GMV by surface.</strong> Video, LIVE, product card, and shop owned against affiliate. These have different economics and blending them hides problems. On one managed account we found a blended GMV Max return of 0.96 while product cards inside the same account returned 4.07, because ninety percent of budget sat in video ads. Nothing in the blended figure showed that.</li>
+    <li><strong>Ad assisted against organic split.</strong> Without it, earned and shared tactics get credited with sales that paid delivery produced. This matters most for the Earned and Shared columns in your PESO definitions, where boosted creator content sits close to the line.</li>
+  </ul>
+
+  <h3>Creator and seeding economics</h3>
+  <ul>
+    <li><strong>Sample to post rate.</strong> You have product gifting written into Earned Creator Endorsement in the PESO definitions. The gifting program has a yield, and nothing in the current framework measures it. Samples requested against samples that produced a post is the first number.</li>
+    <li><strong>Sample cost per posting creator, and sample cost per dollar of GMV.</strong> This is the ROI of the earned creator tactic, and it is the number that decides whether seeding scales next year.</li>
+    <li><strong>GMV concentration.</strong> Share of affiliate GMV coming from the top ten percent of creators. High concentration means the program is one creator relationship away from a bad quarter, and no other metric in the set will surface that.</li>
+  </ul>
+
+  <h3>Time and durability</h3>
+  <ul>
+    <li><strong>GMV decay curve.</strong> Shop videos keep selling for weeks after posting. A campaign window built for a PR burst will close before the revenue arrives. Report GMV at 7, 30, and 60 days from post.</li>
+    <li><strong>Return and refund rate by creator.</strong> A creator who oversells the product generates GMV that reverses. Without this, the highest performing creator in a campaign report can be the one costing the most money.</li>
+  </ul>
+
+  <h3>Penetration</h3>
+  <ul>
+    <li><strong>New to brand share.</strong> Seller Center reports new against returning customers at shop level. Penetration is one of the three business outcomes at the top of your hierarchy, and TikTok Shop is the only place in PESO where Mars can observe it directly instead of modeling it. That is a direct read on a business outcome from an executional metric.</li>
+  </ul>
+
+  <h3>LIVE</h3>
+  <ul>
+    <li><strong>Average watch time, GMV per hour, product click rate during LIVE, and peak concurrent viewers.</strong> The framework currently has no LIVE metrics at all. Social Commerce and Live Shopping are named under Shared in your PESO definitions, so the tactic is already in scope.</li>
+  </ul>
+</section>
+
+<section>
+  <p class="snum">06 / Data governance</p>
+  <h2>Three things to settle before the first roll-up</h2>
+
+  <h4>Name one system of record</h4>
+  <p>Seller Center, platform native analytics, and third party estimators will each return a different GMV for the same window. We recommend Seller Center as the book of record for owned shops, with third party tools used for competitive context only. Attribution in third party tools lags on recent windows and converges with older ones, so a figure pulled on Monday for last week will not match the same figure pulled a month later.</p>
+
+  <h4>Discount third party efficiency estimates</h4>
+  <p>We have tested the widely used third party TikTok Shop estimators against Seller Center figures. They overstate ad efficiency by roughly 2.6x to 3.8x, because they capture around sixty percent of video attributed ad revenue and miss product card revenue entirely. Anyone pulling a competitive ROAS figure into a Mars deck should divide it by about three before treating it as real. Competitive lookbacks are also capped, commonly at 180 days, which constrains any year over year competitive read.</p>
+
+  <h4>Treat TikTok Shop GMV as a floor</h4>
+  <p>In app attribution is last click within a short window. It cannot see the TikTok video that sent someone to a Target aisle or a Walmart basket, which for Snacking is most of the commercial effect. TikTok Shop GMV understates the total commercial effect, and the halo belongs in MMM. Slide 14 makes the same argument about plugging the framework in.</p>
+</section>
+
+<section>
+  <p class="snum">07 / Next</p>
+  <h2>What we would need to build this out</h2>
+  <ul>
+    <li>Seller Center report access or scheduled exports for the Snacking shops in scope, including the affiliate and sample modules.</li>
+    <li>Confirmation of which shops are live and which are in test, so benchmarks are not set on ramp period data.</li>
+    <li>A decision on the benchmark window for indexing. We suggest trailing 90 days per shop and category, refreshed quarterly.</li>
+    <li>A decision on system of record before the first cross channel roll-up rather than after it.</li>
+  </ul>
+  <p>With those in place we can produce a worked Commerce Quality Score against a live Snacking shop and a sample campaign report in the four number format, so your measurement leads can see the output before committing the framework to it.</p>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Prepared by Third for Mars Snacking measurement leads. Written against the PRSI Snacking KPIs and Measurement Framework, updated May 2026, and against TikTok Shop Seller Center reporting as available August 2026. Platform reporting changes frequently, and metric availability should be re-confirmed before the framework is locked.</p>
+    <div class="fmeta">Third / Strategy Doc / Mars Snacking PRSI x TikTok Shop / August 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
