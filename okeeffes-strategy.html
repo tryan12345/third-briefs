@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O'Keeffe's | TikTok Shop Launch Strategy | Third</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tomato:#FF5A3E;
+    --ink:#14110F;
+    --body:#3A3532;
+    --rule:#E4DFDB;
+    --paper:#FFFDFB;
+    --wash:#F7F3EF;
+    --c1:#FF5A3E; --c2:#F2913A; --c3:#E8C547; --c4:#7FA650; --c5:#3F8F7C;
+    --c6:#2E6F9E; --c7:#4B4E8C; --c8:#8B4A76; --c9:#2B2523;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);
+       font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+       font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  .strip{display:flex;height:6px}
+  .strip span{flex:1}
+  .hero{background:var(--tomato);color:#fff;padding:56px 40px 48px}
+  .hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;
+                text-transform:uppercase;opacity:.9;margin:0 0 18px}
+  .hero h1{margin:0;font-size:44px;line-height:1.1;font-weight:700;letter-spacing:-.02em;max-width:19ch}
+  .hero .sub{margin:18px 0 0;font-size:18.5px;font-weight:400;opacity:.95;max-width:56ch}
+  .hero .meta{margin-top:30px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;
+              letter-spacing:.04em;opacity:.92}
+  main{max-width:940px;margin:0 auto;padding:0 40px 90px}
+  section{padding-top:52px}
+  h2{font-size:13px;font-family:'IBM Plex Mono',monospace;letter-spacing:.15em;text-transform:uppercase;
+     color:var(--tomato);margin:0 0 6px;font-weight:600}
+  h2 + .h2sub{font-size:29px;color:var(--ink);font-weight:700;letter-spacing:-.015em;
+              margin:0 0 22px;line-height:1.22}
+  h3{font-size:19px;color:var(--ink);font-weight:600;margin:34px 0 10px;letter-spacing:-.01em}
+  p{margin:0 0 15px}
+  .lede{font-size:18.5px;color:var(--ink)}
+  ul{margin:0 0 16px;padding-left:20px}
+  li{margin-bottom:8px}
+  .rule{height:1px;background:var(--rule);margin-top:52px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);
+         border:1px solid var(--rule);margin:26px 0}
+  .stat{background:var(--paper);padding:20px 18px}
+  .stat .n{font-family:'IBM Plex Mono',monospace;font-size:27px;font-weight:600;color:var(--ink);
+           letter-spacing:-.02em;line-height:1.1}
+  .stat .l{font-size:12.5px;color:var(--body);margin-top:7px;line-height:1.4}
+  table{width:100%;border-collapse:collapse;margin:22px 0;font-size:14.5px}
+  th{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;
+     text-transform:uppercase;color:var(--body);border-bottom:2px solid var(--ink);
+     padding:0 12px 9px 0;font-weight:600;vertical-align:bottom}
+  td{padding:12px 12px 12px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+  td.num{font-family:'IBM Plex Mono',monospace;white-space:nowrap;color:var(--ink)}
+  tr.hl td{background:#FFF3F0}
+  .callout{border-left:3px solid var(--tomato);background:var(--wash);padding:18px 22px;margin:24px 0}
+  .callout p:last-child{margin-bottom:0}
+  .callout .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;
+                text-transform:uppercase;color:var(--tomato);font-weight:600;display:block;margin-bottom:7px}
+  .flag{border:1px solid var(--rule);border-top:3px solid var(--c2);padding:18px 22px;margin:24px 0;
+        background:var(--paper)}
+  .flag .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;
+             text-transform:uppercase;color:var(--c2);font-weight:600;display:block;margin-bottom:7px}
+  .flag p:last-child{margin-bottom:0}
+  ol.steps{padding-left:0;list-style:none;counter-reset:s;margin:22px 0}
+  ol.steps li{counter-increment:s;padding-left:44px;position:relative;margin-bottom:17px}
+  ol.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:1px;
+       font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:var(--tomato)}
+  ol.steps b{color:var(--ink)}
+  footer{border-top:1px solid var(--rule);margin-top:20px;padding:30px 40px 46px;
+         max-width:940px;margin-left:auto;margin-right:auto;
+         font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A827D;letter-spacing:.03em}
+  footer .companions{margin-top:9px;color:#A39A94}
+  @media(max-width:720px){
+    .hero{padding:40px 22px 36px}.hero h1{font-size:32px}
+    main{padding:0 22px 60px}.stats{grid-template-columns:repeat(2,1fr)}
+    h2 + .h2sub{font-size:24px}footer{padding:26px 22px 40px}
+    table{font-size:13px}
+  }
+</style>
+</head>
+<body>
+
+<div class="strip">
+  <span style="background:var(--c1)"></span><span style="background:var(--c2)"></span>
+  <span style="background:var(--c3)"></span><span style="background:var(--c4)"></span>
+  <span style="background:var(--c5)"></span><span style="background:var(--c6)"></span>
+  <span style="background:var(--c7)"></span><span style="background:var(--c8)"></span>
+  <span style="background:var(--c9)"></span>
+</div>
+
+<div class="hero">
+  <p class="kicker">Third &middot; Strategy Document</p>
+  <h1>O'Keeffe's TikTok Shop Launch</h1>
+  <p class="sub">Category read, competitor models, affiliate strategy, and the grey market position we inherit on day one.</p>
+  <p class="meta">Prepared September 3, 2026 &nbsp;·&nbsp; Data window Aug 4 – Sep 3, 2026 &nbsp;·&nbsp; Source: Cruva social intelligence</p>
+</div>
+
+<main>
+
+<section>
+  <h2>Section 01</h2>
+  <p class="h2sub">The situation we are walking into</p>
+
+  <p class="lede">O'Keeffe's has no shop on TikTok. It has 141 product listings. Every one of them belongs to somebody else.</p>
+
+  <p>Resellers have been listing Working Hands and Healthy Feet on TikTok Shop since at least January 2024. None of them have built anything. The largest single listing has moved 29 units in its lifetime, worth $554. The top ten grey listings combined have done roughly $1,900 in total GMV across two and a half years.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">141</div><div class="l">Unauthorized O'Keeffe's listings live on TikTok Shop</div></div>
+    <div class="stat"><div class="n">$0</div><div class="l">Brand-controlled GMV in the last 30 days</div></div>
+    <div class="stat"><div class="n">$10.80&ndash;$67.62</div><div class="l">Price range resellers charge for the same product</div></div>
+    <div class="stat"><div class="n">5&ndash;16.5%</div><div class="l">Commission rates set by resellers, not by the brand</div></div>
+  </div>
+
+  <h3>What the grey listings are actually doing to the brand</h3>
+  <p>The revenue leakage is trivial. The brand damage is not. A shopper searching Working Hands on TikTok today gets a scattered set of results with no consistent price, no consistent image, and no brand account behind any of them.</p>
+  <ul>
+    <li><b>Pricing is incoherent.</b> The 3.4 oz jar is listed at $5.99, $11.10, $14.65, $17.99, and $27.22 depending on which reseller a shopper lands on. One listing prices a single jar at $67.62.</li>
+    <li><b>Products are in the wrong categories.</b> At least two listings sit under Health &gt; Alternative Medications &gt; Essential Oils for Aromatherapy. They will never surface in a hand care search.</li>
+    <li><b>Ratings are unmanaged.</b> Several listings carry a 0 rating. The highest-volume one carries a 4.</li>
+    <li><b>At least one seller is evading enforcement by misspelling.</b> A Healthy Feet listing is titled "Oft.Keeffes 360201 Healthy Feet Creme 3.2oz. Jar." That is a deliberate workaround, and it tells us brand protection has never been enforced on this channel.</li>
+  </ul>
+
+  <div class="callout">
+    <span class="tag">Read on this</span>
+    <p>The grey market is wide and shallow. That is good news. No reseller has built a creator network, a review base, or search authority on O'Keeffe's, so there is nothing entrenched to displace. Cleanup is a housekeeping exercise, not a fight. We should still run it before launch, because a clean SERP is worth more than the $1,900 it removes.</p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>Section 02</h2>
+  <p class="h2sub">The category</p>
+
+  <p>Hand &amp; Foot Care on TikTok Shop US did roughly $550K across the top 25 products in the last 30 days. That is a mid-size category. It is not a hair care or a supplements category, and we should set the client's expectations accordingly.</p>
+
+  <p>The money splits into three groups that behave nothing alike.</p>
+
+  <h3>Group one: hand sanitizer, which is really licensing</h3>
+  <p>Touchland owns the top of the category and does it through licensed collaborations. The Crocs bundle did $64,321 on 59,091 units. The Peanuts collaboration did $46,954 on 34,412 units. There is a Disney Minnie Mouse set doing $14,390. This group is irrelevant to O'Keeffe's as a competitive set, but it matters for one reason: it inflates the category totals and makes Hand &amp; Foot Care look larger than the treatment segment actually is.</p>
+
+  <h3>Group two: foot treatment, where transformation content lives</h3>
+  <p>CornStick, a salicylic acid corn and callus remover, did $60,484 on 4,111 units at $22.47. PLANTIFIQUE's foot peel mask did $23,439. BAREN's shea butter heel patch did $30,386 on 7,732 units at $3.93. YECUCE's 40% urea foot cream did $10,813. DRMTLGY's foot cream did $8,337.</p>
+  <p>This group sells on visible before and after. Cracked heels, calluses, dead skin coming off. It is the ugliest content in beauty and it is the highest reach content in the category.</p>
+
+  <h3>Group three: hand cream, where the story is anti-aging</h3>
+  <p>The hand creams that sell on TikTok are not sold as repair. They are sold as anti-aging. LIVAURA's Retinol Anti-Aging Hand Cream did $30,792 at $29.99. DRMTLGY's Concentrated Hand Cream did $31,424, though at $5.30 that is a volume and traffic play more than an affiliate one. ROZINO's Sake Lees Hand Mask did $14,092 at $31.49. L'Occitane's Shea Butter Hand Cream did $9,588 at $34.</p>
+
+  <div class="callout">
+    <span class="tag">The gap</span>
+    <p>Nobody in the top 25 is selling a hand cream on cracked, working, damaged hands. The whole hand segment has converged on retinol, aging, and cuticles, aimed at women. O'Keeffe's owns the repair claim in retail and has no competitor holding it here. That is the clearest white space in the category.</p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>Section 03</h2>
+  <p class="h2sub">Three competitor models, and which one we should copy</p>
+
+  <p>We pulled video-level performance on the three products that best represent the strategies available to O'Keeffe's. They produce very different economics.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:26%">Product</th>
+        <th style="width:14%">Creators</th>
+        <th style="width:15%">30-day GMV</th>
+        <th style="width:15%">GMV per creator</th>
+        <th style="width:15%">Typical views</th>
+        <th style="width:15%">GMV per 1K views</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hl">
+        <td><b>CornStick</b><br>Corn &amp; callus remover, $22.47</td>
+        <td class="num">11</td>
+        <td class="num">$60,484</td>
+        <td class="num">$5,498</td>
+        <td class="num">95K&ndash;1.3M</td>
+        <td class="num">$3.37&ndash;$5.76</td>
+      </tr>
+      <tr>
+        <td><b>LIVAURA Retinol</b><br>Anti-aging hand cream, $29.99</td>
+        <td class="num">796</td>
+        <td class="num">$30,792</td>
+        <td class="num">$39</td>
+        <td class="num">13K&ndash;60K</td>
+        <td class="num">$10.76&ndash;$12.84</td>
+      </tr>
+      <tr>
+        <td><b>L'Occitane</b><br>Shea butter hand cream, $34.00</td>
+        <td class="num">599</td>
+        <td class="num">$9,588</td>
+        <td class="num">$16</td>
+        <td class="num">3K&ndash;8K</td>
+        <td class="num">$12.31&ndash;$25.07</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>What each row means</h3>
+
+  <p><b>CornStick is the reach model.</b> Eleven creators. Three of them broke a million views. The top video did $4,376 on 1.3 million views. Per-view efficiency is the worst of the three at $3.37 per thousand, and it does not matter, because the reach is 200 times larger. This is a small set of creators who know how to make a transformation video go wide.</p>
+
+  <p><b>LIVAURA is the volume affiliate model.</b> 796 creators generating $39 each per month. No single video carries the program. The top performer did $2,159 on 200,700 views and everything below it clusters between $270 and $510 on 13K to 60K views. The creator base skews heavily Spanish-language and older. It works, and it takes 800 creators to produce $31K.</p>
+
+  <p><b>L'Occitane is the trap.</b> 599 creators producing $16 each. Videos land at 3,000 to 8,000 views and $102 in GMV, which is three units. Per-view efficiency looks excellent on paper and is meaningless because nobody sees the videos. This is what a legacy retail brand gets when it ships a lot of samples and does not manage reach.</p>
+
+  <div class="flag">
+    <span class="tag">Risk</span>
+    <p>O'Keeffe's is a legacy retail brand about to run a sampling program. Without an explicit reach floor on creator selection, the default outcome is the L'Occitane result. We should build the creator qualification criteria before we open sampling, not after.</p>
+  </div>
+
+  <h3>The recommendation</h3>
+  <p>Lead with Healthy Feet, not Working Hands.</p>
+  <p>Working Hands is the flagship in retail and every instinct on the client side will be to launch with it. The data says the foot product is the better opening move. Foot treatment has the transformation mechanic that produces million-view videos. Hand cream tops out around 60,000 views in this category, and the winning hand cream story is anti-aging, which O'Keeffe's is not positioned to tell.</p>
+  <p>Healthy Feet gives us cracked heels on camera. That is CornStick's playbook and CornStick is doing double LIVAURA's GMV with 1.4% of the creators.</p>
+  <p>Working Hands follows in month two or three, positioned into the repair white space rather than against retinol.</p>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>Section 04</h2>
+  <p class="h2sub">Affiliate strategy</p>
+
+  <h3>Two tiers, built for different jobs</h3>
+
+  <p><b>Tier one, the reach set.</b> Ten to twenty creators who have already proven they can take a foot or skin transformation video past 500,000 views. Names visible in the CornStick data are @momlookwhatifoundd, @juneplum2017, @justbrittneynichole, and @ourlifeafterloss. @ourlifeafterloss posted three CornStick videos in five weeks and cleared $4,995 across them, which is a creator running a product hard rather than posting once. These people get paid product plus a rate. They are not a sampling audience.</p>
+
+  <p><b>Tier two, the volume set.</b> 300 to 600 creators on open sampling with a reach floor. LIVAURA proves the mechanic works and proves the yield is about $39 per creator per month. Budget against that number rather than against a hoped-for average.</p>
+
+  <h3>Audience skew worth knowing before we recruit</h3>
+  <p>The hand cream creator base on TikTok Shop is heavily Spanish-language. Across LIVAURA's top fifteen videos, the majority came from Spanish-language accounts including @rosaumanzor79, @brenda.ge28, @erikamgarcia, @yeseniav60, @vitalnaty77, and @jessimaldonadotv. @rosaumanzor79 alone appears three times in the top twelve.</p>
+  <p>This is not the audience O'Keeffe's talks to in retail, where the brand is aimed at trades, construction, nurses, and mechanics. It is the audience actually buying hand cream on this platform. We should plan for Spanish-language creative from the start rather than treating it as a later expansion.</p>
+
+  <h3>Commission</h3>
+  <p>Grey resellers are currently setting O'Keeffe's commission between 5% and 16.5% with no logic behind it. Category norm for a treatment product at this price point sits in the high teens. We should open at 20% to buy creator attention through the launch window, then step down once the top performer set is identified.</p>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>Section 05</h2>
+  <p class="h2sub">Hooks and creative direction</p>
+
+  <p>Full hook extraction sits in the Informed Creative Brief. The directional read from video performance is below.</p>
+
+  <ul>
+    <li><b>Foot content wins on visible damage.</b> Every CornStick video that broke a million views leads with the problem, not the product. The condition of the foot is the hook.</li>
+    <li><b>Comment volume tracks with reach, not with GMV.</b> @justbrittneynichole's video pulled 10,200 likes and 97 comments on 734,400 views and converted at $5.76 per thousand. @ourlifeafterloss pulled 2,948 likes on 189,200 views and converted at $9.86. The smaller video converted better. Reach and conversion are separate levers and we should brief them separately.</li>
+    <li><b>Hand cream content is demonstration, not transformation.</b> LIVAURA's videos sit in a tight 13K to 60K band regardless of creator. There is no viral ceiling to chase here, so the brief should optimize for consistency and volume.</li>
+    <li><b>Price anchoring matters at $30.</b> LIVAURA at $29.99 and ROZINO at $31.49 both work. DRMTLGY at $5.30 sells six times the units for the same GMV. O'Keeffe's retail price sits below both, which means we have room to bundle rather than discount.</li>
+  </ul>
+
+  <div class="callout">
+    <span class="tag">Bundle note</span>
+    <p>A Working Hands plus Healthy Feet bundle at $28 to $32 puts O'Keeffe's at the category's proven price point and gives creators two demonstrations in one video. Single jars at $8 to $12 will land in the low-attention end of the category where DRMTLGY already has scale.</p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>Section 06</h2>
+  <p class="h2sub">Next steps</p>
+
+  <ol class="steps">
+    <li><b>Brand protection sweep.</b> File takedowns on the 141 grey listings, prioritizing the misspelled evasion listing and the two miscategorized ones. Low revenue impact, high SERP impact.</li>
+    <li><b>Shop setup with Healthy Feet as hero.</b> Correct category assignment under Hand, Foot &amp; Nail Care. Commission at 20% through the launch window.</li>
+    <li><b>Tier one creator outreach.</b> Build the target list from creators with proven 500K-plus transformation videos in foot and skin categories. Ten to twenty names, paid placements.</li>
+    <li><b>Tier two sampling with a reach floor.</b> 300 to 600 creators, qualified on median views rather than follower count, to avoid the L'Occitane outcome.</li>
+    <li><b>Spanish-language creative track.</b> Built into the launch brief rather than added later.</li>
+    <li><b>Informed Creative Brief.</b> Hook extraction from the top 75 videos in foot and hand treatment, plus comment mining on CornStick, PLANTIFIQUE, and LIVAURA.</li>
+  </ol>
+
+  <h3>What we need from the client</h3>
+  <ul>
+    <li>Confirmation on whether Healthy Feet can lead, or whether Working Hands is contractually or strategically locked as the launch SKU.</li>
+    <li>Sample allocation for tier two, and whether the ceiling is 300, 400, or 600 units per month.</li>
+    <li>Retailer conflict picture. O'Keeffe's is deep in Home Depot, Lowe's, and Walmart, and we need to know what pricing floor those relationships impose before we set the bundle price.</li>
+    <li>Brand protection authority. Whether Third can file takedowns directly or whether that routes through their legal team.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  THIRD &middot; O'KEEFFE'S TIKTOK SHOP LAUNCH STRATEGY &middot; SEPTEMBER 2026
+  <div class="companions">Companion documents: Buyer Persona &middot; Commerce Creator Persona &middot; Informed Creative Brief</div>
+</footer>
+
+</body>
+</html>
