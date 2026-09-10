@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strategy &middot; Makeup By Mario &times; TikTok Shop US</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+</style>
+<style>
+.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
+section.alt .companions{background:#fff;}
+.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.companions ul{list-style:none;margin-top:12px;}
+.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
+.companions li:first-child{border-top:none;}
+.companions li b{font-weight:700;color:var(--ink);}
+.hooks{margin-top:22px;display:grid;gap:12px;}
+.hook{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;}
+.hook .rank{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);}
+.hook .quote{font-size:16px;font-weight:700;line-height:1.35;}
+.hook .meta{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.hook .why{margin-top:9px;font-size:14px;color:#333;}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.dodont .panel.do{border-top:6px solid var(--c4);}
+.dodont .panel.dont{border-top:6px solid var(--c8);}
+.quotebox{margin-top:20px;display:grid;gap:10px;}
+.qb{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c5);border-radius:12px;padding:16px 20px;font-size:15px;color:#333;}
+.qb .src{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+.qb.neg{border-left-color:var(--c8);}
+.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--ink);color:#fff;padding:7px 12px;border-radius:6px;}
+.chip.alt2{background:var(--c6);} .chip.alt3{background:var(--c7);} .chip.alt4{background:var(--c4);color:var(--ink);}
+.gate{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;margin-top:12px;border-left:6px solid var(--c5);}
+.gate .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gate h3{margin-top:8px;font-size:17px;}
+.gate p{margin-top:9px;font-size:14px;color:#333;}
+@media(max-width:760px){.dodont{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;gap:8px;}}
+</style>
+
+
+<style>
+.tbl tr.mbm td{background:#FFF1EE;font-weight:700;border-top:2px solid var(--tomato);border-bottom:2px solid var(--tomato);}
+.tbl tr.med td{background:#FAFAF8;font-weight:700;}
+.tbl tr.ex td{color:#9A9A9A;}
+.tbl td.r,.tbl th.r{text-align:right;}
+.tbl.dense td{padding:9px 14px;font-size:13px;}
+.tbl.dense th{padding:11px 14px;}
+.chart{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 20px 14px;}
+.chart svg{width:100%;height:auto;display:block;}
+.legend{display:flex;gap:22px;flex-wrap:wrap;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:7px;vertical-align:-1px;}
+.qlist{list-style:none;margin-top:14px;}
+.qlist li{padding:11px 0;border-top:1px solid #EDEDEA;font-size:15px;color:#333;}
+.qlist li:first-child{border-top:none;}
+.gapgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px;}
+.gap{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;border-left:6px solid var(--tomato);}
+.gap .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gap .gn{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;}
+.gap p{margin-top:8px;font-size:14px;color:#333;}
+@media(max-width:760px){.gapgrid{grid-template-columns:1fr;}}
+</style>
+
+</head>
+<body>
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">THIRD. &middot; Makeup By Mario &middot; Strategy</div>
+    <h1>Makeup By Mario &times; TikTok Shop US</h1>
+    <p class="sub">August closed at $148.6K. That is 32% below July and $55.5K short of the top 50 makeup brands. Creator video output is up about 8x since June. Sales per video are half the category median.</p>
+  </div>
+</div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">01 &middot; The position</div>
+    <h2>The shop sits one place outside the top 50</h2>
+    <p class="lede">Makeup By Mario opened its TikTok Shop on November 6, 2025. It has $3.2M in lifetime GMV, 85,300 units sold and 60 SKUs. On the August ranking of makeup brand shops it would place 51st.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">$148.6K</div><div class="lbl">August GMV, down 32% from $217.2K in July</div></div>
+      <div class="stat"><div class="num">$114</div><div class="lbl">GMV per video in August. Top 50 median is $221</div></div>
+      <div class="stat"><div class="num">0.17%</div><div class="lbl">Share of 28-day GMV from the brand's own account</div></div>
+      <div class="stat"><div class="num">$38.61</div><div class="lbl">Average order value. Top 50 median is $17.70</div></div>
+    </div>
+    <div class="statement">
+      <div class="tag">The finding</div>
+      <p>The program is growing activity and shrinking sales. The gap to the top 50 is conversion per video, plus three channels that sit near zero: the brand account, live and paid.</p>
+      <p class="detail">Mario already posts more videos than the median top 50 brand. If those videos earned the median $221 each, August would have been about $314K.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">02 &middot; Trajectory</div>
+    <h2>More videos every week, fewer sales</h2>
+    <p class="lede">New linked videos rose from 55 in the week of June 13 to 432 in the week of August 29. Weekly GMV fell from $53K to $34K over the same stretch. Total shop GMV divided by new videos dropped from $964 to $79 per video.</p>
+    <div class="chart">
+      <svg viewBox="0 0 900 320" role="img" aria-label="Weekly shop GMV against weekly new linked creator videos, June 13 to September 10, 2026">
+<line x1="64" x2="836" y1="264.0" y2="264.0" stroke="#EDEDEA" stroke-width="1"/>
+<text x="54" y="268.0" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">$0K</text>
+<line x1="64" x2="836" y1="203.0" y2="203.0" stroke="#EDEDEA" stroke-width="1"/>
+<text x="54" y="207.0" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">$100K</text>
+<line x1="64" x2="836" y1="142.0" y2="142.0" stroke="#EDEDEA" stroke-width="1"/>
+<text x="54" y="146.0" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">$200K</text>
+<line x1="64" x2="836" y1="81.0" y2="81.0" stroke="#EDEDEA" stroke-width="1"/>
+<text x="54" y="85.0" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">$300K</text>
+<line x1="64" x2="836" y1="20.0" y2="20.0" stroke="#EDEDEA" stroke-width="1"/>
+<text x="54" y="24.0" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">$400K</text>
+<text x="846" y="268.0" font-family="IBM Plex Mono, monospace" font-size="11" fill="#3A6BFF">0</text>
+<text x="846" y="219.2" font-family="IBM Plex Mono, monospace" font-size="11" fill="#3A6BFF">100</text>
+<text x="846" y="170.4" font-family="IBM Plex Mono, monospace" font-size="11" fill="#3A6BFF">200</text>
+<text x="846" y="121.6" font-family="IBM Plex Mono, monospace" font-size="11" fill="#3A6BFF">300</text>
+<text x="846" y="72.8" font-family="IBM Plex Mono, monospace" font-size="11" fill="#3A6BFF">400</text>
+<text x="846" y="24.0" font-family="IBM Plex Mono, monospace" font-size="11" fill="#3A6BFF">500</text>
+<rect x="76.5" y="231.7" width="34.4" height="32.3" fill="#111111" rx="3"/>
+<text x="93.7" y="224.7" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#111">$53K</text>
+<text x="93.7" y="284" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Jun 13</text>
+<rect x="135.9" y="203.6" width="34.4" height="60.4" fill="#111111" rx="3"/>
+<text x="153.1" y="196.6" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#111">$99K</text>
+<text x="153.1" y="284" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Jun 20</text>
+<rect x="195.2" y="33.3" width="34.4" height="230.7" fill="#FF5A3E" rx="3"/>
+<text x="212.5" y="26.3" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#111">$378K</text>
+<text x="212.5" y="284" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Jun 27</text>
+<rect x="254.6" y="230.2" width="34.4" height="33.8" fill="#111111" rx="3"/>
+<text x="271.8" y="223.2" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#111">$55K</text>
+<text x="271.8" y="284" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Jul 4</text>
+<rect x="314.0" y="238.0" width="34.4" height="26.0" fill="#111111" rx="3"/>
+<text x="331.2" y="231.0" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#111">$43K</text>
+<text x="331.2" y="284" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Jul 11</text>
+<rect x="373.4" y="237.1" width="34.4" height="26.9" fill="#111111" rx="3"/>
+<text x="390.6" y="230.1" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#111">$44K</text>
+<text x="390.6" y="284" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Jul 18</text>
+<rect x="432.8" y="239.2" width="34.4" height="24.8" fill="#111111" rx="3"/>
+<text x="450.0" y="232.2" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#111">$41K</text>
+<text x="450.0" y="284" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Jul 25</text>
+<rect x="492.2" y="248.0" width="34.4" height="16.0" fill="#111111" rx="3"/>
+<text x="509.4" y="241.0" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#111">$26K</text>
+<text x="509.4" y="284" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Aug 1</text>
+<rect x="551.5" y="242.9" width="34.4" height="21.1" fill="#111111" rx="3"/>
+<text x="568.8" y="235.9" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#111">$35K</text>
+<text x="568.8" y="284" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Aug 8</text>
+<rect x="610.9" y="241.6" width="34.4" height="22.4" fill="#111111" rx="3"/>
+<text x="628.2" y="234.6" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#111">$37K</text>
+<text x="628.2" y="284" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Aug 15</text>
+<rect x="670.3" y="242.1" width="34.4" height="21.9" fill="#111111" rx="3"/>
+<text x="687.5" y="235.1" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#111">$36K</text>
+<text x="687.5" y="284" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Aug 22</text>
+<rect x="729.7" y="243.3" width="34.4" height="20.7" fill="#111111" rx="3"/>
+<text x="746.9" y="236.3" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#111">$34K</text>
+<text x="746.9" y="284" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Aug 29</text>
+<rect x="789.1" y="247.6" width="34.4" height="16.4" fill="#111111" rx="3"/>
+<text x="806.3" y="240.6" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#111">$27K</text>
+<text x="806.3" y="284" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Sep 5</text>
+<polyline fill="none" stroke="#3A6BFF" stroke-width="3" stroke-linejoin="round" points="93.7,237.2 153.1,213.7 212.5,177.6 271.8,184.9 331.2,140.0 390.6,94.2 450.0,152.2 509.4,193.2 568.8,168.4 628.2,133.2 687.5,82.0 746.9,53.2 806.3,143.5"/>
+<circle cx="93.7" cy="237.2" r="4.5" fill="#fff" stroke="#3A6BFF" stroke-width="2.5"/>
+<circle cx="153.1" cy="213.7" r="4.5" fill="#fff" stroke="#3A6BFF" stroke-width="2.5"/>
+<circle cx="212.5" cy="177.6" r="4.5" fill="#fff" stroke="#3A6BFF" stroke-width="2.5"/>
+<circle cx="271.8" cy="184.9" r="4.5" fill="#fff" stroke="#3A6BFF" stroke-width="2.5"/>
+<circle cx="331.2" cy="140.0" r="4.5" fill="#fff" stroke="#3A6BFF" stroke-width="2.5"/>
+<circle cx="390.6" cy="94.2" r="4.5" fill="#fff" stroke="#3A6BFF" stroke-width="2.5"/>
+<circle cx="450.0" cy="152.2" r="4.5" fill="#fff" stroke="#3A6BFF" stroke-width="2.5"/>
+<circle cx="509.4" cy="193.2" r="4.5" fill="#fff" stroke="#3A6BFF" stroke-width="2.5"/>
+<circle cx="568.8" cy="168.4" r="4.5" fill="#fff" stroke="#3A6BFF" stroke-width="2.5"/>
+<circle cx="628.2" cy="133.2" r="4.5" fill="#fff" stroke="#3A6BFF" stroke-width="2.5"/>
+<circle cx="687.5" cy="82.0" r="4.5" fill="#fff" stroke="#3A6BFF" stroke-width="2.5"/>
+<circle cx="746.9" cy="53.2" r="4.5" fill="#fff" stroke="#3A6BFF" stroke-width="2.5"/>
+<circle cx="806.3" cy="143.5" r="4.5" fill="#fff" stroke="#3A6BFF" stroke-width="2.5"/>
+<text x="64" y="312" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Week starting. Sep 5 is a six-day week.</text>
+</svg>
+      <div class="legend"><span><i style="background:#111"></i>Weekly shop GMV</span><span><i style="background:#FF5A3E"></i>Deals For You Days week</span><span><i style="background:#3A6BFF"></i>New linked videos per week (right axis)</span></div>
+    </div>
+    <p class="body-p">Deals For You Days ran June 26 to 29 and produced $380K in four days. That is 42% of all GMV in the last 90 days, and June 28 alone did $171.9K. Outside that event the shop averaged about $8.0K a day in June, $4.8K a day in August and $4.6K a day so far in September.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">03 &middot; Diagnosis</div>
+    <h2>What is working and what is not</h2>
+    <div class="twocol">
+      <div class="panel trig">
+        <h3>Working</h3>
+        <ul>
+          <li><b>Buyers search for the brand.</b> Product card sales (search and shop page) were 50% of GMV in the last 28 days.</li>
+          <li><b>There is a clear hero.</b> Enhance &amp; Pop Duo has $779K in lifetime GMV.</li>
+          <li><b>There is an entry product.</b> Lip Lift Kit at $20 sold 4,710 units in 90 days.</li>
+          <li><b>Event days convert.</b> Deals For You Days did $380K in four days.</li>
+          <li><b>Premium price holds.</b> AOV is $38.61, about double the top 50 median.</li>
+          <li><b>Active creators post often.</b> 0.66 videos per creator in August against a 0.30 median.</li>
+          <li><b>Mid-tier creators carry sales.</b> Creators with 10K to 50K followers drove 62.5% of affiliate GMV.</li>
+        </ul>
+      </div>
+      <div class="panel obj">
+        <h3>Not working</h3>
+        <ul>
+          <li><b>Conversion per video.</b> $114 against a $221 median. 43 of 49 ranked brands earn more per video.</li>
+          <li><b>The brand account does not sell.</b> @makeupbymario has 2.03M followers. It posted 36 videos in 90 days with zero product links and $0 GMV. The top post did 1.4M plays. Soft Shimmer launch posts pointed to Sephora and makeupbymario.com.</li>
+          <li><b>Live has stalled.</b> 2,271 affiliate lives in 90 days averaged $41 and one unit each. Live fell from 10.3% of GMV over 90 days to 1.5% over 28 days.</li>
+          <li><b>Sales rest on a few creators.</b> Two creators drove 24.8% of 28-day affiliate GMV. The top 10 drove 44.7%.</li>
+          <li><b>Creator fit is loose.</b> Beauty creators are 24% of active creators. 56 home-category creators produced $0.</li>
+          <li><b>Paid is small and below the floor.</b> About $75.4K estimated spend over 90 days and $13.5K in August. Reported ROAS is 4.63. Adjusted for attribution overstatement, real ROI is about 1.5x. The floor is 3x.</li>
+          <li><b>Catalog and ops.</b> Soft Pop Blush Veil went from $58.5K over 90 days to $789 over 28. Creators note Enhance &amp; Pop is back in stock. Shop response rate is 81%.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">04 &middot; Category benchmark</div>
+    <h2>Top 50 makeup brands on TikTok Shop US, August 2026</h2>
+    <p class="lede">GMV and month-over-month change are August makeup category sales for brand shops. Creators, August videos and GMV per video come from one consistent dataset for every brand.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">$375K</div><div class="lbl">Median August GMV across the top 50</div></div>
+      <div class="stat"><div class="num">964</div><div class="lbl">Median August videos. Mario posted 1,424</div></div>
+      <div class="stat"><div class="num">4,026</div><div class="lbl">Median creator roster. Mario has 2,172</div></div>
+      <div class="stat"><div class="num">$221</div><div class="lbl">Median GMV per video. Mario earned $114</div></div>
+    </div>
+    <p class="body-p">Mario is above the median on video volume and below it on roster size and sales per video. Leaders separate on what each video sells. KEYYOU, ELROEL and OKAYLOVE each earned more than $990 per video on fewer than 530 videos. M.A.C nearly doubled month over month at $527 per video.</p>
+    <table class="tbl dense">
+      <tr><th>#</th><th>Brand</th><th class="r">Aug GMV</th><th class="r">MoM</th><th class="r">Creators</th><th class="r">Aug videos</th><th class="r">GMV / video</th></tr>
+      <tr><td class="n">1</td><td>Tarte Cosmetics</td><td class="n r">$6.27M</td><td class="n r">+3%</td><td class="n r">36,469</td><td class="n r">13,455</td><td class="n r">$351</td></tr>
+<tr><td class="n">2</td><td>M.A.C Cosmetics</td><td class="n r">$2.33M</td><td class="n r">+99%</td><td class="n r">7,415</td><td class="n r">4,747</td><td class="n r">$527</td></tr>
+<tr><td class="n">3</td><td>Wonderskin</td><td class="n r">$1.83M</td><td class="n r">+36%</td><td class="n r">14,127</td><td class="n r">6,613</td><td class="n r">$207</td></tr>
+<tr><td class="n">4</td><td>Laka US</td><td class="n r">$1.61M</td><td class="n r">-19%</td><td class="n r">9,852</td><td class="n r">9,153</td><td class="n r">$173</td></tr>
+<tr><td class="n">5</td><td>Missha US</td><td class="n r">$1.50M</td><td class="n r">+1%</td><td class="n r">25,233</td><td class="n r">5,621</td><td class="n r">$94</td></tr>
+<tr><td class="n">6</td><td>ONE SIZE Beauty</td><td class="n r">$1.39M</td><td class="n r">-21%</td><td class="n r">5,895</td><td class="n r">4,014</td><td class="n r">$199</td></tr>
+<tr><td class="n">7</td><td>Laura Geller Beauty</td><td class="n r">$1.29M</td><td class="n r">+12%</td><td class="n r">12,201</td><td class="n r">4,525</td><td class="n r">$167</td></tr>
+<tr><td class="n">8</td><td>Clinique</td><td class="n r">$1.26M</td><td class="n r">+15%</td><td class="n r">6,451</td><td class="n r">3,924</td><td class="n r">$320</td></tr>
+<tr><td class="n">9</td><td>e.l.f. Cosmetics</td><td class="n r">$802K</td><td class="n r">-47%</td><td class="n r">20,683</td><td class="n r">6,937</td><td class="n r">$255</td></tr>
+<tr><td class="n">10</td><td>Cofier Lashes</td><td class="n r">$725K</td><td class="n r">+4%</td><td class="n r">3,127</td><td class="n r">1,717</td><td class="n r">$118</td></tr>
+<tr><td class="n">11</td><td>Goddvenus Lashes</td><td class="n r">$717K</td><td class="n r">-12%</td><td class="n r">1,289</td><td class="n r">810</td><td class="n r">$526</td></tr>
+<tr><td class="n">12</td><td>KEYYOU</td><td class="n r">$694K</td><td class="n r">-15%</td><td class="n r">1,735</td><td class="n r">527</td><td class="n r">$992</td></tr>
+<tr><td class="n">13</td><td>Maybelline NY</td><td class="n r">$667K</td><td class="n r">-32%</td><td class="n r">16,655</td><td class="n r">2,777</td><td class="n r">$188</td></tr>
+<tr><td class="n">14</td><td>LYS Beauty</td><td class="n r">$660K</td><td class="n r">+23%</td><td class="n r">5,457</td><td class="n r">1,702</td><td class="n r">$184</td></tr>
+<tr><td class="n">15</td><td>Timephoria</td><td class="n r">$647K</td><td class="n r">+25%</td><td class="n r">1,795</td><td class="n r">926</td><td class="n r">$614</td></tr>
+<tr><td class="n">16</td><td>YouLuck Beauty</td><td class="n r">$622K</td><td class="n r">-8%</td><td class="n r">2,037</td><td class="n r">239</td><td class="n r">$570</td></tr>
+<tr><td class="n">17</td><td>Kulfi Beauty</td><td class="n r">$555K</td><td class="n r">+9%</td><td class="n r">2,944</td><td class="n r">1,646</td><td class="n r">$266</td></tr>
+<tr><td class="n">18</td><td>TIRTIR</td><td class="n r">$538K</td><td class="n r">-33%</td><td class="n r">13,657</td><td class="n r">1,355</td><td class="n r">$134</td></tr>
+<tr><td class="n">19</td><td>Glamlite</td><td class="n r">$531K</td><td class="n r">-39%</td><td class="n r">2,553</td><td class="n r">1,372</td><td class="n r">$241</td></tr>
+<tr><td class="n">20</td><td>KCTAN Studio</td><td class="n r">$476K</td><td class="n r">+12%</td><td class="n r">7,424</td><td class="n r">1,406</td><td class="n r">$174</td></tr>
+<tr><td class="n">21</td><td>L'Oreal Paris</td><td class="n r">$469K</td><td class="n r">-17%</td><td class="n r">12,859</td><td class="n r">3,037</td><td class="n r">$220</td></tr>
+<tr><td class="n">22</td><td>Carslan</td><td class="n r">$456K</td><td class="n r">-24%</td><td class="n r">3,914</td><td class="n r">841</td><td class="n r">$394</td></tr>
+<tr><td class="n">23</td><td>Too Faced</td><td class="n r">$395K</td><td class="n r">+12%</td><td class="n r">8,109</td><td class="n r">1,649</td><td class="n r">$182</td></tr>
+<tr><td class="n">24</td><td>Westmore Beauty</td><td class="n r">$388K</td><td class="n r">-38%</td><td class="n r">6,383</td><td class="n r">874</td><td class="n r">$356</td></tr>
+<tr><td class="n">25</td><td>ELROEL</td><td class="n r">$376K</td><td class="n r">+88%</td><td class="n r">1,188</td><td class="n r">461</td><td class="n r">$1,403</td></tr>
+<tr><td class="n">26</td><td>OKAYLOVE</td><td class="n r">$374K</td><td class="n r">-6%</td><td class="n r">3,778</td><td class="n r">488</td><td class="n r">$1,025</td></tr>
+<tr class="ex"><td class="n">27</td><td>Hot Star Hair (wig seller, excluded)</td><td class="n r">$367K</td><td class="n r">-14%</td><td class="n r">n/a</td><td class="n r">n/a</td><td class="n r">n/a</td></tr>
+<tr><td class="n">28</td><td>SACHEU Beauty</td><td class="n r">$365K</td><td class="n r">-22%</td><td class="n r">17,197</td><td class="n r">1,910</td><td class="n r">$224</td></tr>
+<tr><td class="n">29</td><td>Clean Skin Club</td><td class="n r">$356K</td><td class="n r">+91%</td><td class="n r">20,265</td><td class="n r">6,731</td><td class="n r">$41</td></tr>
+<tr><td class="n">30</td><td>Kisslily</td><td class="n r">$344K</td><td class="n r">-12%</td><td class="n r">1,023</td><td class="n r">522</td><td class="n r">$593</td></tr>
+<tr><td class="n">31</td><td>Persona Cosmetics</td><td class="n r">$334K</td><td class="n r">+30%</td><td class="n r">2,015</td><td class="n r">515</td><td class="n r">$220</td></tr>
+<tr><td class="n">32</td><td>Judydoll</td><td class="n r">$326K</td><td class="n r">-11%</td><td class="n r">5,246</td><td class="n r">739</td><td class="n r">$268</td></tr>
+<tr><td class="n">33</td><td>WOOW Beauty</td><td class="n r">$320K</td><td class="n r">+4%</td><td class="n r">1,727</td><td class="n r">931</td><td class="n r">$162</td></tr>
+<tr><td class="n">34</td><td>Ninetynine Dreams</td><td class="n r">$311K</td><td class="n r">+188%</td><td class="n r">1,174</td><td class="n r">394</td><td class="n r">$101</td></tr>
+<tr><td class="n">35</td><td>Palladio</td><td class="n r">$295K</td><td class="n r">+120%</td><td class="n r">3,369</td><td class="n r">787</td><td class="n r">$312</td></tr>
+<tr><td class="n">36</td><td>NOONI</td><td class="n r">$284K</td><td class="n r">-31%</td><td class="n r">16,545</td><td class="n r">847</td><td class="n r">$136</td></tr>
+<tr><td class="n">37</td><td>KimChi Chic</td><td class="n r">$263K</td><td class="n r">-11%</td><td class="n r">7,425</td><td class="n r">693</td><td class="n r">$115</td></tr>
+<tr><td class="n">38</td><td>SKINTIFIC</td><td class="n r">$261K</td><td class="n r">-2%</td><td class="n r">9,321</td><td class="n r">4,507</td><td class="n r">$187</td></tr>
+<tr><td class="n">39</td><td>BK Beauty Brushes</td><td class="n r">$254K</td><td class="n r">-35%</td><td class="n r">2,377</td><td class="n r">891</td><td class="n r">$134</td></tr>
+<tr><td class="n">40</td><td>OURBELLA</td><td class="n r">$252K</td><td class="n r">-15%</td><td class="n r">693</td><td class="n r">856</td><td class="n r">$221</td></tr>
+<tr><td class="n">41</td><td>GlowVane Lash</td><td class="n r">$249K</td><td class="n r">-21%</td><td class="n r">184</td><td class="n r">596</td><td class="n r">$207</td></tr>
+<tr><td class="n">42</td><td>HOHADBR</td><td class="n r">$240K</td><td class="n r">+3%</td><td class="n r">2,504</td><td class="n r">326</td><td class="n r">$306</td></tr>
+<tr><td class="n">43</td><td>MilyBest Beauty</td><td class="n r">$237K</td><td class="n r">-28%</td><td class="n r">2,025</td><td class="n r">386</td><td class="n r">$440</td></tr>
+<tr><td class="n">44</td><td>VIOLETTE_FR</td><td class="n r">$235K</td><td class="n r">+137%</td><td class="n r">1,363</td><td class="n r">644</td><td class="n r">$221</td></tr>
+<tr><td class="n">45</td><td>Haus Labs</td><td class="n r">$235K</td><td class="n r">-74%</td><td class="n r">3,576</td><td class="n r">964</td><td class="n r">$329</td></tr>
+<tr><td class="n">46</td><td>Painted</td><td class="n r">$221K</td><td class="n r">-11%</td><td class="n r">1,285</td><td class="n r">563</td><td class="n r">$102</td></tr>
+<tr><td class="n">47</td><td>NYX Professional</td><td class="n r">$218K</td><td class="n r">-42%</td><td class="n r">11,245</td><td class="n r">2,909</td><td class="n r">$111</td></tr>
+<tr><td class="n">48</td><td>Fenty Beauty</td><td class="n r">$214K</td><td class="n r">-33%</td><td class="n r">11,013</td><td class="n r">3,569</td><td class="n r">$232</td></tr>
+<tr><td class="n">49</td><td>Forever Bloom</td><td class="n r">$205K</td><td class="n r">-15%</td><td class="n r">4,026</td><td class="n r">1,251</td><td class="n r">$85</td></tr>
+<tr><td class="n">50</td><td>UCANBE</td><td class="n r">$204K</td><td class="n r">+49%</td><td class="n r">2,508</td><td class="n r">234</td><td class="n r">$360</td></tr>
+<tr class="mbm"><td class="n">51</td><td>Makeup By Mario</td><td class="n r">$149K</td><td class="n r">-32%</td><td class="n r">2,172</td><td class="n r">1,424</td><td class="n r">$114</td></tr>
+<tr class="med"><td class="n"></td><td>Top 50 median</td><td class="n r">$375K</td><td class="n r"></td><td class="n r">4,026</td><td class="n r">964</td><td class="n r">$221</td></tr>
+    </table>
+    <p class="note">Hot Star Hair is a wig seller listed in the makeup category. It is left out of all medians.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">05 &middot; Founder peers</div>
+    <h2>Artist and celebrity-founder brands</h2>
+    <p class="lede">These are Mario's closest comparisons. The median earns $182 per video. Mario ties Jones Road for the lowest in the set.</p>
+    <table class="tbl">
+      <tr><th>Brand</th><th class="r">Aug GMV</th><th class="r">Creators</th><th class="r">Aug videos</th><th class="r">GMV / video</th></tr>
+      <tr><td>M.A.C</td><td class="n r">$2.50M</td><td class="n r">7,415</td><td class="n r">4,747</td><td class="n r">$527</td></tr>
+<tr><td>Rare Beauty</td><td class="n r">$476K</td><td class="n r">1,837</td><td class="n r">1,293</td><td class="n r">$368</td></tr>
+<tr><td>Haus Labs</td><td class="n r">$318K</td><td class="n r">3,576</td><td class="n r">964</td><td class="n r">$329</td></tr>
+<tr><td>Thrive Causemetics</td><td class="n r">$349K</td><td class="n r">2,824</td><td class="n r">1,120</td><td class="n r">$312</td></tr>
+<tr><td>Fenty Beauty</td><td class="n r">$829K</td><td class="n r">11,013</td><td class="n r">3,569</td><td class="n r">$232</td></tr>
+<tr><td>Too Faced</td><td class="n r">$301K</td><td class="n r">8,109</td><td class="n r">1,649</td><td class="n r">$182</td></tr>
+<tr><td>Tower 28</td><td class="n r">$250K</td><td class="n r">5,425</td><td class="n r">1,377</td><td class="n r">$182</td></tr>
+<tr><td>Patrick Ta</td><td class="n r">$521K</td><td class="n r">4,803</td><td class="n r">2,930</td><td class="n r">$178</td></tr>
+<tr><td>Laura Geller</td><td class="n r">$757K</td><td class="n r">12,201</td><td class="n r">4,525</td><td class="n r">$167</td></tr>
+<tr><td>MAKE UP FOR EVER</td><td class="n r">$90K</td><td class="n r">2,849</td><td class="n r">657</td><td class="n r">$137</td></tr>
+<tr><td>Anastasia Beverly Hills</td><td class="n r">$211K</td><td class="n r">7,910</td><td class="n r">1,803</td><td class="n r">$117</td></tr>
+<tr><td>Jones Road</td><td class="n r">$117K</td><td class="n r">1,699</td><td class="n r">1,025</td><td class="n r">$114</td></tr>
+<tr class="mbm"><td>Makeup By Mario</td><td class="n r">$163K</td><td class="n r">2,172</td><td class="n r">1,424</td><td class="n r">$114</td></tr>
+<tr class="med"><td>Peer median (excluding Mario)</td><td class="n r"></td><td class="n r"></td><td class="n r"></td><td class="n r">$182</td></tr>
+    </table>
+    <div class="callout">
+      <div class="ct">Closest analog</div>
+      <p>Patrick Ta is a celebrity makeup artist with a prestige line at Sephora. He did $521K in August on 2,930 videos, 3.2x Mario's GMV. Rare Beauty ran fewer videos than Mario (1,293) and earned 3.2x more per video.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-kicker">06 &middot; The gaps</div>
+    <h2>Where the revenue is sitting</h2>
+    <div class="gapgrid">
+      <div class="gap"><div class="gt">Gap to the top 50</div><div class="gn">+$55.5K / month</div><p>August GMV needed to pass UCANBE at #50 ($204.2K).</p></div>
+      <div class="gap"><div class="gt">Conversion per video</div><div class="gn">$259K to $314K / month</div><p>Mario's August video count at the founder peer median ($182) or top 50 median ($221) per video. No added volume.</p></div>
+      <div class="gap"><div class="gt">Brand account</div><div class="gn">0.17% of GMV</div><p>2.03M followers and no product links. Every post currently sends demand off platform.</p></div>
+      <div class="gap"><div class="gt">Live</div><div class="gn">$41 per session</div><p>Affiliate lives average one unit. There is no brand-hosted live cadence.</p></div>
+      <div class="gap"><div class="gt">Paid</div><div class="gn">~1.5x real ROI</div><p>About $437 a day in August. Below the 3x floor and too small to scale winners.</p></div>
+      <div class="gap"><div class="gt">Creator roster</div><div class="gn">+1,850 creators</div><p>To reach the top 50 median roster. Fit and conversion come first. Size follows.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-kicker">07 &middot; Where Third starts</div>
+    <h2>Required actions, sequenced to Black Friday</h2>
+    <p class="lede">Black Friday and Cyber Monday land in late November. The shop has shown it can do $170K in a day when an event lines up. The plan builds to that window.</p>
+    <div class="phases">
+      <div class="phase"><div class="when">Weeks 1 to 2</div><h3>Reset the roster</h3><p>Map all 4,295 linked creators to the L-tier system on trailing 30-day GMV. Cut non-beauty and zero-sale creators. Protect the top 20 converters with retainers or rate increases. Confirm inventory on Enhance &amp; Pop and Blush Veil. Lift response rate above 81%.</p></div>
+      <div class="phase"><div class="when">Weeks 2 to 4</div><h3>Put the brand account on the shop</h3><p>Link product on @makeupbymario posts. Spark the top affiliate videos through the brand account. Run one live hosted by Mario as a test. This depends on what the Sephora agreement allows.</p></div>
+      <div class="phase"><div class="when">Weeks 3 to 6</div><h3>Rebuild the creative</h3><p>Build the Informed Creative Brief from the top 75 selling videos and 1,500+ buyer comments. Current winners share a pattern: shade swatches with a bundle offer ("choose 2 and save" on Shimmer Shadow Duo), beauty creators with 10K to 50K followers, and over-50 creators. Kat James hit 8.3% engagement.</p></div>
+      <div class="phase"><div class="when">Weeks 4 to 8</div><h3>Rebuild GMVMax against real ROI</h3><p>Measure on adjusted ROI, not reported ROAS. Hold the 3x floor. Fund proven videos and cut the rest. Stop running brand posts as ads without a product link.</p></div>
+      <div class="phase"><div class="when">Weeks 6 to 11</div><h3>Hit the Activation Target</h3><p>Concentrate about 750 videos in the window ahead of Black Friday. Pair them with a TikTok Shop bundle offer. The house benchmark is 25 to 30% off MSRP, subject to Sephora terms. Run vetted affiliate lives and a brand live on event days.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-kicker">08 &middot; For today's meeting</div>
+    <h2>What we need to know</h2>
+    <ul class="qlist">
+      <li>What does the Sephora agreement allow on TikTok Shop pricing, bundles and launch timing? Soft Shimmer went to Sephora first.</li>
+      <li>What does the current partner run today: creators only, or paid and live as well? Who controls GMVMax?</li>
+      <li>What are the monthly sample budget and commission rates?</li>
+      <li>What is the inventory position on Enhance &amp; Pop and Blush Veil?</li>
+      <li>Is Mario available to go live, and how often?</li>
+    </ul>
+    <div class="companions">
+      <div class="ct">Companion documents</div>
+      <ul>
+        <li><b>Buyer Persona</b> &middot; who buys Mario on TikTok Shop, what they pay and what stops the sale.</li>
+        <li><b>Commerce Creator Persona</b> &middot; the creator types that convert Mario's hero SKUs and how to source them.</li>
+        <li><b>Informed Creative Brief</b> &middot; hooks, angles and non-negotiables built from the top 75 videos and buyer comments.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-kicker">09 &middot; Risks and data notes</div>
+    <h2>What could change this read</h2>
+    <div class="risks">
+      <div class="risk"><div class="rt">Sephora channel terms</div><p>Bundles, discounts and launch timing on TikTok Shop may be limited by the retail agreement. The brand account and offer recommendations depend on the answer.</p></div>
+      <div class="risk"><div class="rt">Founder time</div><p>Brand-hosted live works best with Mario on camera. If he is unavailable, a house artist host is the fallback and should be tested before Black Friday.</p></div>
+      <div class="risk"><div class="rt">Source differences</div><p>Marketplace datasets differ. Mario's August GMV reads $148.6K in one and $162.8K in another. Creator counts appear to be totals rather than August-only figures. GMV per video uses one dataset for every brand.</p></div>
+      <div class="risk"><div class="rt">Paid attribution</div><p>Reported ROAS overstates efficiency by roughly 2.6x to 3.8x and misses product card revenue. All ROAS here is divided by three. Real figures need shop-level ad data from the brand.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>THIRD. &middot; Makeup By Mario &middot; Strategy</span>
+    <span>Data: TikTok Shop US marketplace intelligence &middot; August 1 to 31, 2026, and 90 days ending September 10, 2026</span>
+  </div>
+</footer>
+</body>
+</html>
