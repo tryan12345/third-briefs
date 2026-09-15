@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loops Lab · 90-Day Tactical Plan · third.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E;
+  --lime:#A2F09F; --citron:#F4FD8D; --cobalt:#3A87E6; --pink:#F186FF;
+  --plum:#8F0846; --turquoise:#BDEAEA; --lavender:#BAB6FD; --warmgray:#C9CDC6;
+  --ink:#1C1917; --ink-2:#44403C; --muted:#78716C; --faint:#A8A29E;
+  --line:#E7E5E4; --surface:#FFFFFF; --surface-2:#F5F5F4; --page:#FFFFFF;
+  --ok-bg:#D1FAE5; --ok-fg:#047857;
+  --wait-bg:#FEF3C7; --wait-fg:#B45309; --wait-line:#F59E0B;
+  --bad-bg:#FEE2E2; --bad-fg:#B91C1C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+
+/* ---- hero ---- */
+.hero{background:var(--tomato);color:#fff;padding:44px 24px 40px}
+.hero-inner{max-width:760px;margin:0 auto}
+.wordmark{
+  font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:600;font-size:15px;letter-spacing:.06em;color:#fff;margin:0 0 30px;
+}
+.kicker{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(255,255,255,.82);margin:0 0 12px;
+}
+.hero h1{
+  font-family:'Inter',sans-serif;font-weight:800;font-size:42px;line-height:1.04;
+  letter-spacing:-.025em;margin:0;color:#fff;text-wrap:balance;
+}
+.hero .lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.92);max-width:62ch}
+
+/* ---- nine-color strip ---- */
+.strip{display:flex;height:10px;width:100%}
+.strip span{flex:1 1 0}
+.s1{background:var(--lime)}      .s2{background:var(--citron)}
+.s3{background:var(--tomato)}    .s4{background:var(--cobalt)}
+.s5{background:var(--pink)}      .s6{background:var(--plum)}
+.s7{background:var(--turquoise)} .s8{background:var(--lavender)}
+.s9{background:var(--warmgray)}
+
+/* ---- layout ---- */
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+section{margin-top:48px}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--tomato);margin:0 0 14px;
+}
+.card{border:1px solid var(--line);border-radius:4px;padding:26px;margin-bottom:16px;background:var(--surface)}
+.card h2{font-family:'Inter',sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
+.card h3{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted);margin:22px 0 8px;
+}
+.card p{margin:0 0 14px;color:var(--ink-2)}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:15px;color:var(--muted)}
+
+/* ---- metrics in IBM Plex Mono ---- */
+.metric{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.03em;
+  color:var(--tomato);margin:20px 0 10px;
+}
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+/* ---- provisional ---- */
+.provisional{background:var(--wait-bg);border-left:4px solid var(--wait-line);border-radius:2px;padding:20px 22px;margin-bottom:16px}
+.provisional p{color:var(--wait-fg);margin:0;font-size:15px}
+.provisional p + p{margin-top:10px}
+.provisional strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0;max-width:100%}
+table{width:100%;min-width:340px;border-collapse:collapse;font-size:15px;margin:0}
+th{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink);vertical-align:bottom;
+}
+td{padding:13px 10px 13px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:right;font-variant-numeric:tabular-nums;padding-right:0;padding-left:18px;white-space:nowrap;
+}
+td.rank{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--faint);width:26px}
+.hook{color:var(--ink);font-weight:500}
+
+ul{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+
+/* ---- do / don't ---- */
+.do-dont{display:grid;gap:12px;margin-top:14px}
+.do,.dont{border-radius:3px;padding:14px 16px;font-size:15px}
+.do{background:var(--ok-bg);color:var(--ok-fg);border-left:3px solid var(--ok-fg)}
+.dont{background:var(--bad-bg);color:var(--bad-fg);border-left:3px solid var(--bad-fg)}
+.do strong,.dont strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;
+}
+
+/* ---- stat rows ---- */
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-row:last-child{border-bottom:none}
+.stat-row .k{color:var(--muted)}
+.stat-row .v{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+
+/* ---- badges ---- */
+.badge{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:inline-block;border-radius:2px;padding:5px 10px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.b-1{background:var(--tomato);color:#fff}
+.b-2{background:var(--citron);color:var(--ink)}
+.b-3{background:var(--turquoise);color:var(--ink)}
+.b-4{background:var(--lavender);color:var(--ink)}
+
+/* ---- companion + footer ---- */
+.companion{background:var(--surface-2);border-radius:4px;padding:22px 24px;margin-top:40px}
+.companion p{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+.companion a{color:var(--tomato);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:5px 0}
+.companion a:hover{text-decoration:underline}
+footer{max-width:760px;margin:0 auto;padding:40px 24px 64px;font-size:13px;color:var(--faint);line-height:1.5}
+footer p{margin:0 0 6px}
+@media (max-width:520px){
+  .hero{padding:32px 20px 30px}
+  .hero h1{font-size:32px}
+  .metric{font-size:38px}
+  .container{padding:0 20px}
+  .card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-inner">
+    <p class="wordmark">THIRD.</p>
+    <p class="kicker">90-day tactical plan</p>
+    <h1>Loops Lab</h1>
+    <p class="lede">Turning views into GMV. Prepared by Third for Loops Lab, September 15, 2026. Covers October 1 to December 29, 2026. Benchmarks of $15,000, $25,000 and $40,000 against a 2.0x return on paid.</p>
+  </div>
+</div>
+<div class="strip"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span><span class="s7"></span><span class="s8"></span><span class="s9"></span></div>
+<main class="container">
+
+
+
+  <section>
+    <p class="eyebrow">The headline</p>
+    <div class="card">
+      <h2>Loops Lab content converts</h2>
+      <p>When someone watches a Loops Lab video, they buy at a rate that beats the closest comparable product on TikTok Shop.</p>
+      <p class="metric">$67.70</p>
+      <p class="meta">GMV earned per 1,000 views on Loops Lab videos that convert. Stickerbox, a $137.98 kids tech toy launched nine months earlier, earns $24.06 on the same measure.</p>
+      <p style="margin-top:16px">Across the full launch library of 183 videos the figure is $17.03 per 1,000 views. Conversion is not the variable. Total audience is: the shop has reached 68,479 views since launching in July.</p>
+      <p>A single Stickerbox video reached 826,500 views. That is the scale of audience available in this category.</p>
+      <p>This plan does one thing. It scales the audience, raising average views per video and the volume of creator content behind the product. The conversion engine underneath is already performing.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">1. What good looks like</p>
+    <div class="card">
+      <p class="meta">GMV per 1,000 views strips out how big a creator is and asks only whether the people who watched went on to buy.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Product</th><th class="num">Price</th><th class="num">Videos</th><th class="num">GMV / 1K</th></tr></thead>
+        <tbody>
+          <tr><td>Tonies Spidey bundle<br><span class="meta">Licensed IP, ages 3+</span></td><td class="num">$90.99</td><td class="num">Top 10</td><td class="num">$202.14</td></tr>
+          <tr><td>Fat Brain Air Toobz<br><span class="meta">STEM, no IP, ages 3+</span></td><td class="num">$207.94</td><td class="num">Top 10</td><td class="num">$95.02</td></tr>
+          <tr><td><strong>Loops Lab Starter Set</strong><br><span class="meta">Converting videos</span></td><td class="num"><strong>$139.00</strong></td><td class="num"><strong>8</strong></td><td class="num"><strong>$67.70</strong></td></tr>
+          <tr><td>Tonies Ms. Rachel starter<br><span class="meta">Licensed IP, ages 3+</span></td><td class="num">$139.24</td><td class="num">Top 6</td><td class="num">$26.92</td></tr>
+          <tr><td>Stickerbox<br><span class="meta">Kids tech toy, no IP, ages 5+</span></td><td class="num">$137.98</td><td class="num">Top 8</td><td class="num">$24.06</td></tr>
+          <tr><td><strong>Loops Lab Starter Set</strong><br><span class="meta">Full launch library</span></td><td class="num"><strong>$139.00</strong></td><td class="num"><strong>183</strong></td><td class="num"><strong>$17.03</strong></td></tr>
+        </tbody>
+      </table></div>
+      <h3>What this tells us</h3>
+      <p class="meta">The top-10 figures are drawn from the best videos on each product, so they run high by design. They show what a good video does rather than what a shop averages. The two Loops Lab rows are the bookends: $67.70 when content reaches the right audience, $17.03 across the launch library, held down by total view volume rather than by conversion.</p>
+    </div>
+
+    <div class="card">
+      <h2>Stickerbox shows what this product shape can reach</h2>
+      <p class="meta">A $137.98 novelty tech toy for kids, no licensed characters, 15% commission. The same shape of product at almost the same price. It reached $150,263 in the last 28 days, nine months after launch, on 494 creators and 1,254 videos.</p>
+      <div class="tw"><table>
+        <thead><tr><th></th><th class="num">Stickerbox</th><th class="num">Loops Lab</th></tr></thead>
+        <tbody>
+          <tr><td>Price</td><td class="num">$137.98</td><td class="num">$139.00</td></tr>
+          <tr><td>Commission</td><td class="num">15%</td><td class="num">15%</td></tr>
+          <tr><td><strong>GMV / 1K views, converting content</strong></td><td class="num"><strong>$24.06</strong></td><td class="num"><strong>$67.70</strong></td></tr>
+          <tr><td>Linked creators</td><td class="num">494</td><td class="num">78</td></tr>
+          <tr><td>Videos on the hero product</td><td class="num">1,254</td><td class="num">25</td></tr>
+          <tr><td>Months since launch</td><td class="num">9</td><td class="num">2</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:14px">Loops Lab is nearly three times ahead on the metric that is hardest to build, at month two against their month nine. The remaining levers all scale predictably with creator volume.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">2. Four creators have already sold this product shape</p>
+    <div class="card">
+      <p class="meta">The creators who drove Stickerbox are not hypothetical. All four are reachable today and two have already been in contact with Loops Lab.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Creator</th><th class="num">Stickerbox views</th><th class="num">Stickerbox GMV</th><th class="num">GMV / 1K</th></tr></thead>
+        <tbody>
+          <tr><td><strong>@keri_danielle</strong><br><span class="meta">Warm, prior contact with Loops Lab</span></td><td class="num">218,101</td><td class="num">$6,332</td><td class="num">$29.03</td></tr>
+          <tr><td><strong>@michaela_motherhood</strong><br><span class="meta">Warm, prior contact with Loops Lab</span></td><td class="num">133,400</td><td class="num">$4,304</td><td class="num">$32.26</td></tr>
+          <tr><td><strong>@kenzie.mikel</strong><br><span class="meta">Priority creator, ready to approach</span></td><td class="num">210,900</td><td class="num">$4,500</td><td class="num">$21.34</td></tr>
+          <tr><td><strong>@cassieaverytts</strong><br><span class="meta">Priority creator, ready to approach</span></td><td class="num">201,600</td><td class="num">$4,270</td><td class="num">$21.18</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:14px">$19,406 of Stickerbox GMV between them on 764,001 views. Every one is a parent creator posting household demos at a $138 price point. None has yet been sent a Loops Lab sample, which makes this the fastest available move in the plan.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">3. Why views are the only number that matters right now</p>
+    <div class="card">
+      <p class="meta">Hold GMV per 1,000 views flat at the shop average of $17.03 and change nothing except how many people see each video.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Avg views / video</th><th class="num">Videos / mo</th><th class="num">Views / mo</th><th class="num">Monthly GMV</th></tr></thead>
+        <tbody>
+          <tr><td>374 (today)</td><td class="num">183</td><td class="num">68,442</td><td class="num">$1,166</td></tr>
+          <tr><td>374</td><td class="num">449</td><td class="num">167,926</td><td class="num">$2,860</td></tr>
+          <tr><td>1,122 (3x)</td><td class="num">449</td><td class="num">503,778</td><td class="num">$8,579</td></tr>
+          <tr><td><strong>1,496 (4x)</strong></td><td class="num"><strong>562</strong></td><td class="num"><strong>840,752</strong></td><td class="num"><strong>$14,318</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:14px">None of this assumes the creative gets better, the price changes, or commission moves. It assumes only that more of the right people see the videos.</p>
+    </div>
+    <div class="card">
+      <h2>The same model with creator quality improving</h2>
+      <p class="meta">Loops Lab already hits $67.70 on converting content. Lifting the shop average from $17.03 to $30 is still well under what the shop does today on its good videos.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Scenario</th><th class="num">Views / mo</th><th class="num">GMV / 1K</th><th class="num">Monthly GMV</th></tr></thead>
+        <tbody>
+          <tr><td>Launch period</td><td class="num">68,442</td><td class="num">$17.03</td><td class="num">Baseline</td></tr>
+          <tr><td>Month 1, seeding only</td><td class="num">192,000</td><td class="num">$20.00</td><td class="num">$3,840</td></tr>
+          <tr><td>Month 2, seeding + Q4</td><td class="num">816,000</td><td class="num">$25.00</td><td class="num">$25,500</td></tr>
+          <tr><td><strong>Month 3, seeding + Q4</strong></td><td class="num"><strong>1,399,200</strong></td><td class="num"><strong>$30.00</strong></td><td class="num"><strong>$60,865</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:14px">Months 2 and 3 clear their benchmarks on seeding alone. Month 1 is the one that needs paid media alongside it, and that is what the next section covers.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">3b. Month one is the only month at risk</p>
+    <div class="card">
+      <h2>Month one runs before the content library and Q4 demand arrive</h2>
+      <p>To hit the month one benchmark on creator content alone, the shop would need roughly 750,000 views inside 30 days. At the target of 750 views per video that is about 1,000 videos, which needs roughly 890 approved samples in a single month. The budget provides 75.</p>
+      <p>Months 2 and 3 are different. By then a content library exists, average views have moved, and Q4 gifting demand is working in our favour on a kids toy. Seeding carries both.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Month</th><th class="num">Benchmark</th><th class="num">Seeding delivers</th><th class="num">Gap</th><th class="num">Ad spend at 2.0x</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Month 1</strong></td><td class="num">$15,000</td><td class="num">$3,840</td><td class="num"><strong>$11,160</strong></td><td class="num"><strong>$5,580</strong></td></tr>
+          <tr><td>Month 2</td><td class="num">$25,000</td><td class="num">$25,500</td><td class="num">None</td><td class="num">Discretionary</td></tr>
+          <tr><td>Month 3</td><td class="num">$40,000</td><td class="num">$60,865</td><td class="num">None</td><td class="num">Discretionary</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:14px">$5,580 of paid media in month one closes it, deployed against creatives with proven conversion and held to the cost per order ceiling.</p>
+    </div>
+    <div class="card">
+      <h2>The efficiency needed for 2.0x is already proven in test data</h2>
+      <p>A 2.0x return on a $109.76 average order value means cost per order has to stay under $54.88. Test spend during the launch period has already delivered orders well inside that, which is what makes the month one budget worth committing.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Creative</th><th class="num">Cost per order</th><th class="num">Implied ROI</th></tr></thead>
+        <tbody>
+          <tr><td>@barbara.desa unboxing</td><td class="num">$1.00</td><td class="num">109.8x</td></tr>
+          <tr><td>@dreamteamsworld Christmas challenge</td><td class="num">$7.88</td><td class="num">13.9x</td></tr>
+          <tr><td>@somo.mama review</td><td class="num">$23.90</td><td class="num">4.6x</td></tr>
+          <tr><td>@somo.mama demo</td><td class="num">$33.12</td><td class="num">3.3x</td></tr>
+          <tr><td><strong>Ceiling for 2.0x</strong></td><td class="num"><strong>$54.88</strong></td><td class="num"><strong>2.0x</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:14px">Four boosted creatives have already delivered orders inside the ceiling, three of them comfortably. Operating ceiling is set at $45, which holds 2.44x and leaves margin. Spend concentrates on creatives with proven conversion and anything drifting above the ceiling is stopped inside 48 hours.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">4. The sampling plan</p>
+    <div class="card">
+      <h2>The sample engine is working and the plan runs on half the samples</h2>
+      <p>117 approved samples produced 183 videos, which is 1.56 videos per approved sample and ahead of the house benchmark of about 1.5. Creators receiving Loops Lab samples post reliably.</p><p>Sample volume runs at half the original proposal. The content volume comes back through written minimums instead. Contracted creators already deliver between 2 and 6 pieces from a single sample, so moving the average to 3.0 more than recovers the difference.</p>
+      <h3>What changes</h3>
+      <ul>
+        <li>Outreach lists are filtered on platform GMV before follower count. Minimum $25,000 trailing 30 days, which is Third's L3 tier.</li>
+        <li>Every creator is scored on floor views, the lowest view count across their recent in-category videos. Not their best video and not their average, both of which hide a single lucky post.</li>
+        <li>Toys and Hobbies category creators are weighted heavily. They carry 12 of the top 15 priority creators.</li>
+        <li>The four creators who have already sold Stickerbox go out first, in week 1.</li><li>Every sample from month 2 onward carries a written content minimum of 3 pieces.</li><li>Refundable samples get tested, where the creator buys and is reimbursed after posting. The shop currently runs none and it would cut cash exposure materially.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Sample ramp</h2>
+      <div class="tw"><table>
+        <thead><tr><th></th><th class="num">Month 1</th><th class="num">Month 2</th><th class="num">Month 3</th></tr></thead>
+        <tbody>
+          <tr><td>Samples approved</td><td class="num">75</td><td class="num">200</td><td class="num">250</td></tr>
+          <tr><td>Delivered at 85%</td><td class="num">64</td><td class="num">170</td><td class="num">212</td></tr>
+          <tr><td>Videos at 3.0 per delivery</td><td class="num">192</td><td class="num">510</td><td class="num">636</td></tr>
+          <tr><td>Cumulative shop videos</td><td class="num">375</td><td class="num">885</td><td class="num">1,521</td></tr>
+          <tr><td>Target avg views / video</td><td class="num">1,000</td><td class="num">1,600</td><td class="num">2,200</td></tr>
+          <tr><td><strong>Projected GMV</strong></td><td class="num"><strong>$15,000</strong></td><td class="num"><strong>$25,500</strong></td><td class="num"><strong>$60,865</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:14px">Month 1 includes $5,580 of paid media. Months 2 and 3 are seeding only. Delivery rises from 72% to 85% through tighter address confirmation and dispatch tracking. The 3.0 videos per delivery assumes a written content minimum, against 1.56 where no minimum is attached.</p>
+    </div>
+    <div class="card">
+      <h2>Where the creators come from</h2>
+      <div class="tw"><table>
+        <thead><tr><th>Pool</th><th class="num">Count</th></tr></thead>
+        <tbody>
+          <tr><td>Matched in-category creators at L3 and above</td><td class="num">2,842</td></tr>
+          <tr><td>Matched at L2 and above</td><td class="num">8,034</td></tr>
+          <tr><td>Screened and ranked by Third so far</td><td class="num">120</td></tr>
+          <tr><td><strong>Of those, clearing 1,500 average views</strong></td><td class="num"><strong>61</strong></td></tr>
+          <tr><td>Of those, ready to approach</td><td class="num">106</td></tr>
+          <tr><td>Currently linked to the shop</td><td class="num">78</td></tr>
+          <tr><td>Of those, converting today</td><td class="num">9</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:14px">Broad invite campaigns reach volume but return a low yield across any TikTok Shop category. Targeting the matched pool instead lifts both reply rate and average views per video, and the pool is deep enough that outreach is never the constraint.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">5. Ninety days, week by week</p>
+
+    <div class="card">
+      <span class="badge b-1">Weeks 1 to 4</span>
+      <h2 style="margin-top:10px">Fix the catalog and restart outreach</h2>
+      <ul>
+        <li>Consolidate the two Starter Set listings into one. Two listings at $122.30 and $139.00 sitting in different categories split creator attribution and compete in search.</li>
+        <li>Decide whether the hero sits in Educational Toys or Musical Instruments and Accessories. The second grew 15.6% month over month in August against 2.6% for the first.</li>
+        <li>Send samples to @keri_danielle, @michaela_motherhood, @kenzie.mikel and @cassieaverytts in week 1.</li>
+        <li>Work the priority creator shortlist in order. Target 75 approved samples in the month.</li>
+        <li>Deploy $5,580 of paid media across creatives with proven conversion, held to a $45 cost per order ceiling.</li>
+        <li>Every sample ships with a creative brief built from the hooks that have already produced sales on this product.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="badge b-1">Weeks 5 to 8</span>
+      <h2 style="margin-top:10px">Buy reach deliberately</h2>
+      <ul>
+        <li>Seed 7 to 10 creators above 100,000 followers and treat the cost as distribution rather than affiliate commission.</li>
+        <li>Target 200 approved samples in the month, all on written content minimums.</li>
+        <li>Scale paid only against creatives already under $45 per order. Q4 demand should carry seeding on its own from here.</li>
+        <li>Stop any creative drifting above $45 per order within 48 hours. Concentration beats spread at this budget level.</li>
+        <li>Review the age of children appearing in content. The listing says 8 and up and much of the converting content shows preschoolers.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="badge b-1">Weeks 9 to 13</span>
+      <h2 style="margin-top:10px">Scale what cleared</h2>
+      <ul>
+        <li>Target 250 approved samples in the month, all on content minimums.</li>
+        <li>Open GMV Max once the consolidated hero listing clears 50 videos and the shop clears 600, which this ramp reaches in month 2.</li>
+        <li>Hold the $45 cost per order ceiling and scale budget only against creatives already under it.</li>
+        <li>Re-engage every creator from months 1 and 2 who posted and earned views. They are already briefed and are the most efficient volume available.</li>
+      </ul>
+      <p class="meta" style="margin-top:14px">Cold start timelines in this section are Third house assumptions and are under active review.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">6. How we will know it is working</p>
+    <div class="card">
+      <p class="meta">Checked weekly. If average views per video is not moving by week 6, we adjust creator selection rather than waiting for month 3. If cost per order rises above $45, paid pauses that day.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Measure</th><th class="num">Launch period</th><th class="num">Day 30</th><th class="num">Day 60</th><th class="num">Day 90</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Monthly GMV benchmark</strong></td><td class="num">Launch</td><td class="num"><strong>$15,000</strong></td><td class="num"><strong>$25,000</strong></td><td class="num"><strong>$40,000</strong></td></tr>
+          <tr><td><strong>Blended paid ROI</strong></td><td class="num">Test</td><td class="num">2.0x</td><td class="num">2.0x</td><td class="num">2.0x</td></tr>
+          <tr><td>Cost per order</td><td class="num">Test</td><td class="num">Under $45</td><td class="num">Under $45</td><td class="num">Under $45</td></tr>
+          <tr><td>Avg views / video</td><td class="num">374</td><td class="num">1,000</td><td class="num">1,600</td><td class="num">2,200</td></tr>
+          <tr><td>Videos posted / month</td><td class="num">183</td><td class="num">192</td><td class="num">510</td><td class="num">636</td></tr>
+          <tr><td>Videos per approved sample</td><td class="num">1.56</td><td class="num">3.0</td><td class="num">3.0</td><td class="num">3.0</td></tr>
+          <tr><td>Creators converting</td><td class="num">9</td><td class="num">20</td><td class="num">40</td><td class="num">60</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">What we need from Loops Lab</p>
+    <div class="card">
+      <ul>
+        <li>A decision on catalog consolidation. One listing, one price, one category.</li>
+        <li>Landed cost of goods on the Starter Set. At retail, 525 samples is $72,975 and that is not the right number to plan against.</li><li>A decision on refundable samples, where the creator buys and is reimbursed after posting. It would cut cash exposure and the shop runs none today.</li>
+        <li>Monthly sample allocation confirmed against the 75, 200, 250 ramp, and agreement that samples from month 2 carry a written content minimum of 3 pieces.</li>
+        <li>A month one paid media budget of $5,580, held to a $45 cost per order ceiling.</li>
+        <li>A clear answer on the intended age range. If the product is genuinely for 8 to 13, the casting in creator content has to change.</li>
+        <li>Expansion band roadmap, including which are shipping and when, so creators can speak to availability accurately.</li>
+        <li>Permission to re-approach @keri_danielle and @michaela_motherhood directly, including on commercial terms if a flat fee is what closes them.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Risks worth naming</p>
+    <div class="card">
+      <p>Tonies owns this price band with licensed characters. Loops Lab has no character recognition to trade on and that gap does not close with better creative. Stickerbox shows a product without licensed IP can win here, and it took nine months and 494 creators to get there.</p>
+      <p>The product needs an app to work and is sold on screen-free play. This is the objection most likely to stop the parent who came in on the strongest reason to buy, and it cannot be edited out of the content.</p>
+      <p>Sample cost at this ramp is a real cash commitment and the plan does not yet carry confirmed cost of goods.</p>
+      <p>The month one benchmark of $15,000 depends on paid media performing at 2.0x. Four boosted creatives have already delivered orders inside the required cost per order, so the efficiency is evidenced, but month one carries more risk than months 2 and 3 combined because it runs before the content library and Q4 demand are in place.</p><p>Months 2 and 3 lean on Q4 gifting demand, modelled at a 25% and 45% uplift. Those multipliers are an estimate rather than a figure pulled from last year's category data. Strip the uplift out and month 2 lands at $20,400 against a $25,000 benchmark.</p><p>The move from 1.56 to 3.0 videos per sample is the single assumption carrying the reduced sample budget. It depends on content minimums being agreed in writing at the point of sampling. Without them the plan delivers roughly half of what is shown.</p>
+      <p>The $67.70 figure rests on 8 converting videos and 18,676 views. It is real and it is an early sample, and it should firm up as volume builds.</p>
+      <p>Consolidating the two listings will reset review count and sales history on whichever one is retired.</p>
+    </div>
+  </section>
+
+
+<footer>
+  <p>third. Loops Lab 90-day tactical plan. September 15, 2026.</p>
+  <p>Sources: Loops Lab shop performance data, June 16 to September 13, 2026. Third category benchmarking for US Toys and Hobbies, 90 days to September 14, 2026. Third house benchmarks for content velocity, sample funnel conversion and paid media thresholds.</p>
+  <p>GMV figures are gross TikTok-attributed GMV, not net revenue. Creator view averages rest on a small number of recent videos per creator, so creator ordering is directional.</p>
+</footer>
+
+</main>
+</body>
+</html>

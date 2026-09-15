@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loops Lab · Informed Creative Brief · third.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E;
+  --lime:#A2F09F; --citron:#F4FD8D; --cobalt:#3A87E6; --pink:#F186FF;
+  --plum:#8F0846; --turquoise:#BDEAEA; --lavender:#BAB6FD; --warmgray:#C9CDC6;
+  --ink:#1C1917; --ink-2:#44403C; --muted:#78716C; --faint:#A8A29E;
+  --line:#E7E5E4; --surface:#FFFFFF; --surface-2:#F5F5F4; --page:#FFFFFF;
+  --ok-bg:#D1FAE5; --ok-fg:#047857;
+  --wait-bg:#FEF3C7; --wait-fg:#B45309; --wait-line:#F59E0B;
+  --bad-bg:#FEE2E2; --bad-fg:#B91C1C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+
+/* ---- hero ---- */
+.hero{background:var(--tomato);color:#fff;padding:44px 24px 40px}
+.hero-inner{max-width:760px;margin:0 auto}
+.wordmark{
+  font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:600;font-size:15px;letter-spacing:.06em;color:#fff;margin:0 0 30px;
+}
+.kicker{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(255,255,255,.82);margin:0 0 12px;
+}
+.hero h1{
+  font-family:'Inter',sans-serif;font-weight:800;font-size:42px;line-height:1.04;
+  letter-spacing:-.025em;margin:0;color:#fff;text-wrap:balance;
+}
+.hero .lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.92);max-width:62ch}
+
+/* ---- nine-color strip ---- */
+.strip{display:flex;height:10px;width:100%}
+.strip span{flex:1 1 0}
+.s1{background:var(--lime)}      .s2{background:var(--citron)}
+.s3{background:var(--tomato)}    .s4{background:var(--cobalt)}
+.s5{background:var(--pink)}      .s6{background:var(--plum)}
+.s7{background:var(--turquoise)} .s8{background:var(--lavender)}
+.s9{background:var(--warmgray)}
+
+/* ---- layout ---- */
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+section{margin-top:48px}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--tomato);margin:0 0 14px;
+}
+.card{border:1px solid var(--line);border-radius:4px;padding:26px;margin-bottom:16px;background:var(--surface)}
+.card h2{font-family:'Inter',sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
+.card h3{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted);margin:22px 0 8px;
+}
+.card p{margin:0 0 14px;color:var(--ink-2)}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:15px;color:var(--muted)}
+
+/* ---- metrics in IBM Plex Mono ---- */
+.metric{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.03em;
+  color:var(--tomato);margin:20px 0 10px;
+}
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+/* ---- provisional ---- */
+.provisional{background:var(--wait-bg);border-left:4px solid var(--wait-line);border-radius:2px;padding:20px 22px;margin-bottom:16px}
+.provisional p{color:var(--wait-fg);margin:0;font-size:15px}
+.provisional p + p{margin-top:10px}
+.provisional strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0;max-width:100%}
+table{width:100%;min-width:340px;border-collapse:collapse;font-size:15px;margin:0}
+th{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink);vertical-align:bottom;
+}
+td{padding:13px 10px 13px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:right;font-variant-numeric:tabular-nums;padding-right:0;padding-left:18px;white-space:nowrap;
+}
+td.rank{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--faint);width:26px}
+.hook{color:var(--ink);font-weight:500}
+
+ul{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+
+/* ---- do / don't ---- */
+.do-dont{display:grid;gap:12px;margin-top:14px}
+.do,.dont{border-radius:3px;padding:14px 16px;font-size:15px}
+.do{background:var(--ok-bg);color:var(--ok-fg);border-left:3px solid var(--ok-fg)}
+.dont{background:var(--bad-bg);color:var(--bad-fg);border-left:3px solid var(--bad-fg)}
+.do strong,.dont strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;
+}
+
+/* ---- stat rows ---- */
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-row:last-child{border-bottom:none}
+.stat-row .k{color:var(--muted)}
+.stat-row .v{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+
+/* ---- badges ---- */
+.badge{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:inline-block;border-radius:2px;padding:5px 10px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.b-1{background:var(--tomato);color:#fff}
+.b-2{background:var(--citron);color:var(--ink)}
+.b-3{background:var(--turquoise);color:var(--ink)}
+.b-4{background:var(--lavender);color:var(--ink)}
+
+/* ---- companion + footer ---- */
+.companion{background:var(--surface-2);border-radius:4px;padding:22px 24px;margin-top:40px}
+.companion p{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+.companion a{color:var(--tomato);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:5px 0}
+.companion a:hover{text-decoration:underline}
+footer{max-width:760px;margin:0 auto;padding:40px 24px 64px;font-size:13px;color:var(--faint);line-height:1.5}
+footer p{margin:0 0 6px}
+@media (max-width:520px){
+  .hero{padding:32px 20px 30px}
+  .hero h1{font-size:32px}
+  .metric{font-size:38px}
+  .container{padding:0 20px}
+  .card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-inner">
+    <p class="wordmark">THIRD.</p>
+    <p class="kicker">Informed creative brief</p>
+    <h1>Loops Lab</h1>
+    <p class="lede">Loops Lab Starter Set, $139. What converts, what does not, and the exact hooks that have produced sales. September 2026.</p>
+  </div>
+</div>
+<div class="strip"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span><span class="s7"></span><span class="s8"></span><span class="s9"></span></div>
+<main class="container">
+
+
+
+  <div class="provisional">
+    <p><strong>Provisional.</strong> A full Informed Creative Brief runs on 75 top-selling videos and 1,500 or more mined buyer comments. This one ran on the 183 videos posted to the Loops Lab shop between June 16 and September 13, 2026, of which 8 produced a sale, plus 271 comments.</p>
+    <p>The hook ranking in section 3 is built on those 8 selling videos, not on 75. Treat the order as directional and re-version this brief once the shop has more converting content.</p>
+  </div>
+
+  <section>
+    <p class="eyebrow">1. Winning formula</p>
+    <div class="card">
+      <h2>Product on screen inside the first second</h2>
+      <p class="meta">All 8 selling videos had the product visible within 3 seconds. Product screen time on the converting set ran 13 to 59 seconds.</p>
+      <div class="do-dont">
+        <div class="do"><strong>Do</strong>Open on the stage and the figures, already out of the box or coming out of it.</div>
+        <div class="dont"><strong>Don't</strong>Open on your face, a talking-head setup, or a b-roll establishing shot.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Show the music happening, with sound on</h2>
+      <p class="meta">The product only makes sense when a viewer hears figures placed on the stage change the track. Videos that showed the lights and skipped the audio underperformed.</p>
+      <div class="do-dont">
+        <div class="do">
+          <strong>Do</strong>Place a figure, let the sound land, place another, let it build. Tapping changes intensity. Show one tap, then three.
+        </div>
+        <div class="dont"><strong>Don't</strong>Cover the product audio with a trending song. The product audio is what proves it works.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Say what is in the box before you say anything else</h2>
+      <p class="meta">This is the number one buyer question. The highest-scoring review in the set opened by promising exactly that, then walked the box, the stage, the first band, and the app in order.</p>
+      <div class="do-dont">
+        <div class="do"><strong>Do</strong>Name the three things: the stage, the first band, the app.</div>
+        <div class="dont"><strong>Don't</strong>Leave the app for the end or leave it out. Buyers find out anyway and it reads as a hidden catch.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Put a child in frame, in the right age range</h2>
+      <p class="meta">Loops Lab is listed for ages 8 and up. Some converting content so far has featured preschoolers, which reads as too young to a parent shopping for a 10 year old.</p>
+      <div class="do-dont">
+        <div class="do"><strong>Do</strong>Film a kid roughly 8 to 13 actually building a track and reacting to it.</div>
+        <div class="dont"><strong>Don't</strong>Film toddlers, and don't film only hands on a table with no kid at all.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Keep it between 15 and 40 seconds</h2>
+      <p class="meta">Every selling video in the set ran between 13 and 59 seconds of product screen time. The best-converting one was under 25 seconds total.</p>
+      <div class="do-dont">
+        <div class="do"><strong>Do</strong>Cut hard. One hook, one demo build, one reason to buy.</div>
+        <div class="dont"><strong>Don't</strong>Run a full unboxing of every band pack. Save that for a second video.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">2. Content angles</p>
+
+    <div class="card">
+      <span class="badge b-1">Angle 1</span>
+      <h2 style="margin-top:10px">Screen-free creative play that still needs one screen</h2>
+      <p class="meta"><strong>Gap it answers:</strong> the app requirement. Buyers come in wanting a break from tablets and then find out the toy needs a device. Get ahead of it.</p>
+      <p class="meta"><strong>Archetype:</strong> A2, the toy-category specialist parent.</p>
+      <p class="meta"><strong>How to run it:</strong> say plainly that the app runs the sound and then show the kid never touching the phone again. The device sits on the shelf. The play happens on the stage.</p>
+    </div>
+
+    <div class="card">
+      <span class="badge b-1">Angle 2</span>
+      <h2 style="margin-top:10px">The Christmas wish list pick</h2>
+      <p class="meta"><strong>Gap it answers:</strong> gift timing. Three of the eight selling videos carried Christmas or birthday framing in August, months ahead of season.</p>
+      <p class="meta"><strong>Archetype:</strong> A4, the gift-guide operator, with A1 running volume behind it.</p>
+      <p class="meta"><strong>How to run it:</strong> position it as the thing the kid will ask for, not the thing you found. Name the age range out loud so the parent of a 10 year old knows it is for them.</p>
+    </div>
+
+    <div class="card">
+      <span class="badge b-1">Angle 3</span>
+      <h2 style="margin-top:10px">Real music on the first try, no lessons</h2>
+      <p class="meta"><strong>Gap it answers:</strong> the parent who wants a musical kid and has watched a keyboard sit unused for two years.</p>
+      <p class="meta"><strong>Archetype:</strong> A3, the reach parent creator.</p>
+      <p class="meta"><strong>How to run it:</strong> hand it to a kid who has never seen it and film the first ninety seconds. No setup montage. The proof is that it sounds good immediately.</p>
+    </div>
+
+    <div class="card">
+      <span class="badge b-2">Angle 4</span>
+      <h2 style="margin-top:10px">What $139 actually gets you</h2>
+      <p class="meta"><strong>Gap it answers:</strong> price. 120 add-to-cart events produced 20 customers over 90 days. Roughly one in six people who carted it bought it.</p>
+      <p class="meta"><strong>Archetype:</strong> A1, the volume shop-finds operator.</p>
+      <p class="meta"><strong>How to run it:</strong> show the starter set as complete on its own. Mention expansion bands once, at the end, as optional. Leading with the expansion makes the $139 read as a down payment.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">3. Proven opening hooks</p>
+    <div class="card">
+      <p class="meta">Ranked by units sold per 1,000 views across every Loops Lab video that has produced a sale. These are the real lines, not paraphrases.</p>
+      <div class="tw"><table>
+        <thead><tr><th class="rank"></th><th>Hook</th><th class="num">Units / 1K views</th></tr></thead>
+        <tbody>
+          <tr><td class="rank">1</td><td class="hook">They can make and record the music they create.</td><td class="num">2.38</td></tr>
+          <tr><td class="rank">2</td><td class="hook">Merry Christmas, Loopsters! This is the Christmas challenge. Ready?</td><td class="num">1.15</td></tr>
+          <tr><td class="rank">3</td><td class="hook">So Loops Lab just sent me a package!</td><td class="num">1.10</td></tr>
+          <tr><td class="rank">4</td><td class="hook">This is everything that you need to know about the Loops Lab. This is going to be on so many kids' Christmas wish lists this year.</td><td class="num">1.04</td></tr>
+          <tr><td class="rank">5</td><td class="hook">Who else immediately ordered the Loops Lab Starter Set because their kids are obsessed with music!</td><td class="num">0.88</td></tr>
+          <tr><td class="rank">6</td><td class="hook">This is going to be one of the hottest new toys. Grab yours before they're gone!</td><td class="num">0.70</td></tr>
+          <tr><td class="rank">7</td><td class="hook">A new way we're exploring music at home.</td><td class="num">0.61</td></tr>
+          <tr><td class="rank">8</td><td class="hook">Where kids can live out their dream of being a DJ.</td><td class="num">0.11</td></tr>
+        </tbody>
+      </table></div>
+      <h3>What the ranking says</h3>
+      <ul>
+        <li>Hooks that name a concrete outcome the kid gets beat hooks that describe a vibe.</li>
+        <li>Gift and season framing holds three of the top four slots, in August.</li>
+        <li>The DJ and light-show framing is last by a wide margin. The video that ran it took 9,045 views and returned one unit. Do not lead with it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">4. Product cheat sheet</p>
+    <div class="card">
+      <h2>What comes in the box, and what else do I have to buy or download?</h2>
+      <p>This is the number one question buyers ask. Answer it in the first fifteen seconds.</p>
+      <div class="stat-row"><span class="k">Price</span><span class="v">$139.00</span></div>
+      <div class="stat-row"><span class="k">Age range</span><span class="v">8 and up</span></div>
+      <div class="stat-row"><span class="k">In the starter set</span><span class="v">Stage + first band</span></div>
+      <div class="stat-row"><span class="k">Required to play</span><span class="v">Free app on a phone or tablet</span></div>
+      <div class="stat-row"><span class="k">Power</span><span class="v">Stage charges before first use</span></div>
+      <div class="stat-row"><span class="k">Commission</span><span class="v">15% ($20.85 per sale)</span></div>
+      <h3>How it works, in the order to say it</h3>
+      <ul>
+        <li>Install the app, turn on the stage, connect.</li>
+        <li>Each figure is a different instrument or musical role.</li>
+        <li>Place a figure on the stage and it starts playing its part.</li>
+        <li>One tap is light play. Two taps is medium. Three taps makes that figure the lead.</li>
+        <li>Move a figure to a different position at any time and the mix changes.</li>
+        <li>Kids can record what they build.</li>
+      </ul>
+      <h3>Expansion bands, if asked</h3>
+      <p class="meta">Named bands include Lax Funkers, Space Mariners, Dragosonic, Fantasimo, 8-Bit All Stars, Curly Lines and Mountain Jam. Swapping a band changes the whole sound. Mention this once, near the end. The starter set plays on its own.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">5. Objection questions to answer on camera</p>
+    <div class="card">
+      <h2>Answer these out loud. Do not wait for the comments.</h2>
+      <ul>
+        <li>Does it need a screen? Yes, the app runs the sound. Show the phone going down and the kid playing on the stage.</li>
+        <li>What do I get for $139? Say the stage and the first band, and say it plays fully without buying anything else.</li>
+        <li>Will my kid still use it in a month? Show a second session, a different arrangement, or a sibling joining in.</li>
+        <li>Is my kid the right age? Say 8 and up, and show a kid in that range using it.</li>
+        <li>Do I have to keep buying bands? No. Say the expansion is optional and worth it if they get hooked.</li>
+        <li>Does it actually sound good, or does it sound like a toy? Let the audio answer this. Do not talk over it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">6. Specs and logistics</p>
+    <div class="card">
+      <h2>Video specs</h2>
+      <div class="stat-row"><span class="k">Format</span><span class="v">9:16 vertical</span></div>
+      <div class="stat-row"><span class="k">Length</span><span class="v">15 to 40 seconds</span></div>
+      <div class="stat-row"><span class="k">Audio</span><span class="v">Product sound audible, no music bed over the demo</span></div>
+      <div class="stat-row"><span class="k">Product visible by</span><span class="v">0:01</span></div>
+      <div class="stat-row"><span class="k">Lighting</span><span class="v">Bright. The stage lights need contrast to read.</span></div>
+      <div class="stat-row"><span class="k">Captions</span><span class="v">On-screen text carrying the hook</span></div>
+      <h3>Tagging</h3>
+      <ul>
+        <li>Tag the Loops Lab Starter Set product link in the video.</li>
+        <li>Use #LoopsLab plus the relevant seasonal tag.</li>
+        <li>Disclose the partnership. #ad or the TikTok branded content toggle.</li>
+      </ul>
+      <h3>Cadence</h3>
+      <p class="meta">Three pieces minimum per creator, agreed at the point of sampling, delivered over the first three weeks. Creators who post more than once consistently outperform single-post creators on this product. A fourth and fifth piece are encouraged where the first three land well.</p>
+      <h3>Contact</h3>
+      <p class="meta">Questions and sample issues go to your Third account contact.</p>
+    </div>
+  </section>
+
+  <div class="companion">
+    <p>Companion documents</p>
+    <a href="loopslab-buyer-persona.html">Loops Lab Buyer Persona</a>
+    <a href="loopslab-creator-persona.html">Loops Lab Commerce Creator Persona</a>
+  </div>
+
+
+<footer>
+  <p>third. Informed Creative Brief. Loops Lab. September 14, 2026.</p>
+  <p>Sources: Loops Lab shop performance data, 183 videos posted June 16 to September 13, 2026, 8 of which produced a sale, and 271 comments. Product detail and commission from the Loops Lab listing.</p>
+  <p>Hooks ranked by units sold per 1,000 views. GMV figures are gross TikTok-attributed GMV, not net revenue.</p>
+</footer>
+
+</main>
+</body>
+</html>

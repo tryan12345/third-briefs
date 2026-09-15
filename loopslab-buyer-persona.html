@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loops Lab · Buyer Persona · third.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E;
+  --lime:#A2F09F; --citron:#F4FD8D; --cobalt:#3A87E6; --pink:#F186FF;
+  --plum:#8F0846; --turquoise:#BDEAEA; --lavender:#BAB6FD; --warmgray:#C9CDC6;
+  --ink:#1C1917; --ink-2:#44403C; --muted:#78716C; --faint:#A8A29E;
+  --line:#E7E5E4; --surface:#FFFFFF; --surface-2:#F5F5F4; --page:#FFFFFF;
+  --ok-bg:#D1FAE5; --ok-fg:#047857;
+  --wait-bg:#FEF3C7; --wait-fg:#B45309; --wait-line:#F59E0B;
+  --bad-bg:#FEE2E2; --bad-fg:#B91C1C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+
+/* ---- hero ---- */
+.hero{background:var(--tomato);color:#fff;padding:44px 24px 40px}
+.hero-inner{max-width:760px;margin:0 auto}
+.wordmark{
+  font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:600;font-size:15px;letter-spacing:.06em;color:#fff;margin:0 0 30px;
+}
+.kicker{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(255,255,255,.82);margin:0 0 12px;
+}
+.hero h1{
+  font-family:'Inter',sans-serif;font-weight:800;font-size:42px;line-height:1.04;
+  letter-spacing:-.025em;margin:0;color:#fff;text-wrap:balance;
+}
+.hero .lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.92);max-width:62ch}
+
+/* ---- nine-color strip ---- */
+.strip{display:flex;height:10px;width:100%}
+.strip span{flex:1 1 0}
+.s1{background:var(--lime)}      .s2{background:var(--citron)}
+.s3{background:var(--tomato)}    .s4{background:var(--cobalt)}
+.s5{background:var(--pink)}      .s6{background:var(--plum)}
+.s7{background:var(--turquoise)} .s8{background:var(--lavender)}
+.s9{background:var(--warmgray)}
+
+/* ---- layout ---- */
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+section{margin-top:48px}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--tomato);margin:0 0 14px;
+}
+.card{border:1px solid var(--line);border-radius:4px;padding:26px;margin-bottom:16px;background:var(--surface)}
+.card h2{font-family:'Inter',sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
+.card h3{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted);margin:22px 0 8px;
+}
+.card p{margin:0 0 14px;color:var(--ink-2)}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:15px;color:var(--muted)}
+
+/* ---- metrics in IBM Plex Mono ---- */
+.metric{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.03em;
+  color:var(--tomato);margin:20px 0 10px;
+}
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+/* ---- provisional ---- */
+.provisional{background:var(--wait-bg);border-left:4px solid var(--wait-line);border-radius:2px;padding:20px 22px;margin-bottom:16px}
+.provisional p{color:var(--wait-fg);margin:0;font-size:15px}
+.provisional p + p{margin-top:10px}
+.provisional strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0;max-width:100%}
+table{width:100%;min-width:340px;border-collapse:collapse;font-size:15px;margin:0}
+th{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink);vertical-align:bottom;
+}
+td{padding:13px 10px 13px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:right;font-variant-numeric:tabular-nums;padding-right:0;padding-left:18px;white-space:nowrap;
+}
+td.rank{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--faint);width:26px}
+.hook{color:var(--ink);font-weight:500}
+
+ul{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+
+/* ---- do / don't ---- */
+.do-dont{display:grid;gap:12px;margin-top:14px}
+.do,.dont{border-radius:3px;padding:14px 16px;font-size:15px}
+.do{background:var(--ok-bg);color:var(--ok-fg);border-left:3px solid var(--ok-fg)}
+.dont{background:var(--bad-bg);color:var(--bad-fg);border-left:3px solid var(--bad-fg)}
+.do strong,.dont strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;
+}
+
+/* ---- stat rows ---- */
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-row:last-child{border-bottom:none}
+.stat-row .k{color:var(--muted)}
+.stat-row .v{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+
+/* ---- badges ---- */
+.badge{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:inline-block;border-radius:2px;padding:5px 10px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.b-1{background:var(--tomato);color:#fff}
+.b-2{background:var(--citron);color:var(--ink)}
+.b-3{background:var(--turquoise);color:var(--ink)}
+.b-4{background:var(--lavender);color:var(--ink)}
+
+/* ---- companion + footer ---- */
+.companion{background:var(--surface-2);border-radius:4px;padding:22px 24px;margin-top:40px}
+.companion p{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+.companion a{color:var(--tomato);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:5px 0}
+.companion a:hover{text-decoration:underline}
+footer{max-width:760px;margin:0 auto;padding:40px 24px 64px;font-size:13px;color:var(--faint);line-height:1.5}
+footer p{margin:0 0 6px}
+@media (max-width:520px){
+  .hero{padding:32px 20px 30px}
+  .hero h1{font-size:32px}
+  .metric{font-size:38px}
+  .container{padding:0 20px}
+  .card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-inner">
+    <p class="wordmark">THIRD.</p>
+    <p class="kicker">Buyer persona</p>
+    <h1>Loops Lab</h1>
+    <p class="lede">Who buys a $139 music toy on TikTok Shop, what moves them, and what stops them. Built from purchase-side data only. September 2026.</p>
+  </div>
+</div>
+<div class="strip"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span><span class="s7"></span><span class="s8"></span><span class="s9"></span></div>
+<main class="container">
+
+
+
+  <div class="provisional">
+    <p><strong>Provisional.</strong> Third builds a buyer persona on 75 top-selling videos and 1,500 or more mined buyer comments. This one ran on 183 videos posted to the Loops Lab shop between June 16 and September 13, 2026, of which 8 produced a sale, plus 271 comments and 20 recorded customers.</p>
+    <p>The video threshold is met. The comment threshold is not. Triggers and objections below are drawn from a thin comment pool and from the language inside videos that actually converted. Re-pull and re-version this document once the shop passes 1,500 comments.</p>
+  </div>
+
+  <section>
+    <p class="eyebrow">Who they are</p>
+    <div class="card">
+      <p>The buyer is a parent shopping for a child, and in almost every converting video she is the mother filming in her own living room. She is buying an activity that keeps a kid busy without a tablet, not a musical instrument, and she is often buying it early for a birthday or for Christmas.</p>
+      <p>Loops Lab is listed for ages 8 and up. The content that has converted for the shop so far shows much younger children. One selling video features a preschooler in an Elsa dress. Another shows toddlers on a carpet. The stated target is 8 to 13. The buyer being reached is the parent of a 3 to 7 year old.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Purchase triggers, ranked</p>
+    <div class="card">
+      <h2>1. Screen-free creative play</h2>
+      <p class="meta">The single strongest recurring frame across converting content. Buyer-facing language from a selling video: finding creative hands-on activities for kids that do not involve another screen.</p>
+      <h2>2. Gift timing</h2>
+      <p class="meta">Three of the eight selling videos carried Christmas or birthday framing in August, months ahead of the season. The highest-scored hook in the set was a Christmas wish list line.</p>
+      <h2>3. Music with no lessons required</h2>
+      <p class="meta">The buyer wants the child to make something that sounds like real music on the first try. Converting copy leads with the result, not the feature set.</p>
+      <h2>4. Collectibility and expansion</h2>
+      <p class="meta">Swappable band packs read as replay value to the parent and as a collection to the child. Named bands appear on screen in the converting unboxing content.</p>
+      <h2>5. The light show</h2>
+      <p class="meta">Visual novelty holds attention in the first three seconds but does not close the sale on its own. The video built entirely on the light show and the DJ frame did 9,045 views and one unit.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Top objections</p>
+    <div class="card">
+      <h2>The app requirement</h2>
+      <p class="meta">A converting review states it plainly on camera: the only thing you need is a device, because it requires an app to play the music. A product sold on screen-free play needs a screen to work. This is the objection most likely to kill the purchase for the parent who came in on trigger 1.</p>
+      <h2>What do I actually get for $139</h2>
+      <p class="meta">120 add-to-cart events produced 20 customers over 90 days. Roughly one in six people who put it in a cart bought it. The drop is at the point where the shopper is weighing what is in the box against the price.</p>
+      <h2>Does my kid have to buy more to keep playing</h2>
+      <p class="meta">Expansion packs read as value to some parents and as a trap to others. The starter set has to be shown as complete on its own before the expansion is mentioned.</p>
+      <h2>Is this right for my kid's age</h2>
+      <p class="meta">The listing says 8 and up. The content shows preschoolers. A parent of a 10 year old watching a toddler play with it reads the product as too young.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">The number one buyer question</p>
+    <div class="card">
+      <h2>What comes in the box, and what else do I have to buy or download?</h2>
+      <p>Every high-performing piece of content answers this inside the first fifteen seconds. The best-performing review in the set opens by saying it is everything you need to know, then walks the box, the stage, the first band, and the app in order. Content that skips this and goes straight to the light show does not convert.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Price tolerance</p>
+    <div class="card">
+      <p>$139 is a real price band in this category and a thin one. In US Toys &amp; Hobbies for August 2026, the band above $100 held 3,101 products and produced $6.64M in GMV on 37,025 units. That is roughly 1.5% of category units and 14.4% of category GMV.</p>
+      <p>Against the competitive set, the price is credible. It is the brand recognition that is not.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Comparable</th><th class="num">Price</th><th class="num">Comm.</th></tr></thead>
+        <tbody>
+          <tr><td>Tonies Spidey bundle<br><span class="meta">Licensed IP, ages 3+</span></td><td class="num">$90.99</td><td class="num">20%</td></tr>
+          <tr><td>Stickerbox<br><span class="meta">Kids tech toy, no IP, ages 5+</span></td><td class="num">$137.98</td><td class="num">15%</td></tr>
+          <tr><td><strong>Loops Lab Starter Set</strong><br><span class="meta">No licensed IP, ages 8+</span></td><td class="num"><strong>$139.00</strong></td><td class="num"><strong>15%</strong></td></tr>
+          <tr><td>Tonies Ms. Rachel starter set<br><span class="meta">Licensed IP, ages 3+</span></td><td class="num">$139.24</td><td class="num">10%</td></tr>
+          <tr><td>Tonies Pokémon Pikachu set<br><span class="meta">Licensed IP, ages 3+</span></td><td class="num">$141.99</td><td class="num">10%</td></tr>
+          <tr><td>Fat Brain Air Toobz<br><span class="meta">STEM, no IP, ages 3+</span></td><td class="num">$207.94</td><td class="num">5%</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:14px">Loops Lab sits at the same shelf price as a Ms. Rachel Toniebox and asks the buyer to take it on faith. The Tonies products she is comparing against carry characters her child already knows. Stickerbox is the closer read, an unbranded kids tech toy at almost the same price that has found real scale. The price objection is really a brand recognition objection, and content has to close that gap in the first fifteen seconds.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Conversion efficiency against the set</p>
+    <div class="card">
+      <p class="meta">Units sold per 1,000 views across the top converting videos for each product.</p>
+      <div class="stat-row"><span class="k">Tonies Spidey bundle, top 10 organic videos</span><span class="v">1.99</span></div>
+      <div class="stat-row"><span class="k">Fat Brain Air Toobz, top 10 boosted videos</span><span class="v">0.57</span></div>
+      <div class="stat-row"><span class="k">Loops Lab, selling videos</span><span class="v">0.54</span></div>
+      <p style="margin-top:14px">Per view, Loops Lab converts about as well as the $207.94 STEM comparable, from a standing start at month two. The buyer who watches the content buys at a competitive rate for this price band. What limits GMV today is how many of the right buyers see the content at all.</p>
+    </div>
+  </section>
+
+  <div class="companion">
+    <p>Companion documents</p>
+    <a href="loopslab-creator-persona.html">Loops Lab Commerce Creator Persona</a>
+    <a href="brief-loopslab.html">Loops Lab Informed Creative Brief</a>
+  </div>
+
+
+<footer>
+  <p>third. Buyer Persona. Loops Lab. September 14, 2026.</p>
+  <p>Sources: Loops Lab shop performance data, June 16 to September 13, 2026. Third category benchmarking for US Toys and Hobbies, August 2026. Third house benchmarks and diagnostics.</p>
+  <p>GMV figures are gross TikTok-attributed GMV, not net revenue.</p>
+</footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loops Lab · Commerce Creator Persona · third.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E;
+  --lime:#A2F09F; --citron:#F4FD8D; --cobalt:#3A87E6; --pink:#F186FF;
+  --plum:#8F0846; --turquoise:#BDEAEA; --lavender:#BAB6FD; --warmgray:#C9CDC6;
+  --ink:#1C1917; --ink-2:#44403C; --muted:#78716C; --faint:#A8A29E;
+  --line:#E7E5E4; --surface:#FFFFFF; --surface-2:#F5F5F4; --page:#FFFFFF;
+  --ok-bg:#D1FAE5; --ok-fg:#047857;
+  --wait-bg:#FEF3C7; --wait-fg:#B45309; --wait-line:#F59E0B;
+  --bad-bg:#FEE2E2; --bad-fg:#B91C1C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+
+/* ---- hero ---- */
+.hero{background:var(--tomato);color:#fff;padding:44px 24px 40px}
+.hero-inner{max-width:760px;margin:0 auto}
+.wordmark{
+  font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:600;font-size:15px;letter-spacing:.06em;color:#fff;margin:0 0 30px;
+}
+.kicker{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(255,255,255,.82);margin:0 0 12px;
+}
+.hero h1{
+  font-family:'Inter',sans-serif;font-weight:800;font-size:42px;line-height:1.04;
+  letter-spacing:-.025em;margin:0;color:#fff;text-wrap:balance;
+}
+.hero .lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.92);max-width:62ch}
+
+/* ---- nine-color strip ---- */
+.strip{display:flex;height:10px;width:100%}
+.strip span{flex:1 1 0}
+.s1{background:var(--lime)}      .s2{background:var(--citron)}
+.s3{background:var(--tomato)}    .s4{background:var(--cobalt)}
+.s5{background:var(--pink)}      .s6{background:var(--plum)}
+.s7{background:var(--turquoise)} .s8{background:var(--lavender)}
+.s9{background:var(--warmgray)}
+
+/* ---- layout ---- */
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+section{margin-top:48px}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--tomato);margin:0 0 14px;
+}
+.card{border:1px solid var(--line);border-radius:4px;padding:26px;margin-bottom:16px;background:var(--surface)}
+.card h2{font-family:'Inter',sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
+.card h3{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted);margin:22px 0 8px;
+}
+.card p{margin:0 0 14px;color:var(--ink-2)}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:15px;color:var(--muted)}
+
+/* ---- metrics in IBM Plex Mono ---- */
+.metric{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.03em;
+  color:var(--tomato);margin:20px 0 10px;
+}
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+/* ---- provisional ---- */
+.provisional{background:var(--wait-bg);border-left:4px solid var(--wait-line);border-radius:2px;padding:20px 22px;margin-bottom:16px}
+.provisional p{color:var(--wait-fg);margin:0;font-size:15px}
+.provisional p + p{margin-top:10px}
+.provisional strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0;max-width:100%}
+table{width:100%;min-width:340px;border-collapse:collapse;font-size:15px;margin:0}
+th{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink);vertical-align:bottom;
+}
+td{padding:13px 10px 13px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:right;font-variant-numeric:tabular-nums;padding-right:0;padding-left:18px;white-space:nowrap;
+}
+td.rank{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--faint);width:26px}
+.hook{color:var(--ink);font-weight:500}
+
+ul{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+
+/* ---- do / don't ---- */
+.do-dont{display:grid;gap:12px;margin-top:14px}
+.do,.dont{border-radius:3px;padding:14px 16px;font-size:15px}
+.do{background:var(--ok-bg);color:var(--ok-fg);border-left:3px solid var(--ok-fg)}
+.dont{background:var(--bad-bg);color:var(--bad-fg);border-left:3px solid var(--bad-fg)}
+.do strong,.dont strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;
+}
+
+/* ---- stat rows ---- */
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-row:last-child{border-bottom:none}
+.stat-row .k{color:var(--muted)}
+.stat-row .v{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+
+/* ---- badges ---- */
+.badge{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:inline-block;border-radius:2px;padding:5px 10px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.b-1{background:var(--tomato);color:#fff}
+.b-2{background:var(--citron);color:var(--ink)}
+.b-3{background:var(--turquoise);color:var(--ink)}
+.b-4{background:var(--lavender);color:var(--ink)}
+
+/* ---- companion + footer ---- */
+.companion{background:var(--surface-2);border-radius:4px;padding:22px 24px;margin-top:40px}
+.companion p{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+.companion a{color:var(--tomato);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:5px 0}
+.companion a:hover{text-decoration:underline}
+footer{max-width:760px;margin:0 auto;padding:40px 24px 64px;font-size:13px;color:var(--faint);line-height:1.5}
+footer p{margin:0 0 6px}
+@media (max-width:520px){
+  .hero{padding:32px 20px 30px}
+  .hero h1{font-size:32px}
+  .metric{font-size:38px}
+  .container{padding:0 20px}
+  .card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-inner">
+    <p class="wordmark">THIRD.</p>
+    <p class="kicker">Commerce creator persona</p>
+    <h1>Loops Lab</h1>
+    <p class="lede">Which creators actually convert a $139 kids toy, how to tier them, and how many exist. Built from seller-side data only. September 2026.</p>
+  </div>
+</div>
+<div class="strip"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span><span class="s7"></span><span class="s8"></span><span class="s9"></span></div>
+<main class="container">
+
+
+
+  <section>
+    <p class="eyebrow">The pattern</p>
+    <div class="card">
+      <h2>Creators here are worth picking on sales history, not on reach</h2>
+      <p>How much a creator has already sold on TikTok Shop predicts whether they will convert. Follower count barely moves it. The clearest evidence sits in the converting roster for Fat Brain Air Toobz, the closest high-price STEM comparable on the platform.</p>
+      <p>The top converter on that SKU has 10,817 followers and $331,992 in lifetime platform GMV, and drove $22,872 on that one product across 102 videos. The third-largest converter has 2,439 followers and drove $8,996 across 624 videos. The creator with 241,333 followers drove $14,368 across 31 videos, which is real but is the exception rather than the engine.</p>
+      <p>Follower tier of the 100 creators converting on Air Toobz:</p>
+      <div class="stat-row"><span class="k">1k to 5k followers</span><span class="v">16</span></div>
+      <div class="stat-row"><span class="k">5k to 10k followers</span><span class="v">21</span></div>
+      <div class="stat-row"><span class="k">10k to 50k followers</span><span class="v">47</span></div>
+      <div class="stat-row"><span class="k">50k to 100k followers</span><span class="v">9</span></div>
+      <div class="stat-row"><span class="k">100k or more followers</span><span class="v">7</span></div>
+    </div>
+    <div class="card">
+      <h2>The roster matches on followers and has room on sales history</h2>
+      <p>Loops Lab has 78 linked creators, and by follower band the roster looks almost identical to the Air Toobz cohort, with 39 of the 78 sitting in the 10,000 to 50,000 band. Nine are converting today.</p>
+      <p>The opportunity is in the filter rather than the funnel. One creator on the roster carries $686,140 in lifetime platform GMV and sold $7,013 of Fat Brain Air Toobz in the same window. The selling capability is already linked to the shop and has not yet been matched to the right brief or content commitment.</p>
+      <div class="stat-row"><span class="k">Linked creators</span><span class="v">78</span></div>
+      <div class="stat-row"><span class="k">Creators converting today</span><span class="v">9</span></div>
+      <div class="stat-row"><span class="k">Videos posted since launch</span><span class="v">183</span></div>
+      <div class="stat-row"><span class="k">Average views per video</span><span class="v">374</span></div>
+      <div class="stat-row"><span class="k">Videos per approved sample</span><span class="v">1.56</span></div>
+    </div>
+    <div class="card">
+      <h2>Sampling converts to content reliably</h2>
+      <p>117 approved samples produced 183 videos, which is 1.56 videos per approved sample and ahead of the house benchmark of roughly 1.5. Creators who receive a Loops Lab sample post.</p>
+      <p>The lever from here is content volume per sample rather than sample count. Creators working to a written content minimum deliver between 2 and 6 pieces from a single sample. Moving the roster average from 1.56 to 3.0 doubles output without doubling sample spend, and it is the assumption the current plan runs on.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Archetypes</p>
+
+    <div class="card">
+      <span class="badge b-1">Priority 1</span>
+      <h2 style="margin-top:10px">A1. The volume shop-finds operator</h2>
+      <p class="meta">L3 to L4 by platform GMV. 2k to 50k followers. Posts daily. Will post 50 to 100 pieces on one SKU without being asked twice.</p>
+      <h3>Buyer trigger served</h3>
+      <p class="meta">Gift timing. This archetype is already running Christmas and birthday framing in August and will slot Loops Lab into an existing gift-guide cadence.</p>
+      <h3>Format</h3>
+      <p class="meta">Short demo, product on screen in the first second, voiceover or on-screen text, 9 to 20 seconds. No face required.</p>
+      <h3>Proven in market</h3>
+      <p class="meta">The Air Toobz roster is full of this archetype. The 2,439-follower operator who posted 624 videos on one SKU is the purest example.</p>
+    </div>
+
+    <div class="card">
+      <span class="badge b-1">Priority 1</span>
+      <h2 style="margin-top:10px">A2. The toy-category specialist parent</h2>
+      <p class="meta">L3 to L5 by platform GMV. Toys &amp; Hobbies is their primary selling category, not an occasional post. 8k to 400k followers.</p>
+      <h3>Buyer trigger served</h3>
+      <p class="meta">Screen-free creative play. This archetype has audience trust on the question the buyer is actually asking, which is whether the toy gets played with twice.</p>
+      <h3>Format</h3>
+      <p class="meta">Real household demo with a child on camera, 20 to 40 seconds, box walk then play.</p>
+      <h3>Proven in market</h3>
+      <p class="meta">Active matches in the category run between $29,165 and $199,774 in trailing 30-day platform GMV. The strongest carries 7.1% engagement on 389,469 followers. Four creators who drove Stickerbox sit in this archetype.</p>
+    </div>
+
+    <div class="card">
+      <span class="badge b-2">Priority 2</span>
+      <h2 style="margin-top:10px">A3. The reach parent creator</h2>
+      <p class="meta">100k or more followers. Moderate platform GMV. Bought for distribution rather than for close rate.</p>
+      <h3>Buyer trigger served</h3>
+      <p class="meta">Music with no lessons required. This archetype carries the demo far enough that the product gets seen working, which is the piece Loops Lab has never bought at scale.</p>
+      <h3>Format</h3>
+      <p class="meta">Longer-form family content, product integrated rather than reviewed.</p>
+      <h3>Recruiting note</h3>
+      <p class="meta">Cap this at 7 to 10 creators and treat the cost as distribution rather than affiliate commission. Only 7 of the 100 Air Toobz converters sit in this tier, so it supplements the roster rather than forming it.</p>
+    </div>
+
+    <div class="card">
+      <span class="badge b-2">Priority 2, seasonal</span>
+      <h2 style="margin-top:10px">A4. The gift-guide operator</h2>
+      <p class="meta">L2 to L4. Runs seasonal gift content from September through December and disappears in January.</p>
+      <h3>Buyer trigger served</h3>
+      <p class="meta">Gift timing, with a deal or scarcity frame layered on top.</p>
+      <h3>Format</h3>
+      <p class="meta">Bundle or price-led, 8 to 25 seconds, urgency in the caption.</p>
+      <h3>Proven in market</h3>
+      <p class="meta">The entire Tonies Spidey converting cohort ran organic with no ad support, on gift and scarcity framing. Those 10 videos converted at 1.99 units per 1,000 views, the highest rate in the comparable set.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Sizing the hit list</p>
+    <div class="card">
+      <p class="meta">Third creator match on parents demoing kids toys at home and children playing with educational or music toys, US, trailing 6 months of video, pulled September 14, 2026.</p>
+      <div class="stat-row"><span class="k">Matched creators, L2 and above ($5K+ platform GMV)</span><span class="v">8,034</span></div>
+      <div class="stat-row"><span class="k">Matched creators, L3 and above ($25K+ platform GMV)</span><span class="v">2,842</span></div>
+      <div class="stat-row"><span class="k">Currently linked to the shop</span><span class="v">78</span></div>
+      <div class="stat-row"><span class="k">Currently converting</span><span class="v">9</span></div>
+      <p style="margin-top:14px">The addressable pool is not the constraint. Loops Lab has engaged under 1% of the L3-and-above match set. Broad invite campaigns reach volume but return low yield in any category, so targeting the matched pool directly is what lifts both reply rate and average views per video.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Commission and recruiting guidance</p>
+    <div class="card">
+      <h2>Commission is already competitive. It is not the lever.</h2>
+      <p>Loops Lab pays 15% on the $139 starter set, which is $20.85 per sale, the highest absolute payout in the comparable set. Stickerbox pays the same 15% on $137.98. Fat Brain pays 5% on Air Toobz. Tonies pays 10% on the Ms. Rachel and Pokémon sets, and 20% on the Spidey bundle, which on a $90.99 price is still $18.20.</p>
+      <p>Creators are not declining Loops Lab on economics, so rate is not the lever.</p>
+      <div class="stat-row"><span class="k">Loops Lab, $139.00 at 15%</span><span class="v">$20.85</span></div>
+      <div class="stat-row"><span class="k">Stickerbox, $137.98 at 15%</span><span class="v">$20.70</span></div>
+      <div class="stat-row"><span class="k">Tonies Spidey, $90.99 at 20%</span><span class="v">$18.20</span></div>
+      <div class="stat-row"><span class="k">Tonies Ms. Rachel, $139.24 at 10%</span><span class="v">$13.92</span></div>
+      <div class="stat-row"><span class="k">Fat Brain Air Toobz, $207.94 at 5%</span><span class="v">$10.40</span></div>
+    </div>
+    <div class="card">
+      <h2>Recruit on sales history, not reach</h2>
+      <ul>
+        <li>Filter every outreach list on platform GMV at L3 and above before follower count is considered at all.</li><li>Attach a written content minimum of 3 pieces to every sample from month 2 onward. This is the single biggest lever on output per sample.</li>
+        <li>Weight the list toward A1 and A2. Those two archetypes should carry 80% of the roster.</li>
+        <li>Seed A3 with 7 to 10 creators and treat them as distribution spend rather than as affiliates.</li>
+        <li>Re-engage roster creators who have platform GMV history and have not yet been matched to a brief. They are already linked and are the most efficient volume available.</li>
+        <li>Run A4 as a September to December push and stop it in January.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="companion">
+    <p>Companion documents</p>
+    <a href="loopslab-buyer-persona.html">Loops Lab Buyer Persona</a>
+    <a href="brief-loopslab.html">Loops Lab Informed Creative Brief</a>
+  </div>
+
+
+<footer>
+  <p>third. Commerce Creator Persona. Loops Lab. September 14, 2026.</p>
+  <p>Sources: Loops Lab shop performance data, June 16 to September 13, 2026. Third creator matching and category benchmarking for US Toys and Hobbies, September 2026. Creator tiers per Third L1 to L7 definitions.</p>
+  <p>GMV figures are gross TikTok-attributed GMV, not net revenue.</p>
+</footer>
+
+</main>
+</body>
+</html>
