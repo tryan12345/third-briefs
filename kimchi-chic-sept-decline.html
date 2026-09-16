@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KimChi Chic: September GMV Decline</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap">
+<style>
+:root{
+  --ink-950:#0c0a09; --ink-900:#1c1917; --ink-700:#44403c; --ink-500:#78716c; --ink-400:#a8a29e; --ink-200:#e7e5e4; --ink-100:#f5f5f4; --ink-50:#fafaf9;
+  --page:var(--ink-50); --surface:#ffffff; --surface-2:var(--ink-100);
+  --text:var(--ink-900); --text-2:var(--ink-700); --muted:var(--ink-500); --faint:var(--ink-400);
+  --line:rgba(231,229,228,.6); --line-strong:var(--ink-200);
+  --accent:#3a87e6; --accent-50:#eef5fd;
+  --ok-bg:#d1fae5; --ok-fg:#047857; --ok-dot:#10b981;
+  --bad-bg:#fee2e2; --bad-fg:#b91c1c; --bad-dot:#ef4444;
+  --wait-bg:#fef3c7; --wait-fg:#b45309; --wait-dot:#f59e0b;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0c0a09; --surface:#1c1917; --surface-2:#292524;
+    --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e; --faint:#78716c;
+    --line:rgba(68,64,60,.85); --line-strong:#44403c;
+    --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+    --ok-bg:rgba(16,185,129,.16); --ok-fg:#6ee7b7;
+    --bad-bg:rgba(239,68,68,.16); --bad-fg:#fca5a5;
+    --wait-bg:rgba(245,158,11,.16); --wait-fg:#fcd34d;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0c0a09; --surface:#1c1917; --surface-2:#292524;
+  --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e; --faint:#78716c;
+  --line:rgba(68,64,60,.85); --line-strong:#44403c;
+  --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+  --ok-bg:rgba(16,185,129,.16); --ok-fg:#6ee7b7;
+  --bad-bg:rgba(239,68,68,.16); --bad-fg:#fca5a5;
+  --wait-bg:rgba(245,158,11,.16); --wait-fg:#fcd34d;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--text);font-family:'DM Sans',ui-sans-serif,system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.container{max-width:760px;margin:0 auto;padding:0 20px 64px}
+header{padding:40px 0 24px}
+.eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted);margin:0 0 12px}
+.eyebrow.accent{color:var(--accent)}
+.title-serif{font-family:'Owners',Georgia,ui-serif,serif;font-style:italic;font-weight:900;letter-spacing:-.01em;line-height:1.05;margin:0}
+h1.title-serif{font-size:clamp(30px,6vw,40px)}
+h2{font-size:15px;font-weight:600;margin:0 0 4px}
+.sub{color:var(--text-2);margin:12px 0 0}
+.meta{font-size:13px;color:var(--muted);margin:8px 0 0}
+section{margin-top:28px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px}
+.card + .card{margin-top:12px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px}
+.stat .v{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:4px}
+.stat .l{font-size:12px;color:var(--muted)}
+.neg{color:var(--bad-fg)}
+.pos{color:var(--ok-fg)}
+p{margin:0 0 10px}
+p:last-child{margin-bottom:0}
+ul{margin:8px 0 0;padding-left:18px}
+li{margin:4px 0}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{padding:10px 12px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
+th{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:var(--surface-2)}
+th:first-child,td:first-child{text-align:left}
+tr:last-child td{border-bottom:none}
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:600}
+.badge .dot{width:6px;height:6px;border-radius:999px}
+.b-dark{background:var(--bad-bg);color:var(--bad-fg)}
+.b-dark .dot{background:var(--bad-dot)}
+.b-live{background:var(--ok-bg);color:var(--ok-fg)}
+.b-live .dot{background:var(--ok-dot)}
+.note{background:var(--accent-50);border-radius:16px;padding:14px 16px;font-size:13px;color:var(--text-2)}
+ol.actions{margin:0;padding-left:20px}
+ol.actions li{margin:8px 0}
+footer{margin-top:36px;font-size:12px;color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <p class="eyebrow accent">KimChi Chic Beauty · Diagnostic</p>
+  <h1 class="title-serif">September GMV decline</h1>
+  <p class="sub">Sep 1–15 compared to Aug 1–15. Data from Cruva (shop 66eb252c885896bc068f4c2c) and FastMoss, pulled Sep 16, 2026.</p>
+</header>
+
+<section>
+  <div class="stats">
+    <div class="stat"><div class="l">Total GMV, Cruva</div><div class="v neg">-12.0%</div><div class="l">$110.1K vs $125.1K</div></div>
+    <div class="stat"><div class="l">Total GMV, FastMoss</div><div class="v neg">-13.5%</div><div class="l">$116.3K vs $134.5K</div></div>
+    <div class="stat"><div class="l">Affiliate GMV</div><div class="v neg">-15.9%</div><div class="l">$63.8K vs $75.9K</div></div>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <p>The drop started around Aug 16. Daily GMV in Cruva averaged $8,342 for Aug 1–15. It fell to $7,645 for Aug 16–31 and $7,343 for Sep 1–15.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Content, views and GMV per video</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th>Aug 1–15</th><th>Sep 1–15</th><th>Change</th></tr></thead>
+      <tbody>
+        <tr><td>GMV per video (avg)</td><td>$12.90</td><td>$3.30</td><td class="neg">-74%</td></tr>
+        <tr><td>New content GMV per new video</td><td>$3.32</td><td>$2.12</td><td class="neg">-36%</td></tr>
+        <tr><td>Videos with sales</td><td>84 (10.9%)</td><td>46 (7.4%)</td><td class="neg">-45%</td></tr>
+        <tr><td>Net new videos</td><td>774</td><td>625</td><td class="neg">-19%</td></tr>
+        <tr><td>Creators posting</td><td>518</td><td>462</td><td class="neg">-11%</td></tr>
+        <tr><td>First-time posters</td><td>200</td><td>173</td><td class="neg">-14%</td></tr>
+        <tr><td>Views</td><td>4.50M</td><td>4.02M</td><td class="neg">-11%</td></tr>
+        <tr><td>GPM</td><td>$14.53</td><td>$13.41</td><td class="neg">-8%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <p>All three are down. GMV per video fell the most. Cruva attribution lags on new videos, so some of that will come back as September content ages. The drops in video count and views are real.</p>
+    <p>Views fell about 25% in late August to roughly 227K a day. September came back to 268K a day but at a lower GPM. A lot of the new reach comes from creators with high views and low conversion. juliethegoddesss had 219K views at $0.0055 GMV per view.</p>
+    <p>FastMoss shows linked videos up in September, 442 vs 325. It counts differently than Cruva. I'm using Cruva for content volume on a shop we run.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Top creators and their September posting</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Creator</th><th>Status</th><th>Jul–Aug videos</th><th>Sep videos</th><th>Jul–Aug GMV</th><th>15-day run-rate</th><th>Sep 1–15 GMV</th></tr></thead>
+      <tbody>
+        <tr><td>lexirosenstein</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>5</td><td>0</td><td>$16,774</td><td>$4,058</td><td>$2,175</td></tr>
+        <tr><td>munecarotaa</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>10</td><td>0</td><td>$4,424</td><td>$1,070</td><td>$961</td></tr>
+        <tr><td>kripapateljoshi</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>1</td><td>0</td><td>$4,265</td><td>$1,032</td><td>$722</td></tr>
+        <tr><td>bishuwish</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>1</td><td>0</td><td>$4,050</td><td>$980</td><td>$983</td></tr>
+        <tr><td>ayannasabrina</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>2</td><td>0</td><td>$3,356</td><td>$812</td><td>$423</td></tr>
+        <tr><td>nataliesamoneshares</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>9</td><td>0</td><td>$3,285</td><td>$795</td><td>$442</td></tr>
+        <tr><td>bentlylovesyou</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>2</td><td>0</td><td>$3,286</td><td>$795</td><td>$780</td></tr>
+        <tr><td>makeupwithamessage</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>1</td><td>0</td><td>$3,018</td><td>$730</td><td>Under $324</td></tr>
+        <tr><td>xogmoney</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>1</td><td>0</td><td>$2,980</td><td>$721</td><td>$617</td></tr>
+        <tr><td>the.rachel.marie</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>18</td><td>0</td><td>$2,742</td><td>$663</td><td>$1,606</td></tr>
+        <tr><td>artistzone2</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>4</td><td>0</td><td>$2,626</td><td>$635</td><td>$342</td></tr>
+        <tr><td>findzzfordays</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>2</td><td>0</td><td>$2,175</td><td>$526</td><td>$383</td></tr>
+        <tr><td>allimaefaves</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>4</td><td>0</td><td>$1,528</td><td>$370</td><td>Under $324</td></tr>
+        <tr><td>aggayucita</td><td><span class="badge b-dark"><span class="dot"></span>Dark</span></td><td>1</td><td>0</td><td>$1,525</td><td>$369</td><td>Under $324</td></tr>
+        <tr><td>itstesatiara</td><td><span class="badge b-live"><span class="dot"></span>Posting</span></td><td>7</td><td>3</td><td>$1,501</td><td>$363</td><td>Under $324</td></tr>
+        <tr><td>kingkayyy_c_</td><td><span class="badge b-live"><span class="dot"></span>Posting</span></td><td>18</td><td>3</td><td>$1,342</td><td>$325</td><td>Under $324</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">Sep videos counted Sep 1–16. Run-rate is Jul–Aug GMV scaled to 15 days. "Under $324" means the creator fell outside the September top 40 by GMV.</p>
+  <div class="card" style="margin-top:12px">
+    <h2>What the list shows</h2>
+    <ul>
+      <li>Fourteen creators are fully dark. itstesatiara and kingkayyy_c_ are still posting. itstesatiara is ahead of her summer pace. kingkayyy_c_ slowed from about 4.4 videos per 15 days to 3. Neither one's September posts have made real GMV yet.</li>
+      <li>Lexi is the biggest gap. She's an L5 doing about $200K a month across TikTok Shop. Five videos made us $16.7K. She's about $1.9K behind run-rate after two weeks.</li>
+      <li>Rachel Marie and Natalie stopped completely. They posted 27 videos between them in July and August and none in September. Rachel's August videos still did $1.6K in September.</li>
+      <li>Summer hits from bentlylovesyou, findzzfordays, artistzone2 and aggayucita each did $1.3K to $3.2K. They're decaying and nobody has posted a replacement.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">LIVE</p>
+  <div class="card">
+    <p>LIVE GMV fell from $5,844 to $2,082, down 64%. That's about a quarter of the total gap.</p>
+    <p>mariyaaaaa23 drove $13.9K of the shop's $17.9K LIVE GMV in July and August, 78% of it, across 21 lives. She's done 3 lives and $863 in September. The shop's LIVE spikes stop after Aug 13. That lines up with when total GMV broke.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Other things tied to the decline</p>
+  <div class="card">
+    <h2>Ad spend</h2>
+    <p>Spend was $13.0K vs $14.6K, down 11%. ROI held at 9.03 vs 9.08. GMV fell 12%. Spend and GMV moved almost one to one, same as the one-pager.</p>
+    <ul>
+      <li>Daily spend dropped on Aug 3, from about $1,070 a day in July to under $1,000.</li>
+      <li>Shop Tab GMV and product impressions both fell 12.7%.</li>
+      <li>Blended cost per order went from $2.36 to $2.47 on shop-wide orders.</li>
+    </ul>
+    <p style="margin-top:10px">ROI is at 9x. There's room to push spend back to July levels.</p>
+  </div>
+  <div class="card">
+    <h2>Sample approvals</h2>
+    <ul>
+      <li>Requests were up 53%, 1,369 vs 897, on an 80% increase in DMs.</li>
+      <li>Approvals were down 27%, 268 vs 365. The approval rate dropped from 41% to 20%.</li>
+      <li>Deliveries fell to 218 in late August, down from 376 in early August. With a 2 to 6 week lag, that hit September posting.</li>
+      <li>At 1.5 videos per approved sample, September approvals point to about 400 videos landing in October.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>Content velocity</h2>
+    <p>Posting was 1,742 videos in July and 1,542 in August. September is pacing at about 1,250. Our benchmark for a performing brand is 2,000 or more a month.</p>
+  </div>
+  <div class="card">
+    <h2>Category</h2>
+    <p>FastMoss shows US Beauty units down about 7% for Sep 1–15 vs Aug 16–31. KimChi Chic units are down about 5% over the same window. Since mid-August the shop is roughly tracking a softer category. The drop from early August is on the shop.</p>
+  </div>
+  <div class="card">
+    <h2>Channel mix</h2>
+    <p>FastMoss, last 28 days: video is 57% of GMV, product card is 40% and LIVE is 3%. Video and product card account for most of the gap.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Where I'd push</p>
+  <div class="card">
+    <ol class="actions">
+      <li>Move ad spend back toward $1,070 a day and watch ROI.</li>
+      <li>Re-seed the dark creators with new samples and a new angle. Lexi first, then Rachel Marie and Natalie.</li>
+      <li>Find out why Mariya stopped going live. Get her back to about 3 lives a week or add a second host.</li>
+      <li>Review the sample approval filter. Requests are coming in and approvals are holding them up.</li>
+    </ol>
+  </div>
+</section>
+
+<div class="note" style="margin-top:20px">Cruva attribution lags on recent windows, so September GMV per video will move up as those videos age. Cruva and FastMoss GMV totals differ on recent dates and track closer on older ones.</div>
+
+<footer>third. · Prepared by Tim Ryan · Sep 16, 2026</footer>
+</div>
+</body>
+</html>
