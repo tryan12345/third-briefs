@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>third. 2027 Platform Revenue Opportunity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-950:#0c0a09; --ink-900:#1c1917; --ink-800:#292524; --ink-700:#44403c;
+  --ink-600:#57534e; --ink-500:#78716c; --ink-400:#a8a29e; --ink-300:#d6d3d1;
+  --ink-200:#e7e5e4; --ink-100:#f5f5f4; --ink-50:#fafaf9;
+  --page:var(--ink-50); --surface:#ffffff; --surface-2:var(--ink-100);
+  --text:var(--ink-900); --text-2:var(--ink-700); --muted:var(--ink-500); --faint:var(--ink-400);
+  --line:rgba(231,229,228,.6); --line-strong:var(--ink-200);
+  --accent:#3a87e6; --accent-50:#eef5fd;
+  --wait-bg:#fef3c7; --wait-fg:#b45309; --wait-dot:#f59e0b;
+  --bad-bg:#fee2e2; --bad-fg:#b91c1c; --bad-dot:#ef4444;
+  --ok-bg:#d1fae5; --ok-fg:#047857; --ok-dot:#10b981;
+  --radius-card:16px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0c0a09; --surface:#1c1917; --surface-2:#292524;
+    --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e; --faint:#78716c;
+    --line:rgba(68,64,60,.85); --line-strong:#44403c;
+    --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+    --wait-bg:rgba(245,158,11,.16); --wait-fg:#fcd34d;
+    --bad-bg:rgba(239,68,68,.16); --bad-fg:#fca5a5;
+    --ok-bg:rgba(16,185,129,.16); --ok-fg:#6ee7b7;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0c0a09; --surface:#1c1917; --surface-2:#292524;
+  --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e; --faint:#78716c;
+  --line:rgba(68,64,60,.85); --line-strong:#44403c;
+  --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+  --wait-bg:rgba(245,158,11,.16); --wait-fg:#fcd34d;
+  --bad-bg:rgba(239,68,68,.16); --bad-fg:#fca5a5;
+  --ok-bg:rgba(16,185,129,.16); --ok-fg:#6ee7b7;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--page); color:var(--text);
+  font-family:'DM Sans',ui-sans-serif,system-ui,-apple-system,sans-serif;
+  font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;padding:32px 20px 40px}
+.brand{font-weight:700;font-size:20px;letter-spacing:-.02em;margin:0 0 20px}
+.eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted);margin:0 0 8px}
+.eyebrow.accent{color:var(--accent)}
+.title-serif{font-family:'Owners',Georgia,ui-serif,serif;font-style:italic;font-weight:900;letter-spacing:-.01em;line-height:1.05;text-wrap:balance}
+h1.title-serif{font-size:34px;margin:0;color:var(--ink-950)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h1.title-serif{color:var(--text)}}
+:root[data-theme="dark"] h1.title-serif{color:var(--text)}
+.lede{font-size:15px;color:var(--text-2);margin:10px 0 0;max-width:62ch}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0 0}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:14px 16px}
+.stat.total{background:var(--accent-50);border-color:transparent}
+.stat .label{font-size:12px;color:var(--muted);margin:0}
+.stat .val{font-size:22px;font-weight:700;margin:4px 0 0;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.stat .val span{font-size:13px;font-weight:500;color:var(--muted)}
+.stat.total .val{color:var(--accent)}
+
+section{margin-top:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:16px 18px}
+.card h2{font-size:15px;font-weight:600;margin:0 0 10px}
+
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:left;padding:0 10px 6px 0;border-bottom:1px solid var(--line-strong)}
+td{padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--text-2)}
+tr:last-child td{border-bottom:0}
+td.name{font-weight:600;color:var(--text);white-space:nowrap}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.target{color:var(--accent);font-weight:600}
+tfoot td{font-weight:700;color:var(--text);border-top:1px solid var(--line-strong);border-bottom:0}
+
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
+.seg-item{padding:10px 0 0;border-top:1px solid var(--line-strong)}
+.seg-item h3{font-size:14px;font-weight:700;margin:0;font-variant-numeric:tabular-nums}
+.seg-item .split{font-size:13px;color:var(--text);margin:3px 0 0;font-variant-numeric:tabular-nums}
+.seg-item .why{font-size:12.5px;color:var(--muted);margin:4px 0 0}
+.gg{background:#a2f09f;color:#1c1917;padding:0 4px;border-radius:4px;font-weight:600;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.seg-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;padding-top:10px;border-top:1px solid var(--line-strong);font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+.seg-total .split{font-weight:500;font-size:13px;color:var(--text-2)}
+@media (max-width:640px){.seg{grid-template-columns:1fr}.seg-total{flex-direction:column;gap:4px}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+ul.items{list-style:none;margin:0;padding:0}
+ul.items li{font-size:13px;color:var(--text-2);padding:7px 0;border-bottom:1px solid var(--line)}
+ul.items li:last-child{border-bottom:0;padding-bottom:0}
+ul.items li:first-child{padding-top:0}
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:600;margin-right:6px;vertical-align:1px}
+.badge i{width:6px;height:6px;border-radius:999px;display:inline-block}
+.badge.wait{background:var(--wait-bg);color:var(--wait-fg)} .badge.wait i{background:var(--wait-dot)}
+.badge.bad{background:var(--bad-bg);color:var(--bad-fg)} .badge.bad i{background:var(--bad-dot)}
+.badge.ok{background:var(--ok-bg);color:var(--ok-fg)} .badge.ok i{background:var(--ok-dot)}
+p.body{font-size:13px;color:var(--text-2);margin:0 0 8px}
+p.body:last-child{margin-bottom:0}
+
+.foot{display:flex;justify-content:space-between;margin-top:18px;font-size:11px;color:var(--faint)}
+
+@media (max-width:640px){
+  .stats{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  h1.title-serif{font-size:28px}
+}
+@media print{
+  @page{size:letter;margin:.45in}
+  :root{padding:0}
+  body{background:#fff;font-size:12px}
+  .wrap{max-width:none;padding:0}
+  .brand{margin-bottom:12px}
+  h1.title-serif{font-size:28px}
+  .stats{margin-top:14px}
+  section,.two{margin-top:12px}
+  .card,.stat{padding:11px 14px;break-inside:avoid}
+  td{padding:5px 8px 5px 0}
+  ul.items li{padding:5px 0}
+  .stat.total{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .badge{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="brand">third.</p>
+  <p class="eyebrow accent">2027 revenue plan</p>
+  <h1 class="title-serif">Platform revenue opportunity</h1>
+  <p class="lede">Platform revenue is $3.35M today. I think it gets to $7.5M in 2027. The closer we work with eBay, TikTok, Whatnot and Amazon, the more brand opportunities they send us. Those opportunities lift our Retail, CPG, Apparel and Fast Growth numbers.</p>
+
+  <div class="stats">
+    <div class="stat"><p class="label">Mapped / Planned</p><p class="val">$3.35M</p></div>
+    <div class="stat"><p class="label">Go-Get</p><p class="val">$4.15M</p></div>
+    <div class="stat total"><p class="label">2027 platform target</p><p class="val">$7.5M</p></div>
+  </div>
+
+  <section class="card">
+    <h2>Revenue opportunity by platform</h2>
+    <div class="seg">
+      <div class="seg-item">
+        <h3>eBay: $2M</h3>
+        <p class="split">$1.5M Mapped / Planned + <span class="gg">$500K</span> Go-Get</p>
+        <p class="why">Co-host lives drove about 3x audience at flat conversion. Take that into more categories.</p>
+      </div>
+      <div class="seg-item">
+        <h3>TikTok: $2M</h3>
+        <p class="split">$1.2M Mapped / Planned + <span class="gg">$800K</span> Go-Get</p>
+        <p class="why">Grow TTCX. Our enterprise TikTok Shop launches give TikTok more reasons to work with us.</p>
+      </div>
+      <div class="seg-item">
+        <h3>Whatnot: $2M</h3>
+        <p class="split">$650K Mapped / Planned + <span class="gg">$1.35M</span> Go-Get</p>
+        <p class="why">Bring enterprise brands into Whatnot live. Test with Best Buy and Wolverine first.</p>
+      </div>
+      <div class="seg-item">
+        <h3>Amazon: $1.5M</h3>
+        <p class="split">$0 Mapped / Planned + <span class="gg">$1.5M</span> Go-Get</p>
+        <p class="why">Start with enterprise brands we already have. All of them sell on Amazon. Stackline can measure the halo.</p>
+      </div>
+    </div>
+    <div class="seg-total">
+      <span>Total Platform Opportunity: <span class="gg">$7.5M</span></span>
+      <span class="split">$3.35M Mapped / Planned + $4.15M Go-Get</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How platforms lift the segments</h2>
+    <p class="body">Platforms send brands to the partners they trust. Every one of those brands is a lead for a segment team. The more work we do with a platform, the more brands it sends us.</p>
+    <p class="body">It works the other way too. Every enterprise proposal should include a platform plan. Every platform conversation should include the brands we can bring.</p>
+    <p class="body">We need to tag platform-sourced deals in the pipeline so we can see the lift in the segment numbers.</p>
+  </section>
+
+  <div class="foot"><span>Confidential</span><span>Tim Ryan, SVP of Commerce</span></div>
+</main>
+</body>
+</html>
