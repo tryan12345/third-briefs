@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reading TikTok Shop LIVE Data | Livestreaming 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-950:#0c0a09; --ink-900:#1c1917; --ink-800:#292524; --ink-700:#44403c;
+  --ink-600:#57534e; --ink-500:#78716c; --ink-400:#a8a29e; --ink-300:#d6d3d1;
+  --ink-200:#e7e5e4; --ink-100:#f5f5f4; --ink-50:#fafaf9;
+  --page:var(--ink-50); --surface:#ffffff; --surface-2:var(--ink-100);
+  --text:var(--ink-900); --text-2:var(--ink-700); --muted:var(--ink-500); --faint:var(--ink-400);
+  --line:rgba(231,229,228,.6); --line-strong:var(--ink-200);
+  --accent:#3a87e6; --accent-50:#eef5fd;
+  --ok-fg:#047857; --bad-fg:#b91c1c;
+  --radius-card:16px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0c0a09; --surface:#1c1917; --surface-2:#292524;
+    --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e; --faint:#78716c;
+    --line:rgba(68,64,60,.85); --line-strong:#44403c;
+    --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+    --ok-fg:#6ee7b7; --bad-fg:#fca5a5;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0c0a09; --surface:#1c1917; --surface-2:#292524;
+  --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e; --faint:#78716c;
+  --line:rgba(68,64,60,.85); --line-strong:#44403c;
+  --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+  --ok-fg:#6ee7b7; --bad-fg:#fca5a5;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--page); color:var(--text);
+  font-family:'DM Sans',ui-sans-serif,system-ui,-apple-system,sans-serif;
+  font-size:15px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.container{max-width:680px;margin:0 auto;padding:0 20px 64px}
+header{padding:48px 0 24px}
+.eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted);margin:0 0 12px}
+.eyebrow.accent{color:var(--accent)}
+.title-serif{font-family:'Owners',Georgia,ui-serif,serif;font-style:italic;font-weight:900;letter-spacing:-.01em;line-height:1.05;text-wrap:balance;margin:0}
+h1.title-serif{font-size:40px;color:var(--text)}
+h2.title-serif{font-size:26px;margin-bottom:12px}
+.lede{font-size:16px;color:var(--text-2);margin:16px 0 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:24px;margin-top:16px}
+section{margin-top:40px}
+p{margin:0 0 12px}
+p:last-child{margin-bottom:0}
+.muted{color:var(--muted);font-size:13px}
+.formula{background:var(--surface-2);border-radius:12px;padding:14px 16px;font-size:14px;font-weight:500;margin:12px 0;font-variant-numeric:tabular-nums}
+.table-wrap{overflow-x:auto;margin:12px -4px 0;padding:0 4px}
+table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+th{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line-strong);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+td.num,th.num{text-align:right;white-space:nowrap}
+tr.group td{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);padding-top:18px;border-bottom:1px solid var(--line-strong)}
+tr:last-child td{border-bottom:none}
+ul{margin:8px 0 0;padding-left:20px}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+.callout{background:var(--accent-50);border-radius:12px;padding:14px 16px;margin-top:12px;font-size:14px}
+.callout strong{color:var(--accent)}
+footer{margin-top:48px;color:var(--faint);font-size:12px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <p class="eyebrow accent">Livestreaming 101</p>
+  <h1 class="title-serif">Reading TikTok Shop LIVE data</h1>
+  <p class="lede">What the LIVE dashboard is comparing you against, what the numbers mean, and the category benchmarks for Beauty &amp; Personal Care and Toys &amp; Hobbies.</p>
+</header>
+
+<section>
+  <p class="eyebrow">01</p>
+  <h2 class="title-serif">Two comparisons on every metric</h2>
+  <div class="card">
+    <p>Every metric on the LIVE dashboard has two lines under it. One compares the LIVE to your last 30 days. The other compares it to the category benchmark.</p>
+    <p>TikTok shows these as percent changes. It doesn't show the benchmark number itself. You can back it out with a standard percent change:</p>
+    <div class="formula">Benchmark = your value ÷ (1 + % above)<br>Benchmark = your value ÷ (1 − % below)</div>
+    <p>We checked this across two Toys &amp; Hobbies LIVEs and two Beauty LIVEs. Every metric landed on the same benchmark within rounding.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">02</p>
+  <h2 class="title-serif">What the benchmark is</h2>
+  <div class="card">
+    <p>The benchmark is the average performance of top-performing LIVEs in your category. TikTok picks those streams for strong audience appeal and strong conversion. It doesn't pick them for size.</p>
+    <p>That makes it a high bar on rates and a low bar on volume. The average benchmark LIVE gets about 15,000 impressions. A brand stream with real feed distribution can get hundreds of thousands or millions.</p>
+    <ul>
+      <li>You pick the category level in the dashboard. Level 1 is the broadest. You can go down to the leaf category for a closer comparison.</li>
+      <li>The benchmark is the same for every LIVE you look up. A LIVE from early in the month gets the same benchmark as one from last week.</li>
+      <li>Each benchmark is averaged on its own. Don't divide one benchmark by another. Benchmark views ÷ benchmark impressions gives 42%, while the tap-through benchmark is about 158%.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">03</p>
+  <h2 class="title-serif">What "last 30 days" is</h2>
+  <div class="card">
+    <p>This is your own account. It's the only comparison against yourself on the page.</p>
+    <p>The window appears to be tied to when the dashboard last updated, not to the date of the LIVE. Two LIVEs from the same account, run 20 days apart, backed out to the same 30-day numbers. So an older LIVE can be compared against streams that happened after it.</p>
+    <p>The "Needs attention" flag only fires on the last-30-day comparison. A metric can be far above benchmark and still get flagged.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">04</p>
+  <h2 class="title-serif">How each metric is calculated</h2>
+  <div class="card">
+    <p>Every rate ties directly to the raw counts on the dashboard.</p>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th>Formula</th></tr></thead>
+      <tbody>
+        <tr><td>Tap-through rate</td><td>Views ÷ impressions</td></tr>
+        <tr><td>Product exposure rate</td><td>Product impressions ÷ views</td></tr>
+        <tr><td>CTR</td><td>Product clicks ÷ product impressions</td></tr>
+        <tr><td>LIVE CTR</td><td>Product clicks ÷ views</td></tr>
+        <tr><td>CTOR</td><td>Orders ÷ product clicks</td></tr>
+        <tr><td>Show GPM</td><td>GMV ÷ impressions × 1,000</td></tr>
+        <tr><td>&gt;1m LIVE viewing rate</td><td>&gt;1m views ÷ views</td></tr>
+        <tr><td>Total attributed GMV</td><td>GMV for the full LIVE</td></tr>
+        <tr><td>GMV per hour</td><td>Total GMV ÷ stream length</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="muted" style="margin-top:12px">Impressions are times the LIVE showed in someone's feed. Product impressions are times a product card showed to someone already in the LIVE. CTR and tap-through use different denominators, so they don't chain together.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">05</p>
+  <h2 class="title-serif">Category benchmarks, level 1</h2>
+  <div class="card">
+    <p>Backed out from two LIVEs in each category. Numbers marked ~ come from metrics 90% or more below benchmark, where rounding moves the answer slightly.</p>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th class="num">Beauty &amp; Personal Care</th><th class="num">Toys &amp; Hobbies</th></tr></thead>
+      <tbody>
+        <tr class="group"><td colspan="3">Funnel</td></tr>
+        <tr><td>Impressions</td><td class="num">15,109</td><td class="num">14,707</td></tr>
+        <tr><td>Tap-through rate</td><td class="num">~169%</td><td class="num">~158%</td></tr>
+        <tr><td>Views</td><td class="num">8,638</td><td class="num">6,177</td></tr>
+        <tr><td>Product exposure rate</td><td class="num">405.2%</td><td class="num">421.9%</td></tr>
+        <tr><td>Product impressions</td><td class="num">36,075</td><td class="num">28,476</td></tr>
+        <tr><td>CTR</td><td class="num">4.15%</td><td class="num">4.41%</td></tr>
+        <tr><td>Product clicks</td><td class="num">1,940</td><td class="num">1,223</td></tr>
+        <tr><td>CTOR</td><td class="num">15.8%</td><td class="num">13.04%</td></tr>
+        <tr><td>LIVE-attributed orders</td><td class="num">84</td><td class="num">77</td></tr>
+        <tr><td>Total attributed GMV</td><td class="num">$2,256</td><td class="num">$1,670</td></tr>
+        <tr class="group"><td colspan="3">Entry and stay</td></tr>
+        <tr><td>Impressions per hour</td><td class="num">35,470</td><td class="num">33,287</td></tr>
+        <tr><td>Avg. viewing duration</td><td class="num">48.2s</td><td class="num">54.1s</td></tr>
+        <tr><td>&gt;1m views</td><td class="num">1,158</td><td class="num">713</td></tr>
+        <tr><td>&gt;1m LIVE viewing rate</td><td class="num">10.5%</td><td class="num">10.86%</td></tr>
+        <tr><td>ACU</td><td class="num">89</td><td class="num">71</td></tr>
+        <tr><td>PCU</td><td class="num">181</td><td class="num">149</td></tr>
+        <tr class="group"><td colspan="3">Interaction and conversion</td></tr>
+        <tr><td>GMV per hour</td><td class="num">$492</td><td class="num">$477</td></tr>
+        <tr><td>LIVE CTR</td><td class="num">16.16%</td><td class="num">17.31%</td></tr>
+        <tr><td>Show GPM</td><td class="num">~$212</td><td class="num">$237</td></tr>
+        <tr><td>Comment rate</td><td class="num">~312%</td><td class="num">~364%</td></tr>
+        <tr><td>Like rate</td><td class="num">~26,650%</td><td class="num">~28,500%</td></tr>
+        <tr><td>Follow rate</td><td class="num">~20.6%</td><td class="num">~20.8%</td></tr>
+        <tr><td>Share rate</td><td class="num">~52%</td><td class="num">~63.3%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="muted" style="margin-top:12px">Total GMV is per LIVE. GMV per hour is per hour. Use the per-hour numbers to compare streams of different lengths.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">06</p>
+  <h2 class="title-serif">How a percent gets over 100</h2>
+  <div class="card">
+    <p>Say 10 kids come to a birthday party. If 5 kids each get a cookie, that's 50%. If all 10 get one, that's 100%.</p>
+    <p>Now say every kid eats 3 cookies. That's 30 cookies for 10 kids, or 300%. The percent goes over 100 because each kid had more than one.</p>
+    <p>Like rate works the same way. It's likes divided by viewers, and people can tap the heart as many times as they want. A 26,650% like rate means the average viewer tapped like about 266 times.</p>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Benchmark</th><th>What it means</th></tr></thead>
+      <tbody>
+        <tr><td>Like rate ~26,650%</td><td>About 266 likes per viewer</td></tr>
+        <tr><td>Comment rate ~312%</td><td>About 3 comments per viewer</td></tr>
+        <tr><td>Product exposure rate ~405%</td><td>Each viewer saw product cards about 4 times</td></tr>
+        <tr><td>Tap-through rate ~169%</td><td>More views than feed impressions. Viewers also come in from the Following tab, notifications and profiles.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="margin-top:12px">Benchmark streams are small LIVEs with loyal fans, so these rates run high. A big stream full of people scrolling past might get 1.5 likes per viewer, or 150%.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">07</p>
+  <h2 class="title-serif">How to use it</h2>
+  <div class="card">
+    <ul>
+      <li>Compare volume to the benchmark. Use impressions per hour and GMV per hour, since totals don't account for stream length.</li>
+      <li>Compare rates to your own last 30 days. Benchmark rates come from small, warm audiences. If your LIVE got real feed reach, most of those rates will show red.</li>
+      <li>Narrow the category level when you want a closer peer group.</li>
+      <li>Retention and CTOR can make up for lost reach. The example below shows it.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">08</p>
+  <h2 class="title-serif">Example: two Toys &amp; Hobbies LIVEs</h2>
+  <div class="card">
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th class="num">LIVE 1</th><th class="num">LIVE 2</th></tr></thead>
+      <tbody>
+        <tr><td>Impressions</td><td class="num">359,269</td><td class="num">176,124</td></tr>
+        <tr><td>Views</td><td class="num">5,327</td><td class="num">2,868</td></tr>
+        <tr><td>Avg. viewing duration</td><td class="num">74s</td><td class="num">142s</td></tr>
+        <tr><td>&gt;1m LIVE viewing rate</td><td class="num">15.5%</td><td class="num">27.1%</td></tr>
+        <tr><td>CTR</td><td class="num">1.77%</td><td class="num">1.10%</td></tr>
+        <tr><td>CTOR</td><td class="num">7.19%</td><td class="num">13.00%</td></tr>
+        <tr><td>Orders</td><td class="num">94</td><td class="num">81</td></tr>
+        <tr><td>Total attributed GMV</td><td class="num">$5,227</td><td class="num">$5,074</td></tr>
+        <tr><td>Stream length</td><td class="num">2.9 hrs</td><td class="num">3.0 hrs</td></tr>
+        <tr><td>AOV</td><td class="num">$55.60</td><td class="num">$62.64</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout">LIVE 2 had about half the reach and half the viewers. It sold nearly the same amount. Viewers stayed twice as long and clicks converted at almost twice the rate.</div>
+  </div>
+</section>
+
+<footer>third. · Livestreaming 101 · September 2026</footer>
+
+</div>
+</body>
+</html>
