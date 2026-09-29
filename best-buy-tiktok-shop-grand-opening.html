@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TikTok Shop Grand Opening | Best Buy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-950:#0c0a09; --ink-900:#1c1917; --ink-800:#292524; --ink-700:#44403c;
+  --ink-600:#57534e; --ink-500:#78716c; --ink-400:#a8a29e; --ink-300:#d6d3d1;
+  --ink-200:#e7e5e4; --ink-100:#f5f5f4; --ink-50:#fafaf9;
+  --page:var(--ink-50); --surface:#ffffff; --surface-2:var(--ink-100);
+  --text:var(--ink-900); --text-2:var(--ink-700); --muted:var(--ink-500); --faint:var(--ink-400);
+  --line:rgba(231,229,228,.6); --line-strong:var(--ink-200);
+  --accent:#3a87e6; --accent-dark:#2a6dc0; --accent-50:#eef5fd;
+  --radius-card:16px; --radius-lg:20px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0c0a09; --surface:#1c1917; --surface-2:#292524;
+    --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e; --faint:#78716c;
+    --line:rgba(68,64,60,.85); --line-strong:#44403c;
+    --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0c0a09; --surface:#1c1917; --surface-2:#292524;
+  --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e; --faint:#78716c;
+  --line:rgba(68,64,60,.85); --line-strong:#44403c;
+  --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--page); color:var(--text);
+  font-family:'DM Sans',ui-sans-serif,system-ui,-apple-system,sans-serif;
+  font-size:14px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.title-serif{font-family:'Owners',Georgia,ui-serif,serif;font-style:italic;font-weight:900;letter-spacing:-.01em;line-height:1.05;text-wrap:balance}
+.eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted);margin:0}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px 40px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:20px}
+
+/* header */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:24px 0 0}
+.wordmark{font-family:'Owners',Georgia,ui-serif,serif;font-style:italic;font-weight:900;font-size:22px;letter-spacing:-.01em;color:var(--text)}
+.prepared{font-size:12px;color:var(--muted)}
+header.hero{padding:28px 0 20px}
+header.hero .eyebrow{color:var(--accent);margin-bottom:12px}
+header.hero h1{font-size:40px;margin:0;color:var(--text)}
+header.hero p.lede{margin:12px 0 0;font-size:15px;color:var(--text-2);max-width:60ch}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+.stat{padding:16px}
+.stat .num{font-size:24px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums;line-height:1.1}
+.stat .num.money{color:var(--accent)}
+.stat .lbl{font-size:12px;color:var(--muted);margin-top:4px}
+@media (min-width:720px){.stats{grid-template-columns:repeat(4,1fr)}}
+
+/* split */
+.split{display:grid;gap:12px;margin-bottom:12px}
+@media (min-width:720px){.split{grid-template-columns:1fr 1.35fr}}
+.card h2{font-size:15px;font-weight:600;margin:6px 0 12px;color:var(--text)}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 10px;font-size:11px;font-weight:600}
+.pill .dot{width:6px;height:6px;border-radius:999px}
+.pill.tt{background:var(--surface-2);color:var(--text-2)}
+.pill.tt .dot{background:var(--ink-400)}
+.pill.bb{background:var(--accent-50);color:var(--accent)}
+.pill.bb .dot{background:var(--accent)}
+ul.list{list-style:none;margin:0;padding:0}
+ul.list li{position:relative;padding:8px 0 8px 16px;border-top:1px solid var(--line);font-size:14px;color:var(--text-2)}
+ul.list li:first-child{border-top:0;padding-top:0}
+ul.list li:first-child::before{top:7px}
+ul.list li::before{content:"";position:absolute;left:0;top:15px;width:6px;height:6px;border-radius:999px;background:var(--ink-300)}
+.card.bb ul.list li::before{background:var(--accent)}
+ul.list li strong{color:var(--text);font-weight:600}
+.sub{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted);margin:16px 0 8px}
+.sub:first-of-type{margin-top:0}
+
+/* timeline */
+.timeline{margin-bottom:12px}
+.steps{display:grid;gap:0;margin-top:12px}
+.step{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.step:first-child{border-top:0}
+.step .when{font-size:12px;font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums}
+.step .what{font-size:14px;color:var(--text-2)}
+
+/* table */
+.two{display:grid;gap:12px;margin-bottom:12px}
+@media (min-width:720px){.two{grid-template-columns:1fr 1fr}}
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+th{text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:0 0 8px;border-bottom:1px solid var(--line-strong)}
+td{padding:6px 0;border-bottom:1px solid var(--line);color:var(--text-2)}
+td:last-child,th:last-child{text-align:right}
+tr.first td{color:var(--accent);font-weight:600}
+.note{font-size:12px;color:var(--muted);margin:10px 0 0}
+
+.menu-group{margin-top:14px}
+.menu-group:first-of-type{margin-top:4px}
+.menu-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.menu-head .t{font-size:14px;font-weight:600;color:var(--text)}
+.menu-head .n{font-size:11px;font-weight:600;color:var(--accent);white-space:nowrap}
+.menu-group ul{margin:6px 0 0;padding-left:18px;color:var(--text-2);font-size:13px}
+.menu-group li{margin:2px 0}
+
+footer{margin-top:20px;font-size:12px;color:var(--faint);display:flex;justify-content:space-between}
+
+@media print{
+  @page{size:letter;margin:0.4in}
+  :root{padding:0}
+  body{background:#fff;font-size:12px}
+  .wrap{max-width:none;padding:0;zoom:.68}
+  .topbar{padding-top:0}
+  header.hero{padding:14px 0 10px}
+  header.hero h1{font-size:30px}
+  .card{padding:12px;break-inside:avoid}
+  .stats{grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px}
+  .split{grid-template-columns:1fr 1.35fr;gap:8px;margin-bottom:8px}
+  .two{grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+  .timeline{margin-bottom:8px}
+  ul.list li{padding:4px 0 4px 14px;font-size:12px}
+  ul.list li::before{top:10px}
+  .step{padding:5px 0}
+  td{padding:3px 0}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <span class="wordmark">third.</span>
+    <span class="prepared">Prepared for Best Buy</span>
+  </div>
+
+  <header class="hero">
+    <p class="eyebrow">TikTok Shop program</p>
+    <h1 class="title-serif">Grand Opening Campaign</h1>
+    <p class="lede">A 7-day launch campaign on TikTok Shop. TikTok gives Best Buy a dedicated campaign slot and platform support. Best Buy commits to a GMV target, ad spend, pricing, creator seeding and marketing.</p>
+  </header>
+
+  <section class="stats" aria-label="Headline commitments">
+    <div class="card stat"><div class="num">7 days</div><div class="lbl">Campaign window</div></div>
+    <div class="card stat"><div class="num money">$70K+</div><div class="lbl">Incremental GMV</div></div>
+    <div class="card stat"><div class="num money">$50K+</div><div class="lbl">Incremental ad spend</div></div>
+    <div class="card stat"><div class="num">500+</div><div class="lbl">Creator samples</div></div>
+  </section>
+
+  <section class="split">
+    <div class="card">
+      <span class="pill tt"><span class="dot"></span>TikTok provides</span>
+      <h2>Platform support</h2>
+      <ul class="list">
+        <li>A Grand Opening campaign slot on TikTok Shop</li>
+        <li>A peak day inside the 7-day window, set by the Grand Opening team</li>
+        <li>A joint social post from TikTok with Best Buy</li>
+        <li>Joint logo use for Best Buy's email, SMS and push outreach</li>
+        <li>Creator matchmaking with about 1,000 targeted creators</li>
+        <li>A campaign point of contact who sets baseline dates</li>
+        <li>A larger campaign budget when ad spend matches the GMV target</li>
+      </ul>
+    </div>
+
+    <div class="card bb">
+      <span class="pill bb"><span class="dot"></span>Best Buy provides</span>
+      <h2>Commitments</h2>
+
+      <p class="sub">To qualify</p>
+      <ul class="list">
+        <li>Shop performance score above 4 (last 30 days)</li>
+        <li>On-time dispatch of 80% or higher. Seller-fault cancellations of 5% or lower.</li>
+        <li>A core assortment that matches what shoppers expect from Best Buy</li>
+      </ul>
+
+      <p class="sub">During the campaign</p>
+      <ul class="list">
+        <li><strong>$70K+ incremental GMV</strong> over 7 days, measured against a baseline 3 weeks before launch</li>
+        <li><strong>$50K+ incremental ad spend</strong> from Best Buy's own budget. Ad credits do not count.</li>
+        <li>All brand ads link inside TikTok Shop. No links to bestbuy.com or other retailers.</li>
+        <li><strong>Lowest price across every channel</strong> from 30 days before through 30 days after the campaign</li>
+        <li>An exclusive offer, such as a discount, bundle, new product or gift with purchase</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card timeline">
+    <p class="eyebrow">Timeline</p>
+    <div class="steps">
+      <div class="step"><div class="when">Launch − 30+ days</div><div class="what">Price window opens. Send 500 to 2,000+ creator samples. Creator matchmaking starts.</div></div>
+      <div class="step"><div class="when">Launch − 3 weeks</div><div class="what">GMV and ad spend baseline period</div></div>
+      <div class="step"><div class="when">Launch − 2 weeks</div><div class="what">Brand ads can start and count toward the ad commitment</div></div>
+      <div class="step"><div class="when">Days 1–7</div><div class="what">Campaign runs. Performance ads count only in this window.</div></div>
+      <div class="step"><div class="when">Launch + 30 days</div><div class="what">Price window closes</div></div>
+    </div>
+  </section>
+
+  <section class="two">
+    <div class="card">
+      <p class="eyebrow">Ad spend scales with the GMV target</p>
+      <div class="tbl-wrap" style="margin-top:12px">
+        <table>
+          <thead><tr><th>Incremental GMV</th><th>Min. incremental ads</th></tr></thead>
+          <tbody>
+            <tr class="first"><td>$50K–$100K</td><td>$50K</td></tr>
+            <tr><td>$100K–$199K</td><td>$60K</td></tr>
+            <tr><td>$200K–$249K</td><td>$75K</td></tr>
+            <tr><td>$250K–$499K</td><td>$125K</td></tr>
+            <tr><td>$500K–$749K</td><td>$225K</td></tr>
+            <tr><td>$750K–$999K</td><td>$300K</td></tr>
+            <tr><td>$1M–$1.249M</td><td>$350K</td></tr>
+            <tr><td>$1.25M–$1.499M</td><td>$400K</td></tr>
+            <tr><td>$1.5M–$1.999M</td><td>$500K</td></tr>
+            <tr><td>$2M+</td><td>$600K</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Qualifying brand ads include TopView, Hashtag Challenge, Branded Effect and In-Feed.</p>
+    </div>
+
+    <div class="card">
+      <p class="eyebrow">Marketing requirements</p>
+
+      <div class="menu-group">
+        <div class="menu-head"><span class="t">Joint social post</span><span class="n">Required</span></div>
+        <ul><li>Posted on Best Buy's own social channels with TikTok</li></ul>
+      </div>
+
+      <div class="menu-group">
+        <div class="menu-head"><span class="t">Content</span><span class="n">Pick 1 of 4</span></div>
+        <ul>
+          <li>Top creator or celebrity LIVE, 2+ hours</li>
+          <li>Best Buy LIVE with a C-level exec</li>
+          <li>Hashtag videos from million-follower creators or celebrities</li>
+          <li>Creator brand webinar</li>
+        </ul>
+      </div>
+
+      <div class="menu-group">
+        <div class="menu-head"><span class="t">Outreach</span><span class="n">Pick 1 of 3</span></div>
+        <ul>
+          <li>CRM email with joint logo</li>
+          <li>SMS or push with joint logo</li>
+          <li>Paid PR or announcement</li>
+        </ul>
+      </div>
+
+      <div class="menu-group">
+        <div class="menu-head"><span class="t">Other</span><span class="n">Optional</span></div>
+        <ul><li>In-store marketing, events, channel partners, out-of-home and off-platform media</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>third.</span>
+    <span>Confidential</span>
+  </footer>
+
+</div>
+</body>
+</html>
