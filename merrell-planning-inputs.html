@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Merrell TikTok Shop Planning Inputs | Third</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-950:#0c0a09; --ink-900:#1c1917; --ink-800:#292524; --ink-700:#44403c;
+  --ink-600:#57534e; --ink-500:#78716c; --ink-400:#a8a29e; --ink-300:#d6d3d1;
+  --ink-200:#e7e5e4; --ink-100:#f5f5f4; --ink-50:#fafaf9;
+  --page:var(--ink-50); --surface:#ffffff; --surface-2:var(--ink-100);
+  --text:var(--ink-900); --text-2:var(--ink-700); --muted:var(--ink-500); --faint:var(--ink-400);
+  --line:rgba(231,229,228,.6); --line-strong:var(--ink-200);
+  --accent:#3a87e6; --accent-50:#eef5fd;
+  --ok-fg:#047857; --bad-fg:#b91c1c;
+  --radius-card:16px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0c0a09; --surface:#1c1917; --surface-2:#292524;
+    --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e; --faint:#78716c;
+    --line:rgba(68,64,60,.85); --line-strong:#44403c;
+    --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+    --ok-fg:#6ee7b7; --bad-fg:#fca5a5;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0c0a09; --surface:#1c1917; --surface-2:#292524;
+  --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e; --faint:#78716c;
+  --line:rgba(68,64,60,.85); --line-strong:#44403c;
+  --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+  --ok-fg:#6ee7b7; --bad-fg:#fca5a5;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--page); color:var(--text);
+  font-family:'DM Sans',ui-sans-serif,system-ui,-apple-system,sans-serif;
+  font-size:15px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.container{max-width:680px;margin:0 auto;padding:0 20px 64px}
+header{padding:48px 0 24px}
+.eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted);margin:0 0 12px}
+.eyebrow.accent{color:var(--accent)}
+.title-serif{font-family:'Owners',Georgia,ui-serif,serif;font-style:italic;font-weight:900;letter-spacing:-.01em;line-height:1.05;text-wrap:balance;margin:0}
+h1.title-serif{font-size:40px;color:var(--text)}
+h2.title-serif{font-size:26px;margin-bottom:12px}
+.lede{font-size:16px;color:var(--text-2);margin:16px 0 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:24px;margin-top:16px}
+section{margin-top:40px}
+p{margin:0 0 12px}
+p:last-child{margin-bottom:0}
+.muted{color:var(--muted);font-size:13px}
+.formula{background:var(--surface-2);border-radius:12px;padding:14px 16px;font-size:14px;font-weight:500;margin:12px 0;font-variant-numeric:tabular-nums}
+.table-wrap{overflow-x:auto;margin:12px -4px 0;padding:0 4px}
+table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+th{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line-strong);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+td.num,th.num{text-align:right;white-space:nowrap}
+tr.group td{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);padding-top:18px;border-bottom:1px solid var(--line-strong)}
+tr:last-child td{border-bottom:none}
+ul{margin:8px 0 0;padding-left:20px}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+.callout{background:var(--accent-50);border-radius:12px;padding:14px 16px;margin-top:12px;font-size:14px}
+.callout strong{color:var(--accent)}
+footer{margin-top:48px;color:var(--faint);font-size:12px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <p class="eyebrow accent">Merrell × Third</p>
+  <h1 class="title-serif">Planning inputs for the TikTok Shop model</h1>
+  <p class="lede">Our best estimates on fees, creator costs, samples, GMV Max and team needs. These are the numbers we'd plan against for the four-month test and the full year.</p>
+</header>
+
+<section>
+  <p class="eyebrow">At a glance</p>
+  <h2 class="title-serif">The numbers for your model</h2>
+  <div class="card">
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Line</th><th class="num">4-month test</th><th class="num">Full year</th></tr></thead>
+      <tbody>
+        <tr class="group"><td colspan="3">Platform fees</td></tr>
+        <tr><td>Referral fee</td><td class="num">6% (3% first 30 days)</td><td class="num">6%</td></tr>
+        <tr><td>Payout fee, bank transfer</td><td class="num">$0.05 each</td><td class="num">$0.05 each</td></tr>
+        <tr><td>Separate card processing</td><td class="num">None</td><td class="num">None</td></tr>
+        <tr class="group"><td colspan="3">Creators</td></tr>
+        <tr><td>Commission rate</td><td class="num">10% to 15%</td><td class="num">12% to 15%</td></tr>
+        <tr><td>Share of GMV through creators</td><td class="num">65% to 75%</td><td class="num">65% to 75%</td></tr>
+        <tr><td>Commission as % of total GMV</td><td class="num">~8.5%</td><td class="num">~10%</td></tr>
+        <tr><td>Creator content fees</td><td class="num">$10K / month</td><td class="num">$10K to $15K / month</td></tr>
+        <tr class="group"><td colspan="3">Samples and paid</td></tr>
+        <tr><td>Sample pairs</td><td class="num">150 / month</td><td class="num">150 / month</td></tr>
+        <tr><td>GMV Max</td><td class="num">15% of GMV</td><td class="num">Rising toward 1 to 2 ROI</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">01</p>
+  <h2 class="title-serif">Payment and credit card fees</h2>
+  <div class="card">
+    <p>Your numbers are right, but those are payout fees. They only come into play when you pull money out of your TikTok balance. Bank transfer is $0.05 each time and takes 3 to 5 business days. PayPal is 0.9% and lands in a day. You'll pick one, and most brands go with bank transfer, so this ends up being close to zero.</p>
+    <p>The good news is you won't have your normal .com card fees on top. TikTok's 6% referral fee already includes payment processing, so there's no separate transaction fee. Because of that, you don't need the split between card, PayPal and bank for your model.</p>
+    <p>A few other things I'd put in there:</p>
+    <ul>
+      <li>The referral fee is 6% on most categories. If you make your first sale within 60 days of onboarding you get 3% for your first 30 days. We'll time launch to get you that.</li>
+      <li>On returns, TikTok keeps 20% of the referral fee on any refund, capped at $5 per SKU. I'd use a footwear return rate since sizing will drive most of those.</li>
+      <li>Shipping or fulfillment costs, depending on whether you ship yourselves or use Fulfilled by TikTok.</li>
+      <li>Co-funded promos during TikTok's big deal windows. Those are optional, but most brands opt in for Q4.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">02</p>
+  <h2 class="title-serif">Creator commissions</h2>
+  <div class="card">
+    <p>For the four-month test I'd plan on 10% to 15%. We usually run an open plan around 10% to get reach, and creators we recruit directly get around 15%. A handful of your top performers will end up at 20%. For the full year I'd plan on 12% to 15%, since we'll be paying more to the creators who keep selling for you.</p>
+    <p>Not everything carries commission. It only applies to orders that come through an affiliate creator. Sales from your own brand account, search and the product card don't. For footwear I'd plan on 65% to 75% of GMV coming from creators, and I'd keep it there all year. The established footwear shops on TikTok are still getting two-thirds to three-quarters of their sales through creators.</p>
+    <div class="formula">12% commission × 70% of GMV = ~8.5% of total GMV<br>14% commission × 70% of GMV = ~10% of total GMV</div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">03</p>
+  <h2 class="title-serif">Creator content fees</h2>
+  <div class="card">
+    <p>$10K a month holds for the test. That's roughly 20 committed videos at $500 each, and we hold that spend to at least $10K a month in GMV back.</p>
+    <p>For the full year I'd plan $10K to $15K a month. More of it shifts to rehiring creators who've already sold for you and buying usage rights on the winners so we can put ad money behind them.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">04</p>
+  <h2 class="title-serif">Product seeding</h2>
+  <div class="card">
+    <p>150 pairs a month still feels right for the first four months, and we'd keep it at 150 for the rest of the year. Each sample turns into about 1.5 videos on average, and those show up 2 to 6 weeks after the pair lands. At 150 a month we should be at 50+ videos a week by month two.</p>
+    <p>Every pair goes to a creator who fits one of the target profiles, and we check each wave at day 21 before sending more of the same.</p>
+    <p>After month four, we get more content out of the same 150 pairs. More of them go to creators who've already sold for you, and we ask for a set number of videos per pair up front. Creators who agree to that usually post 2 to 6 videos per sample.</p>
+    <div class="callout"><strong>Sample stock.</strong> Hold an extra 10% across the size run for exchanges.</div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">05</p>
+  <h2 class="title-serif">GMV Max</h2>
+  <div class="card">
+    <p>15% works for the test. The first few months won't be a straight line though. GMV Max needs about 50 videos per hero product, or around 600 across the shop, before spend really starts working. In months one and two we'll run a set dollar amount to get it going. GMV is still small then, so it'll look high as a percentage. By months three and four we'll have enough content to scale.</p>
+    <p>For the full year, I'd plan on that number going up. Most of the top 100 brands on TikTok Shop are running GMV Max at a 1 to 2 ROI. That means they're spending 50 cents to a dollar for every dollar GMV Max brings in. That's what it takes to hold a spot at the top of the category, and we'd expect to move in that direction once we see what's working.</p>
+    <p>We manage to cost per order and will report against that.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">06</p>
+  <h2 class="title-serif">Internal resources and operations</h2>
+  <div class="card">
+    <p>What you ran into at Stanley is really common. The good news is we take most of that off your plate. We handle all of the shop ops, plus creator recruiting, outreach, approvals, briefs, affiliate management and ads. That covers listings, pricing, promos, inventory updates and customer service inside TikTok's response window.</p>
+    <p>On your side, it comes down to a few things:</p>
+    <ul>
+      <li>One point person on your team. They don't need to run the shop, they just need to get us answers and approvals quickly.</li>
+      <li>Samples shipping within 48 hours of approval. This is the biggest lift on the brand side and where most shops get stuck.</li>
+      <li>Inventory. Keeping us stocked on the SKUs we're pushing and giving us a heads up on anything running low.</li>
+      <li>Quick sign-off on creative, usage rights, pricing and promos. 48 hours is a good target.</li>
+      <li>Someone on finance to reconcile TikTok payouts on your end each month.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">07</p>
+  <h2 class="title-serif">Monthly operating calendar</h2>
+  <div class="card">
+    <p>Here's roughly how we'd run it.</p>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>When</th><th>Third</th><th>Merrell</th></tr></thead>
+      <tbody>
+        <tr><td>Week 1</td><td>Close out last month against targets</td><td>Lock samples, commission changes and ad budget with us</td></tr>
+        <tr><td>Week 2</td><td>Update the creator brief if the sales data tells us something new</td><td>Ship the sample wave</td></tr>
+        <tr><td>Week 3</td><td>Day-21 check on last month's wave. Set up promos for the next deal window.</td><td>Approve promos</td></tr>
+        <tr><td>Week 4</td><td>Forecast next month. Confirm the campaign calendar.</td><td>Place sample and inventory orders off the forecast</td></tr>
+        <tr><td>Weekly</td><td colspan="2">30-minute call on the scorecard, creator pipeline and anything waiting on approval</td></tr>
+        <tr><td>Daily</td><td>Everything else in the shop</td><td>Ship samples</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<footer>third. · September 2026</footer>
+
+</div>
+</body>
+</html>
