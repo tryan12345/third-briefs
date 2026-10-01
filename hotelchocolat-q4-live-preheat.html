@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hotel Chocolat Q4 LIVE Preheat</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{
+  --tomato:#FF5A3E;
+  --lime:#A2F09F; --citron:#F4FD8D; --cobalt:#3A87E6; --pink:#F186FF;
+  --plum:#8F0846; --turquoise:#BDEAEA; --lavender:#BAB6FD; --warmgray:#C9CDC6;
+  --ink:#1C1917; --ink-2:#44403C; --muted:#78716C; --faint:#A8A29E;
+  --line:#E7E5E4; --surface:#FFFFFF; --surface-2:#F5F5F4; --page:#FFFFFF;
+  --ok-bg:#D1FAE5; --ok-fg:#047857;
+  --wait-bg:#FEF3C7; --wait-fg:#B45309; --wait-line:#F59E0B;
+  --bad-bg:#FEE2E2; --bad-fg:#B91C1C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+
+/* ---- hero ---- */
+.hero{background:var(--tomato);color:#fff;padding:44px 24px 40px}
+.hero-inner{max-width:760px;margin:0 auto}
+.wordmark{
+  font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:600;font-size:15px;letter-spacing:.06em;color:#fff;margin:0 0 30px;
+}
+.kicker{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(255,255,255,.82);margin:0 0 12px;
+}
+.hero h1{
+  font-family:'Inter',sans-serif;font-weight:800;font-size:42px;line-height:1.04;
+  letter-spacing:-.025em;margin:0;color:#fff;text-wrap:balance;
+}
+.hero .lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.92);max-width:62ch}
+
+/* ---- nine-color strip ---- */
+.strip{display:flex;height:10px;width:100%}
+.strip span{flex:1 1 0}
+.s1{background:var(--lime)}      .s2{background:var(--citron)}
+.s3{background:var(--tomato)}    .s4{background:var(--cobalt)}
+.s5{background:var(--pink)}      .s6{background:var(--plum)}
+.s7{background:var(--turquoise)} .s8{background:var(--lavender)}
+.s9{background:var(--warmgray)}
+
+/* ---- layout ---- */
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+section{margin-top:48px}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--tomato);margin:0 0 14px;
+}
+.card{border:1px solid var(--line);border-radius:4px;padding:26px;margin-bottom:16px;background:var(--surface)}
+.card h2{font-family:'Inter',sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
+.card h3{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted);margin:22px 0 8px;
+}
+.card p{margin:0 0 14px;color:var(--ink-2)}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:15px;color:var(--muted)}
+
+/* ---- metrics in IBM Plex Mono ---- */
+.metric{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.03em;
+  color:var(--tomato);margin:20px 0 10px;
+}
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+/* ---- provisional ---- */
+.provisional{background:var(--wait-bg);border-left:4px solid var(--wait-line);border-radius:2px;padding:20px 22px;margin-bottom:16px}
+.provisional p{color:var(--wait-fg);margin:0;font-size:15px}
+.provisional p + p{margin-top:10px}
+.provisional strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0;max-width:100%}
+table{width:100%;min-width:340px;border-collapse:collapse;font-size:15px;margin:0}
+th{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink);vertical-align:bottom;
+}
+td{padding:13px 10px 13px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:right;font-variant-numeric:tabular-nums;padding-right:0;padding-left:18px;white-space:nowrap;
+}
+td.rank{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--faint);width:26px}
+.hook{color:var(--ink);font-weight:500}
+
+ul{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+
+/* ---- do / don't ---- */
+.do-dont{display:grid;gap:12px;margin-top:14px}
+.do,.dont{border-radius:3px;padding:14px 16px;font-size:15px}
+.do{background:var(--ok-bg);color:var(--ok-fg);border-left:3px solid var(--ok-fg)}
+.dont{background:var(--bad-bg);color:var(--bad-fg);border-left:3px solid var(--bad-fg)}
+.do strong,.dont strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;
+}
+
+/* ---- stat rows ---- */
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-row:last-child{border-bottom:none}
+.stat-row .k{color:var(--muted)}
+.stat-row .v{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+
+/* ---- badges ---- */
+.badge{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:inline-block;border-radius:2px;padding:5px 10px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.b-1{background:var(--tomato);color:#fff}
+.b-2{background:var(--citron);color:var(--ink)}
+.b-3{background:var(--turquoise);color:var(--ink)}
+.b-4{background:var(--lavender);color:var(--ink)}
+
+/* ---- companion + footer ---- */
+.companion{background:var(--surface-2);border-radius:4px;padding:22px 24px;margin-top:40px}
+.companion p{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+.companion a{color:var(--tomato);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:5px 0}
+.companion a:hover{text-decoration:underline}
+footer{max-width:760px;margin:0 auto;padding:40px 24px 64px;font-size:13px;color:var(--faint);line-height:1.5}
+footer p{margin:0 0 6px}
+@media (max-width:520px){
+  .hero{padding:32px 20px 30px}
+  .hero h1{font-size:32px}
+  .metric{font-size:38px}
+  .container{padding:0 20px}
+  .card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---- timeline chart ---- */
+.chart{margin-top:14px;border:1px solid var(--line);border-radius:4px;padding:18px 14px 10px;overflow-x:auto}
+.chart svg{width:100%;min-width:560px;height:auto;display:block}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:7px;vertical-align:-1px}
+.card h3 + .tw{margin-top:0}
+</style></head><body>
+<div class="hero"><div class="hero-inner"><p class="wordmark">THIRD.</p><p class="kicker">Q4 TikTok Shop LIVE preheat strategy</p><h1>Hotel Chocolat</h1><p class="lede">How we build and optimize preheat creative for 75 hours of LIVE, from the first show on October 19 through the last-minute gifting MegaLive on December 10. Prepared by Third for Hotel Chocolat. September 2026.</p></div></div>
+<div class="strip"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span><span class="s7"></span><span class="s8"></span><span class="s9"></span></div>
+<main class="container">
+
+<section><p class="eyebrow">The headline</p>
+<div class="card">
+<h2>Thirty preheat assets carry the Q4 LIVE calendar across two layers.</h2>
+<p>The program starts October 19 and runs 75 LIVE hours. An evergreen creative engine supports the recurring LIVE calendar. Dedicated tentpole bursts build audiences for the First LIVE, Black Friday / Cyber Monday and two holiday MegaLives.</p>
+<p class="metric">30</p><p class="meta">Total preheat and LIVE-day assets for Q4: 8 evergreen, 22 tentpole.</p>
+<div class="stat-row"><span class="k">First LIVE</span><span class="v">Oct 19</span></div>
+<div class="stat-row"><span class="k">Total LIVE hours</span><span class="v">75</span></div>
+<div class="stat-row"><span class="k">Tentpole events</span><span class="v">4 (5 shows)</span></div>
+<div class="stat-row"><span class="k">Evergreen launch</span><span class="v">Oct 9 to 12</span></div>
+<div class="stat-row"><span class="k">Primary CTA</span><span class="v">Register for the LIVE</span></div>
+<p style="margin-top:14px">The goal of the evergreen layer is to find the strongest format, hook and reason to register. A single winning video is a byproduct of that.</p>
+</div>
+</section>
+
+<section><p class="eyebrow">1. The evergreen preheat engine</p>
+<div class="card">
+<h2>Three formats launch together through GMV Max ahead of the first LIVE.</h2>
+<p>Each video tests a meaningfully different creative format. Three variations of one execution would tell us about the edit. Three formats tell us what makes people register.</p>
+<p class="meta">GMV Max Live performs with 3 to 6 preheat pieces in rotation. Three evergreen assets plus the tentpole preheats keep us inside that range.</p>
+</div>
+<div class="card"><span class="badge b-1">Preheat 01</span><h2 style="margin-top:10px">Product and gifting</h2>
+<p class="meta">Lead with hero SKUs, gifting occasions, bundles or a compelling LIVE offer.</p></div>
+<div class="card"><span class="badge b-1">Preheat 02</span><h2 style="margin-top:10px">Personality-led invitation</h2>
+<p class="meta">Personality-forward creative that invites viewers to the upcoming LIVE and teases what they can expect.</p></div>
+<div class="card"><span class="badge b-1">Preheat 03</span><h2 style="margin-top:10px">Curiosity and FOMO</h2>
+<p class="meta">Lead with exclusivity, limited-time pricing, gifting finds, product demonstrations or another strong reason to tune in.</p></div>
+</section>
+
+<section><p class="eyebrow">2. Evergreen optimization cadence</p>
+<div class="card">
+<h2>A two-week read decides what stays, what goes and what we make next.</h2>
+<p class="meta">Evergreen launches 7 to 10 days before the first LIVE. If the October 19 date moves, every date in this section moves with it.</p>
+<div class="tw"><table><thead><tr><th>Dates</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hook">Oct 9 to 12</td><td>Launch the three evergreen tests into GMV Max.</td></tr>
+<tr><td class="hook">Oct 23 to 26</td><td>First 14-day performance read.</td></tr>
+<tr><td class="hook">Oct 28 to 30</td><td>1 to 2 new preheats on the winning format go into rotation.</td></tr>
+<tr><td class="hook">Nov 6 to 9</td><td>Biweekly read. Refresh only if performance or fatigue warrants it.</td></tr>
+<tr><td class="hook">Nov 20 to 23</td><td>Late November read on fatigue, registration efficiency and creative winners.</td></tr>
+<tr><td class="hook">Dec 1 to 3</td><td>Launch 2 to 3 holiday and last-minute evergreen iterations for the final push.</td></tr>
+</tbody></table></div>
+<p class="meta" style="margin-top:14px">Assumption: the Nov 6 to 9 and Nov 20 to 23 windows apply the two-week loop to the calendar. Adjust to match real launch dates.</p>
+</div>
+<div class="card">
+<h2>Every read ends in one of three decisions.</h2>
+<div class="stat-row"><span class="k">Keep</span><span class="v">Strongest format(s) keep running</span></div>
+<div class="stat-row"><span class="k">Cut</span><span class="v">Pause creative not driving registrations</span></div>
+<div class="stat-row"><span class="k">Iterate</span><span class="v">1 to 2 new preheats on the winner</span></div>
+<p style="margin-top:14px">We do not need new evergreen preheats for every LIVE. The December holiday refresh carries the evergreen pool through the rest of the month. New evergreen work is only needed if the program continues into January.</p>
+</div>
+</section>
+
+<section><p class="eyebrow">3. The tentpole preheat model</p>
+<div class="card">
+<h2>Each tentpole gets a dedicated 10-day preheat window.</h2>
+<div class="tw"><table><thead><tr><th>Timing</th><th>Asset</th><th>Job</th></tr></thead><tbody>
+<tr><td class="hook">T-10</td><td>Preheat #1</td><td>Announcement and registration.</td></tr>
+<tr><td class="hook">T-5</td><td>Preheat #2</td><td>Why to watch: product, gifting or offer.</td></tr>
+<tr><td class="hook">T-1 to T-2</td><td>Preheat #3</td><td>Urgency and countdown.</td></tr>
+<tr><td class="hook">LIVE day</td><td>1 to 2 rapid-turn ads</td><td>"We're LIVE right now" ads that drive viewers straight into the stream.</td></tr>
+</tbody></table></div>
+<p class="meta" style="margin-top:14px">That is 5 unique assets per tentpole. BFCM runs two shows, so its LIVE day carries 3 to 4 rapid-turn ads.</p>
+</div>
+<div class="card">
+<h2>LIVE-day rapid-turn creative uses what is working in the stream.</h2>
+<p>For priority LIVEs, the SV Producer is on set capturing content for paid amplification while the show is running. The producer reacts in real time. If a bundle, demonstration, offer or host moment is landing, that becomes the ad.</p>
+<h3>Core structure</h3>
+<ul><li>Open on "We're LIVE right now."</li><li>Show the product, host or LIVE energy.</li><li>Tease the offer or reason to watch.</li><li>Close on tap to join the LIVE.</li></ul>
+</div>
+<div class="card">
+<h2>The two MegaLives work as one holiday campaign.</h2>
+<p>MegaLive #1 (Dec 6) and MegaLive #2 (Dec 10) are four days apart, and their preheat windows overlap. MegaLive #1 creative establishes the broader holiday gifting moment. MegaLive #2 creative shifts to last-minute gifting and urgency. Each event keeps a distinct reason to watch without duplicating production.</p>
+</div>
+</section>
+
+<section><p class="eyebrow">4. The Q4 timeline</p>
+<div class="card">
+<h2>Preheat activity runs from October 9 to December 10.</h2>
+<div class="chart"><svg viewBox="0 0 720 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Q4 preheat timeline, October 5 to December 12, 2026">
+<line x1="150.0" y1="32" x2="150.0" y2="246" stroke="#EDEDEA"/>
+<text x="152.0" y="262" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">10/5</text>
+<line x1="206.8" y1="32" x2="206.8" y2="246" stroke="#EDEDEA"/>
+<text x="208.8" y="262" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">10/12</text>
+<line x1="263.6" y1="32" x2="263.6" y2="246" stroke="#EDEDEA"/>
+<text x="265.6" y="262" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">10/19</text>
+<line x1="320.4" y1="32" x2="320.4" y2="246" stroke="#EDEDEA"/>
+<text x="322.4" y="262" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">10/26</text>
+<line x1="377.2" y1="32" x2="377.2" y2="246" stroke="#EDEDEA"/>
+<text x="379.2" y="262" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">11/2</text>
+<line x1="434.1" y1="32" x2="434.1" y2="246" stroke="#EDEDEA"/>
+<text x="436.1" y="262" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">11/9</text>
+<line x1="490.9" y1="32" x2="490.9" y2="246" stroke="#EDEDEA"/>
+<text x="492.9" y="262" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">11/16</text>
+<line x1="547.7" y1="32" x2="547.7" y2="246" stroke="#EDEDEA"/>
+<text x="549.7" y="262" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">11/23</text>
+<line x1="604.5" y1="32" x2="604.5" y2="246" stroke="#EDEDEA"/>
+<text x="606.5" y="262" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">11/30</text>
+<line x1="661.3" y1="32" x2="661.3" y2="246" stroke="#EDEDEA"/>
+<text x="663.3" y="262" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">12/7</text>
+<text x="152.0" y="24" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="600" fill="#111111">OCT</text>
+<text x="371.1" y="24" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="600" fill="#111111">NOV</text>
+<line x1="369.1" y1="14" x2="369.1" y2="246" stroke="#C9CDC6" stroke-dasharray="3 3"/>
+<text x="614.6" y="24" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="600" fill="#111111">DEC</text>
+<line x1="612.6" y1="14" x2="612.6" y2="246" stroke="#C9CDC6" stroke-dasharray="3 3"/>
+<text x="0" y="58" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">Evergreen engine</text>
+<line x1="150" y1="76" x2="710" y2="76" stroke="#F4F4F2"/>
+<text x="0" y="98" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">First LIVE</text>
+<line x1="150" y1="116" x2="710" y2="116" stroke="#F4F4F2"/>
+<text x="0" y="138" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">BFCM LIVE</text>
+<line x1="150" y1="156" x2="710" y2="156" stroke="#F4F4F2"/>
+<text x="0" y="178" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">MegaLive #1</text>
+<line x1="150" y1="196" x2="710" y2="196" stroke="#F4F4F2"/>
+<text x="0" y="218" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">MegaLive #2</text>
+<line x1="150" y1="236" x2="710" y2="236" stroke="#F4F4F2"/>
+<rect x="182.5" y="51.0" width="510.3" height="4" rx="2" fill="#C9CDC6" opacity="1"/>
+<rect x="182.5" y="46.0" width="31.5" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="296.1" y="46.0" width="31.5" height="14" rx="2" fill="#3A6BFF" opacity="1"/>
+<rect x="336.7" y="46.0" width="23.3" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="409.7" y="46.0" width="31.5" height="14" rx="2" fill="#3A6BFF" opacity="0.45"/>
+<rect x="523.3" y="46.0" width="31.5" height="14" rx="2" fill="#3A6BFF" opacity="1"/>
+<rect x="612.6" y="46.0" width="23.3" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="182.5" y="86.0" width="7.1" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="223.0" y="86.0" width="7.1" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="247.4" y="86.0" width="15.2" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="263.6" y="83.0" width="7.1" height="20" rx="2" fill="#FF5A3E" opacity="1"/>
+<rect x="507.1" y="126.0" width="7.1" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="547.7" y="126.0" width="7.1" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="572.0" y="126.0" width="15.2" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="588.3" y="123.0" width="7.1" height="20" rx="2" fill="#FF5A3E" opacity="1"/>
+<rect x="572.0" y="166.0" width="7.1" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="612.6" y="166.0" width="7.1" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="637.0" y="166.0" width="15.2" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="653.2" y="163.0" width="7.1" height="20" rx="2" fill="#FF5A3E" opacity="1"/>
+<rect x="604.5" y="206.0" width="7.1" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="645.1" y="206.0" width="7.1" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="669.4" y="206.0" width="15.2" height="14" rx="2" fill="#111111" opacity="1"/>
+<rect x="685.7" y="203.0" width="7.1" height="20" rx="2" fill="#FF5A3E" opacity="1"/>
+</svg></div>
+<div class="legend"><span><i style="background:#111111"></i>Preheat launch</span><span><i style="background:#FF5A3E"></i>LIVE day</span><span><i style="background:#3A6BFF"></i>Evergreen read</span><span><i style="background:#C9CDC6"></i>Evergreen in market</span></div>
+</div>
+<div class="card">
+<h3>October</h3>
+<div class="tw"><table><thead><tr><th>Date</th><th>Moment</th><th>Preheat action</th></tr></thead><tbody>
+<tr><td class="hook">Oct 9</td><td>First LIVE, T-10</td><td>Tentpole Preheat #1. Introduce Hotel Chocolat LIVE and drive registration.</td></tr>
+<tr><td class="hook">Oct 9 to 12</td><td>Evergreen launch</td><td>Launch 3 evergreen preheats together into GMV Max.</td></tr>
+<tr><td class="hook">Oct 14</td><td>First LIVE, T-5</td><td>Tentpole Preheat #2. Product, gifting or offer-led reason to tune in.</td></tr>
+<tr><td class="hook">Oct 17 to 18</td><td>First LIVE, T-1/2</td><td>Tentpole Preheat #3. Urgency and "We're going LIVE" messaging.</td></tr>
+<tr><td class="hook">Oct 19</td><td><strong>Tentpole: First LIVE</strong></td><td>SV Producer captures and deploys 1 to 2 LIVE-now ads during the show.</td></tr>
+<tr><td class="hook">Week of Oct 19</td><td>LIVE #2</td><td>Evergreen supports the show. Custom preheat only if the theme or offer is unique.</td></tr>
+<tr><td class="hook">Oct 23 to 26</td><td>Evergreen optimization</td><td>14-day read. Cut underperformers, keep winners, name the winning format and hook.</td></tr>
+<tr><td class="hook">Oct 28 to 30</td><td>Evergreen refresh</td><td>Produce and launch 1 to 2 variations on the winning format.</td></tr>
+</tbody></table></div>
+<h3>November</h3>
+<div class="tw"><table><thead><tr><th>Date</th><th>Moment</th><th>Preheat action</th></tr></thead><tbody>
+<tr><td class="hook">Nov 18</td><td>BFCM, T-10</td><td>BFCM Preheat #1. Tease the event and drive registration.</td></tr>
+<tr><td class="hook">Nov 23</td><td>BFCM, T-5</td><td>BFCM Preheat #2. Lead with gifting, deal or offer.</td></tr>
+<tr><td class="hook">Late Nov</td><td>Evergreen optimization</td><td>Review fatigue, registration efficiency and winners to carry into December.</td></tr>
+<tr><td class="hook">Nov 26</td><td>MegaLive #1, T-10</td><td>Preheat #1 launches. Can overlap with the BFCM campaign.</td></tr>
+<tr><td class="hook">Nov 26 to 27</td><td>BFCM, T-1/2</td><td>BFCM Preheat #3. Urgency and final reminder.</td></tr>
+<tr><td class="hook">Nov 28</td><td><strong>Tentpole: BFCM LIVE (2 shows)</strong></td><td>SV Producer captures and deploys 3 to 4 LIVE-now ads.</td></tr>
+<tr><td class="hook">Nov 30</td><td>MegaLive #2, T-10</td><td>Preheat #1 launches.</td></tr>
+</tbody></table></div>
+<h3>December</h3>
+<div class="tw"><table><thead><tr><th>Date</th><th>Moment</th><th>Preheat action</th></tr></thead><tbody>
+<tr><td class="hook">Early Dec</td><td>Evergreen holiday refresh</td><td>Launch 2 to 3 holiday and last-minute evergreen iterations.</td></tr>
+<tr><td class="hook">Dec 1</td><td>MegaLive #1, T-5</td><td>Preheat #2. Gifting or product-led reason to register.</td></tr>
+<tr><td class="hook">Dec 4 to 5</td><td>MegaLive #1, T-1/2</td><td>Preheat #3. Urgency and countdown.</td></tr>
+<tr><td class="hook">Dec 5</td><td>MegaLive #2, T-5</td><td>Preheat #2. Last-minute gifting angle.</td></tr>
+<tr><td class="hook">Dec 6</td><td><strong>Tentpole: MegaLive #1</strong></td><td>Holiday Gifting. SV Producer captures and deploys 1 to 2 LIVE-now ads.</td></tr>
+<tr><td class="hook">Dec 8 to 9</td><td>MegaLive #2, T-1/2</td><td>Preheat #3. Urgency and countdown.</td></tr>
+<tr><td class="hook">Dec 10</td><td><strong>Tentpole: MegaLive #2</strong></td><td>Last-Minute Gifting. SV Producer captures and deploys 1 to 2 LIVE-now ads.</td></tr>
+</tbody></table></div>
+</div>
+</section>
+
+<section><p class="eyebrow">5. Q4 creative footprint</p>
+<div class="card">
+<h2>Thirty assets across evergreen and tentpole work.</h2>
+<div class="tw"><table><thead><tr><th>Layer</th><th>What it includes</th><th class="num">Assets</th></tr></thead><tbody>
+<tr><td class="hook">Evergreen</td><td>3 initial tests, 1 to 2 optimized iterations, 2 to 3 holiday iterations</td><td class="num">8</td></tr>
+<tr><td class="hook">First LIVE</td><td>3 preheats, 1 to 2 LIVE-day ads</td><td class="num">5</td></tr>
+<tr><td class="hook">BFCM LIVE</td><td>3 preheats, 3 to 4 LIVE-day ads across 2 shows</td><td class="num">7</td></tr>
+<tr><td class="hook">MegaLive #1</td><td>3 preheats, 1 to 2 LIVE-day ads</td><td class="num">5</td></tr>
+<tr><td class="hook">MegaLive #2</td><td>3 preheats, 1 to 2 LIVE-day ads</td><td class="num">5</td></tr>
+<tr><td class="hook"><strong>Total</strong></td><td>Planned at the top of each range</td><td class="num"><strong>30</strong></td></tr>
+</tbody></table></div>
+<p class="meta" style="margin-top:14px">Counts use the upper end of each range. The low end is 24.</p>
+</div>
+</section>
+
+<section><p class="eyebrow">6. How we will know it is working</p>
+<div class="card">
+<h2>Registration efficiency drives the evergreen decisions. GPM and CPO judge the shows.</h2>
+<div class="stat-row"><span class="k">Evergreen read metric</span><span class="v">Cost per registration</span></div>
+<div class="stat-row"><span class="k">LIVE GPM floor</span><span class="v">$4</span></div>
+<div class="stat-row"><span class="k">LIVE GPM goal</span><span class="v">Above $6</span></div>
+<div class="stat-row"><span class="k">Paid efficiency</span><span class="v">CPO</span></div>
+<p class="meta" style="margin-top:14px">LIVE GPM is GMV per 1,000 viewer entries to the LIVE room. CPO (cost per order) is the primary paid metric for TikTok Shop.</p>
+<h3>Leading indicators at each read</h3>
+<ul><li>Registrations and cost per registration by format and hook.</li><li>Hook retention in the first two seconds of each preheat.</li><li>Frequency and falling click-through as fatigue signals.</li><li>LIVE room entries sourced from rapid-turn ads during each tentpole.</li></ul>
+</div>
+</section>
+
+<section><p class="eyebrow">7. Next steps</p>
+<div class="card"><span class="badge b-1">This week, Sep 30 to Oct 2</span><h2 style="margin-top:10px">Lock dates and inputs.</h2>
+<ul>
+<li>Confirm the First LIVE date. The plan runs on October 19 and every evergreen date keys off it.</li>
+<li>Confirm the BFCM show dates. Nov 28 is a Saturday. Black Friday is Nov 27 and Cyber Monday is Nov 30.</li>
+<li>Get hero SKUs, gifting bundles and LIVE offers from Hotel Chocolat for October.</li>
+<li>Confirm the host for the First LIVE.</li>
+<li>Write the three evergreen briefs and the three First LIVE preheat briefs.</li>
+</ul></div>
+<div class="card"><span class="badge b-1">Oct 5 to 8</span><h2 style="margin-top:10px">Produce, approve and set up.</h2>
+<ul>
+<li>Shoot and edit the three evergreen preheats and First LIVE Preheat #1.</li>
+<li>Hotel Chocolat approval by Oct 7 (suggested) so assets are live on Oct 9.</li>
+<li>Set up the LIVE event and registration in TikTok Shop for Oct 19.</li>
+<li>Build the GMV Max campaigns and registration tracking for the evergreen read.</li>
+</ul></div>
+<div class="card"><span class="badge b-1">Oct 9 to 19</span><h2 style="margin-top:10px">Launch and run the First LIVE burst.</h2>
+<ul>
+<li>Oct 9: Tentpole Preheat #1 live. Oct 9 to 12: evergreen launch.</li>
+<li>Oct 14: Preheat #2 live. Oct 17 to 18: Preheat #3 live.</li>
+<li>Book the SV Producer for Oct 19 with a same-day edit and paid launch workflow.</li>
+</ul></div>
+<div class="card"><span class="badge b-2">Oct 20 to Nov 13</span><h2 style="margin-top:10px">Optimize and get ahead on holiday production.</h2>
+<ul>
+<li>Run the Oct 23 to 26 read and make the Keep, Cut and Iterate calls.</li>
+<li>Launch 1 to 2 winning-format iterations Oct 28 to 30.</li>
+<li>Lock BFCM and MegaLive themes, offers and hosts by early November.</li>
+<li>Brief and produce the BFCM preheats for approval by Nov 13 (suggested), ahead of the Nov 18 launch.</li>
+</ul></div>
+<div class="card"><span class="badge b-2">Nov 14 to Dec 10</span><h2 style="margin-top:10px">Run the holiday tentpoles.</h2>
+<ul>
+<li>Approve MegaLive #1 and #2 preheats by Nov 20 (suggested). Their launches start Nov 26 and Nov 30.</li>
+<li>Book the SV Producer for Nov 28, Dec 6 and Dec 10.</li>
+<li>Brief the early December holiday evergreen iterations off the late November read.</li>
+<li>Decide by mid-December whether the program continues into January.</li>
+</ul></div>
+</section>
+
+<section><p class="eyebrow">What we need from Hotel Chocolat</p>
+<div class="card"><ul>
+<li>Final LIVE calendar: the First LIVE date, the BFCM show dates and times, and the recurring LIVE schedule.</li>
+<li>Hero SKUs, bundles and LIVE-exclusive offers for each tentpole.</li>
+<li>Host confirmation.</li>
+<li>An approval contact and a 48-hour turnaround on preheat creative.</li>
+</ul></div>
+</section>
+
+<section><p class="eyebrow">Risks worth naming</p>
+<div class="card">
+<h2>The First LIVE date is not final.</h2>
+<p class="meta">The evergreen launch, the first read and the refresh are all keyed to Oct 19. A move of a few days shifts the whole October cadence.</p>
+<h2>The approval window before launch is tight.</h2>
+<p class="meta">The first assets go live Oct 9, nine days from today. Brief sign-off this week keeps that date.</p>
+<h2>BFCM and the MegaLives overlap from Nov 26 to Dec 10.</h2>
+<p class="meta">Up to three preheat campaigns run at once. Clear messaging per event and paid budget split by event keep them from competing for the same audience.</p>
+<h2>LIVE-day ads depend on a same-day workflow.</h2>
+<p class="meta">Rapid-turn ads only work if edit, approval and launch happen during the show. Pre-approving the ad structure and offer language removes the approval step on the day.</p>
+</div>
+</section>
+
+<div class="companion"><p>Companion documents</p><p style="text-transform:none;letter-spacing:0;font-family:Inter,sans-serif;font-size:15px;color:var(--ink-2);margin:0">None yet</p></div>
+</main>
+<footer><p>third. Q4 TikTok Shop LIVE Preheat Strategy. Hotel Chocolat. September 30, 2026.</p><p>Sources: Third Q4 LIVE preheat plan for Hotel Chocolat. Dates reflect a First LIVE on October 19, 2026.</p><p>GMV figures are gross TikTok-attributed GMV, not net revenue. LIVE GPM and CPO targets are Third house benchmarks. Suggested approval dates and the November biweekly read windows are planning assumptions.</p></footer>
+
+</body></html>
