@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brotege Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+  color-scheme:light;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
+section.alt .companions{background:#fff;}
+.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.companions ul{list-style:none;margin-top:12px;}
+.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
+.companions li:first-child{border-top:none;}
+.companions li b{font-weight:700;color:var(--ink);}
+.hooks{margin-top:22px;display:grid;gap:12px;}
+.hook{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;}
+.hook .rank{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);}
+.hook .quote{font-size:16px;font-weight:700;line-height:1.35;}
+.hook .meta{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.hook .why{margin-top:9px;font-size:14px;color:#333;}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.dodont .panel.do{border-top:6px solid var(--c4);}
+.dodont .panel.dont{border-top:6px solid var(--c8);}
+.quotebox{margin-top:20px;display:grid;gap:10px;}
+.qb{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c5);border-radius:12px;padding:16px 20px;font-size:15px;color:#333;}
+.qb .src{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+.qb.neg{border-left-color:var(--c8);}
+.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--ink);color:#fff;padding:7px 12px;border-radius:6px;}
+.chip.alt2{background:var(--c6);} .chip.alt3{background:var(--c7);} .chip.alt4{background:var(--c4);color:var(--ink);}
+.gate{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;margin-top:12px;border-left:6px solid var(--c5);}
+.gate .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gate h3{margin-top:8px;font-size:17px;}
+.gate p{margin-top:9px;font-size:14px;color:#333;}
+@media(max-width:760px){.dodont{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;gap:8px;}}
+.tbl tr.mbm td{background:#FFF1EE;font-weight:700;border-top:2px solid var(--tomato);border-bottom:2px solid var(--tomato);}
+.tbl tr.med td{background:#FAFAF8;font-weight:700;}
+.tbl tr.ex td{color:#9A9A9A;}
+.tbl td.r,.tbl th.r{text-align:right;}
+.tbl.dense td{padding:9px 14px;font-size:13px;}
+.tbl.dense th{padding:11px 14px;}
+.chart{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 20px 14px;}
+.chart svg{width:100%;height:auto;display:block;}
+.legend{display:flex;gap:22px;flex-wrap:wrap;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:7px;vertical-align:-1px;}
+.qlist{list-style:none;margin-top:14px;}
+.qlist li{padding:11px 0;border-top:1px solid #EDEDEA;font-size:15px;color:#333;}
+.qlist li:first-child{border-top:none;}
+.gapgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px;}
+.gap{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;border-left:6px solid var(--tomato);}
+.gap .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gap .gn{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;}
+.gap p{margin-top:8px;font-size:14px;color:#333;}
+@media(max-width:760px){.gapgrid{grid-template-columns:1fr;}}
+.tblwrap{overflow-x:auto;margin-top:18px;max-width:100%}
+section.alt .hooks .hook, .hooks .hook{background:#fff}
+</style>
+</head><body>
+
+
+<div class="hero"><div class="wrap"><div class="kicker">THIRD. &middot; Brotege &middot; Strategy</div><h1>Brotege &times; TikTok Shop US</h1><p class="sub">Since Third took over the account in May, Brotege has done $6.5K in total shop GMV. There are enough creators under the 20,000-follower cap. The gains are in reach per video, repeat posting and the gifting buyer, with Night Train launching in early October.</p></div></div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<section><div class="wrap"><div class="sec-kicker">01 &middot; The position</div><h2>Creators post Brotege once. Few of their videos reach anyone.</h2>
+<p class="lede">Since Third took over (May 1 to September 29, 2026), Brotege sold 283 units for $6,534.47 in total shop GMV, almost all of it Good Boy Protection Daily Moisturizer (SPF 15 and retinol, $28.50 list). Night Train, a nighttime moisturizer for men at $34.99, launches in early October.</p>
+<div class="stats">
+<div class="stat"><div class="num">$6.5K</div><div class="lbl">Total shop GMV since May 1, at a $23.09 realized price per unit</div></div>
+<div class="stat"><div class="num">$5.83</div><div class="lbl">GMV per affiliate video posted since May 1 (shop data: $822 on 141 videos from 82 affiliates)</div></div>
+<div class="stat"><div class="num">374</div><div class="lbl">Median views on an affiliate video posted since May 1</div></div>
+<div class="stat"><div class="num">1.7</div><div class="lbl">Videos per affiliate since May 1. The median affiliate posted once</div></div>
+</div>
+<div class="statement"><div class="tag">The finding</div><p>Brotege's shortfall sits in two places: videos that never reach 500 views, and creators who post once and stop. Both are fixable inside the 20,000-follower cap.</p><p class="detail">Views are what matter. Since May, an affiliate video with 2,000 or more views sold 83% of the time and one with 500 to 2,000 views sold 24% of the time. Under 500 views, it sold 2.4% of the time. Affiliates who posted three or more videos earned $35.80 each; one-video affiliates earned $3.64.</p></div>
+</div></section>
+
+<section class="alt"><div class="wrap"><div class="sec-kicker">02 &middot; Trajectory</div><h2>GMV fell by a third after June as video output stayed low</h2>
+<p class="lede">Total shop GMV averaged $1,617 a month in May and June and $1,100 a month from July to September. The average week dropped from $260 in the four weeks from June 29 to $189 in the four weeks to September 27.</p>
+<div class="chart">
+<svg viewBox="0 0 820 290" role="img" aria-label="Weekly total shop GMV and new linked videos, June 29 to September 27, 2026">
+<g font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">
+<line x1="60" y1="250" x2="800" y2="250" stroke="#D8D8D4"/>
+<line x1="60" y1="206" x2="800" y2="206" stroke="#EDEDEA"/>
+<line x1="60" y1="162" x2="800" y2="162" stroke="#EDEDEA"/>
+<line x1="60" y1="118" x2="800" y2="118" stroke="#EDEDEA"/>
+<line x1="60" y1="74" x2="800" y2="74" stroke="#EDEDEA"/>
+<line x1="60" y1="30" x2="800" y2="30" stroke="#EDEDEA"/>
+<text x="52" y="254" text-anchor="end">$0</text>
+<text x="52" y="210" text-anchor="end">$100</text>
+<text x="52" y="166" text-anchor="end">$200</text>
+<text x="52" y="122" text-anchor="end">$300</text>
+<text x="52" y="78" text-anchor="end">$400</text>
+<text x="52" y="34" text-anchor="end">$500</text>
+<text x="808" y="254">0</text>
+<text x="808" y="199">3</text>
+<text x="808" y="144">6</text>
+<text x="808" y="89">9</text>
+<text x="808" y="34">12</text>
+</g>
+<g fill="#111111">
+<rect x="70.5" y="105.0" width="36" height="145.0"/>
+<rect x="127.4" y="203.8" width="36" height="46.2"/>
+<rect x="184.3" y="55.2" width="36" height="194.8"/>
+<rect x="241.3" y="177.5" width="36" height="72.5"/>
+<rect x="298.2" y="147.7" width="36" height="102.3"/>
+<rect x="355.1" y="35.8" width="36" height="214.2" fill="#FF5A3E"/>
+<rect x="412.0" y="85.1" width="36" height="164.9"/>
+<rect x="468.9" y="151.0" width="36" height="99.0"/>
+<rect x="525.9" y="162.0" width="36" height="88.0"/>
+<rect x="582.8" y="135.4" width="36" height="114.6"/>
+<rect x="639.7" y="182.9" width="36" height="67.1"/>
+<rect x="696.6" y="172.1" width="36" height="77.9"/>
+<rect x="753.5" y="176.9" width="36" height="73.1"/>
+</g>
+<polyline fill="none" stroke="#3A6BFF" stroke-width="2.5" points="88.5,213.3 145.4,176.7 202.3,103.3 259.3,121.7 316.2,66.7 373.1,140 430.0,176.7 486.9,195 543.9,213.3 600.8,158.3 657.7,176.7 714.6,48.3 771.5,231.7"/>
+<g fill="#3A6BFF"><circle cx="88.5" cy="213.3" r="3.5"/><circle cx="145.4" cy="176.7" r="3.5"/><circle cx="202.3" cy="103.3" r="3.5"/><circle cx="259.3" cy="121.7" r="3.5"/><circle cx="316.2" cy="66.7" r="3.5"/><circle cx="373.1" cy="140" r="3.5"/><circle cx="430.0" cy="176.7" r="3.5"/><circle cx="486.9" cy="195" r="3.5"/><circle cx="543.9" cy="213.3" r="3.5"/><circle cx="600.8" cy="158.3" r="3.5"/><circle cx="657.7" cy="176.7" r="3.5"/><circle cx="714.6" cy="48.3" r="3.5"/><circle cx="771.5" cy="231.7" r="3.5"/></g>
+<g font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B" text-anchor="middle">
+<text x="88.5" y="270">Jun 29</text><text x="202.3" y="270">Jul 13</text><text x="316.2" y="270">Jul 27</text><text x="430.0" y="270">Aug 10</text><text x="543.9" y="270">Aug 24</text><text x="657.7" y="270">Sep 7</text><text x="771.5" y="270">Sep 21</text>
+<text x="373.1" y="28" fill="#FF5A3E">$487</text>
+</g>
+</svg>
+<div class="legend"><span><i style="background:#111111"></i>Weekly total shop GMV (left axis)</span><span><i style="background:#FF5A3E"></i>Peak week, Aug 3</span><span><i style="background:#3A6BFF"></i>New linked videos per week (right axis)</span></div>
+</div>
+<p class="body-p">By month: May $1,598, June $1,637, July $1,000, August $1,536, September $763. GMV tracks video output with a one to two week lag. The 17 new videos in the last two weeks of July were followed by two of the three best weeks of the quarter. Recent weeks keep collecting GMV for several weeks, so September will move up somewhat.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">03 &middot; Diagnosis</div><h2>What is working and what is not, since May</h2>
+<div class="twocol">
+<div class="panel trig"><h3>Working</h3><ul>
+<li><b>Gifting hooks sell best.</b> "Men, women, both, stop. Pay attention to this," followed by "Do you have a boyfriend? A husband?", sold 17.8 units per 1,000 views in July. A mom buying for her son sold 12.8 in August.</li>
+<li><b>Women sell a men's product.</b> 9 of the 13 affiliates who converted since May are women, and 11 of the 13 have a mostly female audience.</li>
+<li><b>Videos that get seen, sell.</b> 5 of the 6 affiliate videos that passed 2,000 views made a sale.</li>
+<li><b>Follower count does not sort winners.</b> Creators with 5,000 to 10,000 followers sold most often (20% of their videos), ahead of creators over 20,000 (15.4%), so the cap costs little.</li>
+<li><b>Price and social proof hooks.</b> "Who else ordered tons of Good Boy Protection because today's offer was too good to pass up?" sold 2.9 units per 1,000 views.</li>
+</ul></div>
+<div class="panel obj"><h3>Not working</h3><ul>
+<li><b>Reach.</b> 60% of affiliate videos posted since May have under 500 views, and those sold 2.4% of the time.</li>
+<li><b>One-and-done creators.</b> 57 of the 82 affiliates who posted since May posted one video. One-video affiliates sold 8.8% of the time; affiliates with three or more sold 35.7% of the time.</li>
+<li><b>Product shows up late.</b> Videos with the product on screen in the first three seconds sold 20% of the time, against 4.8% when it came later (96 analyzed videos).</li>
+<li><b>Sit-down reviews and demos.</b> Videos showing Good Boy used inside a routine sold 38.1% of the time (21 videos). Sit-down reviews sold 10.6% (47) and demos 6.3% (16).</li>
+<li><b>GMV leans on brand posts.</b> Brotege's own account earned $1,441 on 49 videos since May, against $822 for all 141 affiliate videos combined.</li>
+</ul></div>
+</div>
+</div></section>
+
+<section class="alt"><div class="wrap"><div class="sec-kicker">04 &middot; Category benchmark</div><h2>Men's face moisturizers from $18 to $36, 90 days to September 29, 2026</h2>
+<p class="lede">This is the price band Good Boy ($28.50) and Night Train ($34.99) compete in. It is one large winner and a long tail. Good Boy already ranks fourth of ten.</p>
+<div class="stats">
+<div class="stat"><div class="num">$2,262</div><div class="lbl">Median 90-day GMV of the nine competitors. Good Boy: $3,212</div></div>
+<div class="stat"><div class="num">20%</div><div class="lbl">Median open commission. Good Boy: 15%</div></div>
+<div class="stat"><div class="num">83%</div><div class="lbl">Share of the band's 90-day GMV taken by FORGE Skin</div></div>
+<div class="stat"><div class="num">108</div><div class="lbl">Linked videos for Hims Goodnight, the closest men's night cream, after a year</div></div>
+</div>
+<p class="body-p">The two products that broke out, FORGE Skin and Berigien, sell almost entirely through creator videos with ad spend behind them. The men's night cream lane has almost no competition. Hims Goodnight, Night Train's closest competitor, has 108 linked videos and did $279 in the last 90 days.</p>
+<table class="tbl dense">
+<thead><tr><th>Product</th><th class="r">Shelf price</th><th class="r">Open commission</th><th class="r">90-day GMV</th><th class="r">Linked creators</th><th class="r">Linked videos</th><th class="r">Top-30 video GMV ad-served</th></tr></thead>
+<tbody>
+<tr><td>FORGE Skin tallow moisturizer</td><td class="n r">$29.00</td><td class="n r">20%</td><td class="n r">$576,774</td><td class="n r">2,828</td><td class="n r">11,390</td><td class="n r">100%</td></tr>
+<tr><td>Berigien men's skincare gel</td><td class="n r">$18.77</td><td class="n r">19%</td><td class="n r">$102,036</td><td class="n r">40</td><td class="n r">110</td><td class="n r">100%</td></tr>
+<tr><td>Tiege Hanley AM SPF Moisturizer</td><td class="n r">$18.42</td><td class="n r">20%</td><td class="n r">$8,937</td><td class="n r">172</td><td class="n r">306</td><td class="n r">99%</td></tr>
+<tr class="mbm"><td>Brotege Good Boy Protection</td><td class="n r">$27.26</td><td class="n r">15%</td><td class="n r">$3,212</td><td class="n r">310</td><td class="n r">599</td><td class="n r">92%</td></tr>
+<tr><td>Uttse 6-in-1 men's moisturizer</td><td class="n r">$21.35</td><td class="n r">20%</td><td class="n r">$2,652</td><td class="n r">72</td><td class="n r">261</td><td class="n r">n/a</td></tr>
+<tr class="med"><td>Median (9 competitors)</td><td class="n r"></td><td class="n r">20%</td><td class="n r">$2,262</td><td class="n r">72</td><td class="n r">186</td><td class="n r"></td></tr>
+<tr><td>Tiege Hanley Super Serum</td><td class="n r">$30.00</td><td class="n r">20%</td><td class="n r">$2,262</td><td class="n r">93</td><td class="n r">186</td><td class="n r">n/a</td></tr>
+<tr><td>Terez &amp; Honor 6-in-1 men's moisturizer</td><td class="n r">$27.76</td><td class="n r">15%</td><td class="n r">$760</td><td class="n r">83</td><td class="n r">257</td><td class="n r">91%</td></tr>
+<tr><td>Tiege Hanley PM Night Cream</td><td class="n r">$30.00</td><td class="n r">20%</td><td class="n r">$698</td><td class="n r">5</td><td class="n r">8</td><td class="n r">100%</td></tr>
+<tr><td>Nivea Men Age Defense</td><td class="n r">$29.00</td><td class="n r">19.5%</td><td class="n r">$338</td><td class="n r">17</td><td class="n r">13</td><td class="n r">n/a</td></tr>
+<tr><td>Hims Goodnight night cream</td><td class="n r">$32.32</td><td class="n r">20%</td><td class="n r">$279</td><td class="n r">54</td><td class="n r">108</td><td class="n r">100%</td></tr>
+<tr class="ex"><td>Tiege Hanley Basic Set (kit, excluded)</td><td class="n r">$19.99</td><td class="n r">20%</td><td class="n r">$9,545</td><td class="n r">33</td><td class="n r">101</td><td class="n r"></td></tr>
+</tbody></table>
+<p class="note">Shelf prices are marketplace prices on September 30 and move with promotions. Excluded: kits, hair products, women's lines and unbranded resale listings. Ad-served share covers each product's 30 highest-GMV videos, or all of them where there are fewer.</p>
+</div></section>
+
+
+<section><div class="wrap"><div class="sec-kicker">05 &middot; Founder peers</div><h2>Five founder-led men's skincare shops, May 1 to September 29, 2026</h2>
+<p class="lede">These brands sell a small line of face care direct to consumer, led by a hero moisturizer or kit. The window matches Third's time on the Brotege account.</p>
+<table class="tbl">
+<thead><tr><th>Shop</th><th>Shop opened</th><th class="r">Brand followers</th><th class="r">GMV since May 1</th><th class="r">New videos</th><th class="r">GMV per new video</th></tr></thead>
+<tbody>
+<tr><td>FORGE MEN</td><td>Feb 2025</td><td class="n r">10,122</td><td class="n r">$1,167,479</td><td class="n r">3,439</td><td class="n r">$339.50</td></tr>
+<tr><td>Tiege Hanley</td><td>Oct 2023</td><td class="n r">39,255</td><td class="n r">$353,630</td><td class="n r">1,069</td><td class="n r">$330.80</td></tr>
+<tr class="med"><td>Median (5 peers)</td><td></td><td class="n r">10,122</td><td class="n r">$58,888</td><td class="n r">314</td><td class="n r">$187.50</td></tr>
+<tr><td>Geologie</td><td>Apr 2024</td><td class="n r">105,163</td><td class="n r">$58,888</td><td class="n r">314</td><td class="n r">$187.50</td></tr>
+<tr><td>BULLBEE Tallow</td><td>Aug 2025</td><td class="n r">9,003</td><td class="n r">$13,007</td><td class="n r">272</td><td class="n r">$47.80</td></tr>
+<tr class="mbm"><td>Brotege</td><td>Apr 2025</td><td class="n r">8,551</td><td class="n r">$6,534</td><td class="n r">75</td><td class="n r">$87.10</td></tr>
+<tr><td>Jaxon Lane</td><td>May 2024</td><td class="n r">1,732</td><td class="n r">$475</td><td class="n r">16</td><td class="n r">$29.70</td></tr>
+</tbody></table>
+<p class="body-p"><b>The FORGE playbook.</b> All 30 of FORGE Skin's top videos ran with ad spend behind creator content. 18 of the 30 are Spanish-language, and the top two creators are women. Two creators under 20,000 followers, miamix_boy and eldonoferton22, each earned about $48K on the product. FORGE pays 20% open commission.</p>
+<p class="body-p"><b>The Tiege Hanley playbook.</b> Repeat posters carry the AM SPF Moisturizer. One creator made 6 of its 10 best videos, and the message stays on one fact: the moisturizer has sunscreen in it.</p>
+<p class="body-p"><b>Where Geologie differs.</b> 75% of Geologie's 90-day creator GMV came from creators over 100,000 followers. That route is closed under the cap.</p>
+<div class="callout"><div class="ct">Closest analog</div><p>BULLBEE Tallow opened in August 2025 with four products and 9,003 brand followers. Since May it did twice Brotege's GMV on 3.6 times the new videos. In the last 90 days, 96% of its video GMV ($1,944 of $2,025) came from its own brand account, the same pattern Brotege shows, and it has not broken out. FORGE, with a similar follower count and a single hero moisturizer, broke out by putting paid behind creator videos. That is the route for Brotege.</p></div>
+<p class="note">GMV per new video is total shop GMV divided by new linked videos over the same window, so it includes GMV from ads and the product card. Counting only affiliate videos posted since May, Brotege is $5.83. FORGE and Tiege Hanley playbook figures cover each product's all-time top videos.</p>
+</div></section>
+
+<section class="alt"><div class="wrap"><div class="sec-kicker">06 &middot; The gaps</div><h2>Where the revenue is sitting</h2>
+<div class="gapgrid">
+<div class="gap"><div class="gt">Videos per affiliate</div><div class="gn">1.7 &rarr; 3</div><p>Since May, affiliates with three or more videos earned $35.80 each and sold 35.7% of the time. One-video affiliates earned $3.64 and sold 8.8% of the time. A three-video ask, a posting deadline and Spark support for videos that start to travel move creators up that curve.</p></div>
+<div class="gap"><div class="gt">Reach per video</div><div class="gn">60% under 500 views</div><p>Product on screen in the first three seconds, the proven hooks in section 08, and Spark ads on any creator video that passes 500 views in its first 72 hours.</p></div>
+<div class="gap"><div class="gt">Product in the first three seconds</div><div class="gn">20% vs 4.8%</div><p>Since May, videos that showed Good Boy inside three seconds sold four times as often as videos that showed it later. Every brief and target plan leads with this rule.</p></div>
+<div class="gap"><div class="gt">The gifting buyer</div><div class="gn">17.8 units / 1K views</div><p>The best hook since May speaks to women buying for a partner. Brotege did $750 in November and December 2025, so the holiday has not been worked.</p></div>
+<div class="gap"><div class="gt">Paid behind creator videos</div><div class="gn">$1,441 vs $822</div><p>Brotege's own posts out-earned every affiliate video combined since May. FORGE scales by putting spend behind creator videos. Moving Spark ads to creator posts that pass 500 views is fully in Third's control.</p></div>
+<div class="gap"><div class="gt">Night Train's lane</div><div class="gn">108 videos</div><p>Hims Goodnight, the closest men's night cream, has 108 linked videos and $2,453 in GMV a year after launch, with 2 new videos in the last 90 days. Night Train launches into a lane no brand owns yet.</p></div>
+</div>
+</div></section>
+<section><div class="wrap"><div class="sec-kicker">07 &middot; The tactical plan</div><h2>Who we reach, what we ask, and where paid goes, October 5 to January 3</h2>
+<p class="lede">Good Boy stays the hero. Night Train launches in early October with no pre-launch samples and rides on the same outreach, picking up target plans as soon as it is live. Women gift-guide sampling starts November 1.</p>
+<h3 style="margin-top:30px">The missed opportunity: Brotege has not reached the creators who sell this category</h3>
+<div class="stats">
+<div class="stat"><div class="num">800</div><div class="lbl">Creators under 20,000 followers who have sold a men's face cream or a men's gift on TikTok Shop</div></div>
+<div class="stat"><div class="num">$1.04M</div><div class="lbl">Their lifetime GMV on those products (marketplace data)</div></div>
+<div class="stat"><div class="num">27</div><div class="lbl">Of the 800 are in Brotege's creator CRM of 4,294. Four posted Brotege</div></div>
+<div class="stat"><div class="num">0</div><div class="lbl">Of the 800 have sold Brotege</div></div>
+</div>
+<p class="body-p">Brotege's CRM holds 4,294 creators. 521 have ever posted a Brotege video and 62 have ever sold one. The creators already selling FORGE Skin, Tiege Hanley, Particle, Enhanse and the leading men's gifts are almost entirely outside it. Of the top 100 men's skincare creators below, 11 are in the CRM, two have posted and none has sold. Of the top 100 women's gift-guide creators, one is in the CRM and she has never posted. The top 100 men's median views per video is 753, about twice Brotege's 374 median since May.</p>
+<div class="tblwrap"><table class="tbl dense" style="margin-top:0">
+<thead><tr><th>List (workbook tab)</th><th class="r">Creators</th><th class="r">With email</th><th>Proof they sell</th><th>Who they are</th></tr></thead>
+<tbody>
+<tr><td><b>Top 100 men's skincare</b></td><td class="n r">100</td><td class="n r">49</td><td>$243.7K lifetime GMV and 7,076 units on men's face care</td><td>Men who sold FORGE Skin (44), Tiege Hanley (21), Enhanse (14), Particle (12) and Harry's (10). Median 7,904 followers.</td></tr>
+<tr><td><b>Brotege converters</b></td><td class="n r">48</td><td class="n r">29</td><td>$1.8K in Brotege sales on 145 videos</td><td>Every creator under 20,000 followers who has sold Brotege. 46 have not posted since August 1, and 34 are women.</td></tr>
+<tr><td><b>Top 100 women gift guide</b></td><td class="n r">100</td><td class="n r">46</td><td>$264.3K lifetime GMV on men's gifts and men's face care</td><td>Women who sold Crowned Skin King, Dr. Squatch sets, Cuba Gold, beard kits, FORGE Skin or Harry's. Median 10,914 followers.</td></tr>
+<tr><td><b>Full prospect pool</b></td><td class="n r">800</td><td class="n r"></td><td>$1.04M lifetime GMV on the same products</td><td>Every like-product seller under 20,000 followers, used to fill the weekly target plan cap once the priority lists are invited.</td></tr>
+</tbody></table></div>
+<p class="note">Fit score: GMV and units on like products, the number of like brands sold, and average views per video, each ranked against the pool. Lifetime GMV is marketplace data on 15 men's face care and 8 men's gift listings; 28-day activity was not available per creator, so confirm recent posting before sampling. The CRM match is by TikTok handle.</p>
+<div class="panel trig" style="margin-top:24px"><h3>Standing rules</h3><ul>
+<li><b>Cap:</b> 2,000 target plans a week, only to creators under 20,000 followers.</li>
+<li><b>Order:</b> priority lists first, in the order of the workbook, then the full prospect pool by GMV on like products.</li>
+<li><b>Ask:</b> three videos per creator, the first within 14 days of the sample landing. In October: two Good Boy, one Night Train.</li>
+<li><b>Brief:</b> product on screen in the first three seconds, shown in use inside a routine, opening with a hook from section 08.</li>
+<li><b>Spark:</b> ad spend on any creator video that passes 500 views in its first 72 hours. Every plan asks for the Spark code.</li>
+<li><b>Email:</b> runs alongside target plans to every list creator with a public email, with no volume target. It is judged on replies and samples requested.</li>
+<li><b>Terms:</b> Good Boy open plan stays at 15%. Good Boy and Night Train sell as separate SKUs.</li>
+</ul></div>
+<div class="tblwrap"><table class="tbl dense" style="margin-top:0">
+<thead><tr><th style="min-width:112px">When</th><th style="min-width:128px">Target plans a week</th><th style="min-width:220px">Target plan pool</th><th style="min-width:210px">Email: who we send to</th><th style="min-width:170px">Paid</th></tr></thead>
+<tbody>
+<tr><td><b>Weeks 1 to 2</b><br>Oct 5 to 18</td><td><b>1,100</b> Good Boy<br><b>900</b> Night Train</td><td><b>Top 100 men's skincare</b>, all invited in week 1. The rest of the weekly cap goes to the full pool's men's face care sellers, led by FORGE Skin, Tiege Hanley, Particle and Enhanse creators.</td><td><b>Top 100 men's skincare</b> with an email (49). Start with the 11 already in Brotege's CRM, who know the brand.</td><td>Spark on videos over 500 views. Night Train on Max Delivery.</td></tr>
+<tr><td><b>Weeks 3 to 4</b><br>Oct 19 to 31</td><td><b>1,300</b> Good Boy<br><b>700</b> Night Train</td><td><b>Brotege converters</b>: the 48 under 20,000 followers, at a rate above the open plan, with the two gifting openers as their brief. Night Train goes back to creators whose first video passed 500 views. The full pool fills the rest.</td><td><b>Brotege converters</b> with an email (29).<br><br><b>Top 100 men</b> who have not replied get one follow-up.</td><td>GMV Max on Good Boy from Oct 19.</td></tr>
+<tr><td><b>Weeks 5 to 9</b><br>Nov 1 to Dec 6</td><td><b>2,000</b><br>Good Boy majority</td><td><b>Top 100 women gift guide</b>, all invited the first week of November, pitching Good Boy and Night Train as separate gifts for him. Then the other women in the full pool who sold a men's gift or men's face care. First videos land mid to late November.</td><td><b>Top 100 women gift guide</b> with an email (46).<br><br>Women in the full pool who sold a men's gift.</td><td>Concentrate on the best gifting videos through Cyber Monday (Dec 1). Night Train moves to GMV Max at about 50 videos.</td></tr>
+<tr><td><b>Weeks 10 to 13</b><br>Dec 7 to Jan 3</td><td><b>2,000</b><br>Good Boy majority</td><td>Q4 posters whose videos sold get a fresh brief for their next video. New Year routine content is briefed for both products.</td><td><b>Creators whose Q4 videos sold</b>, with the New Year routine brief.<br><br><b>Non-responders</b> from the October and November lists get one follow-up.</td><td>Gifting videos until the shipping cutoff, then routine videos.</td></tr>
+</tbody></table></div>
+<p class="note">Assumption: the October split is a starting point. If Night Train's first videos pass 500 views more often than Good Boy's, shift up to 200 plans a week toward it in weeks 3 to 4, keeping Good Boy at 1,000 or more. CPO is the paid measure: at 15% commission on the $23.09 realized price, Good Boy leaves $19.63 per order before landed cost and fulfillment.</p>
+<div class="callout"><div class="ct">Night Train's 60-day goal</div><p>Own men's night cream on TikTok Shop. Hims Goodnight launched in September 2025 and has 108 linked videos and $2,453 in GMV; in the last 90 days it added 2 videos and sold 9 units. Passing 108 creator videos by early December makes Night Train the most-covered men's night cream on the platform.</p></div>
+<h3 style="margin-top:34px">What it adds up to</h3>
+<table class="tbl">
+<thead><tr><th>Sample request rate on target plans</th><th class="r">Creators a month</th><th class="r">Videos at 3 per creator</th><th class="r">Affiliate GMV at $5.83 a video</th><th class="r">Affiliate GMV at $15 a video</th></tr></thead>
+<tbody>
+<tr><td>2%</td><td class="n r">173</td><td class="n r">519</td><td class="n r">$3,026</td><td class="n r">$7,785</td></tr>
+<tr class="mbm"><td>4% (base case)</td><td class="n r">346</td><td class="n r">1,038</td><td class="n r">$6,052</td><td class="n r">$15,570</td></tr>
+<tr><td>6%</td><td class="n r">520</td><td class="n r">1,560</td><td class="n r">$9,095</td><td class="n r">$23,400</td></tr>
+</tbody></table>
+<p class="body-p">At the 1.7 videos per affiliate and $5.83 per video seen since May, the base case adds about $3.5K a month. Three videos per creator lifts that to $6.1K, and $15 per video lifts it to $15.6K. Email outreach and GMV Max add on top of these figures.</p>
+<p class="note">Assumptions: sample request rates are placeholders until two weeks of target plan data arrive. Three videos per creator is the target; the average since May is 1.7 and the median is 1. $15 per video is the target once hooks, product-first openings and Spark ads are in place. Figures are steady state, since samples take two to six weeks to become videos.</p>
+</div></section>
+<section class="alt"><div class="wrap"><div class="sec-kicker">08 &middot; Target plan and email one-liners</div><h2>What gets a creator to open the plan</h2>
+<p class="lede">Each line leads with a fact about how Brotege or its price band sells on TikTok Shop, so the creator sees a reason the product will convert for them.</p>
+<table class="tbl">
+<thead><tr><th>For</th><th>One-liner</th><th>The data behind it</th></tr></thead>
+<tbody>
+<tr><td>Men's grooming creators</td><td>"Men's SPF 15 + retinol in one tube. Brotege videos that hit 2K views sold 5 out of 6 times."</td><td>5 of 6 affiliate videos over 2,000 views made a sale since May.</td></tr>
+<tr><td>Creators who sold FORGE, Enhanse or Particle</td><td>"Your audience already buys men's moisturizers. Good Boy adds SPF 15 and retinol, under $30."</td><td>FORGE Skin ($29) did $576.8K in 90 days. Good Boy's realized price since May is $23.09.</td></tr>
+<tr><td>Women creators</td><td>"Women are buying this for their husbands. Our top video sold 17 units on 956 views."</td><td>The gifting opener sold 17.8 units per 1,000 views. 9 of 13 converting affiliates since May are women.</td></tr>
+<tr><td>Mom creators</td><td>"Moms are buying this for their sons: SPF + retinol he'll actually use."</td><td>The mom-for-son opener sold 12.8 units per 1,000 views in August.</td></tr>
+<tr><td>Gift guides</td><td>"A men's skincare gift under $30 he'll use every morning."</td><td>$23.09 realized price since May. Hims Goodnight's selling videos by women were framed as gifts for him.</td></tr>
+<tr><td>Past Brotege creators</td><td>"The two openers that sold Good Boy best this summer are inside. Your next video starts here."</td><td>The top two openers sold 17.8 and 12.8 units per 1,000 views, two to four times the next best (4.9).</td></tr>
+<tr><td>Night Train: men's grooming</td><td>"A night cream for men who skip skincare. On before bed, nothing to learn."</td><td>Hims Goodnight's top video sold 17 units on a no-routine pitch.</td></tr>
+<tr><td>Night Train: early movers</td><td>"The leading men's night cream has 108 videos after a year. Night Train is open for its first creators."</td><td>Hims Goodnight launched September 2025 and has 108 linked videos, $2,453 in GMV, and 2 new videos in the last 90 days.</td></tr>
+<tr><td>Night Train: women creators</td><td>"He keeps borrowing your night cream. Now he has his own."</td><td>The partner angle drove Brotege's best video. Hims Goodnight videos by women that sold were framed as a gift for him.</td></tr>
+</tbody></table>
+<h3 style="margin-top:34px">Brief messaging: opening lines that sold men's moisturizers in the last six months</h3>
+<div class="hooks">
+<div class="hook"><div class="rank">17.8</div><div><div class="quote">"Men, women, both, stop. Pay attention to this." Then: "Do you have a boyfriend? Do you have a husband?"</div><div class="meta">Units per 1,000 views &middot; Brotege Good Boy &middot; 17 units on 956 views &middot; July 27</div></div></div>
+<div class="hook"><div class="rank">12.8</div><div><div class="quote">"Teenage boys and taking care of their skin is like the biggest joke I've ever heard of."</div><div class="meta">Units per 1,000 views &middot; Brotege Good Boy &middot; a mom buying for her son &middot; August 15</div></div></div>
+<div class="hook"><div class="rank">9.1</div><div><div class="quote">"Wanna look younger? Get rid of wrinkles?"</div><div class="meta">Units per 1,000 views &middot; FORGE Skin &middot; 101 units on 11,100 views &middot; May 11</div></div></div>
+<div class="hook"><div class="rank">7.0</div><div><div class="quote">"Hey, y'all, skincare is not just for women. Skincare is for everybody."</div><div class="meta">Units per 1,000 views &middot; Enhanse 2-in-1 &middot; 51 units on 7,310 views &middot; July 31</div></div></div>
+<div class="hook"><div class="rank">4.9</div><div><div class="quote">"Do you want your skin to look like this?"</div><div class="meta">Units per 1,000 views &middot; Brotege Good Boy &middot; before and after framing &middot; August 22</div></div></div>
+<div class="hook"><div class="rank">2.9</div><div><div class="quote">"Si tu marido es joven pero ya se le empezó a notar las líneas finas..." (If your husband is young but his fine lines are starting to show...)</div><div class="meta">Units per 1,000 views &middot; FORGE Skin &middot; Spanish, partner buyer &middot; 154 units on 53,400 views &middot; June 24</div></div></div>
+<div class="hook"><div class="rank">2.2</div><div><div class="quote">"My guy, if you are still using soap and water every morning and night for your skincare routine, what are you doing?"</div><div class="meta">Units per 1,000 views &middot; Enhanse 2-in-1 &middot; 14 units on 6,494 views &middot; June 7</div></div></div>
+</div>
+<div class="callout"><div class="ct">Angles from the price band, not yet tested on Brotege</div><p>The partner purchase: a woman telling other women to buy it for him if they want him to start caring for his skin (Terez &amp; Honor, Spanish-language). The borrowed cream: "my husband used my face cream," turned into "so I got him his own" (Hims Goodnight). One fact, repeated: the moisturizer has sunscreen in it (Tiege Hanley). Lines and crow's feet named up front, in Spanish, for the 30 to 50 buyer (FORGE Skin).</p></div>
+<p class="note">Spoken opening lines from men's daily moisturizer and night cream videos posted April 1 to September 30, 2026, ranked by units sold per 1,000 views. Competitor videos needed 2,000 or more views and 5 or more units; Brotege videos needed 500 or more views. No men's night cream video (Hims Goodnight, Tiege Hanley PM) cleared both bars in that window, so the day-cream lines are the ones to adapt for Night Train. Source: marketplace per-video data and transcripts.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">09 &middot; How we will know</div><h2>Monthly targets and leading indicators</h2>
+<table class="tbl">
+<thead><tr><th>Measure</th><th class="r">Today</th><th class="r">Oct</th><th class="r">Nov</th><th class="r">Dec</th></tr></thead>
+<tbody>
+<tr><td>Target plans sent (cap)</td><td class="n r">n/a</td><td class="n r">8,660</td><td class="n r">8,660</td><td class="n r">8,660</td></tr>
+<tr><td>Videos per affiliate</td><td class="n r">1.7</td><td class="n r">2.0</td><td class="n r">2.5</td><td class="n r">3.0</td></tr>
+<tr><td>Share of videos over 500 views</td><td class="n r">40%</td><td class="n r">45%</td><td class="n r">50%</td><td class="n r">55%</td></tr>
+<tr><td>Affiliate GMV per video</td><td class="n r">$5.83</td><td class="n r">$8</td><td class="n r">$11</td><td class="n r">$15</td></tr>
+<tr><td>CPO against ceiling</td><td class="n r">n/a</td><td class="n r">At or under</td><td class="n r">At or under</td><td class="n r">At or under</td></tr>
+</tbody></table>
+<p class="note">Assumption: targets are proposals for Brotege to approve. "Today" uses shop data for affiliate videos posted since May 1. Email outreach has no volume target; it is judged on replies and samples requested.</p>
+</div></section>
+
+<section class="alt"><div class="wrap"><div class="sec-kicker">10 &middot; For today's meeting</div><h2>What we need to know</h2>
+<ul class="qlist">
+<li>What target plan rate will Brotege offer on Night Train? Hims Goodnight and Tiege Hanley PM both pay 20%. Would Brotege also consider a 20% Good Boy open plan? Both are nice to have, not requirements.</li>
+<li>How many sample units a month can Brotege fund for Good Boy and for Night Train?</li>
+<li>What is the landed cost per unit for each product, so we can set CPO ceilings?</li>
+<li>What is the paid media budget for October to December?</li>
+</ul>
+<div class="companions"><div class="ct">Companion documents</div><ul><li><b>Brotege creator lists (workbook)</b> &middot; top 100 men's skincare creators, top 100 women's gift-guide creators, the missed-opportunity cross-check against Brotege's CRM, every past Brotege converter, the CRM reactivation lists, top Brotege creators by month, and the full 800-creator prospect pool.</li></ul></div>
+</div></section>
+
+<section class="dark"><div class="wrap"><div class="sec-kicker">11 &middot; Risks and data notes</div><h2>What could change this read</h2>
+<div class="risks">
+<div class="risk"><div class="rt">GMV bases</div><p>Total shop GMV and all benchmark figures are marketplace estimates of gross TikTok-attributed GMV. Affiliate GMV, video counts, videos per affiliate and retention come from Brotege's shop performance data, counted on videos posted since May 1, 2026, when Third took over, unless marked all time. Brotege's own brand-account videos are excluded from affiliate figures. Each figure is labelled with its base.</p></div>
+<div class="risk"><div class="rt">Commission at 15%</div><p>Scaled products in the band pay 20% open. At 15%, target plan acceptance may run lower than the model's base case. Week 4 data will show it.</p></div>
+<div class="risk"><div class="rt">Acceptance rate unknown</div><p>The model uses 2%, 4% and 6%. At 6% Brotege would ship about 520 samples a month, so the sample budget may cap invites.</p></div>
+<div class="risk"><div class="rt">Small samples</div><p>The format and first-three-seconds findings rest on 96 to 109 analyzed videos posted since May. They are directional.</p></div>
+<div class="risk"><div class="rt">Lagging credit</div><p>Shop data credits some recent videos late. The top gifting hook shows $0 in shop data but $428 in marketplace data.</p></div>
+<div class="risk"><div class="rt">Creator lists</div><p>List GMV is lifetime GMV on like products, from marketplace data. 28-day activity was not available per creator, so a creator can rank high on past sales and be quiet now; confirm recent posting before sampling. Gender comes from each creator's display name, handle, bio or Brotege's shop data, and should be confirmed before outreach.</p></div>
+<div class="risk"><div class="rt">Ad-served GMV</div><p>Ad-served share shows paid traffic touched a video. It does not show how much of the GMV the ads created.</p></div>
+</div>
+</div></section>
+
+<footer><div class="wrap"><span>THIRD. &middot; Brotege &middot; Strategy</span><span>Data: TikTok Shop US marketplace intelligence &middot; May 1 to Sep 29, 2026 and 90 days to Sep 29, 2026; shop performance data &middot; May 1 to Sep 30, 2026; creator lists &middot; Oct 1, 2026</span></div></footer>
+
+</body></html>
