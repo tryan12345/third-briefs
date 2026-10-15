@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O-Cedar Commerce Creator Persona</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-950:#0c0a09; --ink-900:#1c1917; --ink-800:#292524; --ink-700:#44403c;
+  --ink-600:#57534e; --ink-500:#78716c; --ink-400:#a8a29e; --ink-300:#d6d3d1;
+  --ink-200:#e7e5e4; --ink-100:#f5f5f4; --ink-50:#fafaf9;
+  --page:var(--ink-50); --surface:#ffffff; --surface-2:var(--ink-100);
+  --text:var(--ink-900); --text-2:var(--ink-700); --muted:var(--ink-500); --faint:var(--ink-400);
+  --line:rgba(231,229,228,.6); --line-strong:var(--ink-200);
+  --accent:#3a87e6; --accent-dark:#2a6dc0; --accent-50:#eef5fd;
+  --ok-bg:#d1fae5; --ok-fg:#047857; --ok-dot:#10b981;
+  --radius-card:16px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0c0a09; --surface:#1c1917; --surface-2:#292524;
+    --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e; --faint:#78716c;
+    --line:rgba(68,64,60,.85); --line-strong:#44403c;
+    --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+    --ok-bg:rgba(16,185,129,.16); --ok-fg:#6ee7b7;
+  }
+}
+body{margin:0;background:var(--page);color:var(--text);font-family:'DM Sans',ui-sans-serif,system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.title-serif{font-family:'Owners',Georgia,ui-serif,serif;font-style:italic;font-weight:900;letter-spacing:-.01em;line-height:1.05;text-wrap:balance}
+.eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted)}
+.container{max-width:576px;margin:0 auto;padding:0 20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:20px;margin-bottom:12px}
+h2.section{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--accent);margin:32px 0 12px}
+.card h3{font-size:15px;font-weight:600;margin:0 0 6px;color:var(--text)}
+.card p{margin:0 0 10px;color:var(--text-2);font-size:14px}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:13px;color:var(--muted)}
+.tagline{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 10px}
+.tag{border:1px solid var(--line-strong);border-radius:9999px;padding:3px 10px;font-size:11px;font-weight:600;color:var(--muted)}
+.trigger-link{background:var(--accent-50);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--text-2);margin-top:10px}
+.trigger-link b{color:var(--accent)}
+.statrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:16px}
+.stat .n{font-size:22px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
+.stat .l{font-size:12px;color:var(--muted);margin-top:2px}
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:9999px;background:var(--ok-bg);color:var(--ok-fg);padding:4px 10px;font-size:11px;font-weight:600}
+.badge .dot{width:6px;height:6px;border-radius:9999px;background:var(--ok-dot)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line-strong)}
+td{padding:9px 10px;border-bottom:1px solid var(--line);color:var(--text-2);vertical-align:top;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:none}
+footer{padding:32px 0 48px;border-top:1px solid var(--line);margin-top:40px}
+footer .wordmark{font-weight:700;font-size:15px;color:var(--text)}
+footer p{font-size:12px;color:var(--muted);margin:6px 0 0}
+header.hero{padding:40px 0 24px}
+.hero .sub{margin-top:12px;font-size:15px;color:var(--text-2)}
+.proof{font-size:12px;color:var(--faint);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="hero">
+  <p class="eyebrow" style="color:var(--accent);margin-bottom:12px">Commerce Creator Persona · O-Cedar · October 2026 Refresh</p>
+  <h1 class="title-serif" style="font-size:34px;margin:0">Five creators who sell this mop</h1>
+  <p class="sub">Built from seller-side data: 8,816 creators with activity in the 90 days ending October 14, 2026, $514,113 in creator-attributed GMV, and the quarter's 80 top-selling videos.</p>
+</header>
+
+<h2 class="section">The pattern</h2>
+<div class="card">
+  <p>Mid-tier creators carry this shop. Accounts with 10k to 50k followers are 43% of sellers and 40% of creator GMV. Accounts over 100k are 8% of sellers and 38% of GMV, so the big accounts still matter, and susanluckhardt proved the ceiling at $46,215 this quarter. Audience beats follower count: every converting profile skews 66% to 86% female, ages 25 to 54.</p>
+  <p>Format predicts conversion more than reach. Only 5.6% of the quarter's 4,402 new videos drove tracked sales, and the ones that did show the water, name the product, and frame an upgrade. Three of the shop's top ten sellers this quarter sold through live rooms only. The standing rule holds: no archetype match, no sample.</p>
+</div>
+<div class="statrow">
+  <div class="stat"><div class="n">8,816</div><div class="l">Creators active in the window</div></div>
+  <div class="stat"><div class="n">43%</div><div class="l">Of sellers sit in the 10k-50k tier</div></div>
+  <div class="stat"><div class="n">9%</div><div class="l">Top creator's share of creator GMV</div></div>
+  <div class="stat"><div class="n">3 of 10</div><div class="l">Top sellers who are live-only</div></div>
+</div>
+
+<h2 class="section">Archetype 1</h2>
+<div class="card">
+  <h3>The Clean-With-Me Mom</h3>
+  <div class="tagline"><span class="tag">10k-150k followers</span><span class="tag">Video</span><span class="tag">POV reset content</span></div>
+  <p>She films her own house getting clean: porch transformations, Sunday resets, postpartum catch-up days. The mop sits inside content her audience already watches. Her videos run 15 to 95 seconds and the water reveal is the payoff shot.</p>
+  <div class="trigger-link"><b>Buyer trigger she hits:</b> upgrade regret and whole-home range. Her "I finally retired my old bucket" framing converts replacement buyers.</div>
+  <p class="proof">Proven this quarter: brittany_qz ($10,636), thems.ligon, sydney.shops, b_saylor, kaley_silvaa.</p>
+</div>
+
+<h2 class="section">Archetype 2</h2>
+<div class="card">
+  <h3>The Deal Curator</h3>
+  <div class="tagline"><span class="tag">Any tier</span><span class="tag">Video, high volume</span><span class="tag">Deal storefronts</span></div>
+  <p>Posts daily, often several times, around platform deal events and price drops. Runs fast demos with the price on screen. One curator account placed four videos in the quarter's top thirty. This archetype converts hardest inside deal windows, which produced every $13K-plus day this quarter.</p>
+  <div class="trigger-link"><b>Buyer trigger she hits:</b> deal windows and price justification. She is the distribution plan for Q4 events.</div>
+  <p class="proof">Proven this quarter: jessicadeals ($16,787), tntdealss, carls_deals, liz_the_clearancequeen, dealzfromtiktok.</p>
+</div>
+
+<h2 class="section">Archetype 3</h2>
+<div class="card">
+  <h3>The Multilingual Household Voice</h3>
+  <div class="tagline"><span class="tag">5k-750k followers</span><span class="tag">Video</span><span class="tag">Spanish first, Arabic and Haitian Creole proven</span></div>
+  <p>She sells home pride in her own language. Spanish-language creators converted across every product this quarter, including the single best-reaching video in the window, an organic Spanish post that moved 104 sponge units. Arabic and Haitian Creole accounts also placed in the top sellers. This is a wider archetype than the July build gave it credit for.</p>
+  <div class="trigger-link"><b>Buyer trigger she hits:</b> hands never touch dirty water. It is the loudest trigger in Spanish-language reviews, in her audience's own words.</div>
+  <p class="proof">Proven this quarter: lily_moradel ($11,382), yolilucas123, harimizzy, jonathan_recomienda, its.massielll, lindakitchen8, chocolatetea24, anapatriciatv.</p>
+</div>
+
+<h2 class="section">Archetype 4</h2>
+<div class="card">
+  <h3>The Live Demo Host</h3>
+  <div class="tagline"><span class="tag">5k-120k followers</span><span class="tag">Live</span><span class="tag">Multi-product rooms, repeat placement</span></div>
+  <p>She runs long bazaar rooms and mops the floor on camera between other products. Live took 14.4% of shop GMV this quarter with no dedicated program, and three live-only sellers sit in the shop's top ten. One host ran five of the quarter's top ten sessions. She is where the live program starts. Her rooms already convert, and dedicated O-Cedar hours are the next step.</p>
+  <div class="trigger-link"><b>Buyer trigger she hits:</b> the dirty-water reveal, performed live. The tank fills with brown water in real time and the cart opens.</div>
+  <p class="proof">Proven this quarter: things_athome ($12,754), winpom16 ($11,649), karenshopstts ($10,862), mrs.maker.of.the.home, shoppingwithlway.</p>
+</div>
+
+<h2 class="section">Archetype 5</h2>
+<div class="card">
+  <h3>The Lineup Explainer</h3>
+  <div class="tagline"><span class="tag">Any tier</span><span class="tag">Video</span><span class="tag">Comparison format</span></div>
+  <p>New this refresh. She answers the question the listings don't: which O-Cedar is which. A four-minute side-by-side of the three mops earned $2,393 this quarter, and "there is a clear winner" framing sold across accounts. With three heroes at three prices and a one-star record full of wrong-item confusion, this archetype protects conversion and cuts returns.</p>
+  <div class="trigger-link"><b>Buyer trigger she hits:</b> the number one buyer question, "which mop am I actually getting?"</div>
+  <p class="proof">Proven this quarter: rachelwarren66 ($2,393 on one comparison), tntdealss comparison formats.</p>
+</div>
+
+<h2 class="section">Sizing and the hit list</h2>
+<div class="card">
+  <table>
+    <tr><th>Pool</th><th>Size</th><th>Note</th></tr>
+    <tr><td>Active roster, last 90 days</td><td>8,816</td><td>150th-ranked seller still did $760+</td></tr>
+    <tr><td>Lifetime linked creators</td><td>9,347</td><td>Reactivation pool before any cold outreach</td></tr>
+    <tr><td>Market pool, persona-matched, $10K+/month</td><td>1,000-1,500</td><td>July sizing holds on current pulls</td></tr>
+    <tr><td>Working hit list</td><td>600-750</td><td>120-150 per archetype across the five</td></tr>
+  </table>
+  <p style="margin-top:12px">Sampled roster rows show most active sellers already run above $10K a month platform-wide. Recruiting starts inside the CRM: reactivate dormant linked creators and upgrade proven sellers to Target Plan before spending outreach on cold names.</p>
+</div>
+
+<h2 class="section">Commission and recruiting guidance</h2>
+<div class="card">
+  <p>Open collaboration at roughly 10%. Target Plan at roughly 15% for proven sellers and hit-list recruits. Samples follow the archetype gate: no match, no sample. The sponges at $19-22 are the cheap sampling and live-giveaway unit this shop did not have in July. House sample math for planning: one approved sample yields about 1.5 videos, arriving 2 to 6 weeks after delivery.</p>
+</div>
+
+<h2 class="section">Companion documents</h2>
+<div class="card">
+  <p><a href="https://tryan12345.github.io/third-briefs/ocedar-buyer-persona.html" style="color:var(--accent);text-decoration:none;font-weight:600">O-Cedar Buyer Persona</a><br><span class="meta">Who buys, what triggers her, and her objections in her own words.</span></p>
+  <p style="margin-top:10px"><a href="https://tryan12345.github.io/third-briefs/brief-ocedar.html" style="color:var(--accent);text-decoration:none;font-weight:600">O-Cedar Informed Creative Brief</a><br><span class="meta">What converting videos do, with hooks ranked by sales per 1,000 views.</span></p>
+  <p style="margin-top:10px" class="meta">The strategy refresh lives in Drive: O-Cedar x Third TikTok Shop Strategy Refresh, October 2026.</p>
+</div>
+
+<footer>
+  <span class="wordmark">third.</span>
+  <p>Internal strategy document. Seller-side data only. 90-day shop pull ending October 14, 2026. Refreshed from the July 2026 build; the Lineup Explainer archetype is new in this version.</p>
+</footer>
+
+</div>
+</body>
+</html>

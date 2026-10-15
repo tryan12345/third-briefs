@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O-Cedar Informed Creative Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-950:#0c0a09; --ink-900:#1c1917; --ink-800:#292524; --ink-700:#44403c;
+  --ink-600:#57534e; --ink-500:#78716c; --ink-400:#a8a29e; --ink-300:#d6d3d1;
+  --ink-200:#e7e5e4; --ink-100:#f5f5f4; --ink-50:#fafaf9;
+  --page:var(--ink-50); --surface:#ffffff; --surface-2:var(--ink-100);
+  --text:var(--ink-900); --text-2:var(--ink-700); --muted:var(--ink-500); --faint:var(--ink-400);
+  --line:rgba(231,229,228,.6); --line-strong:var(--ink-200);
+  --accent:#3a87e6; --accent-dark:#2a6dc0; --accent-50:#eef5fd;
+  --ok-bg:#d1fae5; --ok-fg:#047857; --ok-dot:#10b981;
+  --bad-bg:#fee2e2; --bad-fg:#b91c1c; --bad-dot:#ef4444;
+  --radius-card:16px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0c0a09; --surface:#1c1917; --surface-2:#292524;
+    --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e; --faint:#78716c;
+    --line:rgba(68,64,60,.85); --line-strong:#44403c;
+    --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+    --ok-bg:rgba(16,185,129,.16); --ok-fg:#6ee7b7;
+    --bad-bg:rgba(239,68,68,.16); --bad-fg:#fca5a5;
+  }
+}
+body{margin:0;background:var(--page);color:var(--text);font-family:'DM Sans',ui-sans-serif,system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.title-serif{font-family:'Owners',Georgia,ui-serif,serif;font-style:italic;font-weight:900;letter-spacing:-.01em;line-height:1.05;text-wrap:balance}
+.eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted)}
+.container{max-width:576px;margin:0 auto;padding:0 20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:20px;margin-bottom:12px}
+h2.section{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--accent);margin:32px 0 12px}
+.card h3{font-size:15px;font-weight:600;margin:0 0 6px;color:var(--text)}
+.card p{margin:0 0 10px;color:var(--text-2);font-size:14px}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:13px;color:var(--muted)}
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:9999px;background:var(--ok-bg);color:var(--ok-fg);padding:4px 10px;font-size:11px;font-weight:600}
+.badge .dot{width:6px;height:6px;border-radius:9999px;background:var(--ok-dot)}
+.dodont{display:grid;grid-template-columns:1fr;gap:8px}
+@media(min-width:480px){.dodont{grid-template-columns:1fr 1fr}}
+.do,.dont{border-radius:12px;padding:12px 14px;font-size:13px}
+.do{background:var(--ok-bg);color:var(--ok-fg)}
+.dont{background:var(--bad-bg);color:var(--bad-fg)}
+.do b,.dont b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.angle{border-left:3px solid var(--accent);padding-left:14px;margin-bottom:18px}
+.angle:last-child{margin-bottom:0}
+.angle h3{margin-bottom:4px}
+.angle .who{font-size:12px;color:var(--accent);font-weight:600}
+.angle p{margin-top:6px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;padding:8px 8px;border-bottom:1px solid var(--line-strong)}
+td{padding:9px 8px;border-bottom:1px solid var(--line);color:var(--text-2);vertical-align:top;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:none}
+.qa{padding:12px 0;border-bottom:1px solid var(--line)}
+.qa:first-child{padding-top:0}
+.qa:last-child{border-bottom:none;padding-bottom:0}
+.qa b{display:block;color:var(--text);font-size:14px}
+.qa span{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+footer{padding:32px 0 48px;border-top:1px solid var(--line);margin-top:40px}
+footer .wordmark{font-weight:700;font-size:15px;color:var(--text)}
+footer p{font-size:12px;color:var(--muted);margin:6px 0 0}
+header.hero{padding:40px 0 24px}
+.hero .sub{margin-top:12px;font-size:15px;color:var(--text-2)}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="hero">
+  <p class="eyebrow" style="color:var(--accent);margin-bottom:12px">Informed Creative Brief · O-Cedar · v2, October 2026</p>
+  <h1 class="title-serif" style="font-size:34px;margin:0">Show the dirty water</h1>
+  <p class="sub">What converting O-Cedar videos do, built from 80 top-selling videos and 2,627 buyer reviews from the 90 days ending October 14, 2026. Covers H2prO Flat Mop, EasyWring Spin Mop, RinseClean Spin Mop, and Punch Scrub Sponges.</p>
+  <p style="margin-top:12px"><span class="badge"><span class="dot"></span>Full confidence: 80 videos against a 75 threshold, 2,627 reviews against 1,500</span></p>
+</header>
+
+<h2 class="section">1 · The winning formula</h2>
+<div class="card">
+  <p>Every video that sold this quarter does four things. Show the water separating, on a real floor with a real mess. Name the exact mop on screen and in the caption. Say the price. Frame the upgrade: make the old bucket the problem.</p>
+  <div class="dodont">
+    <div class="do"><b>Do</b>Film your actual floor after a real week: kitchen, entryway, porch, pet areas.</div>
+    <div class="dont"><b>Don't</b>Film an already-clean studio floor. Buyers call out demos with nothing to prove.</div>
+    <div class="do"><b>Do</b>Hold the shot where brown water collects away from the clean tank. That frame sells.</div>
+    <div class="dont"><b>Don't</b>Talk through features without mopping. Talking-head videos did not convert this quarter.</div>
+    <div class="do"><b>Do</b>Say which mop this is: H2prO, EasyWring, or RinseClean, out loud and in text.</div>
+    <div class="dont"><b>Don't</b>Say "the O-Cedar mop." Three systems exist and wrong-item confusion is the top one-star complaint.</div>
+    <div class="do"><b>Do</b>State the price and, in a deal window, the deal price.</div>
+    <div class="dont"><b>Don't</b>Promise what the box can't: it is one tank of water per fill, and refills are sold separately.</div>
+  </div>
+</div>
+
+<h2 class="section">2 · Content angles</h2>
+<div class="card">
+  <div class="angle">
+    <h3>The Dirty-Water Reveal</h3>
+    <span class="who">Every archetype · answers the trigger that ranks first in reviews</span>
+    <p>Mop a floor you believed was clean. Show what the water says. The payoff line: "I already mopped this floor with my old mop. This is what the new one pulled up."</p>
+  </div>
+  <div class="angle">
+    <h3>Which O-Cedar Is Right For You</h3>
+    <span class="who">Lineup Explainer · answers the number one buyer question</span>
+    <p>Side-by-side the three systems: EasyWring if she wants the classic spin mop, RinseClean if she wants spin plus separated tanks, H2prO if she wants a flat mop for daily resets and under furniture. One comparison video earned $2,393 this quarter. Buyers order the wrong mop when nobody runs this angle.</p>
+  </div>
+  <div class="angle">
+    <h3>Retire the Old Bucket</h3>
+    <span class="who">Clean-With-Me Mom · answers the upgrade-regret trigger</span>
+    <p>The video is about the switch itself. "Can't believe I used to use a normal mop bucket." Film the old mop going to the garage and the first clean with the new one, inside a reset your audience already watches.</p>
+  </div>
+  <div class="angle">
+    <h3>Manos Limpias</h3>
+    <span class="who">Multilingual Household Voice · answers the loudest Spanish-language trigger</span>
+    <p>In her language, in her kitchen: your hands never touch dirty water again. Spanish reviews say it word for word, "me encanta no tener que poner mis manos en agua sucia." This angle converted in Spanish, Arabic, and Haitian Creole this quarter.</p>
+  </div>
+  <div class="angle">
+    <h3>Past the Floor</h3>
+    <span class="who">Clean-With-Me Mom and Live Demo Host · answers the whole-home trigger</span>
+    <p>Walls, doors, baseboards, the porch. Reviews brag about cleaning the whole kitchen with one tool. Show range, and attach the sponges or a refill to the same basket.</p>
+  </div>
+</div>
+
+<h2 class="section">3 · Hooks, ranked by sales per 1,000 views</h2>
+<div class="card">
+  <table>
+    <tr><th>Opening hook</th><th>Product</th><th>Sales /1K views</th></tr>
+    <tr><td>"Once you start using one of these, you'll never go back."</td><td>H2prO</td><td>20.6</td></tr>
+    <tr><td>"I'm going to hold your hand..." (then the reveal)</td><td>H2prO</td><td>19.7</td></tr>
+    <tr><td>"Mop with me using the O-Cedar spin mop. An oldie but a goodie."</td><td>EasyWring</td><td>18.0</td></tr>
+    <tr><td>"No more mopping with dirty mop water."</td><td>RinseClean</td><td>17.5</td></tr>
+    <tr><td>"Clean the things I've been putting off with me..."</td><td>EasyWring</td><td>17.4</td></tr>
+    <tr><td>"There is a clear winner." (lineup comparison)</td><td>H2prO</td><td>14.5</td></tr>
+    <tr><td>"A mop that separates the dirty and clean water is a top tier investment."</td><td>H2prO</td><td>12.8</td></tr>
+    <tr><td>"I already mopped this floor with my old mop. This is what the new one pulled up."</td><td>H2prO</td><td>11.1</td></tr>
+    <tr><td>"If you're still mopping with the same bucket of dirty water, this is your sign to upgrade."</td><td>RinseClean</td><td>5.1</td></tr>
+    <tr><td>"Can't believe I used to use a normal mop bucket."</td><td>H2prO</td><td>4.6</td></tr>
+  </table>
+  <p class="meta" style="margin-top:12px">Ranked on the quarter's top-selling videos with at least 1,000 views. These are the creators' real openings, word for word. Most ran with paid amplification behind them; the hooks earned the spend, so use them as written and make the reveal your first three seconds.</p>
+</div>
+
+<h2 class="section">4 · Product cheat sheet</h2>
+<div class="card">
+  <h3>The one answer to have ready: which mop is which</h3>
+  <table>
+    <tr><th>System</th><th>Price</th><th>What it is</th><th>Pitch it when</th></tr>
+    <tr><td>EasyWring</td><td>$51.99</td><td>The classic spin mop and bucket. Foot-pedal wring, hands-free.</td><td>She wants the proven one her friends own.</td></tr>
+    <tr><td>RinseClean</td><td>$64.99+</td><td>Spin mop with two tanks: clean water on one side, dirty on the other.</td><td>She wants the spin mop and the separation story.</td></tr>
+    <tr><td>H2prO</td><td>$49.50-58.50</td><td>Flat mop with a dual-tank base. Slides under furniture, built for quick daily cleans.</td><td>She wants fast everyday resets and edge-to-edge reach.</td></tr>
+    <tr><td>Punch Scrub Sponges</td><td>$19.49-22.09</td><td>New scrub sponges, the under-$25 entry into the brand.</td><td>Basket add, giveaway, or a first purchase.</td></tr>
+  </table>
+  <p style="margin-top:12px">Facts to use on camera: the mops remove over 99% of bacteria with just water, the microfiber heads are machine washable, replacement heads are sold separately, and the two-tank systems keep the water you mop with clean for the whole job.</p>
+</div>
+
+<h2 class="section">5 · Objection questions to answer on camera</h2>
+<div class="card">
+  <div class="qa"><b>Which mop am I actually getting in this listing?</b><span>Name it, show the box, show the tag in your cart. Wrong-item confusion is the top complaint.</span></div>
+  <div class="qa"><b>Can the water really stay separate the whole time?</b><span>Show the two tanks mid-clean. Pour out each one at the end.</span></div>
+  <div class="qa"><b>How far does one fill of water go?</b><span>Mop a full room on camera and show what's left. Capacity doubt is a repeated one-star theme.</span></div>
+  <div class="qa"><b>How do you fill it and empty it without a mess?</b><span>Show the fill, show the pour-out. Thirty seconds kills the biggest handling complaint.</span></div>
+  <div class="qa"><b>Does the wringer hold up?</b><span>Wring it hard, more than once. Durability doubt shows up in reviews on every system.</span></div>
+  <div class="qa"><b>Why not a cheap knockoff?</b><span>Machine-washable heads, replacement refills, and the two-tank build. Compare what breaks and what gets replaced.</span></div>
+</div>
+
+<h2 class="section">6 · Specs and logistics</h2>
+<div class="card">
+  <p>Vertical 9:16. The converting range this quarter ran 12 to 95 seconds, and most winners sat between 15 and 45. Put the reveal in the first three seconds. Tag the exact product in the orange cart and match the product you filmed. Price on screen, and the deal price during events. Post timing matters in Q4: deal windows are when this audience buys, so have content ready before each window opens.</p>
+  <p>Samples ship against the archetype gate on the commerce creator persona. Questions and sample requests go through your Third contact.</p>
+</div>
+
+<h2 class="section">Companion documents</h2>
+<div class="card">
+  <p><a href="https://tryan12345.github.io/third-briefs/ocedar-buyer-persona.html" style="color:var(--accent);text-decoration:none;font-weight:600">O-Cedar Buyer Persona</a><br><span class="meta">Who buys, what triggers her, and her objections in her own words.</span></p>
+  <p style="margin-top:10px"><a href="https://tryan12345.github.io/third-briefs/ocedar-creator-persona.html" style="color:var(--accent);text-decoration:none;font-weight:600">O-Cedar Commerce Creator Persona</a><br><span class="meta">The five archetypes this brief assigns angles to.</span></p>
+</div>
+
+<footer>
+  <span class="wordmark">third.</span>
+  <p>O-Cedar Informed Creative Brief, v2. Built on a 90-day shop pull ending October 14, 2026. Supersedes the July 2026 brief.</p>
+</footer>
+
+</div>
+</body>
+</html>

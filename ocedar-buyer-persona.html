@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O-Cedar Buyer Persona</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-950:#0c0a09; --ink-900:#1c1917; --ink-800:#292524; --ink-700:#44403c;
+  --ink-600:#57534e; --ink-500:#78716c; --ink-400:#a8a29e; --ink-300:#d6d3d1;
+  --ink-200:#e7e5e4; --ink-100:#f5f5f4; --ink-50:#fafaf9;
+  --page:var(--ink-50); --surface:#ffffff; --surface-2:var(--ink-100);
+  --text:var(--ink-900); --text-2:var(--ink-700); --muted:var(--ink-500); --faint:var(--ink-400);
+  --line:rgba(231,229,228,.6); --line-strong:var(--ink-200);
+  --accent:#3a87e6; --accent-dark:#2a6dc0; --accent-50:#eef5fd;
+  --ok-bg:#d1fae5; --ok-fg:#047857; --ok-dot:#10b981;
+  --bad-bg:#fee2e2; --bad-fg:#b91c1c; --bad-dot:#ef4444;
+  --radius-card:16px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0c0a09; --surface:#1c1917; --surface-2:#292524;
+    --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e; --faint:#78716c;
+    --line:rgba(68,64,60,.85); --line-strong:#44403c;
+    --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+    --ok-bg:rgba(16,185,129,.16); --ok-fg:#6ee7b7;
+    --bad-bg:rgba(239,68,68,.16); --bad-fg:#fca5a5;
+  }
+}
+body{margin:0;background:var(--page);color:var(--text);font-family:'DM Sans',ui-sans-serif,system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.title-serif{font-family:'Owners',Georgia,ui-serif,serif;font-style:italic;font-weight:900;letter-spacing:-.01em;line-height:1.05;text-wrap:balance}
+.eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted)}
+.container{max-width:576px;margin:0 auto;padding:0 20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:20px;margin-bottom:12px}
+h2.section{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--accent);margin:32px 0 12px}
+.card h3{font-size:15px;font-weight:600;margin:0 0 6px;color:var(--text)}
+.card p{margin:0 0 10px;color:var(--text-2);font-size:14px}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:13px;color:var(--muted)}
+.quote{border-left:3px solid var(--line-strong);padding:2px 0 2px 12px;margin:10px 0;font-size:13px;color:var(--text-2);font-style:italic}
+.quote .who{display:block;font-style:normal;font-size:11px;color:var(--faint);margin-top:4px}
+.rank{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:9999px;background:var(--accent-50);color:var(--accent);font-size:12px;font-weight:700;margin-right:10px;flex-shrink:0}
+.trigger{display:flex;align-items:flex-start;gap:0;padding:12px 0;border-bottom:1px solid var(--line)}
+.trigger:last-child{border-bottom:none;padding-bottom:0}
+.trigger:first-child{padding-top:0}
+.trigger .body{min-width:0}
+.trigger .body b{font-size:14px;color:var(--text)}
+.trigger .body span{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.statrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:16px}
+.stat .n{font-size:22px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
+.stat .l{font-size:12px;color:var(--muted);margin-top:2px}
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:9999px;background:var(--ok-bg);color:var(--ok-fg);padding:4px 10px;font-size:11px;font-weight:600}
+.badge .dot{width:6px;height:6px;border-radius:9999px;background:var(--ok-dot)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line-strong)}
+td{padding:9px 10px;border-bottom:1px solid var(--line);color:var(--text-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+footer{padding:32px 0 48px;border-top:1px solid var(--line);margin-top:40px}
+footer .wordmark{font-weight:700;font-size:15px;color:var(--text)}
+footer p{font-size:12px;color:var(--muted);margin:6px 0 0}
+footer a{color:var(--accent);text-decoration:none}
+header.hero{padding:40px 0 24px}
+.hero .sub{margin-top:12px;font-size:15px;color:var(--text-2)}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="hero">
+  <p class="eyebrow" style="color:var(--accent);margin-bottom:12px">Buyer Persona · O-Cedar · October 2026 Refresh</p>
+  <h1 class="title-serif" style="font-size:34px;margin:0">The woman who is done mopping with dirty water</h1>
+  <p class="sub">Built from purchase-side data: 2,627 buyer reviews across the three hero mops, plus the language of the quarter's top-converting videos. 90-day window ending October 14, 2026.</p>
+  <p style="margin-top:12px"><span class="badge"><span class="dot"></span>Full confidence: 2,627 reviews against a 1,500 threshold</span></p>
+</header>
+
+<h2 class="section">Who she is</h2>
+<div class="card">
+  <p>She is a woman between 25 and 54 running a busy household with kids, pets, and hard floors. On the creators who convert her, audiences run 66% to 86% female with the 25-44 band carrying the volume. A meaningful share of her shops and reviews in Spanish. She already owns a mop. She is replacing one that disgusts her.</p>
+</div>
+<div class="statrow">
+  <div class="stat"><div class="n">66-86%</div><div class="l">Female share on converting creators</div></div>
+  <div class="stat"><div class="n">25-54</div><div class="l">Core age range, 25-44 heaviest</div></div>
+  <div class="stat"><div class="n">$43</div><div class="l">Blended order value, $50-65 on mop systems</div></div>
+  <div class="stat"><div class="n">2,627</div><div class="l">Reviews mined across the three heroes</div></div>
+</div>
+
+<h2 class="section">Purchase triggers, ranked</h2>
+<div class="card">
+  <div class="trigger"><span class="rank">1</span><div class="body"><b>The dirty-water reveal</b><span>Seeing the separated tank of brown water is the purchase moment. "This mop works wonderfully! I love how it separates the clean and dirty water."</span></div></div>
+  <div class="trigger"><span class="rank">2</span><div class="body"><b>Her hands never touch dirty water</b><span>The loudest trigger in Spanish-language reviews. "Me encanta no tener que poner mis manos en agua sucia."</span></div></div>
+  <div class="trigger"><span class="rank">3</span><div class="body"><b>Upgrade regret</b><span>"Never using a regular mop again." "No sé cómo no lo compré desde antes." She converts when a creator makes her old bucket feel unacceptable.</span></div></div>
+  <div class="trigger"><span class="rank">4</span><div class="body"><b>Whole-home range</b><span>"I deep cleaned my entire kitchen with this alone, getting the walls and doors as well." Floors are only the start.</span></div></div>
+  <div class="trigger"><span class="rank">5</span><div class="body"><b>It works with what she owns</b><span>"You can use anything in it. Scrub Daddy, microfiber cloth, the mop." Compatibility reads as value.</span></div></div>
+  <div class="trigger"><span class="rank">6</span><div class="body"><b>Deal windows</b><span>The October 12-14 platform event tripled the shop's daily rate on the same content. She buys fastest when the price drops and the video told her why she wants it.</span></div></div>
+</div>
+
+<h2 class="section">The number one question</h2>
+<div class="card">
+  <h3>"Which mop am I actually getting?"</h3>
+  <p>O-Cedar sells three similar systems at three prices: EasyWring at $51.99, H2prO at $49.50 to $58.50, and RinseClean at $64.99 and up. Comparison videos are a top-selling format because buyers cannot tell the systems apart from the listings. The one-star record includes buyers who ordered RinseClean and believe they received EasyWring, or an older version without separated tanks. Answer the question before she asks it, on camera and in the cart.</p>
+</div>
+
+<h2 class="section">Objections, in her own words</h2>
+<div class="card">
+  <h3>Fulfillment, the biggest and most fixable</h3>
+  <div class="quote">"Bought the product, got sent the old version with no separate clean water section. Bait and switch, that's what this is."<span class="who">1-star, RinseClean</span></div>
+  <div class="quote">"Didn't come with the mop handle."<span class="who">1-star, EasyWring</span></div>
+  <div class="quote">"They marked it as delivered and it never came."<span class="who">1-star, H2prO</span></div>
+  <h3 style="margin-top:16px">Durability and mechanism</h3>
+  <div class="quote">"It stopped spinning after 3 uses."<span class="who">1-star, RinseClean</span></div>
+  <div class="quote">"It worked great the first time. Now all the clean water leaks down to the dirty water before you can even mop."<span class="who">1-star, H2prO</span></div>
+  <h3 style="margin-top:16px">Capacity and handling</h3>
+  <div class="quote">"As soon as you put the mop in the clean water and wring it out to even start mopping, you have used half the water."<span class="who">1-star, RinseClean</span></div>
+  <div class="quote">"It is a pain to work with and emptying is not easy."<span class="who">1-star, RinseClean</span></div>
+  <h3 style="margin-top:16px">The price-justification standard she holds</h3>
+  <div class="quote">"I've bought cheap dollar store knockoffs that were better."<span class="who">1-star, RinseClean</span></div>
+  <p class="meta" style="margin-top:12px">The pattern: her objections are about getting the right product in working condition. The dirty-water story is already won. Fulfillment is what loses her.</p>
+</div>
+
+<h2 class="section">Price tolerance</h2>
+<div class="card">
+  <table>
+    <tr><th>Price band</th><th>Share of 90-day GMV</th></tr>
+    <tr><td>$45-60</td><td>64.5%</td></tr>
+    <tr><td>$60-75</td><td>27.5%</td></tr>
+    <tr><td>$15-30</td><td>8.0%</td></tr>
+  </table>
+  <p style="margin-top:12px">She pays $50 to $65 for a mop system without hesitating when the reveal lands. Knockoffs undercut on price, and she names them only when the real product disappoints. The new Punch Scrub Sponges at $19-22 give her a first purchase under $25, and refills are where she should return, although the RinseClean refill listing's 3.0 rating is currently telling her not to.</p>
+</div>
+
+<h2 class="section">Companion documents</h2>
+<div class="card">
+  <p><a href="https://tryan12345.github.io/third-briefs/ocedar-creator-persona.html" style="color:var(--accent);text-decoration:none;font-weight:600">O-Cedar Commerce Creator Persona</a><br><span class="meta">Who sells her this product, in five archetypes.</span></p>
+  <p style="margin-top:10px"><a href="https://tryan12345.github.io/third-briefs/brief-ocedar.html" style="color:var(--accent);text-decoration:none;font-weight:600">O-Cedar Informed Creative Brief</a><br><span class="meta">What converting videos do, with hooks ranked by sales per 1,000 views.</span></p>
+  <p style="margin-top:10px" class="meta">The strategy refresh lives in Drive: O-Cedar x Third TikTok Shop Strategy Refresh, October 2026.</p>
+</div>
+
+<footer>
+  <span class="wordmark">third.</span>
+  <p>Internal strategy document. Purchase-side data only. 90-day shop pull ending October 14, 2026. Refreshed from the July 2026 build.</p>
+</footer>
+
+</div>
+</body>
+</html>
