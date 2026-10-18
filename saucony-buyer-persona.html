@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saucony Buyer Persona</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-950:#0c0a09; --ink-900:#1c1917; --ink-800:#292524; --ink-700:#44403c;
+  --ink-600:#57534e; --ink-500:#78716c; --ink-400:#a8a29e; --ink-300:#d6d3d1;
+  --ink-200:#e7e5e4; --ink-100:#f5f5f4; --ink-50:#fafaf9;
+  --brand-tomato:#ff5a3e; --brand-turquoise:#bdeaea; --brand-lavender:#bab6fd; --brand-lime:#a2f09f;
+  --page:var(--ink-50); --surface:#ffffff;
+  --text:var(--ink-900); --text-2:var(--ink-700); --muted:var(--ink-500);
+  --line:rgba(231,229,228,.6); --accent:#3a87e6; --accent-50:#eef5fd;
+  --wait-bg:#fef3c7; --wait-fg:#b45309; --wait-dot:#f59e0b;
+  --radius-card:16px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0c0a09; --surface:#1c1917; --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e;
+    --line:rgba(68,64,60,.85); --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+    --wait-bg:rgba(245,158,11,.16); --wait-fg:#fcd34d;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0c0a09; --surface:#1c1917; --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e;
+  --line:rgba(68,64,60,.85); --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+  --wait-bg:rgba(245,158,11,.16); --wait-fg:#fcd34d;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--text);font-family:'DM Sans',ui-sans-serif,system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.container{max-width:576px;margin:0 auto;padding:0 20px}
+.title-serif{font-family:'Owners',Georgia,ui-serif,serif;font-style:italic;font-weight:900;letter-spacing:-.01em;line-height:1.05;text-wrap:balance}
+.eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:20px;margin-top:12px}
+.wordmark{font-weight:700;font-size:16px;color:var(--text)}
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;background:var(--wait-bg);color:var(--wait-fg);padding:4px 10px;font-size:11px;font-weight:600}
+.badge .dot{width:6px;height:6px;border-radius:999px;background:var(--wait-dot)}
+h2.section{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted);margin:32px 0 0}
+.card h3{font-size:15px;font-weight:600;margin:0 0 6px;color:var(--text)}
+.card p{margin:0;color:var(--text-2);font-size:14px}
+.card p + p{margin-top:8px}
+.quote{border-left:2px solid var(--ink-300);padding-left:12px;color:var(--muted);font-size:13px;margin-top:8px}
+.stat{font-size:24px;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.statlabel{font-size:12px;color:var(--muted);margin-top:2px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600;padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:8px;border-bottom:1px solid var(--line);color:var(--text-2)}
+td:first-child{color:var(--text);font-weight:500}
+.rank{color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+footer{padding:32px 0 48px;color:var(--muted);font-size:12px}
+a{color:var(--accent);text-decoration:none}
+.companion{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:14px 16px;margin-top:8px;font-size:14px;font-weight:600;color:var(--text)}
+.companion span{display:block;font-weight:400;font-size:12px;color:var(--muted);margin-top:2px}
+</style>
+</head>
+<body>
+<header class="container" style="padding-top:40px;padding-bottom:8px">
+  <p class="wordmark">third<span style="color:var(--brand-tomato)">.</span></p>
+  <p class="eyebrow" style="color:var(--accent);margin:24px 0 10px">Buyer Persona · Saucony · October 2026</p>
+  <h1 class="title-serif" style="font-size:34px;margin:0">The woman who buys the retro runner as an outfit</h1>
+  <p style="font-size:15px;color:var(--text-2);margin:12px 0 10px">Built from purchase-side signals in the premium retro sneaker lane the ProGrid Omni 9 sells into. Refreshed ahead of the November 6 shop launch.</p>
+  <span class="badge"><span class="dot"></span>Provisional</span>
+  <p style="font-size:12px;color:var(--muted);margin-top:8px">The house bar for a full-confidence buyer persona is 1,500+ mined comments. This refresh ran on 50 of 912 reviews from the closest comparable listing, the top converting videos in the lane, and the Omni 9's own 85-review rating profile. It gets re-run on Saucony's own buyers after launch.</p>
+</header>
+
+<main class="container">
+  <h2 class="section">Who she is</h2>
+  <div class="card">
+    <p>She is 25 to 44, style-first, and shops TikTok like a feed, buying when a shoe shows up styled on someone shaped like her. She knows the retro silhouette trend by sight. She pays $110 to $175 for the right colorway without treating it as a splurge, and she has already bought this look from New Balance. The Omni 9 reads to her as the next one of these, with silver, pink, and metallic colorways that the big brands are not doing.</p>
+  </div>
+
+  <h2 class="section">Purchase triggers, ranked</h2>
+  <div class="card">
+    <table>
+      <tr><th></th><th>Trigger</th><th>What it looks like in the data</th></tr>
+      <tr><td class="rank">1</td><td>Availability and scarcity</td><td>The best-converting video in the lane sold 34 units per 1,000 views on a restock line about every color being in stock. Sellouts and drops move her faster than styling.</td></tr>
+      <tr><td class="rank">2</td><td>Colorway as outfit</td><td>The shoe gets bought when it completes a look. The Omni 9's own best video was a colorway appreciation post. Reviews name colors, then comfort.</td></tr>
+      <tr><td class="rank">3</td><td>Gifting</td><td>Spanish-language gift framing converted at twice the rate of outfit content. She buys for daughters, sisters, and herself in the same order.</td></tr>
+      <tr><td class="rank">4</td><td>Comfort proof from a real day</td><td>"Walked all around Europe in them." She trusts a worn test over a spec.</td></tr>
+      <tr><td class="rank">5</td><td>A deal on a shoe she already wanted</td><td>She screenshots full price and buys the markdown. The lane discounts about 10 percent into Q4 and she knows it.</td></tr>
+    </table>
+  </div>
+
+  <h2 class="section">Top objections, in her words</h2>
+  <div class="card">
+    <h3>Sizing splits her reviews in two</h3>
+    <p>Both sides are loud, and both are five-star reviews.</p>
+    <p class="quote">"Amazing gorgeous I recommend sizing half size down."</p>
+    <p class="quote">"They are amazingly comfortable I loveee them. True to size. I highly recommend them."</p>
+    <p>A unisex silhouette listed in men's sizes makes this worse for her. If the video does not answer fit, she scrolls.</p>
+  </div>
+  <div class="card">
+    <h3>Will it actually arrive right</h3>
+    <p>The complaints in the lane are about shipping and packaging. The shoe itself holds a 4.8 to 5.0 rating across listings.</p>
+    <p class="quote">"Received the wrong size! They are pretty but they don't seem comfortable enough. Hard soles."</p>
+    <p class="quote">"The 3 stars isn't for the footwear itself. It's for the extremely poor packaging. By the time I finally got my package the box was obliterated."</p>
+    <p>An official shop that ships the right pair in an intact box clears the bar the resellers keep missing.</p>
+  </div>
+  <div class="card">
+    <h3>Why this price, from this seller</h3>
+    <p>The same shoe shows up on her feed at $81 from one seller and $160 from another. She does not know which listing is real. Authenticity doubt and price doubt are the same objection for her, and only the official shop can close it.</p>
+  </div>
+
+  <h2 class="section">The number one question</h2>
+  <div class="card">
+    <h3>"Do I size down?"</h3>
+    <p>Every video answers it, by rule. The creator states her usual size, what she took in this shoe, and whether she would change it. For the Omni 9 that includes the unisex conversion, because the listing runs on men's sizing and she shops in women's.</p>
+  </div>
+
+  <h2 class="section">Price tolerance</h2>
+  <div class="card">
+    <div class="grid2">
+      <div><p class="stat">$110–$175</p><p class="statlabel">The proven premium band she buys retro silhouettes in</p></div>
+      <div><p class="stat">$12.6M</p><p class="statlabel">Monthly category GMV above $100, September</p></div>
+      <div><p class="stat">2.8 : 1</p><p class="statlabel">Women to men unit sales in the category</p></div>
+      <div><p class="stat">~$139</p><p class="statlabel">Average selling price in the over-$100 band</p></div>
+    </div>
+    <p style="margin-top:14px">She will pay full premium for the right colorway at launch. She will not pay $60 over the gray-market price of the identical pair, and she can see both listings in the same scroll session.</p>
+  </div>
+
+  <h2 class="section">Companion documents</h2>
+  <a class="companion" href="saucony-creator-persona.html">Saucony Commerce Creator Persona<span>Who sells to her, by tier and archetype</span></a>
+  <a class="companion" href="brief-saucony.html">Saucony Informed Creative Brief<span>What the videos say and show</span></a>
+</main>
+
+<footer class="container">
+  <p>third. · Saucony · Buyer Persona · October 2026 refresh · Re-run on first-party buyer data after launch</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saucony Commerce Creator Persona</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-950:#0c0a09; --ink-900:#1c1917; --ink-800:#292524; --ink-700:#44403c;
+  --ink-600:#57534e; --ink-500:#78716c; --ink-400:#a8a29e; --ink-300:#d6d3d1;
+  --ink-200:#e7e5e4; --ink-100:#f5f5f4; --ink-50:#fafaf9;
+  --brand-tomato:#ff5a3e; --brand-lavender:#bab6fd;
+  --page:var(--ink-50); --surface:#ffffff;
+  --text:var(--ink-900); --text-2:var(--ink-700); --muted:var(--ink-500);
+  --line:rgba(231,229,228,.6); --accent:#3a87e6; --accent-50:#eef5fd;
+  --ok-bg:#d1fae5; --ok-fg:#047857; --ok-dot:#10b981;
+  --radius-card:16px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0c0a09; --surface:#1c1917; --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e;
+    --line:rgba(68,64,60,.85); --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+    --ok-bg:rgba(16,185,129,.16); --ok-fg:#6ee7b7;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0c0a09; --surface:#1c1917; --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e;
+  --line:rgba(68,64,60,.85); --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+  --ok-bg:rgba(16,185,129,.16); --ok-fg:#6ee7b7;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--text);font-family:'DM Sans',ui-sans-serif,system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.container{max-width:576px;margin:0 auto;padding:0 20px}
+.title-serif{font-family:'Owners',Georgia,ui-serif,serif;font-style:italic;font-weight:900;letter-spacing:-.01em;line-height:1.05;text-wrap:balance}
+.eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:20px;margin-top:12px}
+.wordmark{font-weight:700;font-size:16px;color:var(--text)}
+h2.section{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted);margin:32px 0 0}
+.card h3{font-size:15px;font-weight:600;margin:0 0 6px;color:var(--text)}
+.card p{margin:0;color:var(--text-2);font-size:14px}
+.card p + p{margin-top:8px}
+.stat{font-size:24px;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.statlabel{font-size:12px;color:var(--muted);margin-top:2px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600;padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:8px;border-bottom:1px solid var(--line);color:var(--text-2)}
+td:first-child{color:var(--text);font-weight:500}
+.trigger{display:inline-flex;align-items:center;gap:6px;border-radius:999px;background:var(--accent-50);color:var(--accent);padding:3px 10px;font-size:11px;font-weight:600;margin-top:10px}
+footer{padding:32px 0 48px;color:var(--muted);font-size:12px}
+a{color:var(--accent);text-decoration:none}
+.companion{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:14px 16px;margin-top:8px;font-size:14px;font-weight:600;color:var(--text)}
+.companion span{display:block;font-weight:400;font-size:12px;color:var(--muted);margin-top:2px}
+.num{font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<header class="container" style="padding-top:40px;padding-bottom:8px">
+  <p class="wordmark">third<span style="color:var(--brand-tomato)">.</span></p>
+  <p class="eyebrow" style="color:var(--accent);margin:24px 0 10px">Commerce Creator Persona · Saucony · October 2026</p>
+  <h1 class="title-serif" style="font-size:34px;margin:0">The seller is her, with a camera and a commission link</h1>
+  <p style="font-size:15px;color:var(--text-2);margin:12px 0 0">Built from seller-side data: the creators with attributed sales on the Omni 9 and on the two largest comparable premium sneaker listings, plus the category's deepest converting-creator bench. Pulled October 18, 2026.</p>
+</header>
+
+<main class="container">
+  <h2 class="section">The pattern</h2>
+  <div class="card">
+    <p>Premium retro sneakers on TikTok Shop are sold by women's lifestyle and deal-finds accounts. Sneakerhead accounts are nearly absent from the top of every converting-creator list we pulled. The volume engine is the 10,000 to 50,000 follower tier, and small accounts outkick their size: six of the top ten earners on the category's biggest bench run under 30,000 followers, and one 6,500-follower account has sold $42,727 of a single shoe. Per-video efficiency beats posting volume. One creator reached $111,660 on 83 videos while another needed 1,508 videos to reach $136,291.</p>
+  </div>
+
+  <h2 class="section">Scale of the comparable pools</h2>
+  <div class="card">
+    <div class="grid2">
+      <div><p class="stat num">1,387</p><p class="statlabel">Creators with attributed sales on the top comparable women's listing</p></div>
+      <div><p class="stat num">483</p><p class="statlabel">Of them in the 10k to 50k volume tier</p></div>
+      <div><p class="stat num">33</p><p class="statlabel">Creators selling the Omni 9 today, unbriefed</p></div>
+      <div><p class="stat num">$160.8K</p><p class="statlabel">Top single-creator GMV on one comparable shoe</p></div>
+    </div>
+    <p style="margin-top:14px">The recruiting pool is not hypothetical. The bench behind the biggest comparable shop runs twenty deep at $126,000 to $678,000 in 30-day brand GMV, and one of its members is already the Omni 9's top seller. The hit list starts with the creators already converting premium retro silhouettes at this price.</p>
+  </div>
+
+  <h2 class="section">Follower tier of converting creators</h2>
+  <div class="card">
+    <table>
+      <tr><th>Tier</th><th>Comparable listing (1,387)</th><th>Omni 9 today (33)</th></tr>
+      <tr><td>Under 5k</td><td class="num">290</td><td class="num">2</td></tr>
+      <tr><td>5k to 10k</td><td class="num">341</td><td class="num">10</td></tr>
+      <tr><td>10k to 50k</td><td class="num">483</td><td class="num">15</td></tr>
+      <tr><td>50k to 100k</td><td class="num">127</td><td class="num">5</td></tr>
+      <tr><td>Over 100k</td><td class="num">146</td><td class="num">1</td></tr>
+    </table>
+    <p style="margin-top:10px">The distribution is the recruiting plan. Weight outreach to 5k to 50k, keep a short list of 100k+ accounts for reach moments, and ignore follower count as a quality screen below that.</p>
+  </div>
+
+  <h2 class="section">The four launch archetypes</h2>
+  <div class="card">
+    <h3>1 · The Deal-Finds Curator</h3>
+    <p>10k to 50k followers. Posts finds, restocks, and price drops daily. Her audience follows her to buy. The best-converting video in the dataset is hers: an availability hook that sold 34 units per 1,000 views. She carries the Black Friday window.</p>
+    <span class="trigger">Serves: availability and deal triggers</span>
+  </div>
+  <div class="card">
+    <h3>2 · The Outfit Styler</h3>
+    <p>10k to 250k followers. Builds looks on camera and treats the shoe as the anchor piece. Highest per-video GMV efficiency in the data. She makes the colorway the reason to buy.</p>
+    <span class="trigger">Serves: colorway-as-outfit trigger</span>
+  </div>
+  <div class="card">
+    <h3>3 · The Multilingual Household Voice</h3>
+    <p>10k to 100k followers, Spanish-first. Frames the shoe as a gift for a daughter or the household buy of the week. Converted at twice the rate of aesthetic content in the comparable pull. Underrecruited by every competitor.</p>
+    <span class="trigger">Serves: gifting and family-buying trigger</span>
+  </div>
+  <div class="card">
+    <h3>4 · The Sizing Truth-Teller</h3>
+    <p>5k to 50k followers. Answers fit on camera: her usual size, what she took, how it compares to the brand she wears now. The buyer's number one question is sizing, and the Omni 9's unisex men's-based sizing makes this archetype load-bearing at launch.</p>
+    <span class="trigger">Serves: fit-confidence trigger, the number one objection</span>
+  </div>
+  <div class="card">
+    <h3>Held for phase two: The Run Club Voice</h3>
+    <p>Culture-credible runner who bridges to performance SKUs. Nothing in the launch conversion data needs her yet. She enters when the performance line does.</p>
+    <span class="trigger">Serves: phase two performance lane</span>
+  </div>
+
+  <h2 class="section">Commission and recruiting guidance</h2>
+  <div class="card">
+    <p>The official shop's 13.5 percent open commission on the Omni 9 already beats every reseller rate on the platform, which runs 3 to 10 percent. Hold it through launch quarter. Target plan offers go to proven converters from the comparable pools first. Seeding follows the gates: 50 to 75 pairs per archetype per wave, day-21 read on GMV per sample, scale what clears.</p>
+    <p>Sequence the outreach: the 33 unbriefed Omni 9 sellers first because they already chose the shoe, the comparable-shoe convertors second, the archetype lookalikes third.</p>
+  </div>
+
+  <h2 class="section">Companion documents</h2>
+  <a class="companion" href="saucony-buyer-persona.html">Saucony Buyer Persona<span>Who she sells to, and what triggers the buy</span></a>
+  <a class="companion" href="brief-saucony.html">Saucony Informed Creative Brief<span>What the videos say and show</span></a>
+</main>
+
+<footer class="container">
+  <p>third. · Saucony · Commerce Creator Persona · October 2026 refresh</p>
+</footer>
+</body>
+</html>
