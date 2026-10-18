@@ -2,256 +2,131 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Buyer Persona &middot; Merrell</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merrell Buyer Persona</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
-  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+  --ink-900:#1c1917; --ink-700:#44403c; --ink-500:#78716c; --ink-400:#a8a29e;
+  --ink-300:#d6d3d1; --ink-200:#e7e5e4; --ink-100:#f5f5f4; --ink-50:#fafaf9;
+  --brand-tomato:#ff5a3e;
+  --page:var(--ink-50); --surface:#ffffff;
+  --text:var(--ink-900); --text-2:var(--ink-700); --muted:var(--ink-500);
+  --line:rgba(231,229,228,.6); --accent:#3a87e6; --accent-50:#eef5fd;
+  --wait-bg:#fef3c7; --wait-fg:#b45309; --wait-dot:#f59e0b;
+  --radius-card:16px;
 }
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
-.mono{font-family:'IBM Plex Mono',monospace;}
-.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
-.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
-.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
-.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
-.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
-.strip{display:flex;height:10px;}
-.strip span{flex:1;}
-.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
-section{padding:52px 0;}
-section.alt{background:var(--gray);}
-h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
-h3{font-size:18px;font-weight:800;}
-.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
-.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
-.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
-.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
-.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
-.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
-.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
-.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
-.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
-.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
-.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
-.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
-.panel.trig{border-top:6px solid var(--c4);}
-.panel.obj{border-top:6px solid var(--c8);}
-.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
-.panel ul{list-style:none;margin-top:14px;}
-.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
-.panel li:first-child{border-top:none;}
-.panel li b{font-weight:700;}
-.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
-.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
-.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
-.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
-.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
-.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
-.tier p{margin-top:10px;font-size:14px;color:#333;}
-.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
-.tier .row b{color:var(--ink);}
-.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
-.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
-.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
-.tbl tr:first-child td{border-top:none;}
-.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
-.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
-section.alt .tbl{background:#fff;}
-.dark{background:var(--ink);color:#fff;}
-.dark h2{color:#fff;}
-.dark h3{color:#fff;}
-.dark .lede{color:#CFCFCF;}
-.dark .sec-kicker{color:var(--c3);}
-.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
-.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
-.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
-.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
-.phases{margin-top:28px;display:grid;gap:12px;}
-.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
-.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
-.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
-.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
-.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
-.risks{margin-top:26px;display:grid;gap:12px;}
-.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
-.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
-.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
-.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
-.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
-.callout p{margin-top:9px;font-size:15px;color:#333;}
-.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
-footer{padding:26px 0;background:#fff;}
-footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
-@media(max-width:760px){
-  .stats{grid-template-columns:1fr 1fr;}
-  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
-  .tbl{display:block;overflow-x:auto;}
-  footer .wrap{flex-direction:column;gap:8px;}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0c0a09; --surface:#1c1917; --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e;
+    --line:rgba(68,64,60,.85); --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+    --wait-bg:rgba(245,158,11,.16); --wait-fg:#fcd34d;
+  }
 }
-</style>
-<style>
-.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
-section.alt .companions{background:#fff;}
-.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
-.companions ul{list-style:none;margin-top:12px;}
-.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
-.companions li:first-child{border-top:none;}
-.companions li b{font-weight:700;color:var(--ink);}
-.hooks{margin-top:22px;display:grid;gap:12px;}
-.hook{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;}
-.hook .rank{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);}
-.hook .quote{font-size:16px;font-weight:700;line-height:1.35;}
-.hook .meta{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
-.hook .why{margin-top:9px;font-size:14px;color:#333;}
-.dodont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
-.dodont .panel.do{border-top:6px solid var(--c4);}
-.dodont .panel.dont{border-top:6px solid var(--c8);}
-.quotebox{margin-top:20px;display:grid;gap:10px;}
-.qb{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c5);border-radius:12px;padding:16px 20px;font-size:15px;color:#333;}
-.qb .src{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
-.qb.neg{border-left-color:var(--c8);}
-.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
-.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--ink);color:#fff;padding:7px 12px;border-radius:6px;}
-.chip.alt2{background:var(--c6);} .chip.alt3{background:var(--c7);} .chip.alt4{background:var(--c4);color:var(--ink);}
-.gate{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;margin-top:12px;border-left:6px solid var(--c5);}
-.gate .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
-.gate h3{margin-top:8px;font-size:17px;}
-.gate p{margin-top:9px;font-size:14px;color:#333;}
-@media(max-width:760px){.dodont{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;gap:8px;}}
+:root[data-theme="dark"]{
+  --page:#0c0a09; --surface:#1c1917; --text:#fafaf9; --text-2:#d6d3d1; --muted:#a8a29e;
+  --line:rgba(68,64,60,.85); --accent:#5b9dee; --accent-50:rgba(58,135,230,.16);
+  --wait-bg:rgba(245,158,11,.16); --wait-fg:#fcd34d;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--text);font-family:'DM Sans',ui-sans-serif,system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.container{max-width:576px;margin:0 auto;padding:0 20px}
+.title-serif{font-family:'Owners',Georgia,ui-serif,serif;font-style:italic;font-weight:900;letter-spacing:-.01em;line-height:1.05;text-wrap:balance}
+.eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:20px;margin-top:12px}
+.wordmark{font-weight:700;font-size:16px;color:var(--text)}
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;background:var(--wait-bg);color:var(--wait-fg);padding:4px 10px;font-size:11px;font-weight:600}
+.badge .dot{width:6px;height:6px;border-radius:999px;background:var(--wait-dot)}
+h2.section{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.125em;color:var(--muted);margin:32px 0 0}
+.card h3{font-size:15px;font-weight:600;margin:0 0 6px;color:var(--text)}
+.card p{margin:0;color:var(--text-2);font-size:14px}
+.card p + p{margin-top:8px}
+.quote{border-left:2px solid var(--ink-300);padding-left:12px;color:var(--muted);font-size:13px;margin-top:8px}
+.stat{font-size:24px;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.statlabel{font-size:12px;color:var(--muted);margin-top:2px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600;padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:8px;border-bottom:1px solid var(--line);color:var(--text-2)}
+td:first-child{color:var(--text);font-weight:500}
+.rank{color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+footer{padding:32px 0 48px;color:var(--muted);font-size:12px}
+a{color:var(--accent);text-decoration:none}
+.companion{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:14px 16px;margin-top:8px;font-size:14px;font-weight:600;color:var(--text)}
+.companion span{display:block;font-weight:400;font-size:12px;color:var(--muted);margin-top:2px}
 </style>
 </head>
 <body>
-<div class="hero">
-  <div class="wrap">
-    <div class="kicker">THIRD. &middot; Merrell &middot; Buyer Persona</div>
-    <h1>Who buys Merrell on TikTok Shop</h1>
-    <p class="sub">Built from purchase-side evidence: the outdoor and comfort footwear that converts, the videos that sell it, and the prices that hold.</p>
-  </div>
-</div>
-<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-<section>
-  <div class="wrap">
-    <div class="sec-kicker">01 &middot; The buyer</div>
-    <h2>Two buyers, and only one of them is going hiking</h2>
-    <p class="lede">Merrell has no shop and therefore no first-party buyer data on TikTok Shop. This persona is built from the products that actually convert in outdoor and comfort footwear, the videos that sell them, and the price points that hold.</p>
-    <div class="twocol">
-      <div class="panel trig">
-        <h3>Primary &middot; The Everyday Outdoor Woman</h3>
-        <ul>
-          <li><b>Who.</b> Buys hiking footwear for a life that includes some trails and a lot of walking. Travel, dog, errands, a state park on Saturday.</li>
-          <li><b>Spends.</b> $60 to $140. The proven converter in this lane is a women's waterproof hiking boot selling at $62 against a $129.99 list.</li>
-          <li><b>Buys on.</b> Proof. The best performing video in the category is 21 seconds of a creek crossing with dry feet. 920,600 views, 16,000 likes, 1.82% interaction.</li>
-          <li><b>Reads.</b> Comfort, waterproof, arch support, all day. The bestselling hiking apparel on the platform is women's and sold on comfort.</li>
-        </ul>
-      </div>
-      <div class="panel obj">
-        <h3>Secondary &middot; The Work and Weather Man</h3>
-        <ul>
-          <li><b>Who.</b> Buys footwear as equipment. Construction, maintenance, outdoor work, long shifts. Often shopping in Spanish.</li>
-          <li><b>Spends.</b> $60 and up. The $59.99 tactical shoe leading this lane did $363,056 in 30 days across 2,096 creators.</li>
-          <li><b>Buys on.</b> Durability and comfort claims delivered plainly. The top video is a 37 second reply to a commenter, at a 0.13% interaction rate and $4,939 in sales.</li>
-          <li><b>Reads.</b> Lightweight, non-slip, all day comfort, protected toe. He is not reading brand heritage.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="chips">
-      <span class="chip">Buys once, expects it to last</span>
-      <span class="chip alt2">Discovers on FYP, checks reviews, buys same session</span>
-      <span class="chip alt3">Has been burned by "water resistant"</span>
-      <span class="chip alt4">Orders one size, keeps or returns</span>
-    </div>
-  </div>
-</section>
+<header class="container" style="padding-top:40px;padding-bottom:8px">
+  <p class="wordmark">third<span style="color:var(--brand-tomato)">.</span></p>
+  <p class="eyebrow" style="color:var(--accent);margin:24px 0 10px">Buyer Persona · Merrell · October 2026 refresh</p>
+  <h1 class="title-serif" style="font-size:34px;margin:0">The woman who calls a hiking boot cute</h1>
+  <p style="font-size:15px;color:var(--text-2);margin:12px 0 10px">Built from purchase-side signals in the women's lifestyle boot lane the Moab 3 sells into. Refreshed ahead of the official shop opening.</p>
+  <span class="badge"><span class="dot"></span>Provisional</span>
+  <p style="font-size:12px;color:var(--muted);margin-top:8px">The house bar for a full-confidence buyer persona is 1,500+ mined comments. This refresh ran on 34 reviews and the top converting videos from the closest comparable women's boot listings, because the Moab 3 has no reviewed listing of scale yet. It gets re-run on first-party buyers after the shop opens.</p>
+</header>
 
-<section class="alt">
-  <div class="wrap">
-    <div class="sec-kicker">02 &middot; Purchase psychology</div>
-    <h2>She is buying access to a Saturday</h2>
-    <p class="lede">The evidence points away from the summit. Very few of these buyers are replacing a worn out boot after 400 miles. Most are buying the shoe that makes the trip possible and the errand comfortable.</p>
-    <div class="stats">
-      <div class="stat"><div class="num">01</div><div class="lbl">Dry feet. The buy trigger, and it only works when it is shown</div></div>
-      <div class="stat"><div class="num">02</div><div class="lbl">All day wear. One shoe for the trail, the parking lot and the airport</div></div>
-      <div class="stat"><div class="num">03</div><div class="lbl">Looks like her. Outdoor product carried by style intent</div></div>
-      <div class="stat"><div class="num">04</div><div class="lbl">Arrives correct. Sizing is the recurring blocker</div></div>
-    </div>
-    <p class="body-p">Timberland's best converting women's product is a platform boat shoe at $69.99 to $140, sold as a fall styling piece on a 10 second video. That is outdoor product moving on style intent, not on performance claims.</p>
-    <p class="body-p">Single-purpose framing narrows the sale. A shoe presented only as hiking equipment competes against how often she hikes. A shoe presented as the one that handles a wet morning and a full day competes against her whole week.</p>
-    <div class="callout">
-      <div class="ct">The signal on sizing</div>
-      <p>In a top converting sandal video the creator volunteers that they run true to size, without being asked and without it being part of the brief. Creators in this category have learned that the sale stalls without it.</p>
-    </div>
+<main class="container">
+  <h2 class="section">Who she is</h2>
+  <div class="card">
+    <p>She is 25 to 44 and buys the boot as an outfit piece she will also wear hard. Her five-star reviews lead with "cute" and "comfy" and get to function later, if at all. She wears the purchase daily, with skirts, jeans, and work pants, and she judges it on how it styles and how it feels on a full day. She pays $140 to $230 for the right boot. She discovers on her feed, checks the reviews, and buys in the same session.</p>
   </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <div class="sec-kicker">03 &middot; Objections</div>
-    <h2>Four objections, and Merrell currently loses on three</h2>
-    <div class="twocol">
-      <div class="panel obj">
-        <h3>What stops the purchase</h3>
-        <ul>
-          <li><b>Sizing.</b> Wide feet, half sizes, whether to order up. Left unanswered this becomes a return.</li>
-          <li><b>Price.</b> A $150 Moab sits on a results page next to $4 to $62 waterproof options.</li>
-          <li><b>Authenticity.</b> The same Moab 3 appears at $97.95, $141.35, $151.51, $170.00 and $173.00 across different sellers.</li>
-          <li><b>Waterproof or water resistant.</b> She has been burned by the difference and treats the claim as marketing until shown otherwise.</li>
-        </ul>
-      </div>
-      <div class="panel trig">
-        <h3>What answers them</h3>
-        <ul>
-          <li><b>Sizing on camera</b> in the first ten seconds, including wide fit.</li>
-          <li><b>Cost per wear framing.</b> Buying once at $150 against buying twice at $62.</li>
-          <li><b>One official shop, one price.</b> This objection gets solved by opening the shop, not by creative.</li>
-          <li><b>Water shown entering and not entering.</b> Creek, hose, puddle, rain.</li>
-        </ul>
-      </div>
-    </div>
-    <p class="body-p">Three of the four are creative and brief instructions. The authenticity objection resolves the day the official shop opens and cannot be fixed by any video.</p>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="sec-kicker">04 &middot; Price tolerance</div>
-    <h2>The ceiling is higher than the category looks</h2>
-    <p class="lede">A search for hiking footwear returns a wall of product between $4 and $62. That wall is the price floor of sellers with nothing else to compete on. The ceiling sits well above it.</p>
-    <table class="tbl">
-      <tr><th>Product</th><th>Price</th><th>GMV (30d)</th><th>Units</th></tr>
-      <tr><td>Crocs Classic Spider-Man clog</td><td class="n">$80.34</td><td class="n">$663,729</td><td class="n">8,261</td></tr>
-      <tr><td>Crocs Loaferette</td><td class="n">$82.49</td><td class="n">$407,372</td><td class="n">4,940</td></tr>
-      <tr><td>Crocs Crafted Vegan Suede clog</td><td class="n">$89.37</td><td class="n">$229,901</td><td class="n">2,570</td></tr>
-      <tr class="total"><td>Timberland Stone Street, top of range</td><td class="n">$140.00</td><td class="n">Converts at 2.25% interaction</td><td class="n">10 sec video</td></tr>
+  <h2 class="section">Purchase triggers, ranked</h2>
+  <div class="card">
+    <table>
+      <tr><th></th><th>Trigger</th><th>What it looks like in the data</th></tr>
+      <tr><td class="rank">1</td><td>The boot completes a fall outfit</td><td>Seasonal styling loops carry the comparable boot's top ten videos. Spec talk appears in none of them.</td></tr>
+      <tr><td class="rank">2</td><td>Versatility she can picture</td><td>"It goes with skirts, jeans and even formal pants great for everyday wear."</td></tr>
+      <tr><td class="rank">3</td><td>Comfort worn daily</td><td>"So cute and comfortable. I wear them like every day."</td></tr>
+      <tr><td class="rank">4</td><td>A deal inside a window</td><td>Deal-page videos on the $230 comparable boot converted at twice the rate of styling loops per view.</td></tr>
+      <tr><td class="rank">5</td><td>Gift and family buying, Spanish first</td><td>Spanish-language reviews and videos recur across the lane and convert above their reach.</td></tr>
     </table>
-    <p class="body-p">Merrell footwear currently lists on the platform at an average of $132 across thirteen reseller listings. That number works. It needs the demonstration attached to it.</p>
-    <div class="statement">
-      <div class="tag">How to talk to her</div>
-      <p>Lead with the water. Answer sizing before she asks. Set the shoe somewhere ordinary, say the price out loud, and keep it short.</p>
-      <p class="detail">The four best performing videos in this pull run 10, 11, 21 and 37 seconds. Every one of them handles sizing or the core claim inside the first fifteen seconds. A creek on a normal walk beats a ridgeline, because the setting should look reachable on a weekend.</p>
-    </div>
-    <div class="companions">
-      <div class="ct">Companion documents</div>
-      <ul>
-        <li><b>Strategy Doc</b> &middot; the commercial case, the Timberland comp and the phased launch plan.</li>
-        <li><b>Commerce Creator Persona</b> &middot; the four archetypes that reach these two buyers.</li>
-        <li><b>Informed Creative Brief</b> &middot; the hooks and angles built from the objections above.</li>
-      </ul>
-    </div>
-    <p class="note">No mined review or comment data exists for this category. FastMoss returns zero reviews across every product in the reference set, so this persona rests on behavioral evidence.</p>
   </div>
-</section>
 
-<footer>
-  <div class="wrap">
-    <span>THIRD. &middot; Merrell &middot; Buyer Persona</span>
-    <span>Data: Cruva and FastMoss TikTok Shop US marketplace intelligence &middot; 30 days ending August 14, 2026</span>
+  <h2 class="section">Top objections, in her words</h2>
+  <div class="card">
+    <h3>Sizing, before anything else</h3>
+    <p>Sizing guidance shows up unprompted inside five-star reviews. She warns the next buyer even when she loves the boot.</p>
+    <p class="quote">"Cute but too small size up"</p>
+    <p class="quote">"I absolutely love them!!!! They are so darn cute and comfy!!! True to size as well."</p>
+    <p>Fit stated on camera is the cheapest conversion lever in the lane.</p>
   </div>
+  <div class="card">
+    <h3>Will the right pair show up</h3>
+    <p>The one-star reviews in the lane are about fulfillment. Wrong sizes resent, used product shipped as new. The shoe itself holds five stars almost everywhere it is reviewed.</p>
+    <p class="quote">"You resent the same item wrong size and seems this item is used. Just refund me my money."</p>
+  </div>
+  <div class="card">
+    <h3>Which listing is the real one</h3>
+    <p>The Moab 3 shows up at nine different prices from $81 to $182 across third-party listings, and the biggest one is out of stock. She cannot tell which pair is legitimate. One official listing per colorway at one price removes the doubt.</p>
+  </div>
+
+  <h2 class="section">The number one question</h2>
+  <div class="card">
+    <h3>"Do I size up?"</h3>
+    <p>Every video answers it. The creator states her usual size, the size she took, and whether she would change it. The waterproof question from the August thesis stays in the answer set as the supporting proof point, behind fit.</p>
+  </div>
+
+  <h2 class="section">Price tolerance</h2>
+  <div class="card">
+    <div class="grid2">
+      <div><p class="stat">$140–$230</p><p class="statlabel">The proven band on comparable women's boots</p></div>
+      <div><p class="stat">30 of 34</p><p class="statlabel">Five-star reviews in the proxy set</p></div>
+      <div><p class="stat">$99.2K</p><p class="statlabel">28-day GMV on the lead comparable boot at $169</p></div>
+      <div><p class="stat">$81–$182</p><p class="statlabel">The Moab 3's current street spread</p></div>
+    </div>
+    <p style="margin-top:14px">She already pays more than a Moab 3 costs for the boot next to it. The obstacle is the missing official listing.</p>
+  </div>
+
+  <h2 class="section">Companion documents</h2>
+  <a class="companion" href="merrell-creator-persona.html">Merrell Commerce Creator Persona<span>Who sells to her, by tier and archetype</span></a>
+  <a class="companion" href="brief-merrell.html">Merrell Informed Creative Brief<span>What the videos say and show</span></a>
+</main>
+
+<footer class="container">
+  <p>third. · Merrell · Buyer Persona · October 2026 refresh · Re-run on first-party buyer data after the shop opens</p>
 </footer>
 </body>
 </html>
