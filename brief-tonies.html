@@ -1,0 +1,279 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>tonies Informed Creative Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{
+  --tomato:#FF5A3E;
+  --lime:#A2F09F; --citron:#F4FD8D; --cobalt:#3A87E6; --pink:#F186FF;
+  --plum:#8F0846; --turquoise:#BDEAEA; --lavender:#BAB6FD; --warmgray:#C9CDC6;
+  --ink:#1C1917; --ink-2:#44403C; --muted:#78716C; --faint:#A8A29E;
+  --line:#E7E5E4; --surface:#FFFFFF; --surface-2:#F5F5F4; --page:#FFFFFF;
+  --ok-bg:#D1FAE5; --ok-fg:#047857;
+  --wait-bg:#FEF3C7; --wait-fg:#B45309; --wait-line:#F59E0B;
+  --bad-bg:#FEE2E2; --bad-fg:#B91C1C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+
+/* ---- hero ---- */
+.hero{background:var(--tomato);color:#fff;padding:44px 24px 40px}
+.hero-inner{max-width:760px;margin:0 auto}
+.wordmark{
+  font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:600;font-size:15px;letter-spacing:.06em;color:#fff;margin:0 0 30px;
+}
+.kicker{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(255,255,255,.82);margin:0 0 12px;
+}
+.hero h1{
+  font-family:'Inter',sans-serif;font-weight:800;font-size:42px;line-height:1.04;
+  letter-spacing:-.025em;margin:0;color:#fff;text-wrap:balance;
+}
+.hero .lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.92);max-width:62ch}
+
+/* ---- nine-color strip ---- */
+.strip{display:flex;height:10px;width:100%}
+.strip span{flex:1 1 0}
+.s1{background:var(--lime)}      .s2{background:var(--citron)}
+.s3{background:var(--tomato)}    .s4{background:var(--cobalt)}
+.s5{background:var(--pink)}      .s6{background:var(--plum)}
+.s7{background:var(--turquoise)} .s8{background:var(--lavender)}
+.s9{background:var(--warmgray)}
+
+/* ---- layout ---- */
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+section{margin-top:48px}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--tomato);margin:0 0 14px;
+}
+.card{border:1px solid var(--line);border-radius:4px;padding:26px;margin-bottom:16px;background:var(--surface)}
+.card h2{font-family:'Inter',sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
+.card h3{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted);margin:22px 0 8px;
+}
+.card p{margin:0 0 14px;color:var(--ink-2)}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:15px;color:var(--muted)}
+
+/* ---- metrics in IBM Plex Mono ---- */
+.metric{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.03em;
+  color:var(--tomato);margin:20px 0 10px;
+}
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+/* ---- provisional ---- */
+.provisional{background:var(--wait-bg);border-left:4px solid var(--wait-line);border-radius:2px;padding:20px 22px;margin-bottom:16px}
+.provisional p{color:var(--wait-fg);margin:0;font-size:15px}
+.provisional p + p{margin-top:10px}
+.provisional strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0;max-width:100%}
+table{width:100%;min-width:340px;border-collapse:collapse;font-size:15px;margin:0}
+th{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink);vertical-align:bottom;
+}
+td{padding:13px 10px 13px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:right;font-variant-numeric:tabular-nums;padding-right:0;padding-left:18px;white-space:nowrap;
+}
+td.rank{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--faint);width:26px}
+.hook{color:var(--ink);font-weight:500}
+
+ul{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+
+/* ---- do / don't ---- */
+.do-dont{display:grid;gap:12px;margin-top:14px}
+.do,.dont{border-radius:3px;padding:14px 16px;font-size:15px}
+.do{background:var(--ok-bg);color:var(--ok-fg);border-left:3px solid var(--ok-fg)}
+.dont{background:var(--bad-bg);color:var(--bad-fg);border-left:3px solid var(--bad-fg)}
+.do strong,.dont strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;
+}
+
+/* ---- stat rows ---- */
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-row:last-child{border-bottom:none}
+.stat-row .k{color:var(--muted)}
+.stat-row .v{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+
+/* ---- badges ---- */
+.badge{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:inline-block;border-radius:2px;padding:5px 10px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.b-1{background:var(--tomato);color:#fff}
+.b-2{background:var(--citron);color:var(--ink)}
+.b-3{background:var(--turquoise);color:var(--ink)}
+.b-4{background:var(--lavender);color:var(--ink)}
+
+/* ---- companion + footer ---- */
+.companion{background:var(--surface-2);border-radius:4px;padding:22px 24px;margin-top:40px}
+.companion p{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+.companion a{color:var(--tomato);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:5px 0}
+.companion a:hover{text-decoration:underline}
+footer{max-width:760px;margin:0 auto;padding:40px 24px 64px;font-size:13px;color:var(--faint);line-height:1.5}
+footer p{margin:0 0 6px}
+@media (max-width:520px){
+  .hero{padding:32px 20px 30px}
+  .hero h1{font-size:32px}
+  .metric{font-size:38px}
+  .container{padding:0 20px}
+  .card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="hero"><div class="hero-inner"><p class="wordmark">THIRD.</p><p class="kicker">Informed creative brief</p><h1>tonies</h1><p class="lede">Toniebox 2 starter sets from $154.99, and holiday Tonies at $19.99. What converts, what does not, and the exact hooks that have produced sales. November 2026.</p></div></div>
+<div class="strip"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span><span class="s7"></span><span class="s8"></span><span class="s9"></span></div>
+<main class="container">
+<div class="provisional"><p><strong>Provisional.</strong> A full brief runs on 75 top-selling videos and 1,500 or more mined buyer comments. This one ran on the top 80 Tonies affiliate videos by GMV from the 2025 holiday season and August to November 2026, plus 285 product reviews. Video comment text was not available.</p><p>The hooks below are real opening lines with real sales. The buyer language comes from reviews.</p></div>
+
+<section><p class="eyebrow">1. Winning formula</p>
+<div class="card"><h2>Name the gift, and the toddler it is for, in your first line</h2>
+<p class="meta">The goal this season is more Tonies sales per video through Christmas. "Tonie box is the best gift for toddlers" returned $52.1 per 1,000 views. One buyer in five writes a review about a gift. Gift-givers need to hear who it is for before they hear what it is.</p>
+<div class="do-dont"><div class="do"><strong>Do</strong>Open with the child's age and the occasion: "If you're shopping for a two-year-old this Christmas."</div><div class="dont"><strong>Don't</strong>Open on the box with no reason to care.</div></div></div>
+
+<div class="card"><h2>Put the price, the deal or the free gift on screen</h2>
+<p class="meta">The single best Tonies video of last holiday season ($115.7 per 1,000 views) led with a Black Friday free gift in the caption. "Check your coupons before this Toniebox 2 bundle sells out" returned $89.3. "Click the cart and see if it still says free gift" returned $30.7.</p>
+<div class="do-dont"><div class="do"><strong>Do</strong>Show the price and the free gift as text in the first three seconds, and say "tap the orange cart to check yours."</div><div class="dont"><strong>Don't</strong>Promise a price or a gift you have not checked on the listing that day. Missing items, free gifts included, are the top reason for low reviews.</div></div></div>
+
+<div class="card"><h2>Play the audio on camera</h2>
+<p class="meta">Character drops and unboxings that play the Tonie out loud sell well. jills.tonie.clips' Judy Hopps unboxing is the top Tonies video of 2026 ($35.4K GMV). Her Baby Shark video opens on the runtime and song count.</p>
+<div class="do-dont"><div class="do"><strong>Do</strong>Place the Tonie and let the first song play for three to five seconds. Say how long it runs.</div><div class="dont"><strong>Don't</strong>Talk over the audio or add trending music on top of it.</div></div></div>
+
+<div class="card"><h2>Show your child using it without help</h2>
+<p class="meta">Buyers write "easy for even our two-year-old to use" and "keeps him both off screens and entertained." Independence and screen-free time are the reasons parents give for buying.</p>
+<div class="do-dont"><div class="do"><strong>Do</strong>Film small hands placing the Tonie and squeezing the ear for volume.</div><div class="dont"><strong>Don't</strong>Stage it with an adult doing every step.</div></div></div>
+
+<div class="card"><h2>Use stock urgency only when it is true</h2>
+<p class="meta">"You're gonna regret waiting on this one" returned $55.5. "She sold out in 2 hours" returned $37.0. "These are going to SELL OUT fast" returned $36.2. All three ran when stock was low.</p>
+<div class="do-dont"><div class="do"><strong>Do</strong>Use a restock or low-stock line when the listing shows it.</div><div class="dont"><strong>Don't</strong>Call an in-stock item "almost gone."</div></div></div>
+</section>
+
+<section><p class="eyebrow">2. Content angles</p>
+<div class="card"><span class="badge b-1">Angle 1</span><h2>The toddler gift pick</h2>
+<p class="meta"><strong>Gap it answers:</strong> Grandparents and aunts know the child, not the system, and need one clear thing to buy.</p>
+<p class="meta"><strong>Archetype:</strong> A5 Toddler Gift Video Creator.</p>
+<p class="meta"><strong>How to run it:</strong> Name the age, show the starter set and what is in the box, play one Tonie, end on the price and the cart.</p></div>
+<div class="card"><span class="badge b-1">Angle 2</span><h2>Toniebox 1, Toniebox 2 or Lite in 30 seconds</h2>
+<p class="meta"><strong>Gap it answers:</strong> The number one buyer question, which box to buy.</p>
+<p class="meta"><strong>Archetype:</strong> A5 Toddler Gift Video Creator, or A2 Mom-Deals Live Seller as a live segment.</p>
+<p class="meta"><strong>How to run it:</strong> Boxes side by side. Ages, charging, games and light ring. Finish on the bundle that is on deal.</p></div>
+<div class="card"><span class="badge b-1">Angle 3</span><h2>The screen-free swap</h2>
+<p class="meta"><strong>Gap it answers:</strong> Parents who want less screen time but still need a quiet half hour.</p>
+<p class="meta"><strong>Archetype:</strong> A4 Baby and Toddler Specialist.</p>
+<p class="meta"><strong>How to run it:</strong> Car ride, nap or bedtime routine with the Toniebox doing the work. Ms. Rachel or My First Tonies as the hero.</p></div>
+<div class="card"><span class="badge b-1">Angle 4</span><h2>The holiday Tonie for kids who already have a box</h2>
+<p class="meta"><strong>Gap it answers:</strong> Owners who want the next Tonie and a stocking stuffer at $19.99.</p>
+<p class="meta"><strong>Archetype:</strong> A1 Tonies Superfan Host.</p>
+<p class="meta"><strong>How to run it:</strong> "If you have a Toniebox, you need this Tonie for the holiday season." Play Holiday Songs 2 or the Grinch.</p></div>
+<div class="card"><span class="badge b-2">Angle 5</span><h2>The live bundle drop</h2>
+<p class="meta"><strong>Gap it answers:</strong> Buyers who balk at $20 a Tonie and wait for a bundle price.</p>
+<p class="meta"><strong>Archetype:</strong> A2 Mom-Deals Live Seller and A3 Big-Box Live Seller.</p>
+<p class="meta"><strong>How to run it:</strong> A timed Toniebox 2 bundle in a live segment, with three to six pre-heat videos the day before.</p></div>
+</section>
+
+<section><p class="eyebrow">3. Proven opening hooks</p>
+<div class="card"><p class="meta">Ranked by GMV per 1,000 views. Opening lines from Tonies affiliate videos with 20,000 or more views, posted Nov to Dec 2025 and Aug to Nov 2026. Boosted videos are marked.</p>
+<div class="tw"><table><thead><tr><th>#</th><th>Hook</th><th>GMV per 1,000 views</th></tr></thead><tbody>
+<tr><td>1</td><td>"Check your coupons before this Toniebox 2 bundle sells out."</td><td>$89.3</td></tr>
+<tr><td>2</td><td>"You're gonna regret waiting on this one."</td><td>$55.5</td></tr>
+<tr><td>3</td><td>"Tonie box is the best gift for toddlers."</td><td>$52.1</td></tr>
+<tr><td>4</td><td>"She sold out in 2 hours."</td><td>$37.0</td></tr>
+<tr><td>5</td><td>"Y'all are crazy because you're fighting me in the comments about the cost of these on TikTok Shop." (boosted)</td><td>$36.9</td></tr>
+<tr><td>6</td><td>"These are going to SELL OUT fast."</td><td>$36.2</td></tr>
+<tr><td>7</td><td>"Toniebox 1 vs. 2... What's the actual difference?"</td><td>$34.6</td></tr>
+<tr><td>8</td><td>"Before you buy the Toniebox 2 for Christmas, check the product link right there and see if you have any coupons."</td><td>$34.5</td></tr>
+<tr><td>9</td><td>"If you have a Toniebox, you need this Tonie for the holiday season."</td><td>$34.2</td></tr>
+<tr><td>10</td><td>"If you're wondering what to grab your toddler..."</td><td>$32.6</td></tr>
+<tr><td>11</td><td>"Click the cart and see if it still says free gift."</td><td>$30.7</td></tr>
+</tbody></table></div>
+<h3>What the ranking says</h3>
+<ul>
+<li>Deal and coupon lines lead. Three of the top eleven tell viewers to check the price or coupon on the listing.</li>
+<li>Gift lines that name a toddler beat general product lines.</li>
+<li>The top seasonal Tonie line (rank 9) also sold 1.6 units per 1,000 views, one of the highest unit rates on the list.</li>
+</ul></div>
+</section>
+
+<section><p class="eyebrow">4. Product cheat sheet</p>
+<div class="card"><h2>"Toniebox 1 vs. 2... What's the actual difference?"</h2>
+<p>Answer it early, before you show anything else about the box.</p>
+<div class="stat-row"><span class="k">Price, Toniebox 2 sets</span><span class="v">$154.99 Ms. Rachel &middot; $209.99 Pooh bundle</span></div><div class="stat-row"><span class="k">Price, Toniebox Lite</span><span class="v">From $99.99</span></div><div class="stat-row"><span class="k">Price, Tonies</span><span class="v">$19.99 single &middot; $59.99 Bluey 3-Pack</span></div>
+<div class="stat-row"><span class="k">Age range</span><span class="v">Toniebox 2 and Lite 1+ &middot; Toniebox 1 3+</span></div>
+<div class="stat-row"><span class="k">What is included</span><span class="v">Box plus the Tonies named on the listing</span></div>
+<div class="stat-row"><span class="k">What else is required</span><span class="v">Wi-Fi for setup and first play of each Tonie</span></div>
+<div class="stat-row"><span class="k">Commission</span><span class="v">10% ($15.50 per Ms. Rachel set)</span></div>
+<h3>How it works, in the order to say it</h3>
+<ul>
+<li>Set up the box once on Wi-Fi.</li>
+<li>Place a Tonie on top and it starts playing.</li>
+<li>Squeeze the ears for volume. Tap the side to skip.</li>
+<li>Each Tonie downloads the first time, then works anywhere, including the car.</li>
+<li>Toniebox 2 adds Tonieplay games, a light ring night light, a sleep timer and a sunrise alarm, and charges by USB-C.</li>
+</ul>
+<h3>Bundles buyers ask about</h3>
+<p class="meta">Multi-packs and bundles convert because buyers resist the per-Tonie price. Name the bundle saving out loud when one is live.</p></div>
+</section>
+
+<section><p class="eyebrow">5. Objection questions to answer on camera</p>
+<div class="card"><h2>Answer these out loud. Do not wait for the comments.</h2>
+<ul>
+<li>Which box should I buy? Toniebox 2 for ages 1+ with games and a night light. Lite for a smaller, simpler box at a lower price.</li>
+<li>Will it work with Tonies we already own? Yes. Both boxes play every Tonie.</li>
+<li>Is $20 a Tonie worth it? Say how long yours runs and how often your child picks it.</li>
+<li>Is it hard to set up? Show the setup. It takes one Wi-Fi connection.</li>
+<li>Is it right for a one-year-old? Toniebox 2 and Lite are made for ages 1+. Start with My First Tonies or Ms. Rachel.</li>
+<li>Will everything be in the box? Hold up every piece in the bundle you are selling.</li>
+</ul></div>
+</section>
+
+<section><p class="eyebrow">6. Specs and logistics</p>
+<div class="card"><h2>Video specs</h2>
+<div class="stat-row"><span class="k">Format</span><span class="v">Vertical 9:16, product linked</span></div>
+<div class="stat-row"><span class="k">Length</span><span class="v">30 to 60 seconds</span></div>
+<div class="stat-row"><span class="k">Audio</span><span class="v">Your voice plus the Tonie playing</span></div>
+<div class="stat-row"><span class="k">Product visible by</span><span class="v">The first second</span></div>
+<div class="stat-row"><span class="k">Lighting</span><span class="v">Daylight or a bright room</span></div>
+<div class="stat-row"><span class="k">Captions</span><span class="v">On, with the price in the first 3 seconds</span></div>
+<h3>Tagging</h3>
+<ul><li>Link the exact product or bundle you show.</li><li>Tag @tonies.us.</li></ul>
+<h3>Cadence</h3>
+<p class="meta">Post your first video within seven days of receiving your sample. Post again for Black Friday, Cyber Monday and the last shipping day before Christmas.</p>
+<h3>Contact</h3>
+<p class="meta">Questions go to your Third account lead.</p></div>
+</section>
+
+<div class="companion"><p>Companion documents</p><a href="tonies-buyer-persona.html">tonies Buyer Persona</a><a href="tonies-creator-persona.html">tonies Commerce Creator Persona</a><a href="tonies-tts-strategy.html">tonies Strategy</a></div>
+</main>
+<footer><p>third. Informed Creative Brief. tonies. November 3, 2026.</p><p>Sources: tonies shop affiliate video performance and opening lines (Nov 1 to Dec 31, 2025 and Aug 1 to Nov 2, 2026); written TikTok Shop product reviews on the top-selling Tonies products (285 reviews, October 2022 to March 2026); tonies product support pages for box ages and features (November 2026).</p><p>GMV figures are gross TikTok-attributed GMV, not net revenue. Hooks are ranked on videos with 20,000 or more views. Recent video GMV keeps arriving for several weeks.</p></footer>
+
+</body></html>
