@@ -1,0 +1,241 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>tonies Affiliate Tactical Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{
+  --tomato:#FF5A3E;
+  --lime:#A2F09F; --citron:#F4FD8D; --cobalt:#3A87E6; --pink:#F186FF;
+  --plum:#8F0846; --turquoise:#BDEAEA; --lavender:#BAB6FD; --warmgray:#C9CDC6;
+  --ink:#1C1917; --ink-2:#44403C; --muted:#78716C; --faint:#A8A29E;
+  --line:#E7E5E4; --surface:#FFFFFF; --surface-2:#F5F5F4; --page:#FFFFFF;
+  --ok-bg:#D1FAE5; --ok-fg:#047857;
+  --wait-bg:#FEF3C7; --wait-fg:#B45309; --wait-line:#F59E0B;
+  --bad-bg:#FEE2E2; --bad-fg:#B91C1C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+
+/* ---- hero ---- */
+.hero{background:var(--tomato);color:#fff;padding:44px 24px 40px}
+.hero-inner{max-width:760px;margin:0 auto}
+.wordmark{
+  font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:600;font-size:15px;letter-spacing:.06em;color:#fff;margin:0 0 30px;
+}
+.kicker{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(255,255,255,.82);margin:0 0 12px;
+}
+.hero h1{
+  font-family:'Inter',sans-serif;font-weight:800;font-size:42px;line-height:1.04;
+  letter-spacing:-.025em;margin:0;color:#fff;text-wrap:balance;
+}
+.hero .lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.92);max-width:62ch}
+
+/* ---- nine-color strip ---- */
+.strip{display:flex;height:10px;width:100%}
+.strip span{flex:1 1 0}
+.s1{background:var(--lime)}      .s2{background:var(--citron)}
+.s3{background:var(--tomato)}    .s4{background:var(--cobalt)}
+.s5{background:var(--pink)}      .s6{background:var(--plum)}
+.s7{background:var(--turquoise)} .s8{background:var(--lavender)}
+.s9{background:var(--warmgray)}
+
+/* ---- layout ---- */
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+section{margin-top:48px}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--tomato);margin:0 0 14px;
+}
+.card{border:1px solid var(--line);border-radius:4px;padding:26px;margin-bottom:16px;background:var(--surface)}
+.card h2{font-family:'Inter',sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
+.card h3{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted);margin:22px 0 8px;
+}
+.card p{margin:0 0 14px;color:var(--ink-2)}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:15px;color:var(--muted)}
+
+/* ---- metrics in IBM Plex Mono ---- */
+.metric{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.03em;
+  color:var(--tomato);margin:20px 0 10px;
+}
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+/* ---- provisional ---- */
+.provisional{background:var(--wait-bg);border-left:4px solid var(--wait-line);border-radius:2px;padding:20px 22px;margin-bottom:16px}
+.provisional p{color:var(--wait-fg);margin:0;font-size:15px}
+.provisional p + p{margin-top:10px}
+.provisional strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0;max-width:100%}
+table{width:100%;min-width:340px;border-collapse:collapse;font-size:15px;margin:0}
+th{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink);vertical-align:bottom;
+}
+td{padding:13px 10px 13px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:right;font-variant-numeric:tabular-nums;padding-right:0;padding-left:18px;white-space:nowrap;
+}
+td.rank{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--faint);width:26px}
+.hook{color:var(--ink);font-weight:500}
+
+ul{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+
+/* ---- do / don't ---- */
+.do-dont{display:grid;gap:12px;margin-top:14px}
+.do,.dont{border-radius:3px;padding:14px 16px;font-size:15px}
+.do{background:var(--ok-bg);color:var(--ok-fg);border-left:3px solid var(--ok-fg)}
+.dont{background:var(--bad-bg);color:var(--bad-fg);border-left:3px solid var(--bad-fg)}
+.do strong,.dont strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;
+}
+
+/* ---- stat rows ---- */
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-row:last-child{border-bottom:none}
+.stat-row .k{color:var(--muted)}
+.stat-row .v{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+
+/* ---- badges ---- */
+.badge{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:inline-block;border-radius:2px;padding:5px 10px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.b-1{background:var(--tomato);color:#fff}
+.b-2{background:var(--citron);color:var(--ink)}
+.b-3{background:var(--turquoise);color:var(--ink)}
+.b-4{background:var(--lavender);color:var(--ink)}
+
+/* ---- companion + footer ---- */
+.companion{background:var(--surface-2);border-radius:4px;padding:22px 24px;margin-top:40px}
+.companion p{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+.companion a{color:var(--tomato);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:5px 0}
+.companion a:hover{text-decoration:underline}
+footer{max-width:760px;margin:0 auto;padding:40px 24px 64px;font-size:13px;color:var(--faint);line-height:1.5}
+footer p{margin:0 0 6px}
+@media (max-width:520px){
+  .hero{padding:32px 20px 30px}
+  .hero h1{font-size:32px}
+  .metric{font-size:38px}
+  .container{padding:0 20px}
+  .card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="hero"><div class="hero-inner"><p class="wordmark">THIRD.</p><p class="kicker">Affiliate tactical plan</p><h1>tonies</h1><p class="lede">What we send over the next 8 weeks and what it should return, Nov 4 to Dec 29. Prepared by Third for tonies. November 2026.</p></div></div>
+<div class="strip"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span><span class="s7"></span><span class="s8"></span><span class="s9"></span></div>
+<main class="container">
+<section><p class="eyebrow">The headline</p>
+<div class="card"><h2>Clear the sample queue, follow up on every sample and email the best-fit creators</h2>
+<p>Third started outreach on Oct 30. Since then about 210 creators have sent 477 sample requests, and the coordinators approved 100 of them on Nov 4. Affiliate GMV was $295.3K in October, down 20% on September, as GMV per video fell from $210 to $157.</p>
+<p class="metric">770</p><p class="meta">Samples over the next 8 weeks, for 770 to 1,150 videos and $121K to $243K in GMV.</p></div>
+</section>
+
+<section><p class="eyebrow">1. The 8-week plan</p>
+<div class="card"><h2>What we send, and what it should return</h2>
+<div class="stat-row"><span class="k">Target collab invites sent</span><span class="v">About 6,000</span></div>
+<div class="stat-row"><span class="k">Sample requests expected</span><span class="v">About 1,500</span></div>
+<div class="stat-row"><span class="k">Samples approved, including the current queue</span><span class="v">770</span></div>
+<div class="stat-row"><span class="k">Videos expected</span><span class="v">770 to 1,150</span></div>
+<div class="stat-row"><span class="k">GMV expected</span><span class="v">$121K to $243K</span></div>
+<p class="meta">Assumptions: one sample request for every four invites, as on Oct 30. One sample approved per L3+ creator. One video per sample without follow-ups, 1.5 with them. GMV per video between October's $157 and September's $210. Most samples go out in November, because videos arrive 2 to 6 weeks after delivery.</p></div>
+</section>
+
+<section><p class="eyebrow">2. Clear the queue</p>
+<div class="card"><h2>Ship the 98 approved samples and approve the 108 L3+ creators still waiting by Nov 6</h2>
+<p>Requests expire seven days after they come in, and 68 of the waiting creators expire on Nov 7.</p>
+<div class="stat-row"><span class="k">Approved since Oct 30</span><span class="v">100 samples &middot; 96 creators</span></div>
+<div class="stat-row"><span class="k">Still waiting, L3+ and post rate 70% or higher</span><span class="v">108 creators</span></div>
+<ul>
+<li>Approve the proven Tonies sellers still waiting first: taryn8849, countingthecoynes, .calliemaree, momof2bboyss, katrinavanderploe, givethemgrace and nicholesahmlife3.</li>
+<li>One SKU per creator, the requested item closest to the holiday heroes.</li>
+<li>After this queue, review new requests within 48 hours.</li>
+</ul></div>
+</section>
+
+<section><p class="eyebrow">3. Follow-ups</p>
+<div class="card"><h2>Four automatic messages and holiday broadcasts</h2>
+<div class="tw"><table><thead><tr><th>When</th><th>Message</th></tr></thead><tbody>
+<tr><td>Sample approved</td><td>Thank you, with the one-pager of hooks that sell</td></tr>
+<tr><td>Delivered, no post after 7 days</td><td>A friendly check-in with the top hook</td></tr>
+<tr><td>First video posted</td><td>Thank you, with a second hook for the next video</td></tr>
+<tr><td>Video passes $500 GMV</td><td>Keep going, you're doing great, with the next hook to try</td></tr>
+</tbody></table></div>
+<p><strong>Holiday broadcasts.</strong> One message to every creator with a sample for each Tonies holiday offer. Justin confirms the offers and dates with Tonies, including whether Tonies joins TikTok's Black Friday campaign, before the coordinators send.</p>
+<p class="meta">Delivery sets these up by Nov 7, before the approved samples arrive, and writes the copy from the CSM's plan.</p></div>
+</section>
+
+<section><p class="eyebrow">4. Email outreach</p>
+<div class="card"><h2>Email the 80 Top 100 Affiliate creators who match Tonies</h2>
+<p>Email has not been used on this shop yet. A creator is a match if she has sold $1K or more of Tonies, or if toys are at least 20% of her sales. That covers 51 past and current Tonies sellers and 29 net-new creators. The other 20 sell mostly outside toys and are left out. Each creator is marked in the Email outreach column of the Top 100 Affiliate tab.</p>
+<p>Starting Nov 11, each creator gets a warm, personal email inviting her to request a Tonies sample and post about it, paired with a target collab invite in TikTok Shop. One follow-up goes three days later.</p>
+<p class="meta">Delivery writes the copy from the CSM's plan and sends.</p></div>
+</section>
+
+<section><p class="eyebrow">5. The one-pager</p>
+<div class="card"><h2>Recommended hooks for this holiday season</h2>
+<p class="meta">Built from the openings that drove the most GMV per 1,000 views on Tonies affiliate videos from Black Friday 2025 through October 2026. Give creators the line, the moment to use it and the product to hold. Swap in the confirmed offer, product and dates before sending.</p>
+<div class="tw"><table><thead><tr><th class="rank"></th><th>Opening line</th><th style="padding-left:18px">When to use it</th></tr></thead><tbody>
+<tr><td class="rank">1</td><td class="hook">"If you're still stuck on a gift for your toddler, this is the one."</td><td style="padding-left:18px">All season. Toniebox 2 bundle in hand in the first second</td></tr>
+<tr><td class="rank">2</td><td class="hook">"The Toniebox is at its Black Friday price right now. Tap the cart and check yours."</td><td style="padding-left:18px">Black Friday to Cyber Monday, only while the offer is live</td></tr>
+<tr><td class="rank">3</td><td class="hook">"Don't wait on this one. Holiday Tonies go fast."</td><td style="padding-left:18px">Restocks and low stock, only when stock really is low</td></tr>
+<tr><td class="rank">4</td><td class="hook">"Check the orange cart before you buy this anywhere else."</td><td style="padding-left:18px">Any time a coupon or bundle price is showing</td></tr>
+<tr><td class="rank">5</td><td class="hook">"Toniebox 1 or Toniebox 2? Here's the difference in 30 seconds."</td><td style="padding-left:18px">Early to mid November, while parents are still choosing</td></tr>
+<tr><td class="rank">6</td><td class="hook">"If your kid already has a Toniebox, this is the Tonie I'd put in their stocking."</td><td style="padding-left:18px">December, for single Tonies, Holiday Songs and the Advent Calendar Tonie</td></tr>
+<tr><td class="rank">7</td><td class="hook">"[Character] just came out for the Toniebox. Listen."</td><td style="padding-left:18px">New releases, with the audio playing on the box</td></tr>
+<tr><td class="rank">8</td><td class="hook">"Last day to get this by Christmas is [date]."</td><td style="padding-left:18px">The final days before the ship-by date</td></tr>
+<tr><td class="rank">9</td><td class="hook">"Just got a Toniebox for Christmas? Here are the first Tonies to add."</td><td style="padding-left:18px">Dec 25 onward, for figurine add-ons</td></tr>
+</tbody></table></div>
+<h3>What to replicate</h3><ul>
+<li>Gift framing for a toddler, with the Toniebox 2 bundle in hand in the first second.</li>
+<li>A real reason to buy now: the Black Friday price, a free gift or limited stock. Only claim what is true on the day.</li>
+<li>Tell viewers to tap the cart and check their price or coupon.</li>
+<li>New character releases unboxed with the audio playing on the box.</li>
+<li>Toniebox 1 versus 2 for parents deciding which to buy.</li>
+</ul>
+<p class="meta">These hooks make up the one-pager sent with every approved sample. The full creator brief builds on them.</p></div>
+</section>
+
+<section><p class="eyebrow">What we need from tonies</p>
+<div class="card"><ul>
+<li>Approval of the 108 L3+ creators still waiting, by Nov 6.</li>
+<li>Whether there is a cap on samples. If there is, we approve proven Tonies sellers first, then the creators on the email list, then other L3+ creators.</li>
+<li>The holiday offers and dates, including Black Friday.</li>
+<li>Stock depth on the sampled products and the last ship-by date for Christmas.</li>
+</ul></div>
+</section>
+
+<div class="companion"><p>Companion documents</p><a href="tonies-creator-live-plan.html">tonies Creator Live Tactical Plan</a><a href="tonies-tts-strategy.html">tonies Strategy</a><a href="brief-tonies.html">tonies Informed Creative Brief</a><a href="tonies-sample-approval-queue.xlsx">tonies Sample Approval Queue</a></div>
+</main>
+<footer><p>third. Affiliate tactical plan. tonies. November 4, 2026.</p><p>Sources: tonies shop affiliate, video and sample request data (Nov 2025 to Nov 4, 2026); outreach campaign results (Oct 30 to Nov 4, 2026).</p><p>GMV figures are gross TikTok-attributed GMV, not net revenue. Modeled figures are labelled as assumptions. Recommended hooks are adapted from the openings with the highest GMV per 1,000 views.</p></footer>
+
+</body></html>
