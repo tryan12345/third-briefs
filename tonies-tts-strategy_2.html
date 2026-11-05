@@ -1,0 +1,336 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>tonies x TikTok Shop US: Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
+section.alt .companions{background:#fff;}
+.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.companions ul{list-style:none;margin-top:12px;}
+.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
+.companions li:first-child{border-top:none;}
+.companions li b{font-weight:700;color:var(--ink);}
+.hooks{margin-top:22px;display:grid;gap:12px;}
+.hook{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;}
+.hook .rank{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);}
+.hook .quote{font-size:16px;font-weight:700;line-height:1.35;}
+.hook .meta{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.hook .why{margin-top:9px;font-size:14px;color:#333;}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.dodont .panel.do{border-top:6px solid var(--c4);}
+.dodont .panel.dont{border-top:6px solid var(--c8);}
+.quotebox{margin-top:20px;display:grid;gap:10px;}
+.qb{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c5);border-radius:12px;padding:16px 20px;font-size:15px;color:#333;}
+.qb .src{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+.qb.neg{border-left-color:var(--c8);}
+.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--ink);color:#fff;padding:7px 12px;border-radius:6px;}
+.chip.alt2{background:var(--c6);} .chip.alt3{background:var(--c7);} .chip.alt4{background:var(--c4);color:var(--ink);}
+.gate{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;margin-top:12px;border-left:6px solid var(--c5);}
+.gate .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gate h3{margin-top:8px;font-size:17px;}
+.gate p{margin-top:9px;font-size:14px;color:#333;}
+@media(max-width:760px){.dodont{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;gap:8px;}}
+.tbl tr.mbm td{background:#FFF1EE;font-weight:700;border-top:2px solid var(--tomato);border-bottom:2px solid var(--tomato);}
+.tbl tr.med td{background:#FAFAF8;font-weight:700;}
+.tbl tr.ex td{color:#9A9A9A;}
+.tbl td.r,.tbl th.r{text-align:right;}
+.tbl.dense td{padding:9px 14px;font-size:13px;}
+.tbl.dense th{padding:11px 14px;}
+.chart{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 20px 14px;}
+.chart svg{width:100%;height:auto;display:block;}
+.legend{display:flex;gap:22px;flex-wrap:wrap;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:7px;vertical-align:-1px;}
+.qlist{list-style:none;margin-top:14px;}
+.qlist li{padding:11px 0;border-top:1px solid #EDEDEA;font-size:15px;color:#333;}
+.qlist li:first-child{border-top:none;}
+.gapgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px;}
+.gap{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;border-left:6px solid var(--tomato);}
+.gap .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gap .gn{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;}
+.gap p{margin-top:8px;font-size:14px;color:#333;}
+@media(max-width:760px){.gapgrid{grid-template-columns:1fr;}}
+</style></head><body>
+<div class="hero"><div class="wrap"><div class="kicker">THIRD. &middot; tonies &middot; Strategy</div><h1>tonies &times; TikTok Shop US</h1><p class="sub">Third started affiliate outreach on Oct 30. The two moves for the next eight weeks: send the capped Toniebox samples to top affiliates who have no box, with figurines for those who do, and get L3+ live creators running Tonies segments, with the SOW floor of one creator live a week as the minimum.</p></div></div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<section><div class="wrap"><div class="sec-kicker">01 &middot; The position</div><h2>Tonies has the creator base to lead Toys on TikTok Shop. Most of it is not yet converting.</h2>
+<p class="lede">This strategy covers the two programs Third runs for Tonies: the affiliate program and creator lives (affiliates selling Tonies on their own live streams). Third also runs the tonies.us brand-account lives under a separate scope. They are excluded from every live figure below unless labelled, so the live read here is creator lives only.</p>
+<div class="stats">
+<div class="stat"><div class="num">$295.3K</div><div class="lbl">Affiliate GMV in October, down 20% on September</div></div>
+<div class="stat"><div class="num">14%</div><div class="lbl">Share of the last 30 days' 1,784 affiliate videos that sold anything</div></div>
+<div class="stat"><div class="num">$399</div><div class="lbl">Average Tonies GMV per creator live that sells 2+ Tonies units. Only 205 of about 3,400 creator lives do</div></div>
+<div class="stat"><div class="num">$3,926</div><div class="lbl">Median GMV per live for the top 10 Toys &amp; Hobbies creator live sellers</div></div>
+</div>
+<div class="statement"><div class="tag">The finding</div><p>Tonies does not need more creators. It needs the capped box samples in the hands of the right creators, every sample briefed on what sells, and L3+ live creators running a Tonies segment each week.</p>
+<p class="detail">The program grew on its own before Third's first outreach on Oct 30. Creators posting each month rose from 281 in July to 469 in October. Of about 3,400 creator lives in the last 28 days, only 205 sold two or more Tonies units, and those 205 made 86% of creator live GMV. When a real host sells Tonies, the show converts at close to leader level. The gaps are cadence and traffic.</p></div>
+</div></section>
+
+<section class="alt"><div class="wrap"><div class="sec-kicker">02 &middot; Trajectory</div><h2>Shop GMV is climbing into holiday while affiliate yield per video slips</h2>
+<p class="lede">Weekly total shop GMV (bars) and creator lives linked to Tonies products (line), 13 weeks to Nov 1, 2026. Brand-account lives are about three a week and do not move the line.</p>
+<div class="chart"><svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Weekly total shop GMV and weekly live sessions, Aug 3 to Nov 1, 2026">
+<line x1="60" x2="840" y1="260.0" y2="260.0" stroke="#EDEDEA"/>
+<text x="52" y="264.0" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">$0K</text>
+<line x1="60" x2="840" y1="181.3" y2="181.3" stroke="#EDEDEA"/>
+<text x="52" y="185.3" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">$100K</text>
+<line x1="60" x2="840" y1="102.7" y2="102.7" stroke="#EDEDEA"/>
+<text x="52" y="106.7" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">$200K</text>
+<line x1="60" x2="840" y1="24.0" y2="24.0" stroke="#EDEDEA"/>
+<text x="52" y="28.0" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">$300K</text>
+<text x="848" y="264.0" font-family="IBM Plex Mono,monospace" font-size="11" fill="#3A6BFF">0</text>
+<text x="848" y="146.0" font-family="IBM Plex Mono,monospace" font-size="11" fill="#3A6BFF">500</text>
+<text x="848" y="28.0" font-family="IBM Plex Mono,monospace" font-size="11" fill="#3A6BFF">1000</text>
+<rect x="71.4" y="175.9" width="37.2" height="84.1" fill="#111111"/>
+<text x="90.0" y="278" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">8/3</text>
+<rect x="131.4" y="220.5" width="37.2" height="39.5" fill="#111111"/>
+<text x="150.0" y="278" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">8/10</text>
+<rect x="191.4" y="202.3" width="37.2" height="57.7" fill="#111111"/>
+<text x="210.0" y="278" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">8/17</text>
+<rect x="251.4" y="199.7" width="37.2" height="60.3" fill="#111111"/>
+<text x="270.0" y="278" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">8/24</text>
+<rect x="311.4" y="142.2" width="37.2" height="117.8" fill="#111111"/>
+<text x="330.0" y="278" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">8/31</text>
+<rect x="371.4" y="44.2" width="37.2" height="215.8" fill="#FF5A3E"/>
+<text x="390.0" y="278" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">9/7</text>
+<rect x="431.4" y="139.1" width="37.2" height="120.9" fill="#111111"/>
+<text x="450.0" y="278" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">9/14</text>
+<rect x="491.4" y="162.1" width="37.2" height="97.9" fill="#111111"/>
+<text x="510.0" y="278" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">9/21</text>
+<rect x="551.4" y="179.4" width="37.2" height="80.6" fill="#111111"/>
+<text x="570.0" y="278" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">9/28</text>
+<rect x="611.4" y="138.4" width="37.2" height="121.6" fill="#111111"/>
+<text x="630.0" y="278" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">10/5</text>
+<rect x="671.4" y="154.7" width="37.2" height="105.3" fill="#111111"/>
+<text x="690.0" y="278" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">10/12</text>
+<rect x="731.4" y="183.3" width="37.2" height="76.7" fill="#111111"/>
+<text x="750.0" y="278" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">10/19</text>
+<rect x="791.4" y="85.6" width="37.2" height="174.4" fill="#111111"/>
+<text x="810.0" y="278" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">10/26</text>
+<polyline points="90.0,197.5 150.0,157.1 210.0,143.9 270.0,140.1 330.0,96.0 390.0,51.6 450.0,58.5 510.0,77.8 570.0,98.8 630.0,62.9 690.0,47.1 750.0,89.1 810.0,51.4" fill="none" stroke="#3A6BFF" stroke-width="2.5"/>
+<circle cx="90.0" cy="197.5" r="3.5" fill="#3A6BFF"/>
+<circle cx="150.0" cy="157.1" r="3.5" fill="#3A6BFF"/>
+<circle cx="210.0" cy="143.9" r="3.5" fill="#3A6BFF"/>
+<circle cx="270.0" cy="140.1" r="3.5" fill="#3A6BFF"/>
+<circle cx="330.0" cy="96.0" r="3.5" fill="#3A6BFF"/>
+<circle cx="390.0" cy="51.6" r="3.5" fill="#3A6BFF"/>
+<circle cx="450.0" cy="58.5" r="3.5" fill="#3A6BFF"/>
+<circle cx="510.0" cy="77.8" r="3.5" fill="#3A6BFF"/>
+<circle cx="570.0" cy="98.8" r="3.5" fill="#3A6BFF"/>
+<circle cx="630.0" cy="62.9" r="3.5" fill="#3A6BFF"/>
+<circle cx="690.0" cy="47.1" r="3.5" fill="#3A6BFF"/>
+<circle cx="750.0" cy="89.1" r="3.5" fill="#3A6BFF"/>
+<circle cx="810.0" cy="51.4" r="3.5" fill="#3A6BFF"/>
+<text x="60" y="298" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">Week starting</text>
+</svg>
+
+<div class="legend"><span><i style="background:#111111"></i>Weekly total shop GMV</span><span><i style="background:#FF5A3E"></i>Peak week (Sep 7)</span><span><i style="background:#3A6BFF"></i>Creator lives per week (right axis)</span></div></div>
+<p class="body-p">Affiliate GMV by month: July $112.2K, August $158.1K, September $365.7K, October $295.3K. Videos rose every month, from 918 to 1,877. GMV per affiliate video peaked at $210 in September and fell to $157 in October. Creator lives per week rose from about 265 to 880 over the same period.</p>
+<p class="body-p">Nov 1 was the biggest day in the window at $86.3K total shop GMV. The holiday ramp has started, so the next four weeks carry the most weight.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">03 &middot; Diagnosis</div><h2>What is working and what is not</h2>
+<div class="twocol">
+<div class="panel trig"><h3>Working</h3><ul>
+<li><b>Recruiting scaled.</b> 469 creators posted in October. 86% of delivered samples get posted, a median of two days after delivery.</li>
+<li><b>Clear winning hooks.</b> The top videos of the last 30 days use a coupon check ("Bluey moms, check your coupons"), low-stock urgency, a Toniebox 1 versus 2 comparison, or a new-release unboxing (Baby Shark, Numberblocks).</li>
+<li><b>Video sells the figurines.</b> The Bluey 3-Pack ($59.99) did $104.1K in 30 days, $84.1K from video.</li>
+<li><b>Creator lives sell the bundles.</b> The Toniebox 2 Winnie the Pooh bundle ($209.99) did $54.7K in 30 days, $52.1K through live.</li>
+<li><b>Seven L3+ creators already sell Tonies on live.</b> realmombestie ($61.9K), taylorstinyworld ($63.9K), jills.tonie.clips ($55.4K), zeesworld321 ($14.8K), joaniie04 ($13.2K), dailywithcaroline ($7.6K) and christina.santiago ($5.2K) lifetime on the tonies shop. Six of the seven are L3.</li>
+<li><b>Strong shows convert.</b> Tonies' five best creator shows in the last 28 days ran a $661 GPM against $743 for category leaders.</li>
+</ul></div>
+<div class="panel obj"><h3>Not working</h3><ul>
+<li><b>Most videos do not sell.</b> 255 of 1,784 videos in the last 30 days had any GMV. 20 cleared $1K.</li>
+<li><b>Box samples are capped.</b> Tonies caps box samples at 100 Toniebox Lite and 50 Toniebox 2 a month in November and December. 60 Lite and 27 Toniebox 2 are already approved for November, leaving 40 and 23. Figurines are not capped.</li>
+<li><b>Top affiliates not yet reached.</b> 56 of the Top 100 Affiliate creators, all with at least 20% of sales in toys, did not get the Oct 30 outreach. 35 have no Toniebox.</li>
+<li><b>Proven sellers wait in line.</b> 26 creators in the queue have each sold $1K or more of Tonies, including alli.rezny ($61.4K) and taryn8849 ($51.2K).</li>
+<li><b>Approvals ran slow before Oct 30.</b> From August to October, 47.4% of sample requests were approved.</li>
+<li><b>Few creator lives sell Tonies.</b> Only 205 of about 3,400 creator lives in 28 days sold two or more Tonies units, from 61 creators. realmombestie, a top-10 Toys creator live seller in October, has not featured Tonies since Sep 18.</li>
+<li><b>Low traffic in good shows.</b> Tonies' best creator shows drew a median 2,678 viewer entries. Leaders draw 10,125.</li>
+<li><b>Bundles barely appear in video.</b> The Pooh bundle made $804 from video in 30 days.</li>
+</ul></div></div>
+</div></section>
+
+<section class="alt"><div class="wrap"><div class="sec-kicker">04 &middot; Category benchmark</div><h2>Toys &amp; Hobbies creator live leaders, October 2026</h2>
+<p class="lede">The top creator accounts by Toys &amp; Hobbies live GMV in October. Brand and seller accounts are removed, so this is the bar for creator lives specifically.</p>
+<div class="stats">
+<div class="stat"><div class="num">$113.6K</div><div class="lbl">Median monthly Toys live GMV, top 10 creators</div></div>
+<div class="stat"><div class="num">41</div><div class="lbl">Median lives a month, about nine a week</div></div>
+<div class="stat"><div class="num">$3,926</div><div class="lbl">Median GMV per live, top 10</div></div>
+<div class="stat"><div class="num">$727</div><div class="lbl">Median GMV per live, creators ranked 11 to 25</div></div>
+</div>
+<p class="body-p">Leaders are mid-size accounts. The top 10 median is 40.7K followers. What separates them is repetition: most go live more than once a day on a fixed format. realmombestie is in the top 10 on other toy brands.</p>
+<table class="tbl dense"><thead><tr><th>Creator</th><th class="r">Followers</th><th class="r">Toys live GMV, Oct</th><th class="r">Lives</th><th class="r">GMV / live</th></tr></thead><tbody>
+<tr><td>erika.withak</td><td class="n r">54.4K</td><td class="n r">$320.8K</td><td class="n r">41</td><td class="n r">$7,825</td></tr>
+<tr><td>positive.patricia</td><td class="n r">155.6K</td><td class="n r">$266.7K</td><td class="n r">49</td><td class="n r">$5,443</td></tr>
+<tr><td>savingwithk</td><td class="n r">38.1K</td><td class="n r">$230.7K</td><td class="n r">41</td><td class="n r">$5,628</td></tr>
+<tr><td>beckotto487</td><td class="n r">94.3K</td><td class="n r">$161.5K</td><td class="n r">54</td><td class="n r">$2,991</td></tr>
+<tr><td>prettyreeljen</td><td class="n r">11.4K</td><td class="n r">$126.4K</td><td class="n r">37</td><td class="n r">$3,415</td></tr>
+<tr><td>jess_happydayz</td><td class="n r">72.3K</td><td class="n r">$100.8K</td><td class="n r">48</td><td class="n r">$2,099</td></tr>
+<tr><td>sarahs_picks</td><td class="n r">43.4K</td><td class="n r">$72.8K</td><td class="n r">9</td><td class="n r">$8,091</td></tr>
+<tr><td>thisbeachylife_</td><td class="n r">21.8K</td><td class="n r">$62.9K</td><td class="n r">28</td><td class="n r">$2,247</td></tr>
+<tr><td>realmombestie</td><td class="n r">37.7K</td><td class="n r">$62.1K</td><td class="n r">14</td><td class="n r">$4,436</td></tr>
+<tr><td>ladyady1211</td><td class="n r">37.0K</td><td class="n r">$57.0K</td><td class="n r">55</td><td class="n r">$1,037</td></tr>
+<tr class="med"><td>Top 10 median</td><td class="n r">40.7K</td><td class="n r">$113.6K</td><td class="n r">41</td><td class="n r">$3,926</td></tr>
+<tr><td>Tonies creator lives, all hosts (28 days)</td><td class="n r">-</td><td class="n r">~$95K</td><td class="n r">~3,400</td><td class="n r">~$28</td></tr>
+<tr class="mbm"><td>Tonies creator lives selling 2+ Tonies units (28 days)</td><td class="n r">-</td><td class="n r">$81.8K</td><td class="n r">205</td><td class="n r">$399</td></tr>
+<tr class="ex"><td>POP MART US local shop (brand account, excluded)</td><td class="n r">560.7K</td><td class="n r">$291.8K</td><td class="n r">52</td><td class="n r">$5,612</td></tr>
+<tr class="ex"><td>tonies.us (brand account, excluded)</td><td class="n r">147.3K</td><td class="n r">$40.2K</td><td class="n r">14</td><td class="n r">$2,874</td></tr>
+</tbody></table>
+<p class="note">Toys &amp; Hobbies live GMV only, October 2026. Grey rows show brand accounts that rank among leaders but are excluded from the creator benchmark.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">05 &middot; Show-level peers</div><h2>A good Tonies creator show converts like a leader's show, with a quarter of the viewers</h2>
+<p class="lede">Median results per show. Leaders: 40 recent shows from erika.withak, savingwithk, beckotto487 and thisbeachylife_, all categories. Tonies: the five best creator shows of the last 28 days.</p>
+<table class="tbl"><thead><tr><th>Show metric</th><th class="r">Leaders</th><th class="r">Tonies best five</th></tr></thead><tbody>
+<tr><td>GMV per show</td><td class="n r">$7,561</td><td class="n r">$3,270</td></tr>
+<tr><td>Viewer entries</td><td class="n r">10,125</td><td class="n r">2,678</td></tr>
+<tr class="mbm"><td>GPM (GMV per 1,000 viewer entries)</td><td class="n r">$743</td><td class="n r">$661</td></tr>
+<tr><td>Units sold</td><td class="n r">219</td><td class="n r">72</td></tr>
+<tr><td>Show length (minutes)</td><td class="n r">126</td><td class="n r">111</td></tr>
+<tr><td>Products linked</td><td class="n r">107</td><td class="n r">-</td></tr>
+</tbody></table>
+<div class="callout"><div class="ct">Outside benchmark: a well-run show</div><p>thisbeachylife_ is not a Tonies creator yet. She has never sold Tonies, and her first Toniebox sample shipped Nov 5. She is a mom-finds host with 21.8K followers who ran 28 Toys lives in October, and her recent shows median $4,878 on 5,831 viewer entries (GPM $823) over about two hours. She is one of the eight creators going live for Black Friday.</p></div>
+<h3 style="margin:28px 0 8px;font-size:18px;font-weight:700">The activated case: taylorstinyworld</h3>
+<p class="body-p">taylorstinyworld already sells Tonies on live. She ran 21 of the 116 creator lives that sold three or more Tonies in the last 28 days, worth $26.6K. She has $63.9K of lifetime Tonies live GMV, and 96% of her sales are toys. Justin is already in talks with her, and she charges a rate.</p>
+<table class="tbl"><thead><tr><th>taylorstinyworld, 28 days</th><th class="r">Median of 21 lives</th><th class="r">Best Tonies live</th></tr></thead><tbody>
+<tr><td>Tonies GMV per show</td><td class="n r">$935</td><td class="n r">$3,270</td></tr>
+<tr><td>Viewer entries</td><td class="n r">3,284</td><td class="n r">10,791</td></tr>
+<tr class="mbm"><td>GPM (GMV per 1,000 viewer entries)</td><td class="n r">$344</td><td class="n r">$303</td></tr>
+<tr><td>Tonies units sold</td><td class="n r">41</td><td class="n r">112</td></tr>
+<tr><td>Show length (minutes)</td><td class="n r">111</td><td class="n r">137</td></tr>
+</tbody></table>
+<p class="note">Her shows draw the viewers but convert at about half the leaders' $743 GPM. Creator lives selling 3+ Tonies units, Oct 8 to Nov 4, 2026. Tonies GMV only.</p>
+</div></section>
+
+<section class="alt"><div class="wrap"><div class="sec-kicker">06 &middot; Where the revenue sits</div><h2>Most new revenue sits in affiliate videos. Live revenue sits with three proven hosts.</h2>
+<div class="gapgrid">
+<div class="gap"><div class="gt">Affiliate videos already posting</div><div class="gn">+$99K / month</div><p>October: 1,877 videos earned $295.3K, $157 each, and only 14% sold anything (about 263 videos at about $1,120 each). At September's $210 a video, the same volume earns $394K, which takes about 90 more selling videos a month. Comes from the winning-hook one-pager sent with every sample. Assumption.</p></div>
+<div class="gap"><div class="gt">New videos from capped samples</div><div class="gn">$79K to $158K / 8 weeks</div><p>300 boxes at the cap (100 Toniebox Lite and 50 Toniebox 2 a month) plus about 200 figurines, for 500 to 750 new videos at $157 to $210 each. One video per sample without follow-ups, 1.5 with them. Does not overlap the row above, which covers today's volume. Assumption.</p></div>
+<div class="gap"><div class="gt">Proven Tonies live hosts</div><div class="gn">$52K / 28 days today</div><p>taylorstinyworld, zeesworld321 and dailywithcaroline ran 32 lives and made $52K of the $74.6K from creator lives selling three or more Tonies. Keep them live with the live-only offer.</p></div>
+<div class="gap"><div class="gt">Segments from the 30 live creators</div><div class="gn">$12K+ by Dec 27</div><p>About 6 of the 30 agree and run two or more segments a week from Nov 16, at about $1,000 each, the median creator live that sells ten or more Tonies. Offer locked by Nov 9. Assumption.</p></div>
+<div class="gap"><div class="gt">Black Friday eight</div><div class="gn">Not yet sized</div><p>Eight creators referred by our TikTok account manager, with $630K live GMV across all brands in 28 days and $65K lifetime Tonies live GMV, mostly realmombestie. Sized once Justin confirms the offers with Shirley.</p></div>
+</div>
+</div></section>
+
+<section class="dark"><div class="wrap"><div class="sec-kicker">07 &middot; Where Third starts</div><h2>Required actions, sequenced to Dec 27</h2>
+<p class="lede">Two tactical plans carry the detail for delivery: the Creator Live Tactical Plan and the Affiliate Tactical Plan. All creator lives are unpaid: the creator earns commission, gets the live-only offer and keeps the product. Brand-account lives, which Third runs under a separate scope, stay on their own calendar.</p>
+<div class="phases">
+<div class="phase"><div class="when">Week 1 &middot; Nov 3 to 8</div><h3>Surface the creators and lock the offers</h3><p>Strategy surfaced 30 L3+ live creators from the Top 100 Live list on Nov 3. Justin confirms the merchandising, flash deal and commission for each creator by Monday, Nov 9 at the latest, and confirms the eight Black Friday creators with Shirley, our TikTok account manager. Box samples are approved within the November cap.</p></div>
+<div class="phase"><div class="when">Week 2 &middot; Nov 9 to 15</div><h3>Outreach to the 30 live creators and the 56 affiliates</h3><p>Delivery contacts the 30 live creators from Nov 10 with the confirmed offer, asking each for a 15 to 30 minute Tonies segment inside a live she already runs. From Nov 11, the 56 Top 100 affiliates not yet contacted get a target plan and an email: 35 with no box get a Toniebox offer, 21 with a box get a figurine offer. Workflows and automatic CRMs are set up for follow-ups.</p></div>
+<div class="phase"><div class="when">Weeks 3 to 4 &middot; Nov 16 to 29</div><h3>Two or more creator lives a week into Black Friday</h3><p>Each creator only tells us her live date and the Tonies product she will feature; there is no schedule to build. Shop Operations gets each show's products and offer 48 hours ahead. The eight referred creators go live for Black Friday and Cyber Monday only.</p></div>
+<div class="phase"><div class="when">Weeks 5 to 7 &middot; Nov 30 to Dec 20</div><h3>Cyber Week, 12.12 and figurine follow-ups</h3><p>Creators who already have a box get new figurines, such as Holiday Songs 2 or the Grinch, as a reason to post again. Holiday broadcasts go to every creator with a sample once Justin confirms the offers. Product focus moves to stocking stuffers and ship-by urgency.</p></div>
+<div class="phase"><div class="when">Week 8 &middot; Dec 21 to 27</div><h3>New Toniebox owners</h3><p>Figurine add-on content after Dec 25. Recap by creator and set the Q1 plan.</p></div>
+</div></div></section>
+
+<section><div class="wrap"><div class="sec-kicker">08 &middot; For today's meeting</div><h2>What we need to know</h2>
+<ul class="qlist">
+<li>Can Tonies approve a creator live commission of 12% to 15%, a 10% flash deal and an exclusive bundle for each creator, including the eight Black Friday creators, by Nov 9?</li>
+<li>What is the December sample cap, and do the approvals made since Oct 30 count toward the November cap?</li>
+<li>Which figurines and holiday offers should creators push each week through December?</li>
+<li>Which bundles have holiday stock depth? Several Toniebox 1 starter sets show zero stock.</li>
+<li>What are the Black Friday, Cyber Week and 12.12 offers and dates, and what is the last ship-by date for Christmas?</li>
+<li>Can brand lives promote upcoming creator lives? Third runs both, but this crosses two scopes.</li>
+</ul>
+<div class="companions"><div class="ct">Companion documents</div><ul>
+<li><b>Creator Live Tactical Plan</b> &middot; tonies-creator-live-plan.html. The 30 live creators, the Black Friday eight, the merchandising recommendation and who owns each step.</li>
+<li><b>Affiliate Tactical Plan</b> &middot; tonies-affiliate-plan.html. Sample caps, who gets a box or a figurine, follow-ups, outreach to the 56 and the hook one-pager.</li>
+<li><b>tonies Creator Lists</b> &middot; Google Sheet. Top 100 Live, Top 100 Affiliate (color coded by Toniebox on hand) and the To contact tab split into two batches.</li>
+<li><b>Commerce Creator Persona</b> and <b>Informed Creative Brief</b>. Creator archetypes and the hooks that sell.</li>
+</ul></div>
+</div></section>
+
+<section class="dark"><div class="wrap"><div class="sec-kicker">09 &middot; Risks and data notes</div><h2>What could change this read</h2>
+<div class="risks">
+<div class="risk"><div class="rt">Commission</div><p>All 30 creators are asked to go live unpaid. Big hosts field holiday offers from larger toy brands, and at a flat 10% fewer than the expected six may agree. taylorstinyworld already charges a rate.</p></div>
+<div class="risk"><div class="rt">Inventory</div><p>Booked hosts need in-stock bundles. Confirm depth before booking.</p></div>
+<div class="risk"><div class="rt">Sample timing</div><p>Videos arrive 2 to 6 weeks after delivery. November approvals carry the holiday; December approvals mostly post after the ship-by date.</p></div>
+<div class="risk"><div class="rt">Host concentration</div><p>Three hosts drove $52K, or 55%, of the about $95K Tonies creator live GMV in 28 days. taylorstinyworld alone is $26.6K (28%). Outreach to the 30 spreads that risk but takes two to three weeks to land.</p></div>
+<div class="risk"><div class="rt">Data notes</div><p>Creator live totals exclude the tonies.us brand account (about $43K in the 28 days to Nov 4). Creator live figures use Oct 8 to Nov 4; affiliate figures run to Nov 1. Leader show benchmarks are all-category, from four hosts. Marketplace data lags on recent lives. Recent video GMV keeps arriving for weeks, so October may firm up. All GMV is gross TikTok-attributed GMV, not net revenue.</p></div>
+</div></div></section>
+
+<footer><div class="wrap"><span>THIRD. &middot; tonies &middot; Strategy</span><span>Data: TikTok Shop US marketplace intelligence and tonies shop performance data &middot; Jul 1 to Nov 4, 2026 &middot; updated Nov 5, 2026</span></div></footer>
+
+</body></html>
