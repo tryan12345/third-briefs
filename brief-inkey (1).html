@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The INKEY List &middot; Informed Creative Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E;
+  --lime:#A2F09F; --citron:#F4FD8D; --cobalt:#3A87E6; --pink:#F186FF;
+  --plum:#8F0846; --turquoise:#BDEAEA; --lavender:#BAB6FD; --warmgray:#C9CDC6;
+  --ink:#1C1917; --ink-2:#44403C; --muted:#78716C; --faint:#A8A29E;
+  --line:#E7E5E4; --surface:#FFFFFF; --surface-2:#F5F5F4; --page:#FFFFFF;
+  --ok-bg:#D1FAE5; --ok-fg:#047857;
+  --wait-bg:#FEF3C7; --wait-fg:#B45309; --wait-line:#F59E0B;
+  --bad-bg:#FEE2E2; --bad-fg:#B91C1C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+
+/* ---- hero ---- */
+.hero{background:var(--tomato);color:#fff;padding:44px 24px 40px}
+.hero-inner{max-width:760px;margin:0 auto}
+.wordmark{
+  font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:600;font-size:15px;letter-spacing:.06em;color:#fff;margin:0 0 30px;
+}
+.kicker{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(255,255,255,.82);margin:0 0 12px;
+}
+.hero h1{
+  font-family:'Inter',sans-serif;font-weight:800;font-size:42px;line-height:1.04;
+  letter-spacing:-.025em;margin:0;color:#fff;text-wrap:balance;
+}
+.hero .lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.92);max-width:62ch}
+
+/* ---- nine-color strip ---- */
+.strip{display:flex;height:10px;width:100%}
+.strip span{flex:1 1 0}
+.s1{background:var(--lime)}      .s2{background:var(--citron)}
+.s3{background:var(--tomato)}    .s4{background:var(--cobalt)}
+.s5{background:var(--pink)}      .s6{background:var(--plum)}
+.s7{background:var(--turquoise)} .s8{background:var(--lavender)}
+.s9{background:var(--warmgray)}
+
+/* ---- layout ---- */
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+section{margin-top:48px}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--tomato);margin:0 0 14px;
+}
+.card{border:1px solid var(--line);border-radius:4px;padding:26px;margin-bottom:16px;background:var(--surface)}
+.card h2{font-family:'Inter',sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
+.card h3{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted);margin:22px 0 8px;
+}
+.card p{margin:0 0 14px;color:var(--ink-2)}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:15px;color:var(--muted)}
+
+/* ---- metrics in IBM Plex Mono ---- */
+.metric{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.03em;
+  color:var(--tomato);margin:20px 0 10px;
+}
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+/* ---- provisional ---- */
+.provisional{background:var(--wait-bg);border-left:4px solid var(--wait-line);border-radius:2px;padding:20px 22px;margin-bottom:16px}
+.provisional p{color:var(--wait-fg);margin:0;font-size:15px}
+.provisional p + p{margin-top:10px}
+.provisional strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0;max-width:100%}
+table{width:100%;min-width:340px;border-collapse:collapse;font-size:15px;margin:0}
+th{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink);vertical-align:bottom;
+}
+td{padding:13px 10px 13px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:right;font-variant-numeric:tabular-nums;padding-right:0;padding-left:18px;white-space:nowrap;
+}
+td.rank{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--faint);width:26px}
+.hook{color:var(--ink);font-weight:500}
+
+ul{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+
+/* ---- do / don't ---- */
+.do-dont{display:grid;gap:12px;margin-top:14px}
+.do,.dont{border-radius:3px;padding:14px 16px;font-size:15px}
+.do{background:var(--ok-bg);color:var(--ok-fg);border-left:3px solid var(--ok-fg)}
+.dont{background:var(--bad-bg);color:var(--bad-fg);border-left:3px solid var(--bad-fg)}
+.do strong,.dont strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;
+}
+
+/* ---- stat rows ---- */
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-row:last-child{border-bottom:none}
+.stat-row .k{color:var(--muted)}
+.stat-row .v{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+
+/* ---- badges ---- */
+.badge{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:inline-block;border-radius:2px;padding:5px 10px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.b-1{background:var(--tomato);color:#fff}
+.b-2{background:var(--citron);color:var(--ink)}
+.b-3{background:var(--turquoise);color:var(--ink)}
+.b-4{background:var(--lavender);color:var(--ink)}
+
+/* ---- companion + footer ---- */
+.companion{background:var(--surface-2);border-radius:4px;padding:22px 24px;margin-top:40px}
+.companion p{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+.companion a{color:var(--tomato);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:5px 0}
+.companion a:hover{text-decoration:underline}
+footer{max-width:760px;margin:0 auto;padding:40px 24px 64px;font-size:13px;color:var(--faint);line-height:1.5}
+footer p{margin:0 0 6px}
+@media (max-width:520px){
+  .hero{padding:32px 20px 30px}
+  .hero h1{font-size:32px}
+  .metric{font-size:38px}
+  .container{padding:0 20px}
+  .card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="hero"><div class="hero-inner"><p class="wordmark">THIRD.</p><p class="kicker">Informed creative brief</p><h1>The INKEY List</h1><p class="lede">Bio-Active Neck Lift Stick, $17.00. What converts, what does not, and the exact hooks that have produced sales. November 2026.</p></div></div>
+<div class="strip"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span><span class="s7"></span><span class="s8"></span><span class="s9"></span></div>
+<main class="container">
+
+<div class="provisional"><p><strong>Provisional.</strong> A full brief runs on 75 top-selling videos and 1,500 or more mined buyer comments. This one ran on the 229 Neck Lift Stick videos that sold between August 6 and November 3, 2026, with the top 20 read in detail, and on 145 written reviews of competing neck and body products. The neck stick has no reviews of its own yet.</p><p>The rules and hooks below come from what has already sold. Re-version once the stick has reviews and comment data.</p></div>
+
+<section><p class="eyebrow">1. Winning formula</p>
+<div class="card"><h2>Name the problem in your first line</h2><p class="meta">The goal is more creators selling the neck stick through Black Friday and into January. The videos that sold most open on the problem in plain words: &ldquo;turkey neck&rdquo;, &ldquo;crepe&rdquo;, &ldquo;neck and chest.&rdquo; 58% of neck stick videos sold at least once, against 23% for the Body Stick.</p><div class="do-dont"><div class="do"><strong>Do</strong>Say what bothered you about your neck in the first sentence.</div><div class="dont"><strong>Don&rsquo;t</strong>Open with the brand name or the ingredient.</div></div></div>
+<div class="card"><h2>Show your face and your own neck</h2><p class="meta">Across INKEY videos in the last 90 days, face-on-camera videos earned $21.97 per 1,000 views. Faceless videos earned $7.19. Six of the ten top-selling neck stick videos show the creator.</p><div class="do-dont"><div class="do"><strong>Do</strong>Film yourself, in daylight, with your neck in frame.</div><div class="dont"><strong>Don&rsquo;t</strong>Use stock footage, a filter or a model.</div></div></div>
+<div class="card"><h2>Tell your story before you show the product</h2><p class="meta">The top creator on the stick opens with her weight loss and took $26.1K from seven videos. Another opens with &ldquo;thousands of dollars and probably hundreds of products later&rdquo; and sold 764 units from one video.</p><div class="do-dont"><div class="do"><strong>Do</strong>Say what you tried before and why you kept looking.</div><div class="dont"><strong>Don&rsquo;t</strong>Read the product listing to camera.</div></div></div>
+<div class="card"><h2>Put the stick on in upward strokes, on camera</h2><p class="meta">A reply video explaining the upward motion sold 128 units from 28,287 views. Buyers want to see how it is used on the neck and chest.</p><div class="do-dont"><div class="do"><strong>Do</strong>Glide it from the base of your neck up to your jaw while you talk.</div><div class="dont"><strong>Don&rsquo;t</strong>Hold the stick without using it.</div></div></div>
+<div class="card"><h2>Give your own timeframe</h2><p class="meta">Buyers of competing neck creams leave bad reviews when results are slower than they expected: &ldquo;3 weeks already don&rsquo;t really see any difference.&rdquo; Happy buyers say &ldquo;give it 30 days.&rdquo;</p><div class="do-dont"><div class="do"><strong>Do</strong>Say how long you have used it and what you see.</div><div class="dont"><strong>Don&rsquo;t</strong>Promise overnight results or a lift that lasts.</div></div></div>
+<div class="card"><h2>If there is a deal, call it early</h2><p class="meta">Deal-led neck videos sold up to 8.9 units per 1,000 views, the highest in the set. The shop&rsquo;s best week came right after the stick&rsquo;s price dropped to $12.70 on October 25, and most videos posted that week were coupon-led. Prices change, so the strongest ones send viewers to check their coupons.</p><div class="do-dont"><div class="do"><strong>Do</strong>Tell viewers to check their coupons, in the first five seconds.</div><div class="dont"><strong>Don&rsquo;t</strong>Quote a price as permanent.</div></div></div>
+</section>
+
+<section><p class="eyebrow">2. Content angles</p>
+<div class="card"><span class="badge b-1">Angle 1</span><h2 style="margin-top:10px">My neck, my story</h2><p class="meta"><strong>Gap it answers:</strong> Trigger 1 (a change she can name) and trigger 2 (loose skin after weight loss). Answers &ldquo;Is it just lotion?&rdquo; with your own result.</p><p class="meta"><strong>Archetype:</strong> A1, The Neck Storyteller.</p><p class="meta"><strong>How to run it:</strong> 40 to 60 seconds, face on camera. Your story, your neck in close-up, the stick going on, your timeframe. Reply to questions in the comments with a new video.</p></div>
+<div class="card"><span class="badge b-1">Angle 2</span><h2 style="margin-top:10px">Check your coupons</h2><p class="meta"><strong>Gap it answers:</strong> Trigger 3, a deal she might miss. Reaches the buyer who was not looking for a neck product.</p><p class="meta"><strong>Archetype:</strong> A2, The Deal Caller.</p><p class="meta"><strong>How to run it:</strong> 10 to 40 seconds. Stick in hand in the first frame, &ldquo;check your coupons&rdquo; in the first line, then one sentence on what it does and one on how you use it.</p></div>
+<div class="card"><span class="badge b-1">Angle 3</span><h2 style="margin-top:10px">Why I switched from my neck cream</h2><p class="meta"><strong>Gap it answers:</strong> Trigger 1 and the format benefit. Most neck buyers already own a jar. Answers &ldquo;Is it just lotion?&rdquo; by showing the difference in use.</p><p class="meta"><strong>Archetype:</strong> A3, The Neck Category Switcher.</p><p class="meta"><strong>How to run it:</strong> Show the cream you used before. Say what you did not like about it. Show the stick going on with no mess and say what it costs next to it.</p></div>
+<div class="card"><span class="badge b-2">Angle 4</span><h2 style="margin-top:10px">Crepey neck, sensitive skin</h2><p class="meta"><strong>Gap it answers:</strong> The irritation objection. Buyers who have reacted to retinol or acids need to hear from someone like them.</p><p class="meta"><strong>Archetype:</strong> A1, The Neck Storyteller.</p><p class="meta"><strong>How to run it:</strong> Say your skin is sensitive and what has bothered it before. Say you patch tested and where. Show how your skin looked after a week.</p></div>
+</section>
+
+<section><p class="eyebrow">3. Proven opening hooks</p><div class="card">
+<p class="meta">Real opening lines from Neck Lift Stick videos that sold between August 6 and November 3, 2026. Ranked by units sold per 1,000 views. Videos with under 10,000 views are left out.</p>
+<div class="tw"><table><thead><tr><th class="rank"></th><th>Hook</th><th class="num">Units / 1K views</th></tr></thead><tbody><tr><td class="rank">1</td><td class="hook">&ldquo;If I were one of those dirty gatekeepers, I would gatekeep this product.&rdquo;</td><td class="num">11.37</td></tr><tr><td class="rank">2</td><td class="hook">&ldquo;Today you are truly honored to be able to purchase the ultimate set at an astonishing price.&rdquo;</td><td class="num">8.88</td></tr><tr><td class="rank">3</td><td class="hook">&ldquo;Never get this neck stick for pricy.&rdquo;</td><td class="num">8.62</td></tr><tr><td class="rank">4</td><td class="hook">&ldquo;For my ladies with the crepe and the sensitive skin, not happy with retinol neck sticks or neck serums&hellip;&rdquo;</td><td class="num">4.66</td></tr><tr><td class="rank">5</td><td class="hook">&ldquo;Check your coupons cause I just saw some people are getting this Inkey List neck stick at a great price.&rdquo;</td><td class="num">3.95</td></tr><tr><td class="rank">6</td><td class="hook">&ldquo;Look, girlfriend, as a person who&rsquo;s lost 90 pounds, I have a loose turkey neck&hellip;&rdquo;</td><td class="num">3.24</td></tr><tr><td class="rank">7</td><td class="hook">&ldquo;Please don&rsquo;t get scammed and buy The Inkey List new bioactive ceramide neck stick.&rdquo;</td><td class="num">3.23</td></tr><tr><td class="rank">8</td><td class="hook">&ldquo;Can&rsquo;t forget the neck anti-aging for the neck and chest.&rdquo;</td><td class="num">2.95</td></tr><tr><td class="rank">9</td><td class="hook">&ldquo;If you don&rsquo;t want this to turn into a turkey neck, then you&rsquo;re going to take this and do this.&rdquo;</td><td class="num">1.35</td></tr></tbody></table></div>
+<h3>What the ranking says</h3>
+<ul><li>Deal and &ldquo;don&rsquo;t miss this&rdquo; openings convert the most per view.</li>
+<li>Personal story openings reach more people and still sell three or more units per 1,000 views.</li>
+<li>Lines that speak to a specific person (&ldquo;my ladies with the crepe and the sensitive skin&rdquo;) beat general anti-aging lines.</li></ul>
+</div></section>
+
+<section><p class="eyebrow">4. Product cheat sheet</p><div class="card">
+<h2>&ldquo;I have mature skin that is sagging especially neck, what do you recommend?&rdquo;</h2>
+<p>Answer this early. It is the question a selling creator was answering when she made her video.</p>
+<div class="stat-row"><span class="k">Price</span><span class="v">$17.00 list</span></div><div class="stat-row"><span class="k">Product</span><span class="v">Bio-Active Neck Lift Stick</span></div><div class="stat-row"><span class="k">Named on the listing</span><span class="v">0.2% Ceramide NP</span></div><div class="stat-row"><span class="k">What is included</span><span class="v">One stick</span></div><div class="stat-row"><span class="k">What else is required</span><span class="v">Nothing</span></div><div class="stat-row"><span class="k">Commission</span><span class="v">30% ($5.10 per sale)</span></div>
+<h3>How it works, in the order to say it</h3>
+<ul><li>What bothered you about your neck or chest.</li><li>That it is a stick, so it goes on without a jar or your fingers.</li><li>Glide it up from the base of your neck to your jaw.</li><li>How it feels and smells on your skin.</li><li>How long you have used it and what you see.</li><li>Check your coupons.</li></ul>
+<h3>Use the listing&rsquo;s words</h3>
+<p class="meta">The listing says it &ldquo;visibly smooths neck &amp; chest&rdquo; and helps &ldquo;define &amp; sculpt jawline.&rdquo; Stay inside those words until INKEY confirms any other claims.</p>
+</div></section>
+
+<section><p class="eyebrow">5. Objection questions to answer on camera</p><div class="card">
+<h2>Answer these out loud. Do not wait for the comments.</h2>
+<ul>
+<li><strong>&ldquo;Is it just lotion?&rdquo;</strong> Say what the listing says it contains and show your own result over time.</li>
+<li><strong>&ldquo;How long until I see a difference?&rdquo;</strong> Give the number of days or weeks you have used it. Do not promise a result for anyone else.</li>
+<li><strong>&ldquo;Does it smell?&rdquo;</strong> Say what it smells like to you. Scent is a common reason buyers return neck creams.</li>
+<li><strong>&ldquo;Will it irritate my sensitive skin?&rdquo;</strong> Say you patch tested and where, and how your skin reacted.</li>
+<li><strong>&ldquo;Is this retinol?&rdquo;</strong> The listing names Ceramide NP. Check the full ingredient list on your pack before you answer.</li>
+<li><strong>&ldquo;Will the price go back up?&rdquo;</strong> Say what you paid and tell viewers to check their coupons. Do not promise a price.</li>
+</ul></div></section>
+
+<section><p class="eyebrow">6. Specs and logistics</p><div class="card">
+<h2>Video specs</h2>
+<div class="stat-row"><span class="k">Format</span><span class="v">Vertical 9:16, native camera</span></div><div class="stat-row"><span class="k">Length</span><span class="v">40 to 60 sec (story), 10 to 40 sec (deal)</span></div><div class="stat-row"><span class="k">Audio</span><span class="v">Your voice, talking to camera</span></div><div class="stat-row"><span class="k">Product visible by</span><span class="v">5 seconds</span></div><div class="stat-row"><span class="k">Lighting</span><span class="v">Daylight, no filter on your neck</span></div><div class="stat-row"><span class="k">Captions</span><span class="v">Name the problem in the first line</span></div>
+<h3>Tagging</h3>
+<ul><li>Tag the Bio-Active Neck Lift Stick product in the video.</li><li>Hashtags the selling videos used: #turkeyneck #looseneck #necksculpting #neckcream #techneck #tiktokshopcreatorpicks.</li></ul>
+<h3>Cadence</h3><p class="meta">Post your first video within a week of the sample arriving. Post two more in the next two weeks, one of them a reply to a comment.</p>
+<h3>Contact</h3><p class="meta">Questions go to your Third account lead.</p>
+</div></section>
+
+<div class="companion"><p>Companion documents</p><a href="inkey-buyer-persona.html">The INKEY List Buyer Persona</a><a href="inkey-creator-persona.html">The INKEY List Commerce Creator Persona</a><a href="inkey-tts-strategy.html">The INKEY List Strategy</a><a href="inkey-top-100-creators.xlsx">The INKEY List Top 100 Commerce Creators</a></div>
+</main>
+<footer><p>third. Informed Creative Brief. The INKEY List. November 4, 2026.</p><p>Sources: INKEY shop performance data on Neck Lift Stick videos, August 6 to November 3, 2026 (393 videos posted, 229 that sold, top 20 read in detail); written reviews of competing neck and body products, July 18 to October 1, 2026.</p><p>GMV figures are gross TikTok-attributed GMV, not net revenue. Hooks are ranked on shop data units and views; videos under 10,000 views are excluded. Recent videos are still collecting orders.</p></footer>
+</body></html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The INKEY List &middot; Buyer Persona</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E;
+  --lime:#A2F09F; --citron:#F4FD8D; --cobalt:#3A87E6; --pink:#F186FF;
+  --plum:#8F0846; --turquoise:#BDEAEA; --lavender:#BAB6FD; --warmgray:#C9CDC6;
+  --ink:#1C1917; --ink-2:#44403C; --muted:#78716C; --faint:#A8A29E;
+  --line:#E7E5E4; --surface:#FFFFFF; --surface-2:#F5F5F4; --page:#FFFFFF;
+  --ok-bg:#D1FAE5; --ok-fg:#047857;
+  --wait-bg:#FEF3C7; --wait-fg:#B45309; --wait-line:#F59E0B;
+  --bad-bg:#FEE2E2; --bad-fg:#B91C1C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+
+/* ---- hero ---- */
+.hero{background:var(--tomato);color:#fff;padding:44px 24px 40px}
+.hero-inner{max-width:760px;margin:0 auto}
+.wordmark{
+  font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:600;font-size:15px;letter-spacing:.06em;color:#fff;margin:0 0 30px;
+}
+.kicker{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(255,255,255,.82);margin:0 0 12px;
+}
+.hero h1{
+  font-family:'Inter',sans-serif;font-weight:800;font-size:42px;line-height:1.04;
+  letter-spacing:-.025em;margin:0;color:#fff;text-wrap:balance;
+}
+.hero .lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.92);max-width:62ch}
+
+/* ---- nine-color strip ---- */
+.strip{display:flex;height:10px;width:100%}
+.strip span{flex:1 1 0}
+.s1{background:var(--lime)}      .s2{background:var(--citron)}
+.s3{background:var(--tomato)}    .s4{background:var(--cobalt)}
+.s5{background:var(--pink)}      .s6{background:var(--plum)}
+.s7{background:var(--turquoise)} .s8{background:var(--lavender)}
+.s9{background:var(--warmgray)}
+
+/* ---- layout ---- */
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+section{margin-top:48px}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--tomato);margin:0 0 14px;
+}
+.card{border:1px solid var(--line);border-radius:4px;padding:26px;margin-bottom:16px;background:var(--surface)}
+.card h2{font-family:'Inter',sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
+.card h3{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted);margin:22px 0 8px;
+}
+.card p{margin:0 0 14px;color:var(--ink-2)}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:15px;color:var(--muted)}
+
+/* ---- metrics in IBM Plex Mono ---- */
+.metric{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.03em;
+  color:var(--tomato);margin:20px 0 10px;
+}
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+/* ---- provisional ---- */
+.provisional{background:var(--wait-bg);border-left:4px solid var(--wait-line);border-radius:2px;padding:20px 22px;margin-bottom:16px}
+.provisional p{color:var(--wait-fg);margin:0;font-size:15px}
+.provisional p + p{margin-top:10px}
+.provisional strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0;max-width:100%}
+table{width:100%;min-width:340px;border-collapse:collapse;font-size:15px;margin:0}
+th{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink);vertical-align:bottom;
+}
+td{padding:13px 10px 13px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:right;font-variant-numeric:tabular-nums;padding-right:0;padding-left:18px;white-space:nowrap;
+}
+td.rank{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--faint);width:26px}
+.hook{color:var(--ink);font-weight:500}
+
+ul{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+
+/* ---- do / don't ---- */
+.do-dont{display:grid;gap:12px;margin-top:14px}
+.do,.dont{border-radius:3px;padding:14px 16px;font-size:15px}
+.do{background:var(--ok-bg);color:var(--ok-fg);border-left:3px solid var(--ok-fg)}
+.dont{background:var(--bad-bg);color:var(--bad-fg);border-left:3px solid var(--bad-fg)}
+.do strong,.dont strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;
+}
+
+/* ---- stat rows ---- */
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-row:last-child{border-bottom:none}
+.stat-row .k{color:var(--muted)}
+.stat-row .v{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+
+/* ---- badges ---- */
+.badge{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:inline-block;border-radius:2px;padding:5px 10px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.b-1{background:var(--tomato);color:#fff}
+.b-2{background:var(--citron);color:var(--ink)}
+.b-3{background:var(--turquoise);color:var(--ink)}
+.b-4{background:var(--lavender);color:var(--ink)}
+
+/* ---- companion + footer ---- */
+.companion{background:var(--surface-2);border-radius:4px;padding:22px 24px;margin-top:40px}
+.companion p{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+.companion a{color:var(--tomato);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:5px 0}
+.companion a:hover{text-decoration:underline}
+footer{max-width:760px;margin:0 auto;padding:40px 24px 64px;font-size:13px;color:var(--faint);line-height:1.5}
+footer p{margin:0 0 6px}
+@media (max-width:520px){
+  .hero{padding:32px 20px 30px}
+  .hero h1{font-size:32px}
+  .metric{font-size:38px}
+  .container{padding:0 20px}
+  .card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="hero"><div class="hero-inner"><p class="wordmark">THIRD.</p><p class="kicker">Buyer persona</p><h1>The INKEY List</h1><p class="lede">Who buys the Neck Lift Stick and the Glycolic Acid Body Stick on TikTok Shop, what moves them, and what stops them. Built from purchase-side data only. November 2026.</p></div></div>
+<div class="strip"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span><span class="s7"></span><span class="s8"></span><span class="s9"></span></div>
+<main class="container">
+
+<div class="provisional"><p><strong>Provisional.</strong> A full buyer persona runs on 75 top-selling videos and 1,500 or more mined buyer comments. This one ran on 160 written reviews (15 on the INKEY Body Stick, none yet on the Neck Lift Stick, 145 on three competing products, July 18 to October 1, 2026) plus the opening lines of the 20 top-selling INKEY videos from August 6 to November 3, 2026.</p><p>Treat the triggers and objections as hypotheses to test in creative. Do not attach percentages to them in client copy.</p></div>
+
+<section><p class="eyebrow">Who they are</p><div class="card">
+<p>Two buyers now share the shop. The neck stick buyer is an adult woman who has started to notice her neck and chest. She describes it in plain words: loose skin, crepe, sagging, turkey neck. Several buyers in this sample give their age or say they have lost weight. One review reads &ldquo;Im 67 and this product has made a big difference in my neck and d&eacute;colletage.&rdquo; Another says she uses a neck cream &ldquo;daily on my neck after glp1 weight loss.&rdquo;</p>
+<p>She is a repeat buyer in the category. Reviews on competing neck creams talk about a fourth jar and about never wanting to run out. Some write in Spanish and describe the same problem as <em>flacidez del cuello</em>.</p>
+<p>The Body Stick buyer is unchanged from August. She is treating a named condition on her body: KP on the arms, ingrown hairs, body breakouts or dark underarms. She wants to know how fast it works and whether the stick reaches the zone. One Spanish-language review says the stick is lightening her underarms.</p>
+</div></section>
+
+<section><p class="eyebrow">Purchase triggers, ranked</p><div class="card">
+<h2>1. A change in her neck she can name</h2>
+<p class="meta">The top neck videos name the problem in the first line: &ldquo;Can&rsquo;t forget the neck anti-aging for the neck and chest.&rdquo; Reviews use the same words: &ldquo;less sagging and crepe lines&rdquo;, &ldquo;struggled with loose skin on my neck.&rdquo;</p>
+<h2>2. Loose skin after weight loss</h2>
+<p class="meta">The top creator on the neck stick opens with &ldquo;as a person who&rsquo;s lost 90 pounds, I have a loose turkey neck.&rdquo; Her seven videos took $26.1K. Competitor reviews repeat it in both languages: &ldquo;after glp1 weight loss&rdquo;, &ldquo;he bajado de peso y mi cuello estaba poquito fl&aacute;cido.&rdquo;</p>
+<h2>3. A deal she might miss</h2>
+<p class="meta">Deal-led neck videos convert the most per view. The best day for the neck stick, October 30 with 654 sold, came five days after its price dropped from $17 to $12.70. &ldquo;Check your coupons cause I just saw some people are getting this Inkey List neck stick at a great price&rdquo; sold 3.95 units per 1,000 views. &ldquo;I wasn&rsquo;t looking for this, but the deal got me&rdquo; captions a video that sold 8.88.</p>
+<h2>4. A named body condition</h2>
+<p class="meta">Body Stick reviews start with the condition: &ldquo;I suffer from pretty severe Keratosis on my upper arms and in one week this cleared it up completely.&rdquo; The top Body Stick video opens on skin texture in close-up and took $16.3K.</p>
+<h2>5. A format that is easy to use</h2>
+<p class="meta">Buyers raise it without being asked: &ldquo;such a convenient way to apply&rdquo;, &ldquo;glides on really smoothly and doesn&rsquo;t stick to clothing.&rdquo; On the neck, the stick sets INKEY apart from the jars that lead the category.</p>
+</div></section>
+
+<section><p class="eyebrow">Top objections</p><div class="card">
+<h2>&ldquo;Is it just lotion?&rdquo;</h2>
+<p class="meta">A one-star review on a competing neck cream reads &ldquo;Garbage I think it&rsquo;s just lotion.&rdquo; Content answers it by showing the creator&rsquo;s own neck over time and by saying what the stick contains, using the listing&rsquo;s words.</p>
+<h2>&ldquo;How long until I see a difference?&rdquo;</h2>
+<p class="meta">&ldquo;I&rsquo;ve been using this product for 3 weeks already don&rsquo;t really see any difference.&rdquo; The satisfied buyers set the expectation themselves: &ldquo;give it 30 days.&rdquo; Content should give the creator&rsquo;s own timeframe and avoid overnight promises.</p>
+<h2>&ldquo;Will the smell bother me?&rdquo;</h2>
+<p class="meta">12 of 58 written reviews on Dr.Melaxin&rsquo;s neck cream mention smell. Two of its one-star reviews are about the scent alone. A creator who says what the stick smells like removes a reason to return it.</p>
+<h2>&ldquo;Will it irritate my skin?&rdquo;</h2>
+<p class="meta">The only one-star Body Stick review says it &ldquo;burned me horribly.&rdquo; A selling neck video speaks to &ldquo;my ladies with the crepe and the sensitive skin, not happy with retinol neck sticks.&rdquo; A patch-test line answers both.</p>
+<h2>&ldquo;Will I get charged again?&rdquo;</h2>
+<p class="meta">Competitor reviews include complaints about repeat deliveries the buyer did not expect: &ldquo;stop send me one every month please.&rdquo; INKEY&rsquo;s Body Stick has 1,369 active subscriptions, so this belongs in creative that mentions subscribing.</p>
+</div></section>
+
+<section><p class="eyebrow">The number one buyer question</p><div class="card">
+<h2>&ldquo;I have mature skin that is sagging especially neck, what do you recommend?&rdquo;</h2>
+<p>This is a buyer comment that a creator answered with a selling video. The neck stick videos that sell answer it directly: the creator shows her own neck, names her age group or her story, puts the stick on in upward strokes and says how long she has used it.</p>
+</div></section>
+
+<section><p class="eyebrow">Price tolerance</p><div class="card">
+<p>The neck buyer is paying $40 and more. Gopure&rsquo;s $40 neck cream sold 7,595 units in October. INKEY lists the stick at $17, and the price shown in October was $12.70.</p>
+<div class="tw"><table><thead><tr><th>Product</th><th class="num">Price</th><th class="num">Oct units</th></tr></thead><tbody>
+<tr><td>Dr.Melaxin Tech Neck Firming Set</td><td class="num">$42.40</td><td class="num">4,852</td></tr>
+<tr><td>Gopure Neck Cream</td><td class="num">$40.00</td><td class="num">7,595</td></tr>
+<tr><td>Z:SEA Peptide Neck Firming Cream</td><td class="num">$21.90</td><td class="num">1,371</td></tr>
+<tr><td>Dr.Melaxin Necksphalt Neck Cream</td><td class="num">$17.60</td><td class="num">6,066</td></tr>
+<tr><td><strong>INKEY Neck Lift Stick</strong></td><td class="num"><strong>$17.00</strong></td><td class="num"><strong>5,153</strong></td></tr>
+<tr><td>Aether &amp; Bloom Retinol Neck Stick</td><td class="num">$9.00 to $20.00</td><td class="num">3,198</td></tr>
+<tr><td>Dr.Melaxin Peel Shot (body)</td><td class="num">$20.80</td><td class="num">71,634</td></tr>
+<tr><td><strong>INKEY Glycolic Acid Body Stick</strong></td><td class="num"><strong>$20.00</strong></td><td class="num"><strong>4,339</strong></td></tr>
+</tbody></table></div>
+<p>INKEY is the lowest-priced neck product in the set at list. The buyer will pay more for a result she trusts, and one review on a $40 cream complains that the price rose after it went viral. The objections in this sample are about results, smell and irritation far more often than about price.</p>
+</div></section>
+
+<section><p class="eyebrow">Conversion efficiency against the set</p><div class="card">
+<p class="meta">Units sold per 1,000 views across each product&rsquo;s top 10 videos by GMV, August 6 to November 3, 2026. Competitor video data was not pulled for this version.</p>
+<div class="stat-row"><span class="k">Neck Lift Stick, top 10 videos</span><span class="v">3.91 units / 1K views &middot; mixed, 46% of GMV ad-attributed</span></div>
+<div class="stat-row"><span class="k">Glycolic Acid Body Stick, top 10 videos</span><span class="v">0.61 units / 1K views &middot; mostly boosted, 67% ad-attributed</span></div>
+<p>The neck stick sells about six times more units per view than the Body Stick, with a smaller share of its GMV coming from ads.</p>
+</div></section>
+
+<div class="companion"><p>Companion documents</p><a href="inkey-tts-strategy.html">The INKEY List Strategy</a><a href="inkey-creator-persona.html">The INKEY List Commerce Creator Persona</a><a href="brief-inkey.html">The INKEY List Informed Creative Brief</a><a href="inkey-top-100-creators.xlsx">The INKEY List Top 100 Commerce Creators</a></div>
+</main>
+<footer><p>third. Buyer persona. The INKEY List. November 4, 2026.</p><p>Sources: written product reviews on the INKEY Body Stick and on three competing products (Gopure Neck Cream, Dr.Melaxin Necksphalt Neck Cream, Dr.Melaxin Peel Shot), July 18 to October 1, 2026, 160 written reviews in total; opening lines and captions of the 20 top-selling INKEY videos, August 6 to November 3, 2026; TikTok Shop US marketplace data, October 2026.</p><p>GMV figures are gross TikTok-attributed GMV, not net revenue. Video comment text was not available; written reviews and video opening lines were used as buyer language. Reviews requested newest-first returned July dates for two competitors.</p></footer>
+</body></html>

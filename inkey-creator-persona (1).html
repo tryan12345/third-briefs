@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The INKEY List &middot; Commerce Creator Persona</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E;
+  --lime:#A2F09F; --citron:#F4FD8D; --cobalt:#3A87E6; --pink:#F186FF;
+  --plum:#8F0846; --turquoise:#BDEAEA; --lavender:#BAB6FD; --warmgray:#C9CDC6;
+  --ink:#1C1917; --ink-2:#44403C; --muted:#78716C; --faint:#A8A29E;
+  --line:#E7E5E4; --surface:#FFFFFF; --surface-2:#F5F5F4; --page:#FFFFFF;
+  --ok-bg:#D1FAE5; --ok-fg:#047857;
+  --wait-bg:#FEF3C7; --wait-fg:#B45309; --wait-line:#F59E0B;
+  --bad-bg:#FEE2E2; --bad-fg:#B91C1C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+
+/* ---- hero ---- */
+.hero{background:var(--tomato);color:#fff;padding:44px 24px 40px}
+.hero-inner{max-width:760px;margin:0 auto}
+.wordmark{
+  font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:600;font-size:15px;letter-spacing:.06em;color:#fff;margin:0 0 30px;
+}
+.kicker{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(255,255,255,.82);margin:0 0 12px;
+}
+.hero h1{
+  font-family:'Inter',sans-serif;font-weight:800;font-size:42px;line-height:1.04;
+  letter-spacing:-.025em;margin:0;color:#fff;text-wrap:balance;
+}
+.hero .lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.92);max-width:62ch}
+
+/* ---- nine-color strip ---- */
+.strip{display:flex;height:10px;width:100%}
+.strip span{flex:1 1 0}
+.s1{background:var(--lime)}      .s2{background:var(--citron)}
+.s3{background:var(--tomato)}    .s4{background:var(--cobalt)}
+.s5{background:var(--pink)}      .s6{background:var(--plum)}
+.s7{background:var(--turquoise)} .s8{background:var(--lavender)}
+.s9{background:var(--warmgray)}
+
+/* ---- layout ---- */
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+section{margin-top:48px}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--tomato);margin:0 0 14px;
+}
+.card{border:1px solid var(--line);border-radius:4px;padding:26px;margin-bottom:16px;background:var(--surface)}
+.card h2{font-family:'Inter',sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
+.card h3{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted);margin:22px 0 8px;
+}
+.card p{margin:0 0 14px;color:var(--ink-2)}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:15px;color:var(--muted)}
+
+/* ---- metrics in IBM Plex Mono ---- */
+.metric{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.03em;
+  color:var(--tomato);margin:20px 0 10px;
+}
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+/* ---- provisional ---- */
+.provisional{background:var(--wait-bg);border-left:4px solid var(--wait-line);border-radius:2px;padding:20px 22px;margin-bottom:16px}
+.provisional p{color:var(--wait-fg);margin:0;font-size:15px}
+.provisional p + p{margin-top:10px}
+.provisional strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0;max-width:100%}
+table{width:100%;min-width:340px;border-collapse:collapse;font-size:15px;margin:0}
+th{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink);vertical-align:bottom;
+}
+td{padding:13px 10px 13px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:right;font-variant-numeric:tabular-nums;padding-right:0;padding-left:18px;white-space:nowrap;
+}
+td.rank{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--faint);width:26px}
+.hook{color:var(--ink);font-weight:500}
+
+ul{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+
+/* ---- do / don't ---- */
+.do-dont{display:grid;gap:12px;margin-top:14px}
+.do,.dont{border-radius:3px;padding:14px 16px;font-size:15px}
+.do{background:var(--ok-bg);color:var(--ok-fg);border-left:3px solid var(--ok-fg)}
+.dont{background:var(--bad-bg);color:var(--bad-fg);border-left:3px solid var(--bad-fg)}
+.do strong,.dont strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;
+}
+
+/* ---- stat rows ---- */
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-row:last-child{border-bottom:none}
+.stat-row .k{color:var(--muted)}
+.stat-row .v{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+
+/* ---- badges ---- */
+.badge{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:inline-block;border-radius:2px;padding:5px 10px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.b-1{background:var(--tomato);color:#fff}
+.b-2{background:var(--citron);color:var(--ink)}
+.b-3{background:var(--turquoise);color:var(--ink)}
+.b-4{background:var(--lavender);color:var(--ink)}
+
+/* ---- companion + footer ---- */
+.companion{background:var(--surface-2);border-radius:4px;padding:22px 24px;margin-top:40px}
+.companion p{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+.companion a{color:var(--tomato);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:5px 0}
+.companion a:hover{text-decoration:underline}
+footer{max-width:760px;margin:0 auto;padding:40px 24px 64px;font-size:13px;color:var(--faint);line-height:1.5}
+footer p{margin:0 0 6px}
+@media (max-width:520px){
+  .hero{padding:32px 20px 30px}
+  .hero h1{font-size:32px}
+  .metric{font-size:38px}
+  .container{padding:0 20px}
+  .card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="hero"><div class="hero-inner"><p class="wordmark">THIRD.</p><p class="kicker">Commerce creator persona</p><h1>The INKEY List</h1><p class="lede">Which creators actually convert the Neck Lift Stick and the Glycolic Acid Body Stick, how to tier them, and how many exist. Built from seller-side data only. November 2026.</p></div></div>
+<div class="strip"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span><span class="s7"></span><span class="s8"></span><span class="s9"></span></div>
+<main class="container">
+
+<div class="provisional"><p><strong>Provisional.</strong> A full commerce creator persona compares INKEY&rsquo;s sellers against competitor creators and competitor videos. Competitor creator lists were pulled for seven products. Competitor video data was not pulled, so format comparisons rest on INKEY&rsquo;s own 2,286 videos from August 6 to November 3, 2026.</p><p>The archetypes and sizing hold. The format notes should be checked against competitor videos in the next version.</p></div>
+
+<section><p class="eyebrow">The pattern</p>
+<div class="card"><h2>Deal and lifestyle accounts with older audiences sell the neck stick</h2>
+<p>Of the 68 creators who have sold the Neck Lift Stick, 9% are classed as Beauty creators. The largest groups are Other at 58% and Shopping &amp; Retail at 13%. The competing neck creams show the same split. The creators who sell it best talk to an audience aged 35 to 55+, either about their own neck or about a deal.</p>
+<div class="stat-row"><span class="k">1k to 5k followers</span><span class="v">7 creators</span></div><div class="stat-row"><span class="k">5k to 10k followers</span><span class="v">23 creators</span></div><div class="stat-row"><span class="k">10k to 50k followers</span><span class="v">25 creators</span></div><div class="stat-row"><span class="k">50k to 100k followers</span><span class="v">4 creators</span></div><div class="stat-row"><span class="k">100k+ followers</span><span class="v">9 creators</span></div>
+</div>
+<div class="card"><h2>The roster is posting less, and a small group carries it</h2>
+<div class="stat-row"><span class="k">Creators who posted, last 90 days</span><span class="v">869 (down 28.8%)</span></div><div class="stat-row"><span class="k">Videos posted, last 90 days</span><span class="v">2,286</span></div><div class="stat-row"><span class="k">Videos that sold at least once</span><span class="v">623 (27%)</span></div><div class="stat-row"><span class="k">Average views per video</span><span class="v">5,970</span></div><div class="stat-row"><span class="k">Posted videos per approved sample</span><span class="v">0.64</span></div>
+<p>The two creators with the most INKEY GMV have stopped posting it. @jopickz ($113.0K lifetime) posted 81 INKEY videos in August, 19 in September and none since. @justjamiemichelle ($95.8K lifetime) went from 11 INKEY videos in August to 4 in October, while posting 166 videos for other brands in the last 28 days.</p>
+</div>
+<div class="card"><h2>Sample screening is holding the bar. Posting after approval is the gap</h2>
+<p>5,760 sample requests came in over 90 days and 4,074 expired. 97% of the expired requests came through the open plan, from creators who found the product themselves. 94% of those creators had under $1K in 30-day GMV, and their median post rate was 31%. Approved creators had a median of $8.2K in 30-day GMV and an 86% post rate. Targeted invites were screened: 595 were rejected and 117 expired.</p>
+<p>After approval, output drops. 479 approved samples produced 306 posted videos, 0.64 per sample, against a house benchmark of about 1.5. 67 approved creators are overdue. The pipeline itself is fast: a median of one day to ship, five days to deliver and two days to post.</p>
+</div></section>
+
+<section><p class="eyebrow">Archetypes</p>
+<div class="card"><span class="badge b-1">Priority 1</span><h2 style="margin-top:10px">A1. The Neck Storyteller</h2><p class="meta">Follower ranges are used in place of L-tiers. 10k to 500k followers. Audience mostly women, 35 to 55+.</p>
+<h3>Buyer trigger served</h3><p class="meta">Trigger 1, a change in her neck she can name, and trigger 2, loose skin after weight loss.</p><h3>Format</h3><p class="meta">Face on camera, 40 to 60 seconds. Opens on her own story: age, weight loss, what she tried before. Shows the stick going on in upward strokes. Replies to comments with new videos.</p><h3>Proven in market</h3><p class="meta">@annekoii, 458,731 followers, took $26.1K on the neck stick from seven videos, opening &ldquo;as a person who&rsquo;s lost 90 pounds.&rdquo; @tinarene_1, 12,976 followers, sold 764 units from one 56-second video at 11.37 units per 1,000 views.</p></div>
+<div class="card"><span class="badge b-1">Priority 1</span><h2 style="margin-top:10px">A2. The Deal Caller</h2><p class="meta">5k to 135k followers. Audiences skew 45 to 55+.</p>
+<h3>Buyer trigger served</h3><p class="meta">Trigger 3, a deal she might miss.</p><h3>Format</h3><p class="meta">10 to 40 seconds. Opens on the price or the coupon, product in hand. Low production, high cadence, often several products a day.</p><h3>Proven in market</h3><p class="meta">@socalshopdeals, 60,559 followers, sold 658 units from one video opening &ldquo;Please don&rsquo;t get scammed.&rdquo; @gingermomchronicles sold 3.95 units per 1,000 views with &ldquo;Check your coupons.&rdquo; @killerdeals247 sold $283K across all products in the last 28 days.</p></div>
+<div class="card"><span class="badge b-1">Priority 1</span><h2 style="margin-top:10px">A3. The Neck Category Switcher</h2><p class="meta">20k to 180k followers. Proven sellers of $17 to $42 neck creams.</p>
+<h3>Buyer trigger served</h3><p class="meta">Trigger 1, plus the stick format against jars.</p><h3>Format</h3><p class="meta">Already sells the category on video at volume. The pitch is a lower-priced product with a different format and twice the commission rate.</p><h3>Recruiting note</h3><p class="meta">@mirandacorneliusbeauty has taken $841.2K on Gopure&rsquo;s neck cream and is already an INKEY affiliate at $9.6K lifetime. @affiliatetammytaylor has taken $1.17M on Dr.Melaxin&rsquo;s neck set. @cakes.by.cynthia has taken $119.1K on Dr.Melaxin&rsquo;s $17.60 neck cream from 125 videos.</p></div>
+<div class="card"><span class="badge b-2">Priority 2</span><h2 style="margin-top:10px">A4. The Close-up Body Seller</h2><p class="meta">7k to 140k followers. Mixed audiences, often younger.</p>
+<h3>Buyer trigger served</h3><p class="meta">Trigger 4, a named body condition.</p><h3>Format</h3><p class="meta">Faceless, under 15 seconds. Skin texture in close-up, then the stick on the skin. Captions and hashtags carry the condition.</p><h3>Proven in market</h3><p class="meta">@jopickz has $113.0K in INKEY GMV, and one 10-second video took $16.3K. @mcjerbear sells with condition hashtags such as #bodyacne and #hidradenitissuppurativa. This archetype drove the September spike and has gone quiet since.</p></div>
+<div class="card"><span class="badge b-2">Priority 2</span><h2 style="margin-top:10px">A5. The Spanish-Language Responder</h2><p class="meta">10k to 40k followers.</p>
+<h3>Buyer trigger served</h3><p class="meta">Trigger 4, especially dark underarms.</p><h3>Format</h3><p class="meta">Spanish-language replies to buyer comments, posted as new videos (&ldquo;Respuesta a&rdquo;). Each reply gives the next creator something to answer.</p><h3>Proven in market</h3><p class="meta">@zamb0806, 15,356 followers, has $15.9K in INKEY GMV, much of it from reply videos. Only five Spanish-language INKEY videos were posted in the window. Recruit eight to twelve together so the reply loop starts.</p></div>
+</section>
+
+<section><p class="eyebrow">Sizing the hit list</p><div class="card">
+<p class="meta">Match method: current INKEY affiliates plus the top sellers of seven competing neck and body products. Gates: US account, $5K or more in 30-day GMV and four or more videos in the last 28 days. L-tier data was not available, so the gate replaces the L2 and L3 cut.</p>
+<div class="stat-row"><span class="k">Creators in the candidate pool</span><span class="v">237</span></div><div class="stat-row"><span class="k">Passed the gates</span><span class="v">164</span></div><div class="stat-row"><span class="k">Current INKEY affiliates among the 164</span><span class="v">66</span></div><div class="stat-row"><span class="k">Current affiliates in the top 100</span><span class="v">16</span></div><div class="stat-row"><span class="k">Creators who have sold the neck competitors</span><span class="v">76,296</span></div>
+<p>The top 100 list is mostly net-new: 81 creators have sold a direct competitor and have never sold INKEY. The neck competitors have been sold by tens of thousands of creators, so the list can be extended well past 100 without lowering the bar.</p>
+</div></section>
+
+<section><p class="eyebrow">Commission and recruiting guidance</p>
+<div class="card"><h2>INKEY pays the most per sale in its price band, and discounts cut that by close to half</h2>
+<div class="stat-row"><span class="k">INKEY Neck Lift Stick</span><span class="v">$17.00 at 30% &middot; $5.10</span></div><div class="stat-row"><span class="k">Dr.Melaxin Necksphalt Neck Cream</span><span class="v">$17.60 at 15% &middot; $2.64</span></div><div class="stat-row"><span class="k">Gopure Neck Cream</span><span class="v">$40.00 at 20% &middot; $8.00</span></div><div class="stat-row"><span class="k">Dr.Melaxin Tech Neck Firming Set</span><span class="v">$42.40 at 15% &middot; $6.36</span></div><div class="stat-row"><span class="k">INKEY Glycolic Acid Body Stick</span><span class="v">$20.00 at 30% &middot; $6.00</span></div><div class="stat-row"><span class="k">Dr.Melaxin Peel Shot</span><span class="v">$20.80 at 15% &middot; $3.12</span></div>
+<p>At the neck stick&rsquo;s realized price of $9.49, 30% pays $2.85 per sale, close to what the competitor pays at full price.</p>
+</div>
+<div class="card"><h2>Recruit on proof of selling this product shape, and review every sample request within 48 hours</h2>
+<ul>
+<li>Filter on GMV from neck or body competitors, not on follower count or the Beauty category.</li>
+<li>Favor creators who talk to camera. Face-on-camera videos earned $21.97 per 1,000 views against $7.19 for faceless ones.</li>
+<li>Affiliate coordinators review the open-plan queue daily against a written bar: $5K+ in 30-day GMV, a 70%+ post rate and a fit with the neck or body buyer. Decline the rest with the existing template.</li>
+<li>Keep the open plan to the two sticks, with refundable samples on. Every other product goes to targeted invites.</li>
+<li>Offer the two quiet top affiliates a direct reactivation deal: @justjamiemichelle on the neck stick, which fits her 45 to 55+ audience, and @jopickz on the Body Stick.</li>
+<li>Keep any 35% to 40% rate for creators who commit to a posting cadence on one product.</li>
+<li>Follow up the 67 approved creators who are overdue on their video, and report GMV-producing creator rate and GMV per sample sent.</li>
+</ul></div></section>
+
+<div class="companion"><p>Companion documents</p><a href="inkey-tts-strategy.html">The INKEY List Strategy</a><a href="inkey-buyer-persona.html">The INKEY List Buyer Persona</a><a href="brief-inkey.html">The INKEY List Informed Creative Brief</a><a href="inkey-top-100-creators.xlsx">The INKEY List Top 100 Commerce Creators</a></div>
+</main>
+<footer><p>third. Commerce creator persona. The INKEY List. November 4, 2026.</p><p>Sources: INKEY shop performance data, August 6 to November 3, 2026 (videos, creators, sample requests); TikTok Shop US marketplace data on creators who sold INKEY and seven competing products, lifetime to November 4, 2026; creator 30-day GMV and audience data, 28 days to November 3, 2026.</p><p>GMV figures are gross TikTok-attributed GMV, not net revenue. Tiers use follower ranges because L-tier data was not available. Per-video GMV for recent videos is still arriving. Creator GMV on competing products is lifetime marketplace GMV.</p></footer>
+</body></html>

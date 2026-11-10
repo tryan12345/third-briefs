@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The INKEY List &times; TikTok Shop US &middot; Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
+section.alt .companions{background:#fff;}
+.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.companions ul{list-style:none;margin-top:12px;}
+.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
+.companions li:first-child{border-top:none;}
+.companions li b{font-weight:700;color:var(--ink);}
+.hooks{margin-top:22px;display:grid;gap:12px;}
+.hook{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;}
+.hook .rank{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);}
+.hook .quote{font-size:16px;font-weight:700;line-height:1.35;}
+.hook .meta{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.hook .why{margin-top:9px;font-size:14px;color:#333;}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.dodont .panel.do{border-top:6px solid var(--c4);}
+.dodont .panel.dont{border-top:6px solid var(--c8);}
+.quotebox{margin-top:20px;display:grid;gap:10px;}
+.qb{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c5);border-radius:12px;padding:16px 20px;font-size:15px;color:#333;}
+.qb .src{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+.qb.neg{border-left-color:var(--c8);}
+.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--ink);color:#fff;padding:7px 12px;border-radius:6px;}
+.chip.alt2{background:var(--c6);} .chip.alt3{background:var(--c7);} .chip.alt4{background:var(--c4);color:var(--ink);}
+.gate{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;margin-top:12px;border-left:6px solid var(--c5);}
+.gate .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gate h3{margin-top:8px;font-size:17px;}
+.gate p{margin-top:9px;font-size:14px;color:#333;}
+@media(max-width:760px){.dodont{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;gap:8px;}}
+.tbl tr.mbm td{background:#FFF1EE;font-weight:700;border-top:2px solid var(--tomato);border-bottom:2px solid var(--tomato);}
+.tbl tr.med td{background:#FAFAF8;font-weight:700;}
+.tbl tr.ex td{color:#9A9A9A;}
+.tbl td.r,.tbl th.r{text-align:right;}
+.tbl.dense td{padding:9px 14px;font-size:13px;}
+.tbl.dense th{padding:11px 14px;}
+.chart{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 20px 14px;}
+.chart svg{width:100%;height:auto;display:block;}
+.legend{display:flex;gap:22px;flex-wrap:wrap;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:7px;vertical-align:-1px;}
+.qlist{list-style:none;margin-top:14px;}
+.qlist li{padding:11px 0;border-top:1px solid #EDEDEA;font-size:15px;color:#333;}
+.qlist li:first-child{border-top:none;}
+.gapgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px;}
+.gap{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;border-left:6px solid var(--tomato);}
+.gap .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gap .gn{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;}
+.gap p{margin-top:8px;font-size:14px;color:#333;}
+@media(max-width:760px){.gapgrid{grid-template-columns:1fr;}}
+</style></head><body>
+<div class="hero"><div class="wrap"><div class="kicker">THIRD. &middot; The INKEY List &middot; Strategy</div><h1>The INKEY List &times; TikTok Shop US</h1><p class="sub">INKEY took $340.9K in total shop GMV in the 90 days to November 3, 2026. The Neck Lift Stick, launched September 2, is now the shop&rsquo;s top seller.</p></div></div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<section><div class="wrap"><div class="sec-kicker">01 &middot; The position</div>
+<h2>INKEY has two heroes. The newer one, the Neck Lift Stick, is the bigger opportunity</h2>
+<p class="lede">The shop has grown fast since the August review. Affiliate GMV in the last 90 days was nearly four times the 90 days before it. Growth came from two places: a strong September on the Glycolic Acid Body Stick, then a fast start on the Neck Lift Stick.</p>
+<div class="stats">
+<div class="stat"><div class="num">$340.9K</div><div class="lbl">Total shop GMV, Aug 6 to Nov 3, 2026</div></div>
+<div class="stat"><div class="num">$271.5K</div><div class="lbl">Affiliate GMV, Aug 6 to Nov 3, 2026. Up 293% from about $69.1K in the prior 90 days</div></div>
+<div class="stat"><div class="num">$42.0K</div><div class="lbl">Total shop GMV, week of Oct 28. Best week of the 13</div></div>
+<div class="stat"><div class="num">#350</div><div class="lbl">Beauty &amp; Personal Care shop rank, October. Up from #909 in July</div></div>
+</div>
+<div class="statement"><div class="tag">The finding</div>
+<p>The Neck Lift Stick earns about five times more per view than the Body Stick, and only 68 creators have ever sold it.</p>
+<p class="detail">Neck Lift Stick videos posted in the last 90 days earned $30.31 in GMV per 1,000 views. Body Stick videos earned $6.14. The closest competitor at the same price, Dr.Melaxin&rsquo;s $17.60 neck cream, has been sold by 787 creators.</p>
+<p class="detail">The Body Stick still matters. It carries 1,369 active subscriptions and $45.0K of subscription GMV in the window.</p>
+</div></div></section>
+
+<section class="alt"><div class="wrap"><div class="sec-kicker">02 &middot; Trajectory</div>
+<h2>Weekly GMV is up 70% since August, and the Neck Lift Stick is now the top seller</h2>
+<p class="lede">The last four weeks averaged $33.4K a week in total shop GMV. The first four weeks of the window averaged $19.6K. The Neck Lift Stick produced 55% of shop GMV across the last two weeks.</p>
+<div class="chart"><svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Weekly total shop GMV and Neck Lift Stick GMV"><line x1="56" x2="864" y1="254.0" y2="254.0" stroke="#E4E4E0" stroke-width="1"/><text x="48" y="258.0" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">$0K</text><line x1="56" x2="864" y1="202.0" y2="202.0" stroke="#E4E4E0" stroke-width="1"/><text x="48" y="206.0" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">$10K</text><line x1="56" x2="864" y1="150.0" y2="150.0" stroke="#E4E4E0" stroke-width="1"/><text x="48" y="154.0" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">$20K</text><line x1="56" x2="864" y1="98.0" y2="98.0" stroke="#E4E4E0" stroke-width="1"/><text x="48" y="102.0" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">$30K</text><line x1="56" x2="864" y1="46.0" y2="46.0" stroke="#E4E4E0" stroke-width="1"/><text x="48" y="50.0" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">$40K</text><rect x="67.2" y="202.9" width="39.8" height="51.1" fill="#111111"/><text x="87.1" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Aug 5</text><rect x="129.3" y="119.4" width="39.8" height="134.6" fill="#111111"/><text x="149.2" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Aug 12</text><rect x="191.5" y="127.7" width="39.8" height="126.3" fill="#111111"/><text x="211.4" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Aug 19</text><rect x="253.6" y="159.1" width="39.8" height="94.9" fill="#111111"/><text x="273.5" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Aug 26</text><rect x="315.8" y="190.3" width="39.8" height="63.7" fill="#111111"/><text x="335.7" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Sep 2</text><rect x="378.0" y="140.2" width="39.8" height="113.8" fill="#111111"/><text x="397.8" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Sep 9</text><rect x="440.1" y="43.7" width="39.8" height="210.3" fill="#111111"/><text x="460.0" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Sep 16</text><rect x="502.3" y="133.1" width="39.8" height="120.9" fill="#111111"/><text x="522.2" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Sep 23</text><rect x="564.4" y="86.2" width="39.8" height="167.8" fill="#111111"/><text x="584.3" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Sep 30</text><rect x="626.6" y="86.1" width="39.8" height="167.9" fill="#111111"/><text x="646.5" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Oct 7</text><rect x="688.7" y="118.6" width="39.8" height="135.4" fill="#111111"/><text x="708.6" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Oct 14</text><rect x="750.9" y="80.8" width="39.8" height="173.2" fill="#111111"/><text x="770.8" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Oct 21</text><rect x="813.0" y="35.6" width="39.8" height="218.4" fill="#FF5A3E"/><text x="832.9" y="272" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Oct 28</text><polyline points="87.1,254.0 149.2,254.0 211.4,254.0 273.5,254.0 335.7,253.6 397.8,251.9 460.0,241.7 522.2,227.6 584.3,194.1 646.5,220.9 708.6,227.8 770.8,172.8 832.9,120.9" fill="none" stroke="#3A6BFF" stroke-width="2.5"/><circle cx="87.1" cy="254.0" r="3" fill="#3A6BFF"/><circle cx="149.2" cy="254.0" r="3" fill="#3A6BFF"/><circle cx="211.4" cy="254.0" r="3" fill="#3A6BFF"/><circle cx="273.5" cy="254.0" r="3" fill="#3A6BFF"/><circle cx="335.7" cy="253.6" r="3" fill="#3A6BFF"/><circle cx="397.8" cy="251.9" r="3" fill="#3A6BFF"/><circle cx="460.0" cy="241.7" r="3" fill="#3A6BFF"/><circle cx="522.2" cy="227.6" r="3" fill="#3A6BFF"/><circle cx="584.3" cy="194.1" r="3" fill="#3A6BFF"/><circle cx="646.5" cy="220.9" r="3" fill="#3A6BFF"/><circle cx="708.6" cy="227.8" r="3" fill="#3A6BFF"/><circle cx="770.8" cy="172.8" r="3" fill="#3A6BFF"/><circle cx="832.9" cy="120.9" r="3" fill="#3A6BFF"/><text x="56" y="294" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B6B6B">Week starting</text></svg>
+<div class="legend"><span><i style="background:#111111"></i>Total shop GMV, weekly</span><span><i style="background:#FF5A3E"></i>Peak week (Oct 28)</span><span><i style="background:#3A6BFF"></i>Neck Lift Stick GMV, weekly</span></div></div>
+<ul class="qlist">
+<li><b>September 15. The Today Show.</b> A segment featured the Neck Lift Stick. It has since generated $11.5K on TikTok Shop.</li>
+<li><b>Week of September 16. One big video.</b> The Body Stick generated $33.3K, largely driven by one @jopickz video that reached 1.5M views.</li>
+<li><b>October 23. A new seller.</b> @tinarene_1 posts a Neck Lift Stick video that has since generated $8.0K and 807 units.</li>
+<li><b>October 25 to 30. A price cut.</b> The Neck Lift Stick drops from $17 to $12.70. 97 Neck Lift Stick videos post the week of October 28, most of them coupon-led. The stick generates $25.6K of a $42.0K week, and October 30 sells 654 units.</li>
+</ul>
+<p class="body-p">Recent weeks will keep collecting GMV as late orders attribute.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">03 &middot; Diagnosis</div>
+<h2>The Neck Lift Stick converts and faces sell. Approved samples are not turning into videos</h2>
+<div class="twocol">
+<div class="panel trig"><h3>Working</h3><ul>
+<li><b>The neck stick converts.</b> 58% of the 393 neck stick videos posted in the window sold at least once. For the Body Stick it was 23% of 882.</li>
+<li><b>Faces sell.</b> 36 videos with a face on camera produced $48.7K, 37% of video GMV from the window. They earned $21.97 per 1,000 views against $7.19 for faceless videos.</li>
+<li><b>Personal stories on the neck.</b> A creator who lost weight and talks about her own neck took $26.1K on the stick across seven videos.</li>
+<li><b>Deal framing for older audiences.</b> Coupon-led neck videos from deal creators with 45 to 55+ audiences sell about 3 to 10 units per 1,000 views.</li>
+<li><b>Subscriptions on the Body Stick.</b> 2,348 new subscriptions in 90 days, with 1,369 active now.</li>
+</ul></div>
+<div class="panel obj"><h3>Not working</h3><ul>
+<li><b>Approved samples are under-posting.</b> 479 approved samples produced 306 posted videos, 0.64 per sample. The house benchmark is about 1.5. 67 approved creators are overdue on their video. Set up CRMs and workflows, and follow up with the overdue creators now.</li>
+<li><b>Price is carried by discounts.</b> The neck stick lists at $17 and realized $9.49 per unit. The Body Stick lists at $20 and realized $13.86. Get content that drives full-price purchases.</li>
+<li><b>The two largest affiliates have stopped posting INKEY.</b> @jopickz posted 81 INKEY videos in August, 19 in September and none since. @justjamiemichelle went from 11 videos and $7.1K in August to 4 videos and $290 in October, while still posting for other brands. Together they hold $208.8K in lifetime INKEY GMV. Re-engage them.</li>
+<li><b>Thin reviews.</b> The neck stick has no reviews. The Body Stick has 15. Shop rating is 4.3, down from 4.5 in August. Set up a Seller Center review campaign with an incentive to post a review.</li>
+</ul></div></div></div></section>
+
+<section class="alt"><div class="wrap"><div class="sec-kicker">04 &middot; Category benchmark</div>
+<h2>Beauty &amp; Personal Care GMV is up 49% in the last 30 days. INKEY&rsquo;s is up 29%</h2>
+<p class="lede">TikTok Shop US market data puts Beauty &amp; Personal Care at $590.4M for October 8 to November 4, 2026, up 49% in GMV on the 28 days before. Most of that lift came from higher order values during TikTok Shop&rsquo;s Deals For You Days window, October 14 to 29. Expect the same event-driven spikes through Black Friday, Cyber Monday and the holiday campaigns for the rest of the year.</p>
+<div class="stats">
+<div class="stat"><div class="num">+49%</div><div class="lbl">Beauty &amp; Personal Care GMV, last 30 days</div></div>
+<div class="stat"><div class="num">+29%</div><div class="lbl">INKEY shop GMV, same window. Below benchmark</div></div>
+<div class="stat"><div class="num">$590.4M</div><div class="lbl">Beauty &amp; Personal Care GMV, Oct 8 to Nov 4</div></div>
+<div class="stat"><div class="num">Oct 14&ndash;29</div><div class="lbl">Deals For You Days, where most of the lift landed</div></div>
+</div>
+<p class="body-p">INKEY grew more slowly than Beauty overall. The category&rsquo;s lift came from higher prices during Deals For You Days, while INKEY cut the neck stick&rsquo;s price to $12.70 on October 25. Holiday events will lift category GMV again, so INKEY&rsquo;s growth is best judged against its own subcategories in section 05.</p>
+<table class="tbl dense"><thead><tr><th>Benchmark</th><th>Window</th><th>Benchmark GMV change</th><th>INKEY</th><th>INKEY GMV change</th><th>Against benchmark</th></tr></thead><tbody>
+<tr class="mbm"><td>Beauty &amp; Personal Care</td><td>Oct 8 to Nov 4 vs prior 28 days</td><td class="n">+49%</td><td>Total shop</td><td class="n">+29%</td><td>Under</td></tr>
+</tbody></table>
+<p class="note">TikTok Shop US marketplace data, pulled November 5, 2026. All figures are GMV at listed price.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">05 &middot; Peer groups</div>
+<h2>The neck stick is beating its category. The Body Stick is trailing its own</h2>
+<h3 style="margin-top:22px">Neck Care</h3>
+<p class="lede"><b>Neck Care did $1.05M in October, up 27% in GMV on September. The Neck Lift Stick grew 465%, from $14.0K to $79.3K, and is overperforming the benchmark.</b> September was its launch month, so part of that is ramp. It ranks fourth in the category with 68 creators. The median of the top six has 1,993.</p>
+<table class="tbl dense"><thead><tr><th>Product</th><th>Price</th><th>Oct GMV</th><th>Oct units</th><th>Creators, lifetime</th><th>Commission</th></tr></thead><tbody>
+<tr><td>Dr.Melaxin Tech Neck Firming Set</td><td class="n">$42.40</td><td class="n">$247.0K</td><td class="n">4,852</td><td class="n">3,198</td><td class="n">15%</td></tr>
+<tr><td>Gopure Neck Cream</td><td class="n">$40.00</td><td class="n">$231.4K</td><td class="n">7,595</td><td class="n">66,474</td><td class="n">20%</td></tr>
+<tr><td>Dr.Melaxin Necksphalt Neck Cream</td><td class="n">$17.60</td><td class="n">$180.2K</td><td class="n">6,066</td><td class="n">787</td><td class="n">15%</td></tr>
+<tr class="mbm"><td>INKEY Bio-Active Neck Lift Stick</td><td class="n">$17.00 ($12.70 shown)</td><td class="n">$79.3K</td><td class="n">5,153</td><td class="n">68</td><td class="n">30%</td></tr>
+<tr><td>Z:SEA Peptide Neck Firming Cream</td><td class="n">$21.90</td><td class="n">$35.5K</td><td class="n">1,371</td><td class="n">5,721</td><td class="n">15%</td></tr>
+<tr><td>Aether &amp; Bloom Retinol Neck Stick</td><td class="n">$9.00 to $20.00</td><td class="n">$33.5K</td><td class="n">3,198</td><td class="n">116</td><td class="n">12%</td></tr>
+<tr class="med"><td>Median, top six</td><td class="n"></td><td class="n">$129.7K</td><td class="n">5,003</td><td class="n">1,993</td><td class="n">15%</td></tr>
+</tbody></table>
+<h3 style="margin-top:30px">Body Scrubs &amp; Peels</h3>
+<p class="lede"><b>Body Scrubs &amp; Peels did $2.57M in October, up 12% in GMV on September. The Glycolic Acid Body Stick grew 1%, from $94.0K to $95.1K, and is underperforming the benchmark.</b> It holds third behind two Dr.Melaxin products.</p>
+<table class="tbl"><thead><tr><th>Product</th><th>Price</th><th>Oct GMV</th><th>Oct units</th><th>Creators, lifetime</th></tr></thead><tbody>
+<tr><td>Dr.Melaxin Peel Shot</td><td class="n">$20.80</td><td class="n">$1,560.2K</td><td class="n">71,634</td><td class="n">7,002</td></tr>
+<tr><td>Dr.Melaxin Body Glow Duo</td><td class="n">$36.00</td><td class="n">$211.7K</td><td class="n">5,404</td><td class="n">Not pulled</td></tr>
+<tr class="mbm"><td>INKEY Glycolic Acid Body Stick</td><td class="n">$20.00</td><td class="n">$95.1K</td><td class="n">4,339</td><td class="n">1,613</td></tr>
+<tr><td>medicube Body Gommage Pad</td><td class="n">$23.00 to $36.00</td><td class="n">$73.5K</td><td class="n">2,977</td><td class="n">1,223</td></tr>
+<tr class="med"><td>Median, these four</td><td class="n"></td><td class="n">$153.4K</td><td class="n">4,872</td><td class="n"></td></tr>
+</tbody></table>
+<p class="note">TikTok Shop US marketplace data, October 1 to 31, 2026. Creator counts are lifetime. The Aether &amp; Bloom stick is the only other stick format in the Neck Care top ten.</p>
+<div class="callout"><div class="ct">Closest analog</div><p>Dr.Melaxin&rsquo;s Necksphalt neck cream is the model for the neck stick. It sits at $17.60, sold 6,066 units in October against INKEY&rsquo;s 5,153, and took $180.2K. It got there with 787 creators. INKEY already matches its unit pace with one eleventh of the creators.</p></div>
+</div></section>
+
+<section class="alt"><div class="wrap"><div class="sec-kicker">06 &middot; The gaps</div>
+<h2>Where the revenue is sitting</h2>
+<div class="gapgrid">
+<div class="gap"><div class="gt">Neck stick creator base</div><div class="gn">+$100.9K / month</div><p>The October gap to Dr.Melaxin&rsquo;s same-price neck cream, on marketplace GMV. Recruit the 63 Neck Lift Stick creators on our Top 100, then scale with creators who sell competing products. INKEY has 68 sellers today. Dr.Melaxin&rsquo;s neck cream has 787.</p></div>
+<div class="gap"><div class="gt">Posts per approved sample</div><div class="gn">0.64 vs 1.5</div><p>At the house rate of about 1.5 videos per approved sample, the window&rsquo;s 479 approvals would have produced about 720 videos instead of 306. Assumption: house benchmark applied to INKEY&rsquo;s approval count. Follow-up on the 67 overdue creators is the first step.</p></div>
+<div class="gap"><div class="gt">GMV Max into Black Friday</div><div class="gn">2.5x ROAS assumed</div><p>Audit current GMV Max campaigns and move the best Neck Lift Stick and Body Stick videos into them. The neck stick has 393 videos from the window and the Body Stick 882, well past the readiness bar of about 50 per hero.</p></div>
+<div class="gap"><div class="gt">Body Stick decline</div><div class="gn">&minus;$25.0K / week</div><p>From $33.3K in the week of September 16 to $8.3K in the week of October 28. Part of this is seasonal. The 1,369 active subscribers are the base to protect into January. Send new outreach and set up CRMs and workflows.</p></div>
+<div class="gap"><div class="gt">Spanish-language content</div><div class="gn">5 videos in 90 days</div><p>One Spanish-language creator took $15.9K on the Body Stick with stitch replies. Seed more Spanish-speaking creators.</p></div>
+</div></div></section>
+
+<section class="dark"><div class="wrap"><div class="sec-kicker">07 &middot; Plan of action</div>
+<h2>What Third starts this week, ahead of BFCM</h2>
+<p class="lede">In scope: Shop Ops Mgt, Affiliate Mgt, Paid Media Services, Creator Agency Partner Mgt and Performance Creative (10 videos a quarter). Livestreaming is out of scope. The Spanish cohort is subject to claim sign-off.</p>
+<div class="phases">
+<div class="phase"><div class="when">01 &middot; Affiliate</div><h3>Housekeeping, seeding and winback</h3><p><b>Housekeeping.</b> Follow up with the 67 overdue creators for content. Set up CRMs and workflows to move 0.64 videos per sample toward 1.5.</p><p><b>Seed the Top 100.</b> Neck Lift Stick first: 81 of the 100 have sold a competitor but never INKEY. Then the Body Stick.</p><p><b>Target Plan.</b> Skincare and Spanish-speaking creators, and creators who sell competing brands.</p><p><b>Open Plan.</b> Audit and refine the open plan so INKEY has fewer samples to sift through.</p><p><b>Creator winback.</b> Email @jopickz and @justjamiemichelle ($208.8K in lifetime GMV) to win them back. Paid offers if necessary.</p></div>
+<div class="phase"><div class="when">02 &middot; Paid Media</div><h3>Audit GMV Max and feed it the best videos</h3><p>Audit current campaigns. Move the best Neck Lift Stick and Body Stick videos into GMV Max. Measure on cost per order from a 2.5x ROAS baseline (assumption).</p></div>
+<div class="phase"><div class="when">03 &middot; Performance Creative</div><h3>Start production on what is working</h3><p>Start production on Neck Lift Stick and Body Stick videos. Build on what works: the neck problem in the first line, face and neck on camera, and storytelling.</p></div>
+<div class="phase"><div class="when">04 &middot; Shop Ops</div><h3>Start a post-purchase review campaign</h3><p>Set up a post-purchase review campaign in Seller Center that gives buyers an incentive to leave a review.</p></div>
+<div class="phase"><div class="when">Every week</div><h3>Report on what drives GMV</h3><p>We report GMV-producing creator rate, GMV per sample sent, GMV per 1,000 views by angle, cost per order and days of inventory cover.</p></div>
+</div></div></section>
+
+<section><div class="wrap"><div class="sec-kicker">08 &middot; For today&rsquo;s meeting</div>
+<h2>Eight answers we need from INKEY today</h2>
+<ul class="qlist">
+<li>BFCM discounts on each product.</li>
+<li>Confirmation of Neck Lift Stick stock to meet demand. At the current rate, 8,031 on hand is about six weeks.</li>
+<li>The monthly paid budget, and confirmation of the GMV Max ROAS baseline and goal.</li>
+<li>Messaging do&rsquo;s and don&rsquo;ts for the creative brief.</li>
+<li>How creators have been chosen for Target Plan invites: creator level, post rate, follower count, category.</li>
+<li>How many samples INKEY can ship each month, by product.</li>
+<li>Limiting the open plan to the two sticks, with refundable samples on. 50 of 52 live products are on it today.</li>
+<li>A green light on a post-purchase review request on the neck and body sticks.</li>
+</ul>
+<div class="companions"><div class="ct">Companion documents</div><ul>
+<li><b>Buyer Persona</b> &middot; who buys the two sticks, what moves them and what stops them.</li>
+<li><b>Commerce Creator Persona</b> &middot; which creators convert, how to tier them and how many exist.</li>
+<li><b>Informed Creative Brief</b> &middot; the Neck Lift Stick brief for creators.</li>
+<li><b>Top 100 Commerce Creators</b> &middot; ranked list with buckets, reasons and the hero to seed.</li>
+</ul></div></div></section>
+
+<section class="dark"><div class="wrap"><div class="sec-kicker">09 &middot; Risks and data notes</div>
+<h2>What could change this read</h2>
+<div class="risks">
+<div class="risk"><div class="rt">Discount dependency</div><p>Both sticks are realizing well under list. The best week of the 13 followed a price cut on the neck stick to $12.70. If Black Friday pricing goes deeper, units rise and GMV per unit falls. Deal-led creators convert best on the neck stick, so a price change after the peak will show up in their numbers first.</p></div>
+<div class="risk"><div class="rt">Neck stick inventory</div><p>About six weeks of cover at current pace, before any Black Friday lift or paid spend. A stockout would stop the creator pipeline we are building.</p></div>
+<div class="risk"><div class="rt">Concentration</div><p>Ten videos produced 53% of video GMV. New creators take 2 to 6 weeks to show up in GMV, since that is how long a sample takes to become a video.</p></div>
+<div class="risk"><div class="rt">Thin review base</div><p>No neck stick reviews and 15 Body Stick reviews. The buyer persona and brief lean on competitor reviews and on what selling videos say, and are marked provisional.</p></div>
+<div class="risk"><div class="rt">Two GMV bases</div><p>Shop figures are INKEY&rsquo;s own shop data at realized prices. Market figures are marketplace GMV at listed price, about 1.5 times higher for INKEY on the same units. All GMV is gross TikTok-attributed GMV, not net revenue.</p></div>
+</div></div></section>
+<footer><div class="wrap"><span>THIRD. &middot; The INKEY List &middot; Strategy</span><span>Data: TikTok Shop US marketplace intelligence &middot; shop data Aug 6 to Nov 3, 2026 &middot; market data October 2026</span></div></footer>
+</body></html>
