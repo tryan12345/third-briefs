@@ -1,0 +1,377 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tangle Teezer Relaunch Thesis</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
+section.alt .companions{background:#fff;}
+.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.companions ul{list-style:none;margin-top:12px;}
+.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
+.companions li:first-child{border-top:none;}
+.companions li b{font-weight:700;color:var(--ink);}
+.hooks{margin-top:22px;display:grid;gap:12px;}
+.hook{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;}
+.hook .rank{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tomato);}
+.hook .quote{font-size:16px;font-weight:700;line-height:1.35;}
+.hook .meta{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.hook .why{margin-top:9px;font-size:14px;color:#333;}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.dodont .panel.do{border-top:6px solid var(--c4);}
+.dodont .panel.dont{border-top:6px solid var(--c8);}
+.quotebox{margin-top:20px;display:grid;gap:10px;}
+.qb{background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c5);border-radius:12px;padding:16px 20px;font-size:15px;color:#333;}
+.qb .src{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+.qb.neg{border-left-color:var(--c8);}
+.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--ink);color:#fff;padding:7px 12px;border-radius:6px;}
+.chip.alt2{background:var(--c6);} .chip.alt3{background:var(--c7);} .chip.alt4{background:var(--c4);color:var(--ink);}
+.gate{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;margin-top:12px;border-left:6px solid var(--c5);}
+.gate .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gate h3{margin-top:8px;font-size:17px;}
+.gate p{margin-top:9px;font-size:14px;color:#333;}
+@media(max-width:760px){.dodont{grid-template-columns:1fr;}.hook{grid-template-columns:1fr;gap:8px;}}
+.tbl tr.mbm td{background:#FFF1EE;font-weight:700;border-top:2px solid var(--tomato);border-bottom:2px solid var(--tomato);}
+.tbl tr.med td{background:#FAFAF8;font-weight:700;}
+.tbl tr.ex td{color:#9A9A9A;}
+.tbl td.r,.tbl th.r{text-align:right;}
+.tbl.dense td{padding:9px 14px;font-size:13px;}
+.tbl.dense th{padding:11px 14px;}
+.chart{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 20px 14px;}
+.chart svg{width:100%;height:auto;display:block;}
+.legend{display:flex;gap:22px;flex-wrap:wrap;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:7px;vertical-align:-1px;}
+.qlist{list-style:none;margin-top:14px;}
+.qlist li{padding:11px 0;border-top:1px solid #EDEDEA;font-size:15px;color:#333;}
+.qlist li:first-child{border-top:none;}
+.gapgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px;}
+.gap{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;border-left:6px solid var(--tomato);}
+.gap .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gap .gn{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;}
+.gap p{margin-top:8px;font-size:14px;color:#333;}
+@media(max-width:760px){.gapgrid{grid-template-columns:1fr;}}
+/* page-contract additions: side gutter and narrow-screen fit */
+:root{color-scheme:light}
+.wrap{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));}
+@media(max-width:480px){.stats{grid-template-columns:1fr;}.statement{padding:24px;}.chart{padding:14px 10px 10px;}}
+
+.glance{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+.gl{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 22px;display:grid;grid-template-columns:44px 1fr;gap:14px;}
+.gl .i{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:#fff;background:var(--tomato);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.gl .n{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;}
+.gl p{margin-top:6px;font-size:15px;color:#333;}
+.takeaway{margin-top:18px;font-size:16px;font-weight:700;max-width:720px;}
+.chart h4{font-size:15px;font-weight:700;margin-bottom:10px;}
+.chart .cap{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mid);}
+.terms{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 28px;margin-top:16px;}
+.terms div{font-size:14px;color:#333;padding:8px 0;border-top:1px solid #EDEDEA;}
+.terms b{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink);margin-right:6px;}
+.formula{margin-top:20px;background:var(--ink);color:#fff;border-radius:12px;padding:22px 24px;font-family:'IBM Plex Mono',monospace;font-size:15px;line-height:1.7;}
+.formula span{color:var(--c3);}
+@media(max-width:760px){.glance,.terms{grid-template-columns:1fr;}}
+</style>
+
+<div class="hero"><div class="wrap"><div class="kicker">THIRD. &middot; Tangle Teezer &middot; Relaunch thesis &middot; Draft 3</div><h1>Tangle Teezer &times; TikTok Shop US</h1><p class="sub">What a January 1, 2027 relaunch can do, and what it takes to get there.</p></div></div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<section><div class="wrap"><div class="sec-kicker">01 &middot; At a glance</div><h2>Brushes sell on TikTok through creator video. Tangle Teezer can win by matching the brush to the hair type.</h2>
+<div class="glance">
+<div class="gl"><div class="i">1</div><div><div class="n">$276.8K</div><p>What a typical competing brush line sold on TikTok Shop in the last 90 days. The category is big.</p></div></div>
+<div class="gl"><div class="i">2</div><div><div class="n">77%</div><p>Share of Wet Brush's TikTok sales that come through creators. Creators do the selling here.</p></div></div>
+<div class="gl"><div class="i">3</div><div><div class="n">7 vs 1,710</div><p>New videos linked to Tangle Teezer vs Wet Brush in 90 days. Tangle Teezer starts close to zero.</p></div></div>
+<div class="gl"><div class="i">4</div><div><div class="n">$624K</div><p>Our base case for Tangle Teezer TikTok Shop sales in 2027, ending the year near $90K a month.</p></div></div>
+</div>
+<div class="statement"><div class="tag">The bet</div><p>Shoppers ask one question before buying a detangling brush: which one is right for my hair? Tangle Teezer's range answers it. Creators with that hair type show the answer on camera.</p><p class="detail">The 2024 shop was run as a social channel. We plan from a clean start: nine products, Amazon fulfillment, and a shop run for sales.</p></div>
+</div></section>
+
+<section class="alt"><div class="wrap"><div class="sec-kicker">02 &middot; The market</div><h2>Competing brush lines sell $100K to $640K every 90 days</h2>
+<div class="chart"><h4>TikTok Shop US sales, last 90 days</h4>
+<svg viewBox="0 0 700 186" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="188" y="26" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="500" fill="#111111">Unbrush, top 10 brushes</text>
+<rect x="200" y="12" width="364.0" height="20" rx="3" fill="#111111" fill-opacity="0.75"/>
+<text x="572.0" y="27" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="600" fill="#111111">$637,037</text>
+<text x="188" y="60" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="500" fill="#111111">medicube glass brush</text>
+<rect x="200" y="46" width="243.7" height="20" rx="3" fill="#111111" fill-opacity="0.75"/>
+<text x="451.7" y="61" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="600" fill="#111111">$426,538</text>
+<text x="188" y="94" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="500" fill="#111111">HAIRtamin Miracle Brush</text>
+<rect x="200" y="80" width="158.2" height="20" rx="3" fill="#111111" fill-opacity="0.75"/>
+<text x="366.2" y="95" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="600" fill="#111111">$276,768</text>
+<text x="188" y="128" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="500" fill="#111111">Wet Brush, whole shop</text>
+<rect x="200" y="114" width="73.3" height="20" rx="3" fill="#111111" fill-opacity="0.75"/>
+<text x="281.3" y="129" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="600" fill="#111111">$128,237</text>
+<text x="188" y="162" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="500" fill="#111111">Kitsch, 5 detanglers</text>
+<rect x="200" y="148" width="60.0" height="20" rx="3" fill="#111111" fill-opacity="0.75"/>
+<text x="268.0" y="163" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="600" fill="#111111">$104,967</text>
+</svg>
+<div class="cap">Aug 8 to Nov 5, 2026. Brush listings only. Kitsch covers five detanglers, so it is a floor.</div></div>
+<div class="callout"><div class="ct">The brand to copy: Wet Brush</div><p>An older detangler brand that joined TikTok Shop late, in August 2025. It now sells about $9,900 a week. Creators drive 77% of sales, and it pays to boost the creator videos that already sell.</p></div>
+<p class="takeaway">Shoppers here will pay $13 to $31 for a brush. Price is not what holds a brand back.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">03 &middot; Content and creators</div><h2>Competitors post hundreds of videos a month. Tangle Teezer posted 7 in three months.</h2>
+<div class="chart"><h4>New videos linked to the shop, last 90 days</h4>
+<svg viewBox="0 0 700 118" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="188" y="26" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="500" fill="#111111">FHI Heat (Unbrush)</text>
+<rect x="200" y="12" width="400.0" height="20" rx="3" fill="#111111" fill-opacity="0.75"/>
+<text x="608.0" y="27" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="600" fill="#111111">9,346</text>
+<text x="188" y="60" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="500" fill="#111111">Wet Brush</text>
+<rect x="200" y="46" width="73.2" height="20" rx="3" fill="#111111" fill-opacity="0.75"/>
+<text x="281.2" y="61" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="600" fill="#111111">1,710</text>
+<text x="188" y="94" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#111111">Tangle Teezer</text>
+<rect x="200" y="80" width="2.0" height="20" rx="3" fill="#FF5A3E" fill-opacity="1"/>
+<text x="210.0" y="95" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="600" fill="#111111">7</text>
+</svg>
+</div>
+<div class="chart"><h4>New creators selling for the shop, last 90 days</h4>
+<svg viewBox="0 0 700 118" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="188" y="26" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="500" fill="#111111">FHI Heat (Unbrush)</text>
+<rect x="200" y="12" width="400.0" height="20" rx="3" fill="#111111" fill-opacity="0.75"/>
+<text x="608.0" y="27" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="600" fill="#111111">5,172</text>
+<text x="188" y="60" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="500" fill="#111111">Wet Brush</text>
+<rect x="200" y="46" width="80.7" height="20" rx="3" fill="#111111" fill-opacity="0.75"/>
+<text x="288.7" y="61" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="600" fill="#111111">1,043</text>
+<text x="188" y="94" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#111111">Tangle Teezer</text>
+<rect x="200" y="80" width="2.0" height="20" rx="3" fill="#FF5A3E" fill-opacity="1"/>
+<text x="210.0" y="95" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="600" fill="#111111">9</text>
+</svg>
+<div class="cap">FHI Heat is the shop that sells Unbrush. Its totals include its hot tools.</div></div>
+<h3 style="margin-top:34px">The right product sells more per video</h3>
+<p class="body-p">Licensed and novelty brushes sell more with fewer videos. Volume still matters, but a hook multiplies it.</p>
+<table class="tbl dense"><thead><tr><th>Brush</th><th class="r">Videos</th><th class="r">Sales, 28 days</th><th>Hook</th></tr></thead><tbody>
+<tr><td>Wet Brush x Bluey</td><td class="n r">184</td><td class="n r">$18,455</td><td>Kids, licensed</td></tr>
+<tr><td>Unbrush Nightmare Before Christmas</td><td class="n r">651</td><td class="n r">$50,538</td><td>Seasonal, licensed</td></tr>
+<tr><td>medicube glass brush</td><td class="n r">3,506</td><td class="n r">$140,765</td><td>Novel material</td></tr>
+<tr><td>Unbrush OG</td><td class="n r">20,761</td><td class="n r">$23,268</td><td>None. Plain detangler</td></tr>
+</tbody></table>
+<div class="twocol">
+<div class="panel trig"><h3>What Tangle Teezer has</h3><ul>
+<li><b>545 past creators</b> to bring back</li>
+<li><b>Proof hair type sells.</b> Its best seller was the curly brush, and its top creator was a curl account</li>
+<li><b>210.5K followers</b> on the brand account</li>
+</ul></div>
+<div class="panel obj"><h3>What it is missing</h3><ul>
+<li><b>New content.</b> Its best videos are from 2024</li>
+<li><b>A US brand account.</b> The current one is UK-based, so it cannot link to US products</li>
+<li><b>Paid support</b> behind any video</li>
+</ul></div>
+</div>
+</div></section>
+
+<section class="alt"><div class="wrap"><div class="sec-kicker">04 &middot; Goals</div><h2>Each goal has one lever and one number we report</h2>
+<table class="tbl"><thead><tr><th>Goal</th><th>The lever</th><th>What we report each month</th></tr></thead><tbody>
+<tr><td><b>US awareness</b></td><td>Lots of creator video, then ads behind the best</td><td>Views and new creators</td></tr>
+<tr><td><b>Teach hair types</b></td><td>One hero brush per hair type, each with matched creators</td><td>Sales by hair type</td></tr>
+<tr><td><b>Lift Amazon</b></td><td>TikTok shoppers who search Amazon for the brand</td><td>Extra Amazon sales per $1 of TikTok sales</td></tr>
+<tr><td><b>End 2027 profitable</b></td><td>Margin per order covers samples, fees and ads by Q4</td><td>Monthly TikTok Shop profit and loss</td></tr>
+</tbody></table>
+<div class="twocol">
+<div class="panel"><h3>Look and feel: Summer Fridays</h3><ul><li>Few discounts. The shop looks like the brand, and creators do the selling.</li></ul></div>
+<div class="panel"><h3>Live shopping: Kitsch</h3><ul><li>Strong, regular lives. We add live once creator sales are moving.</li></ul></div>
+</div>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">05 &middot; What we sell</div><h2>Three hair-type heroes do the volume. Chrome raises the average price.</h2>
+<table class="tbl"><thead><tr><th>Hero</th><th>Why it leads</th><th>Proof it sells in the category</th></tr></thead><tbody>
+<tr><td><b>Fine &amp; Fragile</b></td><td>Strong 2024 seller</td><td>Unbrush Plus, made for fragile hair: 133.1K sold at $23.40</td></tr>
+<tr><td><b>Naturally Curly</b></td><td>Best 2024 seller: 890 units, $15K</td><td>HAIRtamin Miracle Brush: $42K in 28 days at about $31</td></tr>
+<tr><td><b>Ultimate Detangler</b></td><td>The wet and dry brush for every hair type</td><td>Kitsch Black Detangling Brush: $26.5K in 28 days</td></tr>
+<tr><td><b>Chrome</b></td><td>Giftable, higher price, eye-catching on video</td><td>Unbrush Chrome: 6.9K sold at $23.40</td></tr>
+</tbody></table>
+<p class="note">Sold counts are lifetime totals on each TikTok Shop listing. Larger brushes ride on hero traffic. We found no large brush selling at volume to compare against.</p>
+<div class="stats">
+<div class="stat"><div class="num">$19.72</div><div class="lbl">Average price per brush on the 2024 shop</div></div>
+<div class="stat"><div class="num">$22&ndash;25</div><div class="lbl">Target average price with Chrome, matte and larger brushes</div></div>
+<div class="stat"><div class="num">$30&ndash;34</div><div class="lbl">Target price for a full-size + mini duo</div></div>
+<div class="stat"><div class="num">0</div><div class="lbl">New bundle SKUs needed. Duos run as multi-buy offers</div></div>
+</div>
+<h3 style="margin-top:34px">Bundles</h3>
+<div class="tiers">
+<div class="tier a"><span class="ctag">Launch</span><h3>Full-size + mini duo</h3><p>For home and travel, and an easy gift.</p><div class="row"><b>Proof:</b> Unbrush sells a full-size + mini duo on a listing with 10.2K sold. Tangle Teezer sells one on its own US site for $25.07.</div></div>
+<div class="tier b"><span class="ctag">If a kids brush is added</span><h3>Parent + kid duo</h3><p>One order for the parent and the child.</p><div class="row"><b>Proof:</b> Wet Brush's Disney and Bluey kids brushes sell $18K to $23K each every 28 days.</div></div>
+<div class="tier c"><span class="ctag">Skip</span><h3>Three-color set</h3><p>Clashes with one color per hair type, and teaches shoppers to wait for a discount.</p><div class="row"><b>Seen at:</b> Kitsch, 35% off.</div></div>
+</div>
+<p class="takeaway">Duos run as a buy-two offer on the single brushes. Amazon ships two units in one box, so nothing new gets packed.</p>
+</div></section>
+
+<section class="dark"><div class="wrap"><div class="sec-kicker">06 &middot; The plan</div><h2>Send samples in December so videos post on launch day</h2>
+<p class="lede">Each creator sample turns into about 1.5 videos, two to six weeks after it arrives. Samples sent in January mean videos in mid-February.</p>
+<div class="grid3">
+<div class="cell"><div class="num">50+ a week</div><div class="lbl">New videos at launch</div></div>
+<div class="cell"><div class="num">~50 per hero</div><div class="lbl">Videos before we turn on TikTok's shop ads</div></div>
+<div class="cell"><div class="num">2,000 a month</div><div class="lbl">New videos by about day 90</div></div>
+</div>
+<div class="phases">
+<div class="phase"><div class="when">December 2026</div><h3>Get ready</h3><p>Shop and product pages live by December 15. Send about 150 samples. Open a US brand account. Test that Amazon orders ship on time and in plain boxes.</p></div>
+<div class="phase"><div class="when">January 2027</div><h3>Launch creators</h3><p>300 samples. Pay creators 15% to 20% commission, more for top curl, fine-hair and beauty creators. Match each creator to the brush for their hair.</p></div>
+<div class="phase"><div class="when">February to March 2027</div><h3>Scale and add ads</h3><p>400, then 500 samples. Turn on TikTok's shop ads for each hero once it has about 50 videos. Judge ads by cost per order.</p></div>
+<div class="phase"><div class="when">Q2 2027</div><h3>Test live</h3><p>A weekly hair-type live hosted by a creator. Then co-hosted lives with a partner brand.</p></div>
+<div class="phase"><div class="when">2027 to 2028</div><h3>Product launch</h3><p>The next new product becomes the first big live event.</p></div>
+</div>
+</div></section>
+
+<section class="alt"><div class="wrap"><div class="sec-kicker">07 &middot; Amazon lift</div><h2>We report one number: extra Amazon sales for every $1 sold on TikTok</h2>
+<div class="formula">Amazon lift on the 9 TikTok products<br><span>minus</span> Amazon lift on products not on TikTok<br><span>divided by</span> TikTok Shop sales</div>
+<p class="body-p">Subtracting the products that are not on TikTok removes seasonality and Amazon promotions. We also check whether Amazon searches jump in the days after a TikTok video takes off.</p>
+<p class="takeaway">The baseline has to start in November, before launch, or there is nothing to compare against.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">08 &middot; Scenarios</div><h2>Base case: $624K in 2027, passing Wet Brush's monthly sales by June</h2>
+<div class="chart"><h4>Monthly TikTok Shop sales, 2027</h4>
+<svg viewBox="0 0 930 325" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Monthly sales by scenario, 2027">
+<line x1="60" x2="760" y1="290.0" y2="290.0" stroke="#EDEDEA"/><text x="52" y="294.0" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">$0K</text>
+<line x1="60" x2="760" y1="227.5" y2="227.5" stroke="#EDEDEA"/><text x="52" y="231.5" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">$50K</text>
+<line x1="60" x2="760" y1="165.0" y2="165.0" stroke="#EDEDEA"/><text x="52" y="169.0" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">$100K</text>
+<line x1="60" x2="760" y1="102.5" y2="102.5" stroke="#EDEDEA"/><text x="52" y="106.5" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">$150K</text>
+<line x1="60" x2="760" y1="40.0" y2="40.0" stroke="#EDEDEA"/><text x="52" y="44.0" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">$200K</text>
+<text x="60.0" y="310" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">Jan</text>
+<text x="123.6" y="310" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">Feb</text>
+<text x="187.3" y="310" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">Mar</text>
+<text x="250.9" y="310" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">Apr</text>
+<text x="314.5" y="310" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">May</text>
+<text x="378.2" y="310" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">Jun</text>
+<text x="441.8" y="310" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">Jul</text>
+<text x="505.5" y="310" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">Aug</text>
+<text x="569.1" y="310" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">Sep</text>
+<text x="632.7" y="310" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">Oct</text>
+<text x="696.4" y="310" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">Nov</text>
+<text x="760.0" y="310" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">Dec</text>
+<line x1="60" x2="760" y1="236.6" y2="236.6" stroke="#3A6BFF" stroke-dasharray="5 4" stroke-width="1.5"/>
+<polyline points="60.0,286.2 123.6,282.5 187.3,277.5 250.9,272.5 314.5,267.5 378.2,258.8 441.8,255.0 505.5,251.2 569.1,247.5 632.7,243.8 696.4,240.0 760.0,240.0" fill="none" stroke="#111111" stroke-opacity="0.35" stroke-width="2"/>
+<text x="770" y="246.0" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#111111">Conservative: $40K/mo</text><text x="770" y="261.0" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">$286K for the year</text>
+<polyline points="60.0,280.0 123.6,265.0 187.3,233.8 250.9,215.0 314.5,190.0 378.2,165.0 441.8,140.0 505.5,115.0 569.1,90.0 632.7,65.0 696.4,40.0 760.0,40.0" fill="none" stroke="#111111" stroke-opacity="0.6" stroke-width="2"/>
+<text x="770" y="38.0" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#111111">Upside: $200K/mo</text><text x="770" y="53.0" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">$1,313K for the year</text>
+<polyline points="60.0,283.8 123.6,275.0 187.3,258.8 250.9,250.0 314.5,240.0 378.2,227.5 441.8,217.5 505.5,207.5 569.1,197.5 632.7,187.5 696.4,177.5 760.0,177.5" fill="none" stroke="#FF5A3E" stroke-opacity="1" stroke-width="3.5"/>
+<text x="770" y="175.5" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#111111">Base: $90K/mo</text><text x="770" y="190.5" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B6B6B">$624K for the year</text>
+</svg>
+<div class="legend"><span><i style="background:#FF5A3E"></i>Base</span><span><i style="background:#111111;opacity:.6"></i>Upside</span><span><i style="background:#111111;opacity:.35"></i>Conservative</span><span><i style="background:#3A6BFF"></i>Wet Brush today, $42.7K a month</span></div></div>
+<div class="tiers">
+<div class="tier c"><span class="ctag">Conservative &middot; $286K</span><p>Samples or stock arrive late. Video stays near the launch minimum.</p></div>
+<div class="tier a"><span class="ctag">Base &middot; $624K</span><p>Samples run on plan. Ads start in March. About 2,000 new videos a month by Q2.</p></div>
+<div class="tier b"><span class="ctag">Upside &middot; $1.3M</span><p>One hero brush has a breakout video, and ads scale it.</p></div>
+</div>
+<h3 style="margin-top:34px">Breaking even</h3>
+<p class="body-p">Q1 loses money while samples go out. Q3 and Q4 have to earn it back. The rule of thumb for every $10K of monthly cost:</p>
+<div class="stats">
+<div class="stat"><div class="num">$29K</div><div class="lbl">Monthly sales needed if each order keeps 35% after costs</div></div>
+<div class="stat"><div class="num">$40K</div><div class="lbl">Monthly sales needed if each order keeps 25%</div></div>
+</div>
+<p class="note">To finish the math we need product cost and Amazon fulfillment cost per unit. Sales figures are gross TikTok sales before returns, not net revenue.</p>
+</div></section>
+
+<section class="dark"><div class="wrap"><div class="sec-kicker">09 &middot; Risks</div><h2>What could slow this down</h2>
+<div class="risks">
+<div class="risk"><div class="rt">No December samples</div><p>The whole plan shifts about six weeks later.</p></div>
+<div class="risk"><div class="rt">Slow Amazon shipping</div><p>Late orders hurt the shop's ranking. We test it in December.</p></div>
+<div class="risk"><div class="rt">Retail price clashes</div><p>TikTok offers have to respect prices at Ulta, Amazon, Target and CVS. Revolve already sells Tangle Teezer on TikTok.</p></div>
+<div class="risk"><div class="rt">New brand account</div><p>It starts with zero followers, so creators carry the first six months.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">10 &middot; What we need from you</div><h2>Eight answers to finish the plan</h2>
+<ul class="qlist">
+<li>1. The final nine products, with prices and launch stock.</li>
+<li>2. Product cost and Amazon fulfillment cost per unit.</li>
+<li>3. How many samples you can send each month, starting with about 150 in December.</li>
+<li>4. Amazon sales and search data access, so the baseline starts now.</li>
+<li>5. Your 2027 promotions and media calendar.</li>
+<li>6. Price floors at each retailer, and how to handle Revolve on TikTok.</li>
+<li>7. A yes or no on a US brand account linked to the shop.</li>
+<li>8. Brands you would co-host lives with, and the next launch date.</li>
+</ul>
+<h3 style="margin-top:34px">Terms used</h3>
+<div class="terms">
+<div><b>Sales</b>Gross TikTok Shop sales (GMV), before returns and fees</div>
+<div><b>Videos</b>Creator videos with a link to the product</div>
+<div><b>TikTok's shop ads</b>GMV Max, TikTok's automated ads for shop products</div>
+<div><b>Amazon fulfillment</b>Amazon Multi-Channel Fulfillment (MCF) shipping TikTok orders</div>
+</div>
+</div></section>
+
+<footer><div class="wrap"><span>THIRD. &middot; Tangle Teezer &middot; Relaunch thesis &middot; Draft 3</span><span>Market data: TikTok Shop US, Aug 8 to Nov 5, 2026</span></div></footer>
+</body></html>
