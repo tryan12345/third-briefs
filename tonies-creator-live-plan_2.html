@@ -1,178 +1,91 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>tonies Creator Live Tactical Plan</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Martian+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>:root{
-  --tomato:#FF5A3E;
-  --lime:#A2F09F; --citron:#F4FD8D; --cobalt:#3A87E6; --pink:#F186FF;
-  --plum:#8F0846; --turquoise:#BDEAEA; --lavender:#BAB6FD; --warmgray:#C9CDC6;
-  --ink:#1C1917; --ink-2:#44403C; --muted:#78716C; --faint:#A8A29E;
-  --line:#E7E5E4; --surface:#FFFFFF; --surface-2:#F5F5F4; --page:#FFFFFF;
-  --ok-bg:#D1FAE5; --ok-fg:#047857;
-  --wait-bg:#FEF3C7; --wait-fg:#B45309; --wait-line:#F59E0B;
-  --bad-bg:#FEE2E2; --bad-fg:#B91C1C;
+  --tomato:#F7674C; --citron:#F7FE9C; --lime:#B4EFA8; --turquoise:#C7EAEA;
+  --pink:#E48CF9; --lavender:#BAB7F9; --warmgray:#CBCEC8; --plum:#841C46;
+  --ink:#0A0A0A; --white:#FFFFFF; --gray:#6B6B6B; --gray-dark:#A8A8A8;
+  --line:1.5px solid var(--ink); --radius:14px; --radius-pill:999px;
+  --sans:'Inter Tight', Arial, sans-serif; --mono:'Martian Mono','Courier New',monospace;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{
-  margin:0; background:var(--page); color:var(--ink);
-  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
-  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
-}
-
-/* ---- hero ---- */
-.hero{background:var(--tomato);color:#fff;padding:44px 24px 40px}
-.hero-inner{max-width:760px;margin:0 auto}
-.wordmark{
-  font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-weight:600;font-size:15px;letter-spacing:.06em;color:#fff;margin:0 0 30px;
-}
-.kicker{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;
-  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
-  color:rgba(255,255,255,.82);margin:0 0 12px;
-}
-.hero h1{
-  font-family:'Inter',sans-serif;font-weight:800;font-size:42px;line-height:1.04;
-  letter-spacing:-.025em;margin:0;color:#fff;text-wrap:balance;
-}
-.hero .lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.92);max-width:62ch}
-
-/* ---- nine-color strip ---- */
-.strip{display:flex;height:10px;width:100%}
-.strip span{flex:1 1 0}
-.s1{background:var(--lime)}      .s2{background:var(--citron)}
-.s3{background:var(--tomato)}    .s4{background:var(--cobalt)}
-.s5{background:var(--pink)}      .s6{background:var(--plum)}
-.s7{background:var(--turquoise)} .s8{background:var(--lavender)}
-.s9{background:var(--warmgray)}
-
-/* ---- layout ---- */
-.container{max-width:760px;margin:0 auto;padding:0 24px}
-section{margin-top:48px}
-.eyebrow{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;
-  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
-  color:var(--tomato);margin:0 0 14px;
-}
-.card{border:1px solid var(--line);border-radius:4px;padding:26px;margin-bottom:16px;background:var(--surface)}
-.card h2{font-family:'Inter',sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
-.card h3{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;
-  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
-  color:var(--muted);margin:22px 0 8px;
-}
-.card p{margin:0 0 14px;color:var(--ink-2)}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.container{max-width:820px;margin:0 auto;padding:0 24px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:56px}
+.wordmark{font-family:var(--sans);font-weight:800;font-size:28px;letter-spacing:-.03em;margin:0}
+.tag{font-family:var(--mono);font-weight:400;font-size:10px;text-transform:uppercase;letter-spacing:.04em}
+.hero{background:var(--tomato);padding:32px 0 64px}
+.hero h1{font-weight:400;font-size:72px;line-height:1;letter-spacing:-.02em;margin:14px 0 0}
+.hero .lede{margin:18px 0 0;font-size:20px;line-height:1.4;max-width:58ch}
+.band{padding:56px 0}
+.bg-citron{background:var(--citron)} .bg-lime{background:var(--lime)} .bg-turquoise{background:var(--turquoise)}
+.bg-pink{background:var(--pink)} .bg-lavender{background:var(--lavender)} .bg-ink{background:var(--ink);color:var(--white)}
+.pill{display:inline-block;font-family:var(--mono);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.02em;background:var(--white);border:var(--line);border-radius:var(--radius-pill);padding:5px 14px;margin:0 0 16px}
+.p-citron{background:var(--citron)} .p-lime{background:var(--lime)} .p-turquoise{background:var(--turquoise)} .p-pink{background:var(--pink)} .p-lavender{background:var(--lavender)}
+.card{background:var(--white);border:var(--line);border-radius:var(--radius);padding:28px;margin-bottom:16px}
+.card h2{font-weight:400;font-size:32px;line-height:1.1;letter-spacing:-.02em;margin:0 0 14px}
+.card h3{font-family:var(--mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;margin:26px 0 8px}
+.card p{margin:0 0 14px}
 .card p:last-child{margin-bottom:0}
-.meta{font-size:15px;color:var(--muted)}
-
-/* ---- metrics in IBM Plex Mono ---- */
-.metric{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;
-  font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.03em;
-  color:var(--tomato);margin:20px 0 10px;
-}
-.label{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;
-  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
-}
-
-/* ---- provisional ---- */
-.provisional{background:var(--wait-bg);border-left:4px solid var(--wait-line);border-radius:2px;padding:20px 22px;margin-bottom:16px}
-.provisional p{color:var(--wait-fg);margin:0;font-size:15px}
-.provisional p + p{margin-top:10px}
-.provisional strong{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;
-  font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
-}
-
-/* ---- tables ---- */
+.meta{font-size:14px;color:var(--gray)}
+.metric{font-weight:400;font-size:72px;line-height:1;letter-spacing:-.03em;margin:22px 0 10px}
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0;max-width:100%}
 table{width:100%;min-width:340px;border-collapse:collapse;font-size:15px;margin:0}
-th{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;
-  text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;
-  color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink);vertical-align:bottom;
-}
-td{padding:13px 10px 13px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+th{font-family:var(--mono);text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;padding:0 10px 10px 0;border-bottom:var(--line);vertical-align:bottom}
+td{padding:13px 10px 13px 0;border-bottom:1px solid #DADADA;vertical-align:top}
 tr:last-child td{border-bottom:none}
-td.num,th.num{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;
-  text-align:right;font-variant-numeric:tabular-nums;padding-right:0;padding-left:18px;white-space:nowrap;
-}
-td.rank{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--faint);width:26px}
-.hook{color:var(--ink);font-weight:500}
-
-ul{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;padding-right:0;padding-left:18px;white-space:nowrap}
+th.num{font-weight:600}
+td.rank{color:var(--gray);width:26px;font-variant-numeric:tabular-nums}
+.hook{font-weight:600}
+ul,ol{margin:0 0 14px;padding-left:20px}
 li{margin-bottom:8px}
 li:last-child{margin-bottom:0}
-
-/* ---- do / don't ---- */
-.do-dont{display:grid;gap:12px;margin-top:14px}
-.do,.dont{border-radius:3px;padding:14px 16px;font-size:15px}
-.do{background:var(--ok-bg);color:var(--ok-fg);border-left:3px solid var(--ok-fg)}
-.dont{background:var(--bad-bg);color:var(--bad-fg);border-left:3px solid var(--bad-fg)}
-.do strong,.dont strong{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;
-  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;
-}
-
-/* ---- stat rows ---- */
-.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #DADADA;font-size:15px}
 .stat-row:last-child{border-bottom:none}
-.stat-row .k{color:var(--muted)}
-.stat-row .v{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
-
-/* ---- badges ---- */
-.badge{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;
-  display:inline-block;border-radius:2px;padding:5px 10px;font-size:11px;font-weight:600;
-  text-transform:uppercase;letter-spacing:.1em;
-}
-.b-1{background:var(--tomato);color:#fff}
-.b-2{background:var(--citron);color:var(--ink)}
-.b-3{background:var(--turquoise);color:var(--ink)}
-.b-4{background:var(--lavender);color:var(--ink)}
-
-/* ---- companion + footer ---- */
-.companion{background:var(--surface-2);border-radius:4px;padding:22px 24px;margin-top:40px}
-.companion p{
-  font-family:'IBM Plex Mono',ui-monospace,monospace;
-  margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
-}
-.companion a{color:var(--tomato);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:5px 0}
-.companion a:hover{text-decoration:underline}
-footer{max-width:760px;margin:0 auto;padding:40px 24px 64px;font-size:13px;color:var(--faint);line-height:1.5}
+.stat-row .k{color:var(--gray)}
+.stat-row .v{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.badge{display:inline-block;font-family:var(--mono);font-weight:600;font-size:10px;text-transform:uppercase;border:var(--line);border-radius:var(--radius-pill);padding:4px 12px;background:var(--citron)}
+.wf{border-top:1px solid #DADADA;padding-top:20px;margin-top:20px}
+.wf:first-of-type{border-top:none;padding-top:0;margin-top:8px}
+.wf h4{font-size:19px;font-weight:600;margin:0 0 8px}
+.wf .trig{font-family:var(--mono);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;margin:0 0 10px;display:inline-block;background:var(--lime);border:var(--line);border-radius:var(--radius-pill);padding:4px 12px}
+.msg{background:var(--turquoise);border:var(--line);border-radius:10px;padding:14px 16px;font-size:15px;margin:0 0 10px}
+.companion a{color:var(--white);text-decoration:none;font-weight:600;font-size:16px;display:block;padding:6px 0;border-bottom:1px solid #333}
+.companion a:hover{color:var(--lime)}
+.companion .pill{background:var(--lime);color:var(--ink)}
+footer{background:var(--ink);color:var(--gray-dark);padding:0 0 56px;font-size:13px;line-height:1.5}
 footer p{margin:0 0 6px}
-@media (max-width:520px){
-  .hero{padding:32px 20px 30px}
-  .hero h1{font-size:32px}
-  .metric{font-size:38px}
-  .container{padding:0 20px}
-  .card{padding:20px}
-}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:560px){.hero h1{font-size:52px}.metric{font-size:52px}.card{padding:20px}.card h2{font-size:26px}}
+
+.provisional{background:var(--citron);border:var(--line);border-radius:var(--radius);padding:20px 22px;margin-bottom:16px}
+.provisional p{margin:0;font-size:15px}
+.provisional p + p{margin-top:10px}
+.provisional strong{font-family:var(--mono);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.02em}
+.b-1{background:var(--pink)} .b-2{background:var(--lavender)}
+.do,.dont{border:var(--line);border-radius:10px;padding:14px 16px;font-size:15px}
+.do{background:var(--lime)} .dont{background:var(--pink)}
+.label{font-family:var(--mono);font-size:11px;font-weight:600;text-transform:uppercase}
 </style></head><body>
-<div class="hero"><div class="hero-inner"><p class="wordmark">THIRD.</p><p class="kicker">Creator live tactical plan</p><h1>tonies</h1><p class="lede">Who goes live for Tonies, what they sell, and who on the team owns each step, Nov 3 to Dec 27. Prepared by Third for tonies. November 2026.</p></div></div>
-<div class="strip"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span><span class="s7"></span><span class="s8"></span><span class="s9"></span></div>
-<main class="container">
-
-<section><p class="eyebrow">The headline</p>
-<div class="card"><h2>Thirty L3+ creators to approach, a live-only offer for each show, and three steps to get them live</h2>
+<div class="hero"><div class="container"><div class="topbar"><p class="wordmark">third.</p><span class="tag">Commerce never sleeps.</span></div><span class="pill p-citron">Creator live tactical plan</span><h1>tonies</h1><p class="lede">Who goes live for Tonies, what they sell, and who on the team owns each step, Dec 1 to Dec 31. Prepared by Third for tonies. Updated November 19, 2026.</p></div></div>
+<section class="band bg-citron"><div class="container"><span class="pill p-lavender">The headline</span>
+<div class="card"><h2>Reach out to 30 L3+ creators and lock in whoever says yes, with a goal of 3 to 5 Tonies lives a week from Dec 1 to Dec 31</h2>
 <p>The SOW asks for at least one L3+ creator live a week. These 30 creators sold $1.2M on live across all brands in the last 28 days, and 10 of them have sold Tonies on live. Every one of them either sells toys on live or has sold Tonies on live. Each creator is asked for a Tonies segment inside a live she already runs, not a full Tonies show.</p>
-<p>The 30 is an outreach list, not a minimum. There is no set number of creators we need to go live with. We expect about 20% to agree to feature Tonies, which is about six creators from 30. A creator who does one Tonies live between now and the end of December is a win.</p>
-<p>All creator lives are unpaid: the creator earns commission, gets the live-only offer and keeps the product.</p>
+<p>The 30 is an outreach list, not a number to lock in. Delivery reaches out to all 30 and books any creator who agrees. The goal is 3 to 5 creators going live with Tonies each week, Dec 1 to Dec 31. We expect about 20% to agree, about six creators from 30, which covers the goal if most of them go live weekly.</p>
+<p>All creator lives are unpaid: the creator earns the live commission and keeps the product.</p>
 <p class="metric">30</p><p class="meta">Creators identified for outreach from our Top 100 Live list, with no minimum to go live. The eight creators referred by our TikTok account manager are handled separately, for Black Friday and Cyber Monday only.</p></div>
-</section>
+</div></section>
 
-<section><p class="eyebrow">Who owns what</p>
+<section class="band bg-lime"><div class="container"><span class="pill p-pink">Who owns what</span>
 <div class="card"><div class="tw"><table><thead><tr><th>Team</th><th>Owns</th></tr></thead><tbody>
-<tr><td><strong>Strategy</strong></td><td>Identifies the L3+ creators. Recommends the merchandising that supports each live.</td></tr>
-<tr><td><strong>Client Success</strong></td><td>Confirms the merchandising, flash deal and commission for each creator with Tonies by Monday, Nov 9 at the latest. Confirms the eight Black Friday creators with Shirley, our TikTok account manager.</td></tr>
-<tr><td><strong>Delivery</strong></td><td>Outreach to the creators. Live creator affiliate management: live schedules, creator comms, and working with Shop Operations on exclusive merchandising.</td></tr>
-<tr><td><strong>Shop Operations</strong></td><td>Sets up the exclusive promos and bundles for each creator live.</td></tr>
+<tr><td><strong>Strategy</strong></td><td>Identifies the L3+ creators.</td></tr>
+<tr><td><strong>Client Success</strong></td><td>Confirms the December deals and live commission with Tonies by Nov 20. Confirms the eight Black Friday creators with Shirley, our TikTok account manager.</td></tr>
+<tr><td><strong>Delivery</strong></td><td>Outreach to the creators. Live creator affiliate management: live schedules, creator comms, and working with Shop Operations on the December deals.</td></tr>
+<tr><td><strong>Shop Operations</strong></td><td>Makes sure the December deals are live on the products each creator shows.</td></tr>
 </tbody></table></div></div>
-</section>
+</div></section>
 
-<section><p class="eyebrow">Black Friday and Cyber Monday &middot; The eight referred creators</p>
+<section class="band bg-turquoise"><div class="container"><span class="pill p-citron">Black Friday and Cyber Monday &middot; The eight referred creators</span>
 <div class="card"><h2>Eight creators referred by our TikTok account manager go live for Black Friday and Cyber Monday only</h2>
 <p>These creators were referred by our TikTok account manager and are confirmed to go live on Black Friday, per TikTok. Justin (Client Success) is confirming this with Shirley, our TikTok account manager. We are not working with them outside Black Friday and Cyber Monday, because they likely cost money.</p>
 <div class="tw"><table><thead><tr><th>Creator</th><th>L band</th><th class="num">Live GMV, 28d</th><th class="num">Tonies live</th></tr></thead><tbody>
@@ -186,12 +99,12 @@ footer p{margin:0 0 6px}
 <tr><td>livelifehappy91</td><td>L3</td><td class="num">$7.8K</td><td class="num">$2.4K</td></tr>
 </tbody></table></div>
 <h3>Next steps</h3><ul>
-<li>Justin confirms the merchandising, flash deal and commission for each of the eight with Tonies.</li>
+<li>Justin confirms the December deals and commission for each of the eight with Tonies.</li>
 <li>Once all three are confirmed, the affiliate coordinator sends each creator a target plan.</li>
 </ul></div>
-</section>
+</div></section>
 
-<section><p class="eyebrow">Step 1 &middot; Strategy &middot; Surface the creators</p>
+<section class="band bg-pink"><div class="container"><span class="pill p-lime">Step 1 &middot; Strategy &middot; Surface the creators</span>
 <div class="card"><h2>The 30 creators to approach</h2>
 <p class="meta">Live GMV is all brands over the last 28 days. Tonies live is lifetime Tonies GMV sold on live. L band uses 28-day platform GMV as the L-tier proxy.</p>
 <div class="tw"><table><thead><tr><th>Creator</th><th>L band</th><th class="num">Live GMV, 28d</th><th class="num">Tonies live</th></tr></thead><tbody>
@@ -232,65 +145,58 @@ footer p{margin:0 0 6px}
 </tbody></table></div>
 <p class="meta">&dagger; Justin has already been speaking with taylorstinyworld, and she is charging a rate. She is the most consistent Tonies host: 96% of her sales are toys and she has run 50 Tonies lives. jills.tonie.clips went live Nov 1 per shop data; her 28-day marketplace figure has not caught up.</p>
 <h3>The ask</h3><ul>
-<li><strong>A Tonies segment for all 30:</strong> 15 to 30 minutes of Tonies inside a live the creator already runs, led by one product and the live-only offer. No full shows.</li>
+<li><strong>Ask all 30 for a Tonies segment:</strong> 15 to 30 minutes of Tonies inside a live the creator already runs, led by one product and that week&rsquo;s December deal. No full shows.</li>
 </ul>
 <h3>The goal</h3><ul>
-<li>At least two of these creators running a Tonies segment each week.</li>
+<li>3 to 5 creators going live with Tonies each week, Dec 1 to Dec 31.</li>
 </ul>
 <p class="meta">Outreach to more live creators on the Top 100 Live tab depends on how these 30 respond.</p></div>
-</section>
+</div></section>
 
-<section><p class="eyebrow">Step 2 &middot; Strategy and Client Success &middot; Lock the merchandising</p>
-<div class="card"><h2>Lead every live with a best seller and give viewers a reason to buy in that live</h2>
-<p><strong>Recommendation only, not confirmed.</strong> Tonies decides the merchandising for each live creator. Justin confirms the merchandising, flash deal and commission for each creator by Monday, Nov 9 at the latest, before outreach. The eight Black Friday creators are confirmed separately.</p>
-<h3>Products to feature</h3>
-<div class="stat-row"><span class="k">Toniebox 2 Winnie the Pooh bundle, $209.99</span><span class="v">Lead bundle, 95% sold on live</span></div>
-<div class="stat-row"><span class="k">Bluey 3-Pack, $59.99</span><span class="v">Top seller, $104.1K in 30 days</span></div>
-<div class="stat-row"><span class="k">Ms. Rachel Toniebox 2 set, $154.99</span><span class="v">Best GMV per view on video</span></div>
-<div class="stat-row"><span class="k">Toniebox Lite, from $99.99</span><span class="v">New Oct 23. The gift-price box.</span></div>
-<div class="stat-row"><span class="k">Holiday Songs 2 and the Grinch, $19.99</span><span class="v">Stocking add-ons</span></div>
-<p class="meta">Swap in whatever Tonies is pushing for each week once Tonies confirms its holiday offers.</p>
-<h3>Live-only offer, recommended for every creator live</h3>
-<div class="stat-row"><span class="k">Flash deal</span><span class="v">10% off the lead product</span></div>
-<div class="stat-row"><span class="k">Exclusive bundle</span><span class="v">Box plus holiday Tonies, lives only</span></div>
-<div class="stat-row"><span class="k">Creator commission on live</span><span class="v">12% to 15%, up from 10%, pending Tonies approval</span></div>
-<h3>Unpaid</h3>
-<p class="meta">All 30 creators are unpaid. They earn commission, get the live-only offer and keep the product.</p></div>
-</section>
-
-<section><p class="eyebrow">Step 3 &middot; Delivery &middot; Outreach and live creator management</p>
-<div class="card"><h2>Reach the 30 with the offer, lock their dates and get them the products</h2>
+<section class="band bg-lavender"><div class="container"><span class="pill p-turquoise">Step 2 &middot; Client Success &middot; Lock the merchandising and commission</span>
+<div class="card"><h2>Confirm December deals and live commission with Justin before any target plan goes out</h2>
+<p>Justin owns the merchandising. The deals Tonies runs in December are what creators offer on their lives. There is no extra flash sale on top of those deals. What creators can get is a live commission.</p>
+<h3>What to confirm with Justin</h3>
 <ul>
-<li><strong>Outreach.</strong> Once Justin confirms each creator's merchandising, flash deal and commission, Delivery contacts the 30 live creators to start, with the offer confirmed by Justin. Depending on appetite, Delivery keeps reaching out to more creators on the Top 100 Live tab of the <a href="https://docs.google.com/spreadsheets/d/1tAdnlTAV-jsLjTJIHbhAhwjn_mlnnZDxdxaAQYg62J4">tonies creator lists sheet</a>.</li>
+<li>The December deals for each week, and which products they cover.</li>
+<li>The live commission rate for creator lives.</li>
+</ul>
+<p class="meta">Once both are confirmed, Delivery knows what to put in each live creator&rsquo;s target plan.</p>
+</div>
+</div></section>
+
+<section class="band bg-citron"><div class="container"><span class="pill p-lavender">Step 3 &middot; Delivery &middot; Outreach and live creator management</span>
+<div class="card"><h2>Reach all 30 with the offer, lock in whoever says yes and get them the products</h2>
+<ul>
+<li><strong>Outreach.</strong> Once Justin confirms the December deals and live commission, Delivery sends the 30 live creators target plans with that deal and commission. Depending on appetite, Delivery keeps reaching out to more creators on the Top 100 Live tab of the <a href="https://docs.google.com/spreadsheets/d/1tAdnlTAV-jsLjTJIHbhAhwjn_mlnnZDxdxaAQYg62J4">tonies creator lists sheet</a>.</li>
 <li><strong>Black Friday support.</strong> Justin (Client Success) locks in the eight referred creators with Shirley, our TikTok account manager. This runs separately from the outreach to the 30.</li>
 <li><strong>Lock in.</strong> Keep it flexible. Each creator only needs to tell us the date she is going live and the Tonies product she will feature, so the merchandising can be set up. No live schedule to build.</li>
-<li><strong>Merchandising setup.</strong> Send each show's products and offer to Shop Operations at least 48 hours before the live, so the promo and bundle are ready.</li>
-<li><strong>Creator comms.</strong> Send each creator the products to show on the live, with a target collab at the higher live commission, so they earn the live rate on every sale.</li>
+<li><strong>Merchandising setup.</strong> Confirm with Shop Operations at least 48 hours before each live that the December deal is live on the products she will show.</li>
+<li><strong>Creator comms.</strong> Send each creator the products to show on the live, with a target collab at the live commission, so they earn it on every sale.</li>
 </ul></div>
-</section>
+</div></section>
 
-<section><p class="eyebrow">Timing</p>
+<section class="band bg-lime"><div class="container"><span class="pill p-pink">Timing</span>
 <div class="card">
 <div class="stat-row"><span class="k">Step 1: creator list</span><span class="v">Done, Nov 3</span></div>
-<div class="stat-row"><span class="k">Step 2: merchandising, flash deals and commission confirmed</span><span class="v">By Monday, Nov 9</span></div>
-<div class="stat-row"><span class="k">Step 3: outreach to all 30</span><span class="v">Nov 10 to 14</span></div>
-<div class="stat-row"><span class="k">First creator lives</span><span class="v">Week of Nov 16, two or more a week</span></div>
+<div class="stat-row"><span class="k">Step 2: December deals and live commission confirmed with Justin</span><span class="v">By Nov 20</span></div>
+<div class="stat-row"><span class="k">Step 3: outreach to all 30</span><span class="v">Nov 23 to 30</span></div>
+<div class="stat-row"><span class="k">First creator lives</span><span class="v">Dec 1 to 31, 3 to 5 a week</span></div>
 <div class="stat-row"><span class="k">Black Friday and Cyber Monday</span><span class="v">The eight referred creators live</span></div>
-<div class="stat-row"><span class="k">Peak weeks</span><span class="v">Black Friday, Cyber Week and 12.12</span></div>
+<div class="stat-row"><span class="k">Peak weeks</span><span class="v">Cyber Week through the Christmas ship-by date</span></div>
 </div>
-</section>
+</div></section>
 
-<section><p class="eyebrow">What we need from tonies</p>
+<section class="band bg-turquoise"><div class="container"><span class="pill p-citron">What we need from tonies</span>
 <div class="card"><ul>
-<li>The merchandising, flash deal and commission for each creator, including the eight Black Friday creators, by Monday, Nov 9.</li>
+<li>The December deals and live commission, including for the eight Black Friday creators, by Nov 20.</li>
 <li>Which products and offers Tonies is pushing each week through December.</li>
 <li>Product for each confirmed creator to show on the live.</li>
 <li>Stock depth on the lead bundles and the Christmas ship-by date.</li>
 </ul></div>
-</section>
+</div></section>
 
-<div class="companion"><p>Companion documents</p><a href="tonies-affiliate-plan.html">tonies Affiliate Tactical Plan</a><a href="tonies-tts-strategy.html">tonies Strategy</a><a href="tonies-creator-persona.html">tonies Commerce Creator Persona</a><a href="brief-tonies.html">tonies Informed Creative Brief</a></div>
-</main>
-<footer><p>third. Creator live tactical plan. tonies. November 3, 2026.</p><p>Sources: tonies shop affiliate and product sales data (to Nov 3, 2026); TikTok Shop US marketplace data for creator live results (28 days to Nov 3, 2026); creator referrals from the TikTok account manager (Nov 3, 2026).</p><p>GMV figures are gross TikTok-attributed GMV, not net revenue. Live GMV is all brands. The L band is a proxy; confirm against Third's L definitions. Creator lives exclude the tonies.us brand account.</p></footer>
+<section class="band bg-ink companion"><div class="container"><span class="pill">Companion documents</span><a href="tonies-tts-strategy_2.html">tonies Strategy White Paper</a><a href="tonies-affiliate-plan_1.html">tonies Affiliate Tactical Plan</a><a href="tonies-buyer-persona_1.html">tonies Buyer Persona</a><a href="tonies-creator-persona.html">tonies Commerce Creator Persona</a><a href="brief-tonies.html">tonies Informed Creative Brief</a><a href="https://docs.google.com/spreadsheets/d/1tAdnlTAV-jsLjTJIHbhAhwjn_mlnnZDxdxaAQYg62J4/edit">tonies Top 100 Creator Lists</a></div></section>
+<footer><div class="container"><p>third. Creator live tactical plan. tonies. Updated November 19, 2026.</p><p>Sources: tonies shop affiliate and product sales data (to Nov 3, 2026); TikTok Shop US marketplace data for creator live results (28 days to Nov 3, 2026); creator referrals from the TikTok account manager (Nov 3, 2026).</p><p>GMV figures are gross TikTok-attributed GMV, not net revenue. Live GMV is all brands. The L band is a proxy; confirm against Third's L definitions. Creator lives exclude the tonies.us brand account.</p></div></footer>
 
 </body></html>
