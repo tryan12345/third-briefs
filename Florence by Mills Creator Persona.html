@@ -1,0 +1,366 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Florence by Mills Creator Persona</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E;
+  --lime:#A2F09F; --citron:#F4FD8D; --cobalt:#3A87E6; --pink:#F186FF;
+  --plum:#8F0846; --turquoise:#BDEAEA; --lavender:#BAB6FD; --warmgray:#C9CDC6;
+  --ink:#1C1917; --ink-2:#44403C; --muted:#78716C; --faint:#A8A29E;
+  --line:#E7E5E4; --surface:#FFFFFF; --surface-2:#F5F5F4; --page:#FFFFFF;
+  --ok-bg:#D1FAE5; --ok-fg:#047857;
+  --wait-bg:#FEF3C7; --wait-fg:#B45309; --wait-line:#F59E0B;
+  --bad-bg:#FEE2E2; --bad-fg:#B91C1C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+
+/* ---- hero ---- */
+.hero{background:var(--tomato);color:#fff;padding:44px 24px 40px}
+.hero-inner{max-width:760px;margin:0 auto}
+.wordmark{
+  font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:600;font-size:15px;letter-spacing:.06em;color:#fff;margin:0 0 30px;
+}
+.kicker{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(255,255,255,.82);margin:0 0 12px;
+}
+.hero h1{
+  font-family:'Inter',sans-serif;font-weight:800;font-size:42px;line-height:1.04;
+  letter-spacing:-.025em;margin:0;color:#fff;text-wrap:balance;
+}
+.hero .lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.92);max-width:62ch}
+
+/* ---- nine-color strip ---- */
+.strip{display:flex;height:10px;width:100%}
+.strip span{flex:1 1 0}
+.s1{background:var(--lime)}      .s2{background:var(--citron)}
+.s3{background:var(--tomato)}    .s4{background:var(--cobalt)}
+.s5{background:var(--pink)}      .s6{background:var(--plum)}
+.s7{background:var(--turquoise)} .s8{background:var(--lavender)}
+.s9{background:var(--warmgray)}
+
+/* ---- layout ---- */
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+section{margin-top:48px}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--tomato);margin:0 0 14px;
+}
+.card{border:1px solid var(--line);border-radius:4px;padding:26px;margin-bottom:16px;background:var(--surface)}
+.card h2{font-family:'Inter',sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
+.card h3{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted);margin:22px 0 8px;
+}
+.card p{margin:0 0 14px;color:var(--ink-2)}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:15px;color:var(--muted)}
+
+/* ---- metrics in IBM Plex Mono ---- */
+.metric{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.03em;
+  color:var(--tomato);margin:20px 0 10px;
+}
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+/* ---- provisional ---- */
+.provisional{background:var(--wait-bg);border-left:4px solid var(--wait-line);border-radius:2px;padding:20px 22px;margin-bottom:16px}
+.provisional p{color:var(--wait-fg);margin:0;font-size:15px}
+.provisional p + p{margin-top:10px}
+.provisional strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0;max-width:100%}
+table{width:100%;min-width:340px;border-collapse:collapse;font-size:15px;margin:0}
+th{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink);vertical-align:bottom;
+}
+td{padding:13px 10px 13px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:right;font-variant-numeric:tabular-nums;padding-right:0;padding-left:18px;white-space:nowrap;
+}
+td.rank{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--faint);width:26px}
+.hook{color:var(--ink);font-weight:500}
+
+ul{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+
+/* ---- do / don't ---- */
+.do-dont{display:grid;gap:12px;margin-top:14px}
+.do,.dont{border-radius:3px;padding:14px 16px;font-size:15px}
+.do{background:var(--ok-bg);color:var(--ok-fg);border-left:3px solid var(--ok-fg)}
+.dont{background:var(--bad-bg);color:var(--bad-fg);border-left:3px solid var(--bad-fg)}
+.do strong,.dont strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;
+}
+
+/* ---- stat rows ---- */
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-row:last-child{border-bottom:none}
+.stat-row .k{color:var(--muted)}
+.stat-row .v{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+
+/* ---- badges ---- */
+.badge{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:inline-block;border-radius:2px;padding:5px 10px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.b-1{background:var(--tomato);color:#fff}
+.b-2{background:var(--citron);color:var(--ink)}
+.b-3{background:var(--turquoise);color:var(--ink)}
+.b-4{background:var(--lavender);color:var(--ink)}
+
+/* ---- companion + footer ---- */
+.companion{background:var(--surface-2);border-radius:4px;padding:22px 24px;margin-top:40px}
+.companion p{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+.companion a{color:var(--tomato);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:5px 0}
+.companion a:hover{text-decoration:underline}
+footer{max-width:760px;margin:0 auto;padding:40px 24px 64px;font-size:13px;color:var(--faint);line-height:1.5}
+footer p{margin:0 0 6px}
+@media (max-width:520px){
+  .hero{padding:32px 20px 30px}
+  .hero h1{font-size:32px}
+  .metric{font-size:38px}
+  .container{padding:0 20px}
+  .card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Martian+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* third. design system override (Nov 2026 deck look) */
+:root{
+  --tomato:#F7674C; --citron:#F7FE9C; --lime:#B4EFA8; --turquoise:#C7EAEA;
+  --pink:#E48CF9; --lavender:#BAB7F9; --warmgray:#CBCEC8; --plum:#841C46;
+  --ink:#0A0A0A; --white:#FFFFFF; --gray:#6B6B6B; --gray-dark:#A8A8A8;
+  --line:1.5px solid #0A0A0A; --radius:14px; --radius-pill:999px;
+  --font-sans:'Inter Tight', Arial, sans-serif;
+  --font-mono:'Martian Mono', 'Courier New', monospace;
+  --c1:#F7674C; --c2:#F7FE9C; --c3:#B4EFA8; --c4:#C7EAEA; --c5:#E48CF9; --c6:#BAB7F9; --c7:#CBCEC8; --c8:#841C46; --c9:#0A0A0A;
+  --surface:#FFFFFF; --surface-2:#FFFFFF; --page:#F7FE9C; --line-c:#0A0A0A;
+  --ink-2:#0A0A0A; --muted:#6B6B6B; --faint:#6B6B6B; --mid:#6B6B6B;
+}
+html,body{background:var(--citron)!important;color:var(--ink)!important;font-family:var(--font-sans)!important}
+body *{font-family:var(--font-sans)}
+.mono,.kicker,.sec-kicker,.eyebrow,.label,.ctag,.tag,.when,.rt,.gt,.ct,.badge,th,.tbl th,.legend,.note,footer,footer .wrap,.wordmark,.stat-row .v,.metric,.provisional strong,.companion p,.do strong,.dont strong,.card h3,.panel h3,.phase .when,.companions .ct,.callout .ct,.gap .gt,.risk .rt,.statement .tag,.samp-key,.pill{
+  font-family:var(--font-mono)!important}
+/* numbers read better in sans */
+.stat .num,.gap .gn,.tier .price,.dark .cell .num,.tbl td.n,td.num,.metric,.stat-row .v{font-family:var(--font-sans)!important;font-weight:600!important;letter-spacing:-0.01em}
+
+/* hero */
+.hero{background:var(--tomato)!important;color:var(--ink)!important;position:relative;padding-top:64px!important}
+.hero::before{content:"third.";position:absolute;top:22px;left:max(28px,calc((100vw - 960px)/2 + 28px));font-family:var(--font-sans);font-weight:800;font-size:26px;letter-spacing:-0.03em;color:var(--ink)}
+.hero::after{content:"COMMERCE NEVER SLEEPS.";position:absolute;top:30px;right:max(20px,calc((100vw - 960px)/2 + 28px));font-family:var(--font-mono);font-size:10px;font-weight:400;letter-spacing:.02em;color:var(--ink)}
+.hero .kicker,.hero .wordmark{color:var(--ink)!important;opacity:1!important;font-weight:600!important;font-size:11px!important;letter-spacing:.04em!important;text-transform:uppercase}
+.hero .wordmark{display:none}
+.hero h1{color:var(--ink)!important;font-weight:400!important;letter-spacing:-0.02em!important;line-height:1.02!important;font-size:clamp(40px,6vw,64px)!important}
+.hero .sub,.hero .lede{color:var(--ink)!important;opacity:1!important}
+.strip{display:none!important}
+
+/* section grounds: one pastel per section */
+section{background:var(--lime)}
+section:nth-of-type(5n+1){background:var(--citron)}
+section:nth-of-type(5n+2){background:var(--turquoise)}
+section:nth-of-type(5n+3){background:var(--lavender)}
+section:nth-of-type(5n+4){background:var(--lime)}
+section:nth-of-type(5n){background:var(--pink)}
+section.dark,.dark{background:var(--ink)!important;color:var(--white)!important}
+section{border-top:var(--line)}
+h2{font-weight:400!important;letter-spacing:-0.02em;line-height:1.08;font-size:clamp(28px,3.6vw,40px)!important}
+h3{font-weight:600!important}
+.sec-kicker,.eyebrow{display:inline-block;color:var(--ink)!important;background:var(--white);border:var(--line);border-radius:var(--radius-pill);padding:5px 12px!important;font-size:11px!important;font-weight:600!important;letter-spacing:.02em!important;margin-bottom:14px!important}
+.dark .sec-kicker{background:var(--lime)!important;color:var(--ink)!important;border-color:var(--lime)}
+.lede,.body-p,.card p,.meta,p{color:inherit}
+.lede,.body-p{color:var(--ink)!important}
+.dark .lede,.dark p{color:#E8E8E8!important}
+
+/* cards: white, black outline, no shadow */
+.stat,.panel,.tier,.gap,.callout,.companions,.chart,.card,.risk,.phase,.cell,.statement,.tbl,.companion,.provisional,.story .panel{
+  background:var(--white)!important;border:var(--line)!important;border-radius:var(--radius)!important;box-shadow:none!important}
+.panel.trig,.panel.obj,.callout,.gap,.phase,.gate,.qb{border-left:var(--line)!important;border-top:var(--line)!important}
+.panel.trig h3::before,.panel.obj h3::before{content:"";display:inline-block;width:10px;height:10px;border:var(--line);border-radius:50%;margin-right:8px;vertical-align:0}
+.panel.trig h3::before{background:var(--lime)} .panel.obj h3::before{background:var(--pink)}
+.stat .num{color:var(--ink)!important;font-size:28px!important}
+.stat .lbl,.gap p,.tier p,.panel li,.callout p{color:var(--ink)!important}
+.statement{color:var(--ink)!important}
+.statement p{color:var(--ink)!important;font-weight:400!important}
+.statement .detail{color:var(--gray)!important}
+.statement .tag,.callout .ct,.companions .ct,.gap .gt,.risk .rt,.phase .when{color:var(--ink)!important;font-size:11px!important;font-weight:600!important;text-transform:uppercase}
+
+/* pills */
+.ctag,.tag,.badge,.pill,.b-1,.b-2,.b-3,.b-4{display:inline-block;background:var(--lavender)!important;color:var(--ink)!important;border:var(--line)!important;border-radius:var(--radius-pill)!important;padding:4px 12px!important;font-size:11px!important;font-weight:600!important;text-transform:uppercase}
+.tier.a .ctag,.b-1{background:var(--tomato)!important}
+.tier.b .ctag,.b-2{background:var(--lime)!important}
+.tier.c .ctag,.b-3{background:var(--turquoise)!important}
+.statement .tag{background:var(--citron)!important;border:var(--line);border-radius:999px;padding:4px 12px;display:inline-block}
+
+/* dark sections: ink cards with white outline */
+.dark .phase,.dark .risk,.dark .cell{background:#161616!important;border:1.5px solid var(--white)!important;color:var(--white)!important}
+.dark .phase h3,.dark .risk p,.dark .phase p,.dark h2,.dark h3{color:var(--white)!important}
+.dark .phase .when{color:var(--lime)!important}
+.dark .risk .rt{color:var(--lime)!important}
+.dark .phase p,.dark .risk p{color:#DADADA!important}
+
+/* tables */
+.tbl{overflow:hidden}
+.tbl th,th{background:var(--white)!important;color:var(--ink)!important;font-size:10px!important;font-weight:600!important;text-transform:uppercase;border-bottom:var(--line)!important}
+.tbl td,td{color:var(--ink)!important;border-top:1px solid #0A0A0A22!important}
+.tbl tr.mbm td{background:var(--citron)!important;border-top:var(--line)!important;border-bottom:var(--line)!important}
+.tbl tr.med td,.tbl tr.total td{background:#F4F4F2!important}
+.qlist li{color:var(--ink)!important;border-top:1px solid #0A0A0A33!important}
+.note{color:var(--ink)!important;opacity:.75}
+a{color:var(--ink)!important;text-decoration:underline;text-underline-offset:3px}
+
+/* footer */
+footer{background:var(--ink)!important;color:var(--white)!important;border-top:var(--line)}
+footer .wrap,footer p{color:var(--white)!important;font-size:10px!important;text-transform:uppercase;letter-spacing:.02em}
+footer::after{content:"Confidential & Proprietary";display:block;max-width:960px;margin:8px auto 0;padding:0 28px;text-align:right;font-family:var(--font-sans);font-size:11px;color:var(--gray-dark);text-transform:none}
+
+/* card-system pages (personas) */
+main.container{max-width:none;padding:0}
+main.container > section,main.container > .companion{max-width:none;margin:0!important;padding:44px max(24px,calc((100vw - 760px)/2))!important}
+main.container > .companion{background:var(--ink)!important;border:none!important;border-radius:0!important}
+main.container > .companion p{color:var(--lime)!important}
+main.container > .companion a{color:var(--white)!important}
+.card h2{font-weight:600!important;font-size:22px!important;letter-spacing:-0.01em}
+.card h3{color:var(--ink)!important;font-size:10px!important}
+.card p,.meta,.stat-row .k,li{color:var(--ink)!important}
+.meta{opacity:.8}
+.stat-row{border-bottom:1px solid #0A0A0A22!important}
+.provisional{background:var(--citron)!important}
+.provisional p{color:var(--ink)!important}
+footer{max-width:none!important;padding:28px max(24px,calc((100vw - 760px)/2)) 40px!important}
+th,td{padding-right:14px!important}
+th.num,td.num{padding-left:14px!important}
+
+</style>
+<div class="hero"><div class="hero-inner"><p class="wordmark">THIRD.</p><p class="kicker">Commerce creator persona</p><h1>Florence by Mills</h1><p class="lede">Which creators actually convert Florence by Mills basics and sleep, how to tier them, and how many exist. Built from seller-side data only. November 2026.</p></div></div>
+<div class="strip"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span><span class="s7"></span><span class="s8"></span><span class="s9"></span></div>
+<main class="container">
+
+<section><p class="eyebrow">The pattern</p>
+<div class="card">
+<h2>Sales come from creators with 10K or more followers, and the comps simply have far more of them</h2>
+<p>At every brand in the set, creators under 10K followers make up a large share of the roster but a small share of sales. The difference is volume. Florence by Mills had 482 active creators in the last 90 days. PUMIEY had 3,898 and Comfrt 18,828.</p>
+<h3>Florence by Mills, share of active creators and share of sales</h3>
+<div class="stat-row"><span class="k">Over 100K followers</span><span class="v">17% / 35%</span></div>
+<div class="stat-row"><span class="k">50K to 100K</span><span class="v">14% / 14%</span></div>
+<div class="stat-row"><span class="k">10K to 50K</span><span class="v">49% / 45%</span></div>
+<div class="stat-row"><span class="k">5K to 10K</span><span class="v">14% / 5%</span></div>
+<div class="stat-row"><span class="k">Under 5K</span><span class="v">7% / 1%</span></div>
+</div>
+<div class="card">
+<h2>Fashion creators drive almost half of sales. At the comps, everyday creators carry more</h2>
+<p>Clothing and accessories creators drove 47% of Florence by Mills sales in the last 90 days, against 33% to 34% at Comfrt, Halara and PUMIEY. Creators outside the big categories, such as moms, teachers, nurses and lifestyle accounts, drove 32% to 37% at the comps and 25% at Florence by Mills.</p>
+<div class="stat-row"><span class="k">Linked creators, all time</span><span class="v">2,677</span></div>
+<div class="stat-row"><span class="k">Active creators, last 90 days</span><span class="v">482</span></div>
+<div class="stat-row"><span class="k">Creators who sold $10K+ in 90 days</span><span class="v">2</span></div>
+<div class="stat-row"><span class="k">Creators behind the top 80 videos</span><span class="v">55</span></div>
+<div class="stat-row"><span class="k">Creator videos a month, 2026 average</span><span class="v">551</span></div>
+</div>
+<div class="card">
+<h2>Samples on proven products return far more than samples on new launches</h2>
+<p>From July to September, about 282 samples on hero products returned $128.6K in sales. About 199 samples on new launches returned $2.4K. The 2027 plan sends 60% of samples to heroes and new colors on proven shapes, and 40% to launches.</p>
+</div>
+</section>
+
+<section><p class="eyebrow">Archetypes</p>
+<div class="card"><span class="badge b-1">Priority 1</span><h2 style="margin-top:10px">A1. The everyday mom and home creator</h2>
+<p class="meta">Creator level not available. 20K to 250K followers. Home, family, holiday and day-in-the-life content.</p>
+<h3>Buyer trigger served</h3><p class="meta">Comfort and the holiday, gifting and matching moment.</p>
+<h3>Format</h3><p class="meta">Product worn through a real day: decorating, school runs, the evening wind-down. Longer organic videos work here.</p>
+<h3>Proven in market</h3><p class="meta">One creator's holiday decorating series sold $4.9K of Daze Off in three organic videos of 3 to 4 minutes. A nurse creator sold $4.1K with short matching pajama videos.</p>
+</div>
+<div class="card"><span class="badge b-1">Priority 1</span><h2 style="margin-top:10px">A2. The deals and finds curator</h2>
+<p class="meta">Creator level not available. 20K to 100K followers. Posts daily across many brands.</p>
+<h3>Buyer trigger served</h3><p class="meta">More colors and prints, and value for the price.</p>
+<h3>Format</h3><p class="meta">A haul of every print or color in 30 to 50 seconds, with the price and a clear favorite.</p>
+<h3>Proven in market</h3><p class="meta">The top video in the window showed nine holiday prints and sold 342 units. The same creator type tops the comps: a single finds creator sold 1,903 units of a Comfrt crew in a 10-second video.</p>
+</div>
+<div class="card"><span class="badge b-1">Priority 1</span><h2 style="margin-top:10px">A3. The real-size try-on creator</h2>
+<p class="meta">Creator level not available. 10K to 350K followers. Shows sizes from XS to 2XL and audiences from 18 to 54.</p>
+<h3>Buyer trigger served</h3><p class="meta">Fit confidence. This answers the number one buyer question: what size to get.</p>
+<h3>Format</h3><p class="meta">Size, height and usual size said in the first seconds, then a turn and a stretch test. Daylight for light colors.</p>
+<h3>Proven in market</h3><p class="meta">A long sleeve creator with an audience mostly aged 35 to 54 sold $6.4K for Florence by Mills. PUMIEY's top long sleeve videos follow this format and convert at 1.56 units per 1,000 views.</p>
+</div>
+<div class="card"><span class="badge b-2">Priority 2</span><h2 style="margin-top:10px">A4. The wellness and lounge creator</h2>
+<p class="meta">Creator level not available. 10K to 50K followers. Yoga, self-care and home routine content.</p>
+<h3>Buyer trigger served</h3><p class="meta">Softness and stretch for wearing all day.</p>
+<h3>Format</h3><p class="meta">Short, calm clips of the product in use: stretching, lounging, getting ready for bed.</p>
+<h3>Recruiting note</h3><p class="meta">A home and wellness creator with 20K followers sold 234 Daze Off sets from one 9-second organic video. Few are on the roster today.</p>
+</div>
+<div class="card"><span class="badge b-2">Priority 2</span><h2 style="margin-top:10px">A5. The fashion stylist</h2>
+<p class="meta">Creator level not available. 20K to 250K followers. Outfit and styling content.</p>
+<h3>Buyer trigger served</h3><p class="meta">A staple that goes with everything.</p>
+<h3>Format</h3><p class="meta">Three ways to wear one piece, styled with jeans or a skirt.</p>
+<h3>Recruiting note</h3><p class="meta">The core of today's roster. Keep them, and grow A1 to A4 around them.</p>
+</div>
+</section>
+
+<section><p class="eyebrow">Sizing the hit list</p>
+<div class="card">
+<p class="meta">Top 100 commerce creators scored for Florence by Mills on likelihood to drive sales in the next 90 days, then checked against who already sells the brand.</p>
+<div class="stat-row"><span class="k">Creators scored</span><span class="v">100</span></div>
+<div class="stat-row"><span class="k">Strong matches not yet worked with</span><span class="v">35</span></div>
+<div class="stat-row"><span class="k">Of those, in the top 25</span><span class="v">7</span></div>
+<div class="stat-row"><span class="k">Active Florence by Mills creators, last 90 days</span><span class="v">482</span></div>
+<p>The first 35 to approach are already scored. Beyond them, PUMIEY's 3,898 active creators show how many everyday creators sell basics at this price.</p>
+</div>
+</section>
+
+<section><p class="eyebrow">Commission and recruiting guidance</p>
+<div class="card">
+<h2>Florence by Mills pays in line with the set. Commission is not the gap</h2>
+<p class="meta">Listed open commission on each brand's top products, November 2026.</p>
+<div class="stat-row"><span class="k">Florence by Mills Cozy Crush Sweat Short</span><span class="v">$37.90 at 15% ($5.69)</span></div>
+<div class="stat-row"><span class="k">Florence by Mills Softie Seamless Long Sleeve</span><span class="v">$36.00 at 10% ($3.60)</span></div>
+<div class="stat-row"><span class="k">Florence by Mills Daze Off Sleep Set</span><span class="v">$20.00 at 10% ($2.00)</span></div>
+<div class="stat-row"><span class="k">Comfrt Minimalist Hoodie</span><span class="v">$49.00 at 10% ($4.90)</span></div>
+<div class="stat-row"><span class="k">Halara UltraSculpt Legging</span><span class="v">$27.90 at 10% ($2.79)</span></div>
+<div class="stat-row"><span class="k">PUMIEY 2-Piece Lounge Set</span><span class="v">$30.00 at 8% ($2.40)</span></div>
+</div>
+<div class="card">
+<h2>Recruit for range, then brief every creator on fit</h2>
+<ul>
+<li>Send hero basics and Daze Off to A1, A3 and A4 creators first, with a target of more of them each month.</li>
+<li>Recruit across sizes and ages on purpose, using the shades and sizes a creator shows on camera.</li>
+<li>Give every creator an Informed Creative Brief that asks for the size worn, their height and a stretch test.</li>
+<li>Approach the 35 strong matches, starting with the 7 in the top 25.</li>
+<li>Keep answering good creator requests within two days.</li>
+<li>Track creators who sell $10K or more in 90 days as the main measure of roster depth.</li>
+</ul>
+</div>
+</section>
+
+<div class="companion"><p>Companion documents</p><a href="https://claude.ai/artifact/9BfLX4kE6f1xNAyD9da3Ce">Florence by Mills 2026 Recap and 2027 Strategy</a><a href="https://claude.ai/artifact/JFJNUniSKY1Gh4xih2RhN3">Florence by Mills Buyer Persona</a></div>
+</main>
+<footer><p>third. Commerce Creator Persona. Florence by Mills. November 11, 2026.</p><p>Sources: Florence by Mills shop creator and video data for the 90 days to November 10, 2026, the Q3 2026 sampling tracker, Third's top 100 creator scoring, and TikTok Shop US marketplace data for Comfrt, Halara and PUMIEY over the same 90 days.</p><p>GMV figures are gross TikTok-attributed GMV, not net revenue. Creator levels were not available, so tiers use follower ranges. Creators selling $10K+ is estimated from units sold times average price and leaves out the brand's own account. Commission is the listed open rate.</p></footer>
+
+</body></html>

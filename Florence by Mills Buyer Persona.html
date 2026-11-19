@@ -1,0 +1,343 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Florence by Mills Buyer Persona</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E;
+  --lime:#A2F09F; --citron:#F4FD8D; --cobalt:#3A87E6; --pink:#F186FF;
+  --plum:#8F0846; --turquoise:#BDEAEA; --lavender:#BAB6FD; --warmgray:#C9CDC6;
+  --ink:#1C1917; --ink-2:#44403C; --muted:#78716C; --faint:#A8A29E;
+  --line:#E7E5E4; --surface:#FFFFFF; --surface-2:#F5F5F4; --page:#FFFFFF;
+  --ok-bg:#D1FAE5; --ok-fg:#047857;
+  --wait-bg:#FEF3C7; --wait-fg:#B45309; --wait-line:#F59E0B;
+  --bad-bg:#FEE2E2; --bad-fg:#B91C1C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+
+/* ---- hero ---- */
+.hero{background:var(--tomato);color:#fff;padding:44px 24px 40px}
+.hero-inner{max-width:760px;margin:0 auto}
+.wordmark{
+  font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:600;font-size:15px;letter-spacing:.06em;color:#fff;margin:0 0 30px;
+}
+.kicker{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(255,255,255,.82);margin:0 0 12px;
+}
+.hero h1{
+  font-family:'Inter',sans-serif;font-weight:800;font-size:42px;line-height:1.04;
+  letter-spacing:-.025em;margin:0;color:#fff;text-wrap:balance;
+}
+.hero .lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.92);max-width:62ch}
+
+/* ---- nine-color strip ---- */
+.strip{display:flex;height:10px;width:100%}
+.strip span{flex:1 1 0}
+.s1{background:var(--lime)}      .s2{background:var(--citron)}
+.s3{background:var(--tomato)}    .s4{background:var(--cobalt)}
+.s5{background:var(--pink)}      .s6{background:var(--plum)}
+.s7{background:var(--turquoise)} .s8{background:var(--lavender)}
+.s9{background:var(--warmgray)}
+
+/* ---- layout ---- */
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+section{margin-top:48px}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--tomato);margin:0 0 14px;
+}
+.card{border:1px solid var(--line);border-radius:4px;padding:26px;margin-bottom:16px;background:var(--surface)}
+.card h2{font-family:'Inter',sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 10px}
+.card h3{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted);margin:22px 0 8px;
+}
+.card p{margin:0 0 14px;color:var(--ink-2)}
+.card p:last-child{margin-bottom:0}
+.meta{font-size:15px;color:var(--muted)}
+
+/* ---- metrics in IBM Plex Mono ---- */
+.metric{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.03em;
+  color:var(--tomato);margin:20px 0 10px;
+}
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+
+/* ---- provisional ---- */
+.provisional{background:var(--wait-bg);border-left:4px solid var(--wait-line);border-radius:2px;padding:20px 22px;margin-bottom:16px}
+.provisional p{color:var(--wait-fg);margin:0;font-size:15px}
+.provisional p + p{margin-top:10px}
+.provisional strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 0;max-width:100%}
+table{width:100%;min-width:340px;border-collapse:collapse;font-size:15px;margin:0}
+th{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink);vertical-align:bottom;
+}
+td{padding:13px 10px 13px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  text-align:right;font-variant-numeric:tabular-nums;padding-right:0;padding-left:18px;white-space:nowrap;
+}
+td.rank{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--faint);width:26px}
+.hook{color:var(--ink);font-weight:500}
+
+ul{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+li{margin-bottom:8px}
+li:last-child{margin-bottom:0}
+
+/* ---- do / don't ---- */
+.do-dont{display:grid;gap:12px;margin-top:14px}
+.do,.dont{border-radius:3px;padding:14px 16px;font-size:15px}
+.do{background:var(--ok-bg);color:var(--ok-fg);border-left:3px solid var(--ok-fg)}
+.dont{background:var(--bad-bg);color:var(--bad-fg);border-left:3px solid var(--bad-fg)}
+.do strong,.dont strong{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;
+}
+
+/* ---- stat rows ---- */
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-row:last-child{border-bottom:none}
+.stat-row .k{color:var(--muted)}
+.stat-row .v{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+
+/* ---- badges ---- */
+.badge{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  display:inline-block;border-radius:2px;padding:5px 10px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.b-1{background:var(--tomato);color:#fff}
+.b-2{background:var(--citron);color:var(--ink)}
+.b-3{background:var(--turquoise);color:var(--ink)}
+.b-4{background:var(--lavender);color:var(--ink)}
+
+/* ---- companion + footer ---- */
+.companion{background:var(--surface-2);border-radius:4px;padding:22px 24px;margin-top:40px}
+.companion p{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+}
+.companion a{color:var(--tomato);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:5px 0}
+.companion a:hover{text-decoration:underline}
+footer{max-width:760px;margin:0 auto;padding:40px 24px 64px;font-size:13px;color:var(--faint);line-height:1.5}
+footer p{margin:0 0 6px}
+@media (max-width:520px){
+  .hero{padding:32px 20px 30px}
+  .hero h1{font-size:32px}
+  .metric{font-size:38px}
+  .container{padding:0 20px}
+  .card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Martian+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* third. design system override (Nov 2026 deck look) */
+:root{
+  --tomato:#F7674C; --citron:#F7FE9C; --lime:#B4EFA8; --turquoise:#C7EAEA;
+  --pink:#E48CF9; --lavender:#BAB7F9; --warmgray:#CBCEC8; --plum:#841C46;
+  --ink:#0A0A0A; --white:#FFFFFF; --gray:#6B6B6B; --gray-dark:#A8A8A8;
+  --line:1.5px solid #0A0A0A; --radius:14px; --radius-pill:999px;
+  --font-sans:'Inter Tight', Arial, sans-serif;
+  --font-mono:'Martian Mono', 'Courier New', monospace;
+  --c1:#F7674C; --c2:#F7FE9C; --c3:#B4EFA8; --c4:#C7EAEA; --c5:#E48CF9; --c6:#BAB7F9; --c7:#CBCEC8; --c8:#841C46; --c9:#0A0A0A;
+  --surface:#FFFFFF; --surface-2:#FFFFFF; --page:#F7FE9C; --line-c:#0A0A0A;
+  --ink-2:#0A0A0A; --muted:#6B6B6B; --faint:#6B6B6B; --mid:#6B6B6B;
+}
+html,body{background:var(--citron)!important;color:var(--ink)!important;font-family:var(--font-sans)!important}
+body *{font-family:var(--font-sans)}
+.mono,.kicker,.sec-kicker,.eyebrow,.label,.ctag,.tag,.when,.rt,.gt,.ct,.badge,th,.tbl th,.legend,.note,footer,footer .wrap,.wordmark,.stat-row .v,.metric,.provisional strong,.companion p,.do strong,.dont strong,.card h3,.panel h3,.phase .when,.companions .ct,.callout .ct,.gap .gt,.risk .rt,.statement .tag,.samp-key,.pill{
+  font-family:var(--font-mono)!important}
+/* numbers read better in sans */
+.stat .num,.gap .gn,.tier .price,.dark .cell .num,.tbl td.n,td.num,.metric,.stat-row .v{font-family:var(--font-sans)!important;font-weight:600!important;letter-spacing:-0.01em}
+
+/* hero */
+.hero{background:var(--tomato)!important;color:var(--ink)!important;position:relative;padding-top:64px!important}
+.hero::before{content:"third.";position:absolute;top:22px;left:max(28px,calc((100vw - 960px)/2 + 28px));font-family:var(--font-sans);font-weight:800;font-size:26px;letter-spacing:-0.03em;color:var(--ink)}
+.hero::after{content:"COMMERCE NEVER SLEEPS.";position:absolute;top:30px;right:max(20px,calc((100vw - 960px)/2 + 28px));font-family:var(--font-mono);font-size:10px;font-weight:400;letter-spacing:.02em;color:var(--ink)}
+.hero .kicker,.hero .wordmark{color:var(--ink)!important;opacity:1!important;font-weight:600!important;font-size:11px!important;letter-spacing:.04em!important;text-transform:uppercase}
+.hero .wordmark{display:none}
+.hero h1{color:var(--ink)!important;font-weight:400!important;letter-spacing:-0.02em!important;line-height:1.02!important;font-size:clamp(40px,6vw,64px)!important}
+.hero .sub,.hero .lede{color:var(--ink)!important;opacity:1!important}
+.strip{display:none!important}
+
+/* section grounds: one pastel per section */
+section{background:var(--lime)}
+section:nth-of-type(5n+1){background:var(--citron)}
+section:nth-of-type(5n+2){background:var(--turquoise)}
+section:nth-of-type(5n+3){background:var(--lavender)}
+section:nth-of-type(5n+4){background:var(--lime)}
+section:nth-of-type(5n){background:var(--pink)}
+section.dark,.dark{background:var(--ink)!important;color:var(--white)!important}
+section{border-top:var(--line)}
+h2{font-weight:400!important;letter-spacing:-0.02em;line-height:1.08;font-size:clamp(28px,3.6vw,40px)!important}
+h3{font-weight:600!important}
+.sec-kicker,.eyebrow{display:inline-block;color:var(--ink)!important;background:var(--white);border:var(--line);border-radius:var(--radius-pill);padding:5px 12px!important;font-size:11px!important;font-weight:600!important;letter-spacing:.02em!important;margin-bottom:14px!important}
+.dark .sec-kicker{background:var(--lime)!important;color:var(--ink)!important;border-color:var(--lime)}
+.lede,.body-p,.card p,.meta,p{color:inherit}
+.lede,.body-p{color:var(--ink)!important}
+.dark .lede,.dark p{color:#E8E8E8!important}
+
+/* cards: white, black outline, no shadow */
+.stat,.panel,.tier,.gap,.callout,.companions,.chart,.card,.risk,.phase,.cell,.statement,.tbl,.companion,.provisional,.story .panel{
+  background:var(--white)!important;border:var(--line)!important;border-radius:var(--radius)!important;box-shadow:none!important}
+.panel.trig,.panel.obj,.callout,.gap,.phase,.gate,.qb{border-left:var(--line)!important;border-top:var(--line)!important}
+.panel.trig h3::before,.panel.obj h3::before{content:"";display:inline-block;width:10px;height:10px;border:var(--line);border-radius:50%;margin-right:8px;vertical-align:0}
+.panel.trig h3::before{background:var(--lime)} .panel.obj h3::before{background:var(--pink)}
+.stat .num{color:var(--ink)!important;font-size:28px!important}
+.stat .lbl,.gap p,.tier p,.panel li,.callout p{color:var(--ink)!important}
+.statement{color:var(--ink)!important}
+.statement p{color:var(--ink)!important;font-weight:400!important}
+.statement .detail{color:var(--gray)!important}
+.statement .tag,.callout .ct,.companions .ct,.gap .gt,.risk .rt,.phase .when{color:var(--ink)!important;font-size:11px!important;font-weight:600!important;text-transform:uppercase}
+
+/* pills */
+.ctag,.tag,.badge,.pill,.b-1,.b-2,.b-3,.b-4{display:inline-block;background:var(--lavender)!important;color:var(--ink)!important;border:var(--line)!important;border-radius:var(--radius-pill)!important;padding:4px 12px!important;font-size:11px!important;font-weight:600!important;text-transform:uppercase}
+.tier.a .ctag,.b-1{background:var(--tomato)!important}
+.tier.b .ctag,.b-2{background:var(--lime)!important}
+.tier.c .ctag,.b-3{background:var(--turquoise)!important}
+.statement .tag{background:var(--citron)!important;border:var(--line);border-radius:999px;padding:4px 12px;display:inline-block}
+
+/* dark sections: ink cards with white outline */
+.dark .phase,.dark .risk,.dark .cell{background:#161616!important;border:1.5px solid var(--white)!important;color:var(--white)!important}
+.dark .phase h3,.dark .risk p,.dark .phase p,.dark h2,.dark h3{color:var(--white)!important}
+.dark .phase .when{color:var(--lime)!important}
+.dark .risk .rt{color:var(--lime)!important}
+.dark .phase p,.dark .risk p{color:#DADADA!important}
+
+/* tables */
+.tbl{overflow:hidden}
+.tbl th,th{background:var(--white)!important;color:var(--ink)!important;font-size:10px!important;font-weight:600!important;text-transform:uppercase;border-bottom:var(--line)!important}
+.tbl td,td{color:var(--ink)!important;border-top:1px solid #0A0A0A22!important}
+.tbl tr.mbm td{background:var(--citron)!important;border-top:var(--line)!important;border-bottom:var(--line)!important}
+.tbl tr.med td,.tbl tr.total td{background:#F4F4F2!important}
+.qlist li{color:var(--ink)!important;border-top:1px solid #0A0A0A33!important}
+.note{color:var(--ink)!important;opacity:.75}
+a{color:var(--ink)!important;text-decoration:underline;text-underline-offset:3px}
+
+/* footer */
+footer{background:var(--ink)!important;color:var(--white)!important;border-top:var(--line)}
+footer .wrap,footer p{color:var(--white)!important;font-size:10px!important;text-transform:uppercase;letter-spacing:.02em}
+footer::after{content:"Confidential & Proprietary";display:block;max-width:960px;margin:8px auto 0;padding:0 28px;text-align:right;font-family:var(--font-sans);font-size:11px;color:var(--gray-dark);text-transform:none}
+
+/* card-system pages (personas) */
+main.container{max-width:none;padding:0}
+main.container > section,main.container > .companion{max-width:none;margin:0!important;padding:44px max(24px,calc((100vw - 760px)/2))!important}
+main.container > .companion{background:var(--ink)!important;border:none!important;border-radius:0!important}
+main.container > .companion p{color:var(--lime)!important}
+main.container > .companion a{color:var(--white)!important}
+.card h2{font-weight:600!important;font-size:22px!important;letter-spacing:-0.01em}
+.card h3{color:var(--ink)!important;font-size:10px!important}
+.card p,.meta,.stat-row .k,li{color:var(--ink)!important}
+.meta{opacity:.8}
+.stat-row{border-bottom:1px solid #0A0A0A22!important}
+.provisional{background:var(--citron)!important}
+.provisional p{color:var(--ink)!important}
+footer{max-width:none!important;padding:28px max(24px,calc((100vw - 760px)/2)) 40px!important}
+th,td{padding-right:14px!important}
+th.num,td.num{padding-left:14px!important}
+
+</style>
+<div class="hero"><div class="hero-inner"><p class="wordmark">THIRD.</p><p class="kicker">Buyer persona</p><h1>Florence by Mills</h1><p class="lede">Who buys Florence by Mills basics and sleep sets on TikTok Shop, what moves them, and what stops them. Built from purchase-side data only. November 2026.</p></div></div>
+<div class="strip"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span><span class="s7"></span><span class="s8"></span><span class="s9"></span></div>
+<main class="container">
+<section>
+<div class="provisional"><p><strong>Provisional.</strong> A full buyer persona runs on 75 top-selling videos and 1,500 or more mined buyer comments. This one ran on the 80 top-selling videos from the 90 days to November 10, 2026, and 133 written reviews across the top 8 products, dated April 2025 to February 2026.</p><p>The triggers and objections are clear and repeat across products. Treat the rankings as directional until more recent review text is available.</p></div>
+</section>
+
+<section><p class="eyebrow">Who they are</p>
+<div class="card">
+<p>The Florence by Mills buyer is a woman shopping for soft everyday basics she can wear all day: a tee, a tank, a sweat short, a long sleeve and, since October, a sleep set. Reviews run from XXS to XXL, and many buyers post their height, weight and size so the next shopper can choose. "I'm 5'4" 150 lbs and I sized up" is a typical review.</p>
+<p>She buys for herself first and comes back for more colors. The Daze Off Sleep Set added a second buyer: someone shopping for a gift or a matching holiday set. Reviews and captions mention girlfriends, a boyfriend's sister, a daughter, teacher gifts and Christmas morning.</p>
+<p>She is not a fashion shopper chasing a trend. She wants something that feels good, fits her body and works with what she owns. "Perfect staple" and "goes with everything" show up across the tee, tank and long sleeve.</p>
+</div>
+</section>
+
+<section><p class="eyebrow">Purchase triggers, ranked</p>
+<div class="card">
+<h2>1. It feels soft and comfortable</h2>
+<p class="meta">71 of 133 written reviews say soft, comfy, cozy or buttery. "So soft and comfy." "I could live in this." "Super soft, stretchy, and flattering." Top videos lead with touch and stretch.</p>
+<h2>2. More colors on a shape she already loves</h2>
+<p class="meta">18 reviews say she bought or plans to buy more colors. "I bought 4 more." "Will be buying more in every color." Video captions repeat it: "I ordered it in every color," "literally scrambling to get the other colors."</p>
+<h2>3. A creator who looks like her shows the fit</h2>
+<p class="meta">Top videos state the size worn: "Wearing size XS," "I'm in a medium in the shirt." Buyers trust a size callout from someone with a similar body. "Everybody getting these are super skinny" was the worry in one review, from a size 14 buyer who then said they fit.</p>
+<h2>4. Thick, quality fabric for the price</h2>
+<p class="meta">25 reviews mention quality, thickness or that it is well made. "NOT cheap feeling." "Really good quality for the price." "Not see through at all."</p>
+<h2>5. Holiday, gifting and matching</h2>
+<p class="meta">Daze Off videos sell the moment: "perfect pajama set for Florida winters," "teacher gifts," "match for the holidays." The top video in the window showed nine holiday prints and sold 342 units.</p>
+</div>
+</section>
+
+<section><p class="eyebrow">Top objections</p>
+<div class="card">
+<h2>"What size should I get?"</h2>
+<p class="meta">Size or fit comes up in 56 of 133 reviews, with conflicting advice: true to size, size up for loose, size down for a snug fit. The Softie Cotton Tee draws "way undersized" and "size up x2." Content answers it by naming the size worn, the creator's height and how it fits.</p>
+<h2>"Is it see-through?"</h2>
+<p class="meta">White and light colors on the tee and pointelle set draw "completely see through," and tank buyers note they still need a bra. Content answers it by showing the color in daylight and saying what is worn underneath.</p>
+<h2>"How short is it?"</h2>
+<p class="meta">Shorts on the sweat short, pointelle and Daze Off sets draw "shorter than I thought," and the long sleeve is "half a shirt long" on a long torso. Content answers it by showing the full length on camera, front and back.</p>
+<h2>"Can I return it?"</h2>
+<p class="meta">Three reviews describe trouble returning a TikTok Shop order through the brand site. Content cannot fix this. The shop ops team should make the TikTok Shop return path clear on product pages.</p>
+</div>
+</section>
+
+<section><p class="eyebrow">The number one buyer question</p>
+<div class="card">
+<h2>"I wasn't sure what size to get."</h2>
+<p>Top content answers this in the first few seconds: the size worn, the creator's height or usual size, and a turn to show the fit. The best answer comes from creators of different sizes and ages, so more shoppers can find someone built like them.</p>
+</div>
+</section>
+
+<section><p class="eyebrow">Price tolerance</p>
+<div class="card">
+<p>Florence by Mills sits above the closest basics brand on tops and tanks, in line on sets, and below on sleep. Prices are realized price over the 90 days to November 10, 2026 (sales divided by units).</p>
+<div class="tw"><table><thead><tr><th>Florence by Mills</th><th class="num">Price</th><th>Closest comparison</th><th class="num">Price</th></tr></thead><tbody>
+<tr><td>Softie Seamless Long Sleeve Top</td><td class="num">$38.50</td><td>PUMIEY Scoop Neck Long Sleeve</td><td class="num">$19.10</td></tr>
+<tr><td>Softie Seamless Tank</td><td class="num">$25.10</td><td>PUMIEY Square Neck Tank</td><td class="num">$16.90</td></tr>
+<tr><td>Cozy Crush Sweat Short</td><td class="num">$35.70</td><td>Comfrt Straight Leg Sweatpant</td><td class="num">$29.80</td></tr>
+<tr><td>Pointelle Tank &amp; Shortie Set</td><td class="num">$33.30</td><td>PUMIEY 2-Piece Lounge Set</td><td class="num">$32.00</td></tr>
+<tr><td>Daze Off Sleep Set</td><td class="num">$20.95</td><td>No direct set at this price</td><td class="num"></td></tr>
+</tbody></table></div>
+<p>Buyers accept the higher price on tops when the content shows thickness and softness. "Worth the money" and "for the price" reviews come from the long sleeve and tank. The Daze Off set at $20 is the easiest first purchase in the range.</p>
+</div>
+</section>
+
+<section><p class="eyebrow">Conversion efficiency against the set</p>
+<div class="card">
+<p class="meta">Units sold per 1,000 views on each shop's top 10 videos by sales, 90 days to November 10, 2026.</p>
+<div class="stat-row"><span class="k">PUMIEY (9 of 10 boosted)</span><span class="v">1.56</span></div>
+<div class="stat-row"><span class="k">Halara (9 of 10 boosted)</span><span class="v">0.58</span></div>
+<div class="stat-row"><span class="k">Florence by Mills (6 of 10 boosted)</span><span class="v">0.45</span></div>
+<div class="stat-row"><span class="k">Comfrt (10 of 10 boosted)</span><span class="v">0.40</span></div>
+<p>Florence by Mills converts in line with Halara and Comfrt. PUMIEY converts best with try-on videos of a single basic and a clear size callout. Four of Florence by Mills' top 10 were organic, including three long day-in-the-life videos from one creator decorating for the holidays.</p>
+</div>
+</section>
+
+<div class="companion"><p>Companion documents</p><a href="https://claude.ai/artifact/9BfLX4kE6f1xNAyD9da3Ce">Florence by Mills 2026 Recap and 2027 Strategy</a><a href="https://claude.ai/artifact/JHm6tGMKgsCxTiJG7RQF8t">Florence by Mills Commerce Creator Persona</a></div>
+</main>
+<footer><p>third. Buyer Persona. Florence by Mills. November 11, 2026.</p><p>Sources: written buyer reviews on the top 8 products (133 reviews with text, April 2025 to February 2026), the 80 top-selling videos and captions from the 90 days to November 10, 2026, and TikTok Shop US marketplace data for comparison brands over the same 90 days.</p><p>GMV figures are gross TikTok-attributed GMV, not net revenue. Review counts use written reviews only. Video comment text was not available, so captions and review text stand in for buyer language.</p></footer>
+
+</body></html>

@@ -1,0 +1,664 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Florence by Mills 2027 Roadmap</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#FF5A3E; --ink:#111111; --paper:#FFFFFF; --gray:#F4F4F2; --mid:#6B6B6B;
+  --c1:#FF5A3E; --c2:#FFB03A; --c3:#FFE23A; --c4:#7ED957; --c5:#3AC3FF; --c6:#3A6BFF; --c7:#9B3AFF; --c8:#FF3A8E; --c9:#111111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.hero{background:var(--tomato);color:#fff;padding:56px 0 48px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.92;}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.08;margin-top:14px;max-width:760px;}
+.hero .sub{margin-top:16px;font-size:17px;max-width:640px;opacity:.95;}
+.strip{display:flex;height:10px;}
+.strip span{flex:1;}
+.strip span:nth-child(1){background:var(--c1);} .strip span:nth-child(2){background:var(--c2);} .strip span:nth-child(3){background:var(--c3);} .strip span:nth-child(4){background:var(--c4);} .strip span:nth-child(5){background:var(--c5);} .strip span:nth-child(6){background:var(--c6);} .strip span:nth-child(7){background:var(--c7);} .strip span:nth-child(8){background:var(--c8);} .strip span:nth-child(9){background:var(--c9);}
+section{padding:52px 0;}
+section.alt{background:var(--gray);}
+h2{font-size:26px;font-weight:800;letter-spacing:-.01em;}
+h3{font-size:18px;font-weight:800;}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);margin-bottom:8px;}
+.lede{margin-top:12px;font-size:16px;max-width:720px;color:#333;}
+.body-p{margin-top:14px;font-size:15px;max-width:720px;color:#333;}
+.statement{background:var(--ink);color:#fff;border-radius:14px;padding:32px;margin-top:26px;}
+.statement .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.statement p{margin-top:12px;font-size:21px;font-weight:700;line-height:1.35;max-width:720px;}
+.statement .detail{margin-top:14px;font-size:15px;font-weight:400;color:#CFCFCF;max-width:720px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+.stat{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:20px 18px;}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);}
+.stat .lbl{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.panel{border-radius:12px;padding:24px;border:1.5px solid #E4E4E0;background:#fff;}
+.panel.trig{border-top:6px solid var(--c4);}
+.panel.obj{border-top:6px solid var(--c8);}
+.panel h3{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;}
+.panel ul{list-style:none;margin-top:14px;}
+.panel li{padding:10px 0;border-top:1px solid #EDEDEA;font-size:15px;}
+.panel li:first-child{border-top:none;}
+.panel li b{font-weight:700;}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.tier{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:24px;}
+.tier .ctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:5px;}
+.tier.a .ctag{background:var(--c1);} .tier.b .ctag{background:var(--c6);} .tier.c .ctag{background:var(--c9);}
+.tier h3{margin-top:14px;font-size:18px;font-weight:800;}
+.tier .price{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--ink);}
+.tier p{margin-top:10px;font-size:14px;color:#333;}
+.tier .row{margin-top:14px;padding-top:14px;border-top:1px solid #EDEDEA;font-size:13px;color:var(--mid);}
+.tier .row b{color:var(--ink);}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;overflow:hidden;}
+.tbl th{background:var(--gray);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-align:left;padding:13px 16px;border-bottom:1.5px solid #E4E4E0;}
+.tbl td{padding:13px 16px;font-size:14px;border-top:1px solid #EDEDEA;}
+.tbl tr:first-child td{border-top:none;}
+.tbl td.n{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.tbl tr.total td{background:#FAFAF8;font-weight:700;border-top:1.5px solid #E4E4E0;}
+section.alt .tbl{background:#fff;}
+.dark{background:var(--ink);color:#fff;}
+.dark h2{color:#fff;}
+.dark h3{color:#fff;}
+.dark .lede{color:#CFCFCF;}
+.dark .sec-kicker{color:var(--c3);}
+.dark .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px;}
+.dark .cell{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:22px;}
+.dark .cell .num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:var(--c3);}
+.dark .cell .lbl{margin-top:8px;font-size:14px;color:#BDBDBD;line-height:1.45;}
+.phases{margin-top:28px;display:grid;gap:12px;}
+.phase{background:#1D1D1D;border:1px solid #2C2C2C;border-left:6px solid var(--c3);border-radius:12px;padding:22px 24px;}
+.phase:nth-child(1){border-left-color:var(--c2);} .phase:nth-child(2){border-left-color:var(--c3);} .phase:nth-child(3){border-left-color:var(--c4);} .phase:nth-child(4){border-left-color:var(--c5);} .phase:nth-child(5){border-left-color:var(--c6);} .phase:nth-child(6){border-left-color:var(--c7);} .phase:nth-child(7){border-left-color:var(--c8);}
+.phase .when{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E8E;}
+.phase h3{margin-top:8px;font-size:17px;font-weight:800;}
+.phase p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.risks{margin-top:26px;display:grid;gap:12px;}
+.risk{background:#1D1D1D;border:1px solid #2C2C2C;border-radius:12px;padding:20px 24px;}
+.risk .rt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--c8);}
+.risk p{margin-top:9px;font-size:14px;color:#BDBDBD;line-height:1.5;}
+.callout{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--c2);border-radius:12px;padding:22px 24px;}
+.callout .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.callout p{margin-top:9px;font-size:15px;color:#333;}
+.note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+footer{padding:26px 0;background:#fff;}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .twocol,.tiers,.dark .grid3{grid-template-columns:1fr;}
+  .tbl{display:block;overflow-x:auto;}
+  footer .wrap{flex-direction:column;gap:8px;}
+}
+.companions{margin-top:26px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;}
+section.alt .companions{background:#fff;}
+.companions .ct{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.companions ul{list-style:none;margin-top:12px;}
+.companions li{padding:8px 0;border-top:1px solid #EDEDEA;font-size:14px;color:#333;}
+.companions li:first-child{border-top:none;}
+.companions li b{font-weight:700;color:var(--ink);}
+.tbl tr.mbm td{background:#FFF1EE;font-weight:700;border-top:2px solid var(--tomato);border-bottom:2px solid var(--tomato);}
+.tbl tr.med td{background:#FAFAF8;font-weight:700;}
+.tbl tr.ex td{color:#9A9A9A;}
+.tbl td.r,.tbl th.r{text-align:right;}
+.tbl.dense td{padding:9px 14px;font-size:13px;}
+.tbl.dense th{padding:11px 14px;}
+.chart{margin-top:24px;background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 20px 14px;}
+.chart svg{width:100%;height:auto;display:block;}
+.legend{display:flex;gap:22px;flex-wrap:wrap;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:7px;vertical-align:-1px;}
+.qlist{list-style:none;margin-top:14px;}
+.qlist li{padding:11px 0;border-top:1px solid #EDEDEA;font-size:15px;color:#333;}
+.qlist li:first-child{border-top:none;}
+.gapgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px;}
+.gap{background:#fff;border:1.5px solid #E4E4E0;border-radius:12px;padding:22px 24px;border-left:6px solid var(--tomato);}
+.gap .gt{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.gap .gn{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;}
+.gap p{margin-top:8px;font-size:14px;color:#333;}
+@media(max-width:760px){.gapgrid{grid-template-columns:1fr;}}
+/* page-contract additions: safe-area gutters, tabular numbers, phone sizing */
+.wrap{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));}
+.tbl td.n,.stat .num,.gap .gn{font-variant-numeric:tabular-nums;}
+.stat,.panel,.tier,.gap{min-width:0;}
+@media(max-width:480px){.stats{grid-template-columns:1fr;}.statement{padding:24px;}.statement p{font-size:18px;}}
+.story-sum{margin-top:22px;background:#fff;border:1.5px solid #E4E4E0;border-left:6px solid var(--tomato);border-radius:12px;padding:18px 22px;font-size:16px;color:#222;max-width:100%;}
+.story{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px;}
+.story .panel{min-width:0;}
+.story .panel.sp1{border-top:6px solid var(--c2);} .story .panel.sp2{border-top:6px solid var(--c4);} .story .panel.sp3{border-top:6px solid var(--c8);}
+.story .panel h3{font-size:13px;}
+.story .mom{margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);}
+.story .panel ul{list-style:disc;padding-left:18px;margin-top:10px;}
+.story .panel li{border-top:none;padding:5px 0;font-size:14px;color:#333;}
+@media(max-width:900px){.story{grid-template-columns:1fr;}}
+.tbl tr.grp td{background:#F4F4F2;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6B6B6B;padding-top:10px;}
+.tbl.samp td.gapc{background:#FFE1E1;color:#B91C1C;font-weight:600;}
+.tbl.samp td.hot{background:#E6F7DF;}
+.subh{margin-top:44px;padding-top:18px;border-top:2px solid #111;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#111;}
+.panel li i{font-style:normal;font-weight:700;color:var(--c8);}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+.pill.g{background:#E6F7DF;color:#2F6B1E;} .pill.y{background:#FFF3D6;color:#8A5A00;} .pill.r{background:#FFE1E1;color:#B91C1C;}
+ul.simple{list-style:none;margin-top:16px;padding:0;} ul.simple li{padding:10px 0;border-top:1px solid #E4E4E0;font-size:16px;} ul.simple li:first-child{border-top:none;}
+details.more{margin-top:18px;border:1.5px solid #E4E4E0;border-radius:12px;padding:12px 16px;background:#fff;} details.more summary{cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
+.tiers.four{grid-template-columns:repeat(4,1fr);} @media(max-width:900px){.tiers.four{grid-template-columns:1fr 1fr;}} @media(max-width:560px){.tiers.four{grid-template-columns:1fr;}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Martian+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* third. design system override (Nov 2026 deck look) */
+:root{
+  --tomato:#F7674C; --citron:#F7FE9C; --lime:#B4EFA8; --turquoise:#C7EAEA;
+  --pink:#E48CF9; --lavender:#BAB7F9; --warmgray:#CBCEC8; --plum:#841C46;
+  --ink:#0A0A0A; --white:#FFFFFF; --gray:#6B6B6B; --gray-dark:#A8A8A8;
+  --line:1.5px solid #0A0A0A; --radius:14px; --radius-pill:999px;
+  --font-sans:'Inter Tight', Arial, sans-serif;
+  --font-mono:'Martian Mono', 'Courier New', monospace;
+  --c1:#F7674C; --c2:#F7FE9C; --c3:#B4EFA8; --c4:#C7EAEA; --c5:#E48CF9; --c6:#BAB7F9; --c7:#CBCEC8; --c8:#841C46; --c9:#0A0A0A;
+  --surface:#FFFFFF; --surface-2:#FFFFFF; --page:#F7FE9C; --line-c:#0A0A0A;
+  --ink-2:#0A0A0A; --muted:#6B6B6B; --faint:#6B6B6B; --mid:#6B6B6B;
+}
+html,body{background:var(--citron)!important;color:var(--ink)!important;font-family:var(--font-sans)!important}
+body *{font-family:var(--font-sans)}
+.mono,.kicker,.sec-kicker,.eyebrow,.label,.ctag,.tag,.when,.rt,.gt,.ct,.badge,th,.tbl th,.legend,.note,footer,footer .wrap,.wordmark,.stat-row .v,.metric,.provisional strong,.companion p,.do strong,.dont strong,.card h3,.panel h3,.phase .when,.companions .ct,.callout .ct,.gap .gt,.risk .rt,.statement .tag,.samp-key,.pill{
+  font-family:var(--font-mono)!important}
+/* numbers read better in sans */
+.stat .num,.gap .gn,.tier .price,.dark .cell .num,.tbl td.n,td.num,.metric,.stat-row .v{font-family:var(--font-sans)!important;font-weight:600!important;letter-spacing:-0.01em}
+
+/* hero */
+.hero{background:var(--tomato)!important;color:var(--ink)!important;position:relative;padding-top:64px!important}
+.hero::before{content:"third.";position:absolute;top:22px;left:max(28px,calc((100vw - 960px)/2 + 28px));font-family:var(--font-sans);font-weight:800;font-size:26px;letter-spacing:-0.03em;color:var(--ink)}
+.hero::after{content:"COMMERCE NEVER SLEEPS.";position:absolute;top:30px;right:max(20px,calc((100vw - 960px)/2 + 28px));font-family:var(--font-mono);font-size:10px;font-weight:400;letter-spacing:.02em;color:var(--ink)}
+.hero .kicker,.hero .wordmark{color:var(--ink)!important;opacity:1!important;font-weight:600!important;font-size:11px!important;letter-spacing:.04em!important;text-transform:uppercase}
+.hero .wordmark{display:none}
+.hero h1{color:var(--ink)!important;font-weight:400!important;letter-spacing:-0.02em!important;line-height:1.02!important;font-size:clamp(40px,6vw,64px)!important}
+.hero .sub,.hero .lede{color:var(--ink)!important;opacity:1!important}
+.strip{display:none!important}
+
+/* section grounds: one pastel per section */
+section{background:var(--lime)}
+section:nth-of-type(5n+1){background:var(--citron)}
+section:nth-of-type(5n+2){background:var(--turquoise)}
+section:nth-of-type(5n+3){background:var(--lavender)}
+section:nth-of-type(5n+4){background:var(--lime)}
+section:nth-of-type(5n){background:var(--pink)}
+section.dark,.dark{background:var(--ink)!important;color:var(--white)!important}
+section{border-top:var(--line)}
+h2{font-weight:400!important;letter-spacing:-0.02em;line-height:1.08;font-size:clamp(28px,3.6vw,40px)!important}
+h3{font-weight:600!important}
+.sec-kicker,.eyebrow{display:inline-block;color:var(--ink)!important;background:var(--white);border:var(--line);border-radius:var(--radius-pill);padding:5px 12px!important;font-size:11px!important;font-weight:600!important;letter-spacing:.02em!important;margin-bottom:14px!important}
+.dark .sec-kicker{background:var(--lime)!important;color:var(--ink)!important;border-color:var(--lime)}
+.lede,.body-p,.card p,.meta,p{color:inherit}
+.lede,.body-p{color:var(--ink)!important}
+.dark .lede,.dark p{color:#E8E8E8!important}
+
+/* cards: white, black outline, no shadow */
+.stat,.panel,.tier,.gap,.callout,.companions,.chart,.card,.risk,.phase,.cell,.statement,.tbl,.companion,.provisional,.story .panel{
+  background:var(--white)!important;border:var(--line)!important;border-radius:var(--radius)!important;box-shadow:none!important}
+.panel.trig,.panel.obj,.callout,.gap,.phase,.gate,.qb{border-left:var(--line)!important;border-top:var(--line)!important}
+.panel.trig h3::before,.panel.obj h3::before{content:"";display:inline-block;width:10px;height:10px;border:var(--line);border-radius:50%;margin-right:8px;vertical-align:0}
+.panel.trig h3::before{background:var(--lime)} .panel.obj h3::before{background:var(--pink)}
+.stat .num{color:var(--ink)!important;font-size:28px!important}
+.stat .lbl,.gap p,.tier p,.panel li,.callout p{color:var(--ink)!important}
+.statement{color:var(--ink)!important}
+.statement p{color:var(--ink)!important;font-weight:400!important}
+.statement .detail{color:var(--gray)!important}
+.statement .tag,.callout .ct,.companions .ct,.gap .gt,.risk .rt,.phase .when{color:var(--ink)!important;font-size:11px!important;font-weight:600!important;text-transform:uppercase}
+
+/* pills */
+.ctag,.tag,.badge,.pill,.b-1,.b-2,.b-3,.b-4{display:inline-block;background:var(--lavender)!important;color:var(--ink)!important;border:var(--line)!important;border-radius:var(--radius-pill)!important;padding:4px 12px!important;font-size:11px!important;font-weight:600!important;text-transform:uppercase}
+.tier.a .ctag,.b-1{background:var(--tomato)!important}
+.tier.b .ctag,.b-2{background:var(--lime)!important}
+.tier.c .ctag,.b-3{background:var(--turquoise)!important}
+.statement .tag{background:var(--citron)!important;border:var(--line);border-radius:999px;padding:4px 12px;display:inline-block}
+
+/* dark sections: ink cards with white outline */
+.dark .phase,.dark .risk,.dark .cell{background:#161616!important;border:1.5px solid var(--white)!important;color:var(--white)!important}
+.dark .phase h3,.dark .risk p,.dark .phase p,.dark h2,.dark h3{color:var(--white)!important}
+.dark .phase .when{color:var(--lime)!important}
+.dark .risk .rt{color:var(--lime)!important}
+.dark .phase p,.dark .risk p{color:#DADADA!important}
+
+/* tables */
+.tbl{overflow:hidden}
+.tbl th,th{background:var(--white)!important;color:var(--ink)!important;font-size:10px!important;font-weight:600!important;text-transform:uppercase;border-bottom:var(--line)!important}
+.tbl td,td{color:var(--ink)!important;border-top:1px solid #0A0A0A22!important}
+.tbl tr.mbm td{background:var(--citron)!important;border-top:var(--line)!important;border-bottom:var(--line)!important}
+.tbl tr.med td,.tbl tr.total td{background:#F4F4F2!important}
+.qlist li{color:var(--ink)!important;border-top:1px solid #0A0A0A33!important}
+.note{color:var(--ink)!important;opacity:.75}
+a{color:var(--ink)!important;text-decoration:underline;text-underline-offset:3px}
+
+/* footer */
+footer{background:var(--ink)!important;color:var(--white)!important;border-top:var(--line)}
+footer .wrap,footer p{color:var(--white)!important;font-size:10px!important;text-transform:uppercase;letter-spacing:.02em}
+footer::after{content:"Confidential & Proprietary";display:block;max-width:960px;margin:8px auto 0;padding:0 28px;text-align:right;font-family:var(--font-sans);font-size:11px;color:var(--gray-dark);text-transform:none}
+
+/* card-system pages (personas) */
+main.container{max-width:none;padding:0}
+main.container > section,main.container > .companion{max-width:none;margin:0!important;padding:44px max(24px,calc((100vw - 760px)/2))!important}
+main.container > .companion{background:var(--ink)!important;border:none!important;border-radius:0!important}
+main.container > .companion p{color:var(--lime)!important}
+main.container > .companion a{color:var(--white)!important}
+.card h2{font-weight:600!important;font-size:22px!important;letter-spacing:-0.01em}
+.card h3{color:var(--ink)!important;font-size:10px!important}
+.card p,.meta,.stat-row .k,li{color:var(--ink)!important}
+.meta{opacity:.8}
+.stat-row{border-bottom:1px solid #0A0A0A22!important}
+.provisional{background:var(--citron)!important}
+.provisional p{color:var(--ink)!important}
+footer{max-width:none!important;padding:28px max(24px,calc((100vw - 760px)/2)) 40px!important}
+th,td{padding-right:14px!important}
+th.num,td.num{padding-left:14px!important}
+
+
+/* third. extras (v19) */
+.story-sum{background:var(--white)!important;border:var(--line)!important;border-left:6px solid var(--tomato)!important;border-radius:var(--radius)!important;color:var(--ink)!important}
+.subh{font-family:var(--font-mono)!important;border-top:var(--line)!important;color:var(--ink)!important;font-size:12px!important}
+.grp td{background:var(--warmgray)!important;font-family:var(--font-mono)!important;color:var(--ink)!important;font-size:10px!important}
+.hot{background:var(--lime)!important}
+.gapc{background:#FBC3B8!important;color:var(--ink)!important}
+.pill.g{background:var(--lime)!important}.pill.y{background:var(--citron)!important}.pill.r{background:var(--tomato)!important}
+.more{background:var(--white)!important;border:var(--line)!important;border-radius:var(--radius)!important}
+.more summary{font-family:var(--font-mono)!important}
+.simple li{border-top:1px solid #0A0A0A22!important;color:var(--ink)!important}
+.samp-key span span{border-color:var(--ink)!important}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.steps .step{background:var(--white);border:var(--line);border-radius:var(--radius);padding:18px 20px}
+.steps .step .pill{margin-bottom:10px}
+.steps .step h3{font-size:16px;margin:12px 0 4px}
+.steps .step p{font-size:14px;color:var(--ink)}
+.cadence{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.cadence .phase{padding:16px 18px}
+.cadence .phase p,.cadence .phase h3,.cadence .phase .when{color:var(--ink)!important}
+.scope{margin-top:18px;background:var(--citron);border:var(--line);border-radius:var(--radius);padding:14px 18px;font-size:14px}
+.bigquote{font-size:clamp(22px,3vw,30px);font-weight:400;letter-spacing:-0.01em;line-height:1.2;margin:18px 0 6px}
+@media(max-width:760px){.steps,.cadence{grid-template-columns:1fr}}
+.chart{background:var(--white)!important}
+</style>
+<div class="hero"><div class="wrap"><div class="kicker">Florence by Mills Fashion &middot; TikTok Shop &middot; 2026 Recap and 2027 Strategy</div><h1>2026 Recap + 2027 Strategy</h1><p class="sub">What drove 2026 and the plan to reach $1.8M (stretch $2M) in 2027. 2026 is on track for $1.52M, with November set to be the best month in shop history.</p></div></div>
+<div class="strip"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<section><div class="wrap"><div class="sec-kicker">01 &middot; 2026 recap</div><h2>2026 is on track for $1.52M, with November set to be the best month in shop history. The 2027 goal is $1.8M</h2>
+<div class="stats">
+<div class="stat"><div class="num">$1.52M</div><div class="lbl">Projected 2026 GMV. $1.14M through October</div></div>
+<div class="stat"><div class="num">$187.8K</div><div class="lbl">June 2026, the best month in shop history. November is on track to beat it</div></div>
+<div class="stat"><div class="num">$1.8M</div><div class="lbl">2027 goal. +$280K, or +18% on 2026</div></div>
+<div class="stat"><div class="num">$2M</div><div class="lbl">2027 stretch. +$480K, or +32% on 2026</div></div>
+</div>
+
+<p class="subh">A &middot; What moved it</p>
+<p class="lede">Growth peaked with every lever on. Pulling back in July slowed sales, and we've reactivated levers with a focus on profitability.</p>
+<div class="tiers four">
+<div class="panel sp1"><h3>Feb to Apr &middot; Creators scaled</h3><ul>
+<li>Creators posting rose from 244 to 331, and videos from 535 to 885.</li>
+<li>About 320 samples shipped each month, two-thirds of them on best sellers.</li>
+<li>One video sold $41.1K of the Foldover Skirt in March.</li>
+</ul></div>
+<div class="panel sp2"><h3>May to Jun &middot; Levers on</h3><ul>
+<li>FBM joined Deals for You Days, and ad spend rose to $33.6K while ROI improved from 3.11x to 3.51x.</li>
+<li>With creators, campaigns and spend all working together, sales per video rose from $139 to $238, and conversion rose from 0.77% in April to 1.37% in June.</li>
+<li>Cozy Crush Short grew from $29.6K to $52.0K.</li>
+</ul></div>
+<div class="panel sp3"><h3>Jul to Sep &middot; Levers pulled back</h3><ul>
+<li>After a profitability review, we opted out of Smart Promotions and TikTok Shop campaigns.</li>
+<li>Ad spend was cut in half, to $17.5K, and the Shop Ads commission dropped to 10%.</li>
+<li>The free-shipping threshold moved to $50, so the Cozy Crush Short no longer qualified.</li>
+</ul></div>
+<div class="panel sp1"><h3>Oct to Nov &middot; Rebuilding</h3><ul>
+<li>Enrolled in Smart Promotions, and free shipping is back to $30.</li>
+<li>Sampling volume is up in October and November.</li>
+<li>The Softie Seamless Long Sleeve restock became a top seller.</li>
+<li>Daze Off launched October 22 and took off quickly.</li>
+<li>November is on pace for a record month.</li>
+</ul></div>
+</div>
+
+<p class="subh">B &middot; What's working</p>
+<p class="lede">Creators sell, Millie mentions convert, and best sellers pay back every sample.</p>
+<div class="twocol">
+<div class="panel trig"><h3>Affiliate</h3><ul>
+<li><b>Creators sell the shop.</b> 79% of 2026 sales ($907.7K) came from creator videos. 876 creators have made at least 1 sale in 2026.</li>
+<li><b>Top creator retention stays strong.</b> The top 10 creators drive 42% of sales, and all 10 still post today.</li>
+<li><b>Sampling is back up.</b> About 450 samples went out in October, with about 500 slated for November.</li>
+<li><b>Contests drive revenue.</b> The spring challenge paid $1,950 in prizes to 5 creators, who drove $56.4K in sales from 131 videos. The winner drove $23.1K from 41 videos. Next: a creator contest every month or two.</li>
+</ul></div>
+<div class="panel trig"><h3>Millie, merchandising and heroes</h3><ul>
+<li><b>Millie content converts.</b> Top video hooks open with "Thanks Millie, selling out again."</li>
+<li><b>New colors in best-selling silhouettes work.</b> Fall colors lifted the Seamless Long Sleeve about 600% in August. The Foldover Shortie rose 255% after restock.</li>
+<li><b>Best sellers pay back per sample and more.</b> July to September, each sample of the four main best sellers drove about $456. Cozy Crush drove about $740 per sample and the Cotton Tee about $410.</li>
+<li><b>Creators want the best sellers.</b> Two of every three August sample requests were for best sellers.</li>
+<li><b>Two best sellers were sampled every month.</b> Cozy Crush Sweat Short and the Cotton Tee, FBM's #1 and #2 products.</li>
+</ul></div>
+</div>
+
+<p class="subh">C &middot; What's not working</p>
+<p class="lede">Most of the Q3 decline came from choices we have already begun reversing.</p>
+<div class="twocol">
+<div class="panel obj"><h3>Campaigns, merchandising and paid media</h3><ul>
+<li><b>Removed from campaigns.</b> No Flash Sales, Weekly Promos or monthly campaigns from July to September. <i>Next:</i> maintain Smart Promotions and campaign enrollment in 2027.</li>
+<li><b>New launches sold less than heroes, and in-stock heroes were under-sampled.</b> About 200 samples went to the Take Me Home and Classic Boxer &amp; Cami Sets and the Barrel Leg and Wide Leg Sweatpants. Creators posted (70% to 89% post rates), but the videos sold $2.4K. <i>Next:</i> seed new launches big and fast, read the first 2 to 3 weeks, then scale or stop.</li>
+<li><b>Proven best sellers were left out.</b> The Skirt, Full Length Tank and Shortie got 47 samples from July to September and still sold $59K. <i>Next:</i> 60% of samples go to best sellers every month.</li>
+<li><b>The hero product lost free shipping.</b> Moving the minimum to $50 put the $39.95 Cozy Crush under the line. Its sales fell 83% from June to September. <i>Next:</i> keep the free shipping minimum at $30.</li>
+<li><b>Holiday-heavy sampling in November.</b> 228 samples were approved by November 9, with the focus on holiday. <i>Next:</i> expand sampling to heroes to avoid losing momentum once holiday sells through.</li>
+<li><b>Paid media was cut in half.</b> Fewer people saw FBM. Product impressions fell 39% in August to 5.4M, and reached 3.8M in October. <i>Next:</i> optimize ROI and ad spend campaigns.</li>
+</ul></div>
+<div class="panel obj"><h3>Creators, LIVE and inventory</h3><ul>
+<li><b>Creator LIVEs sold nothing.</b> 32 creators went live with FBM in their showcase in 90 days and sold $0. FBM was one of 50 to 100 products. <i>Next:</i> build a live creator strategy and scale.</li>
+<li><b>Big creators are missing.</b> Our new top 100 list surfaced 35 strong matches we haven't captured yet, 7 of them in the top 25. Comfrt's sweatpant has 3,625 creators. Cozy Crush has 369, even with a higher commission. <i>Next:</i> focus here, with a flat fee plus commission for the top 10.</li>
+<li><b>Low inventory paused momentum on top sellers.</b> When the Pointelle Set and Cozy Crush sizes ran out, their samples went to new launches instead of other in-stock best sellers. <i>Next:</i> plan inventory in advance for hero SKUs, with a contingency plan for samples.</li>
+</ul></div>
+</div>
+
+<p class="subh">D &middot; Sample mix</p>
+<p class="lede">In-stock best sellers earned the most per sample from July to September.</p>
+<div class="stats">
+<div class="stat"><div class="num">$456 vs $12</div><div class="lbl">Sales per sample, four best sellers vs four new launches</div></div>
+</div>
+<table class="tbl dense">
+<thead><tr><th>Product, Jul to Sep</th><th class="r">Samples</th><th class="r">Sales</th><th class="r">Per sample</th></tr></thead>
+<tbody>
+<tr><td>Cozy Crush Sweat Short</td><td class="n r">83</td><td class="n r">$61.1K</td><td class="n r">$737</td></tr>
+<tr><td>Cotton Tee</td><td class="n r">102</td><td class="n r">$41.6K</td><td class="n r">$408</td></tr>
+<tr><td>Seamless Tank</td><td class="n r">52</td><td class="n r">$13.7K</td><td class="n r">$264</td></tr>
+<tr><td>Pointelle Set</td><td class="n r">45</td><td class="n r">$12.2K</td><td class="n r">$271</td></tr>
+<tr class="mbm"><td>Foldover Skirt</td><td class="n r">24</td><td class="n r">$28.4K</td><td class="n r">$1,185</td></tr>
+<tr class="mbm"><td>Full Length Tank</td><td class="n r">11</td><td class="n r">$17.9K</td><td class="n r">$1,623</td></tr>
+<tr class="mbm"><td>Foldover Shortie</td><td class="n r">12</td><td class="n r">$13.0K</td><td class="n r">$1,083</td></tr>
+<tr class="total"><td>4 new launches, combined</td><td class="n r">199</td><td class="n r">$2.4K</td><td class="n r">$12</td></tr>
+</tbody></table>
+<p class="note">The four launches were the Take Me Home Set, Classic Boxer &amp; Cami Set, Barrel Leg Sweatpant and Wide Leg Sweatpant. They were still building awareness, and best sellers turned samples into sales faster. Highlighted rows were in stock with few samples, yet each sold more per sample than any other product.</p>
+<div class="callout"><div class="ct">Why the mix changed</div><p>Two best-sellers ran short on stock. The Pointelle Set was sold out until August 26 (first expected July 25). Cozy Crush Sweat Short was missing small sizes in its core colors from late July, with no restock until the end of October. At the brand's direction, seeding moved away from both. Most of those samples went to new launches. The Cotton Tee, Seamless Tank and Foldover Skirt were in stock and could have taken them.</p></div>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">02 &middot; Channel audit</div><h2>Creators drive 79% of sales. TikTok campaigns and LIVE are the two biggest gaps</h2>
+<table class="tbl dense chan">
+<thead><tr><th>Channel</th><th>Status</th><th>What's working</th><th>What's missing</th><th>Next move</th></tr></thead>
+<tbody>
+<tr><td><b>Creators</b></td><td><span class="pill g">Strong</span></td><td>Creators make up 79% of sales. 876 creators have sold in 2026</td><td>We need to scale from 236 creators posting a month to 300+ (705 videos a month) to hit $1.8M</td><td>Sample higher volume of best sellers. Activate missing top 100 creators for FBM and recruit new ones. Prioritize inclusivity to expand customer base</td></tr>
+<tr><td><b>Content</b></td><td><span class="pill y">Steady</span></td><td>Demo and review videos drive 74% of top-video sales</td><td>Video volume down 72% since April. Brand account under 3% of sales</td><td>CRM and workflow set up. A monthly brief per best seller. More brand content</td></tr>
+<tr><td><b>Paid ads</b></td><td><span class="pill y">Steady</span></td><td>About $4.90 in sales for every $1 spent</td><td>Spend was cut when sales dipped, so it could not help sales recover</td><td>Audit current campaigns. Split best sellers into their own campaign and raise spend on heroes</td></tr>
+<tr><td><b>TikTok campaigns</b></td><td><span class="pill y">Paused to end of Sept, steady Oct</span></td><td>FBM Fam sale lifted sales 15% in a week</td><td>Unenrolled from Smart Promotions from July to September</td><td>Maintain Smart Promotions enrollment and enroll in campaigns when possible</td></tr>
+<tr><td><b>LIVE</b></td><td><span class="pill r">Not active</span></td><td>57 creator LIVEs showed FBM in 90 days</td><td>$0 from creator LIVEs. No brand LIVEs yet. Competitors earn 18% to 26% of sales here</td><td>Regular brand LIVEs, the Millie Mega Live and creator LIVE activation</td></tr>
+</tbody></table>
+<div class="callout"><div class="ct">Conversion held</div><p>Conversion held at 1.3% to 1.6% through Q3 even as sales fell. Shoppers who reached FBM's product pages kept buying; fewer people saw the products. More content puts FBM in front of more shoppers, and showing size and fit on camera turns them into buyers.</p></div>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">03 &middot; Competitive landscape</div><h2>Competitors grow through creator volume and LIVE. FBM has the brand to win both in 2027</h2>
+<div class="gapgrid">
+<div class="gap"><div class="gt">Category leader</div><div class="gn">$41.2M</div><p>Comfrt, 90-day GMV. <b>Opportunity:</b> apply learnings from category leaders to scale FBM's core products through consistent creator content.</p></div>
+<div class="gap"><div class="gt">Dupe price</div><div class="gn">$19 vs $39</div><p>PUMIEY Seamless Long Sleeve vs FBM. <b>Opportunity:</b> differentiate through matching sets, fit and Millie's brand recognition rather than price alone.</p></div>
+<div class="gap"><div class="gt">LIVE</div><div class="gn">18&ndash;26%</div><p>Share of competitor GMV from LIVE. <b>Opportunity:</b> launch brand and creator LIVEs in Q1 to establish a new revenue channel.</p></div>
+<div class="gap"><div class="gt">Creators</div><div class="gn">3.9K&ndash;18.8K</div><p>Active creators over the last 90 days. <b>Opportunity:</b> expand creator volume while prioritizing high-performing affiliates through a curated top 100 list.</p></div>
+</div>
+<div class="callout"><div class="ct">FBM's advantage</div><p>Millie's brand recognition, differentiated fits and matching sets. In 2027, we'll build on those strengths by scaling creator partnerships and introducing LIVE as an additional growth lever.</p></div>
+<h3 style="margin-top:30px">The biggest brands in the category sell through thousands of creators. That's FBM's biggest opportunity for 2027</h3>
+<table class="tbl dense">
+<thead><tr><th>Brand</th><th class="r">90-day sales</th><th class="r">LIVE share</th><th class="r">Lifetime creators</th><th class="r">Active, 90 days</th><th class="r">Selling, 90 days</th><th>Best seller</th></tr></thead>
+<tbody>
+<tr><td>Comfrt</td><td class="n r">$41.2M</td><td class="n r">18.5%</td><td class="n r">53,479</td><td class="n r">18,828</td><td class="n r">12,347</td><td><a href="https://www.tiktok.com/shop/pdp/1730778171235996547" target="_blank">Sweatpant</a></td></tr>
+<tr><td>Pacsun</td><td class="n r">$19.3M</td><td class="n r">0.3%</td><td class="n r">27,001</td><td class="n r">6,778</td><td class="n r">4,619</td><td><a href="https://www.tiktok.com/shop/pdp/1729393128870744730" target="_blank">Baggy jeans</a></td></tr>
+<tr><td>Edikted</td><td class="n r">$12.4M</td><td class="n r">10.4%</td><td class="n r">23,078</td><td class="n r">5,524</td><td class="n r">4,373</td><td><a href="https://www.tiktok.com/shop/pdp/1732091770954813602" target="_blank">Wrap sweater</a></td></tr>
+<tr><td>Halara</td><td class="n r">$27.2M</td><td class="n r">6.5%</td><td class="n r">61,536</td><td class="n r">11,263</td><td class="n r">9,881</td><td><a href="https://www.tiktok.com/shop/pdp/1729406821413261604" target="_blank">Shaping pants</a></td></tr>
+<tr><td>FeelinGirl</td><td class="n r">$11.4M</td><td class="n r">23.8%</td><td class="n r">51,846</td><td class="n r">9,367</td><td class="n r">8,128</td><td><a href="https://www.tiktok.com/shop/pdp/1730675258376884721" target="_blank">Seamless bodysuit</a></td></tr>
+<tr><td>Shapellx</td><td class="n r">$8.2M</td><td class="n r">26.4%</td><td class="n r">37,619</td><td class="n r">7,620</td><td class="n r">6,157</td><td><a href="https://www.tiktok.com/shop/pdp/1732519307808379520" target="_blank">Shaping tights</a></td></tr>
+<tr><td>PrettyGarden</td><td class="n r">$8.2M</td><td class="n r">5.3%</td><td class="n r">27,381</td><td class="n r">7,609</td><td class="n r">5,396</td><td><a href="https://www.tiktok.com/shop/pdp/1731208195967717743" target="_blank">Cardigan</a></td></tr>
+<tr><td>PUMIEY</td><td class="n r">$2.6M</td><td class="n r">2.6%</td><td class="n r">27,102</td><td class="n r">3,898</td><td class="n r">3,680</td><td><a href="https://www.tiktok.com/shop/pdp/1729486731098100183" target="_blank">Lounge set</a></td></tr>
+<tr class="mbm"><td>Florence by Mills</td><td class="n r">$245K</td><td class="n r">0%</td><td class="n r">2,673</td><td class="n r">482</td><td class="n r">492</td><td><a href="https://www.tiktok.com/shop/pdp/1731134439898714627" target="_blank">Cotton Tee</a></td></tr>
+</tbody></table>
+<p class="note">Active: posted in the last 90 days. Selling: made a sale in the last 90 days, including from earlier videos. Best seller links open the product on TikTok Shop. Marketplace data, 90 days to November 5, 2026.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">04 &middot; The 2027 goal</div><h2>$1.8M means about $150K a month</h2>
+<div class="stats">
+<div class="stat"><div class="num">$1.52M</div><div class="lbl">2026 projected. Assumes November $250K, December $125K</div></div>
+<div class="stat"><div class="num">+$280K</div><div class="lbl">Gap to the $1.8M goal, or +18%</div></div>
+<div class="stat"><div class="num">+$480K</div><div class="lbl">Gap to the $2M stretch, or +32%</div></div>
+<div class="stat"><div class="num">705</div><div class="lbl">Creator videos a month needed to hit goal (785 for $2M). 2026 average: 551</div></div>
+</div>
+<p class="body-p" style="margin-top:20px">$1.8M comes from fixing what slipped in 2026: samples on best sellers, a broader creator mix, ads on heroes, stock planned ahead and a return to TikTok campaigns. The stretch adds LIVE, the Millie Mega Live, brand content and new product in proven fabrics to reach $2M.</p>
+<h3 style="margin-top:28px">How we get there</h3>
+<div class="gapgrid">
+<div class="gap"><div class="gt">01 &middot; Creators and sampling</div><div class="gn">Goal</div><p>60% of samples on heroes and new colors, 40% on launches. A broader creator mix with Informed Creative Briefs. A contest every month or two.</p></div>
+<div class="gap"><div class="gt">02 &middot; Spend, stock and campaigns</div><div class="gn">Goal</div><p>Ad dollars on best sellers. Hero stock planned ahead for demand. Enroll in TikTok Shop campaigns for exposure, where the fee works with margin.</p></div>
+<div class="gap"><div class="gt">03 &middot; Product</div><div class="gn">Goal</div><p>New colors and prints in Softie and Cozy Crush. Daze Off sleep as a hero line. Sets, bottoms and intimates where demand is growing.</p></div>
+<div class="gap"><div class="gt">04 &middot; LIVE and brand</div><div class="gn">Stretch</div><p>Regular brand LIVEs, creator LIVEs, the Millie Mega Live if confirmed, and more content on FBM's own account.</p></div>
+</div>
+<p class="note">Goal levers fix what slipped in 2026 and build on what sells. Stretch levers open channels FBM has barely used.</p>
+<h3 style="margin-top:28px">Quarterly plan</h3>
+<p class="body-p">2027 growth comes from a stronger Q1 and Q3, with November remaining the peak sales opportunity.</p>
+<table class="tbl dense">
+<thead><tr><th>Quarter</th><th class="r">2026</th><th class="r">2027 goal</th><th class="r">Stretch</th><th class="r">Growth</th><th>Main drivers</th></tr></thead>
+<tbody>
+<tr><td>Q1 (Jan to Mar)</td><td class="n r">$256K</td><td class="n r">$325K</td><td class="n r">$360K</td><td class="n r">+27%</td><td>December seeding, spring colors, Galentine's, LIVE ramp-up 2 to 3 times a week</td></tr>
+<tr><td>Q2 (Apr to Jun)</td><td class="n r">$497K</td><td class="n r">$535K</td><td class="n r">$590K</td><td class="n r">+8%</td><td>Mega Live in March or April if confirmed, Memorial Day, Deals for You Days, summer seeding starts</td></tr>
+<tr class="mbm"><td>Q3 (Jul to Sep)</td><td class="n r">$317K</td><td class="n r">$390K</td><td class="n r">$440K</td><td class="n r">+23%</td><td>Stay in sale events, best seller samples, fall colors by late August</td></tr>
+<tr><td>Q4 (Oct to Dec)</td><td class="n r">$449K*</td><td class="n r">$550K</td><td class="n r">$610K</td><td class="n r">+22%</td><td>November is the biggest month: Daze Off, BFCM and LIVE</td></tr>
+<tr class="total"><td>Total</td><td class="n r">$1.52M</td><td class="n r">$1.80M</td><td class="n r">$2.00M</td><td class="n r">+18%</td><td></td></tr>
+</tbody></table>
+<p class="note">*November and December 2026 projected at $250K and $125K. Q3 is where 2026 slipped. Keeping July to September near $390K is worth more than any single campaign.</p>
+<h3 style="margin-top:28px">What has to be true</h3>
+<p class="body-p">To reach $1.8M, monthly creator videos rise 28% and samples rise to 390 a month.</p>
+<table class="tbl dense">
+<thead><tr><th>Driver</th><th class="r">2026 average</th><th class="r">$1.8M plan</th><th class="r">$2M plan</th></tr></thead>
+<tbody>
+<tr><td>Creator videos per month</td><td class="n r">551</td><td class="n r">705</td><td class="n r">785</td></tr>
+<tr><td>Samples per month</td><td class="n r">305</td><td class="n r">390</td><td class="n r">435</td></tr>
+<tr><td>Creators posting per month</td><td class="n r">236</td><td class="n r">300</td><td class="n r">335</td></tr>
+<tr><td>Ad spend, share of monthly GMV</td><td class="n r">21%</td><td class="n r">Up to 20% (4x to 6x return)</td><td class="n r">Up to 20% (4x to 6x return)</td></tr>
+<tr><td>Months in TikTok's sale events</td><td class="n r">Out July to September</td><td class="n r">12</td><td class="n r">12</td></tr>
+<tr><td>LIVE sales</td><td class="n r">$0</td><td class="n r">Not counted</td><td class="n r">Stretch lever</td></tr>
+</tbody></table>
+<p class="note">Assumptions: $166 in sales per creator video (2026 rate), 1.8 videos per sample, creator videos stay near 78% of sales. Of 390 samples a month, about 235 go to heroes and new colors and 155 to new launches.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">05 &middot; Sampling</div><h2>Heroes get a fixed floor. Launches go on top</h2>
+<div class="tiers four">
+<div class="tier a"><span class="ctag">60% &middot; Hero floor</span><h3>About 235 a month</h3><p>Heroes and new colors on hero shapes. The floor holds even in busy launch months. Cozy Crush Sweat Short, Cotton Tee, Full Length Tank, Foldover Skirt, Seamless Tank, Foldover Shortie, Seamless Long Sleeve and now Daze Off sleep.</p></div>
+<div class="tier b"><span class="ctag">40% &middot; New launches</span><h3>About 155 a month</h3><p>Seed enough in week one to get content live, then read sales over 2 to 3 weeks.</p></div>
+<div class="tier c"><span class="ctag">Scale or stop</span><h3>Winners graduate</h3><p>Daze Off is the proof: $49.7K in the first 10 days of November. Launches with no early signal stop, and those samples go back to heroes.</p></div>
+<div class="tier a"><span class="ctag">More launches, more samples</span><h3>390 is the minimum</h3><p>Peak months run higher, about 450 in October and 500 in November. If FBM adds launches, total sampling grows and the hero floor stays the same.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">06 &middot; Creators</div><h2>FBM leans on fashion creators. Competitors sell through everyday creators</h2>
+<div class="stats">
+<div class="stat"><div class="num">29%</div><div class="lbl">Of FBM's active creators are fashion creators, nearly 3x Comfrt (10%) and Halara (12%)</div></div>
+<div class="stat"><div class="num">482</div><div class="lbl">FBM creators active in 90 days. PUMIEY: 3,898. Comfrt: 18,828</div></div>
+</div>
+<div class="statement"><div class="tag">Win by looking like everyone who wears FBM</div><p>Send hero basics to four creator types, of every size and age, each with an Informed Creative Brief.</p><p class="detail">Fashion creators stay the core. More kinds of creators means more shoppers who see themselves in FBM, and a creator base that grows toward the comps.</p></div>
+<div class="tiers four">
+<div class="tier a"><span class="ctag">A1</span><h3>Mom and home</h3><p>Holiday and day-in-the-life content. One series sold $4.9K.</p></div>
+<div class="tier b"><span class="ctag">A2</span><h3>Deals and finds</h3><p>Hauls every print with the price. Top video sold 342 units.</p></div>
+<div class="tier c"><span class="ctag">A3</span><h3>Real-size try-on</h3><p>Size and height up front. Answers the top question: what size to get.</p></div>
+<div class="tier a"><span class="ctag">A4</span><h3>Wellness and lounge</h3><p>Self-care and bedtime routines. One 9-second video sold 234 sets.</p></div>
+</div>
+<div class="callout"><div class="ct">Commerce Creator Persona</div><p>The full persona covers which creators convert FBM, the five archetypes (including the fashion stylist core), how many exist and commission guidance. <a href="https://claude.ai/artifact/JHm6tGMKgsCxTiJG7RQF8t" target="_blank">Open the Commerce Creator Persona</a>. The ranked hit list is in the <a href="https://docs.google.com/spreadsheets/d/1ZVTDlHLLOBf3JQHwAFrdLvtKNmxpFLehFbfBUDlyUL8/edit?usp=sharing" target="_blank">Top 100 Commerce Creators</a> sheet.</p></div>
+<p class="note">Active creators posted a linked video or LIVE in the last 90 days (as of November 10, 2026).</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">07 &middot; Buyer persona</div><h2>She buys soft basics in more colors. Fit is her biggest question</h2>
+<div class="stats">
+<div class="stat"><div class="num">53%</div><div class="lbl">Of written reviews say soft, comfy or cozy</div></div>
+<div class="stat"><div class="num">42%</div><div class="lbl">Of reviews talk size or fit. Top question: what size to get</div></div>
+<div class="stat"><div class="num">18</div><div class="lbl">Reviews say they bought or will buy more colors</div></div>
+<div class="stat"><div class="num">$38.50</div><div class="lbl">Softie Seamless Long Sleeve. PUMIEY's closest: $19.10</div></div>
+</div>
+<div class="statement"><div class="tag">Who she is</div><p>A woman buying all-day basics and, since October, sleep sets for herself and as gifts, in sizes XXS to 2XL.</p><p class="detail">Content wins when it shows softness, the size worn and the full length on camera.</p></div>
+<div class="callout"><div class="ct">Buyer Persona</div><p>The full persona covers purchase triggers ranked, top objections and how content answers them, price tolerance against the closest comps, and conversion against the set. <a href="https://claude.ai/artifact/JFJNUniSKY1Gh4xih2RhN3" target="_blank">Open the Buyer Persona</a>.</p></div>
+<p class="note">Provisional. Built on 133 written reviews across the top 8 products and the 80 top-selling videos from the 90 days to November 10, 2026. Prices are realized price (sales divided by units).</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">08 &middot; Product strategy</div><h2>Three products led 2026. Q1 starts with the styles that sold last winter</h2>
+<div class="tiers">
+<div class="tier a"><span class="ctag">Top 3 of 2026</span><h3>About 40% of 2026 sales</h3><p>Cozy Crush Sweat Short: $255.4K, 6,781 units.<br>Softie Cotton Tee: $132.8K, 5,334 units.<br>Softie Seamless Full Length Tank: $106.9K, 4,303 units.</p></div>
+<div class="tier b"><span class="ctag">Jan to Mar comps</span><h3>What sold last winter</h3><p>Cozy Crush Sweat Short: $48.8K.<br>Softie Seamless Long Sleeve: $34.9K.<br>Softie Cotton Tee: $26.3K.<br>Cozy Crush Oversized Sweatshirt: $20.2K.<br>Plus Daze Off into Valentine's: $57.5K since October 22.</p></div>
+<div class="tier c"><span class="ctag">Trends to tap into</span><h3>Category growth, year over year</h3><p>Sets +98%, bottoms +103%, intimates +80%, sleep +46%. First moves: a Cozy Crush lounge set, a Softie Seamless active set, and Daze Off as a year-round line.</p></div>
+</div>
+<div class="callout"><div class="ct">Lead Q1 with proven winners</div><p>Heroes and cold-weather styles in new colors, then test sets where the category is growing.</p></div>
+
+<h3 style="margin-top:30px">Three fabrics drove 86% of 2026 sales. Build more around them</h3>
+<div class="stats">
+<div class="stat"><div class="num">33%</div><div class="lbl">Softie Cotton, Jan to Oct sales. Tee, Foldover Skirt and Shortie</div></div>
+<div class="stat"><div class="num">27%</div><div class="lbl">Cozy Crush. The Sweat Short is the #1 product</div></div>
+<div class="stat"><div class="num">26%</div><div class="lbl">Softie Seamless. Tanks and the Long Sleeve</div></div>
+<div class="stat"><div class="num">75%</div><div class="lbl">Of November 1 to 10 sales came from sleep. Daze Off Sleep Set: $49.7K in 10 days</div></div>
+</div>
+<p class="body-p">Build more around what already sells. More shapes in Softie and Cozy Crush fabric, new colors on the best sellers every season, and Daze Off as a year-round sleep line with seasonal prints or colors. Then explore new product development with lounge sets, active and intimates.</p>
+
+<h3 style="margin-top:30px">Heroes and new colors come first. Sets, bottoms, intimates and sleep are growing fastest</h3>
+<div class="stats">
+<div class="stat"><div class="num">+98%</div><div class="lbl">Women's sets GMV, October vs last year. 895K units</div></div>
+<div class="stat"><div class="num">+103%</div><div class="lbl">Women's bottoms GMV, year over year</div></div>
+<div class="stat"><div class="num">+80%</div><div class="lbl">Intimates GMV. 1.16M bras sold in October</div></div>
+<div class="stat"><div class="num">+46%</div><div class="lbl">Sleep and lounge GMV, year over year</div></div>
+</div>
+<div class="stats">
+<div class="stat"><div class="num">82%</div><div class="lbl">Of 2026 sales came from the top 10 products</div></div>
+</div>
+<p class="body-p">Start with heroes and new colors. Then enter lounge sets with a Cozy Crush set, test a Softie Seamless active set, and keep Daze Off sleep going into Valentine's.</p>
+
+<h3 style="margin-top:30px">New product opportunity: sets and soft pants are the biggest for early 2027</h3>
+<table class="tbl dense">
+<thead><tr><th>Style</th><th class="r">Q1 2026 proof</th><th>Product</th><th>FBM move</th></tr></thead>
+<tbody>
+<tr><td><b>Lounge sets</b></td><td class="n r">$1.15M</td><td><a href="https://www.tiktok.com/shop/pdp/1730228441641554287" target="_blank">PrettyGarden set</a></td><td><b>Develop</b> a matching Cozy Crush or Softie Seamless set priced as one item</td></tr>
+<tr><td><b>Wide-leg pants</b></td><td class="n r">$5.5M</td><td><a href="https://www.tiktok.com/shop/pdp/1730870511626195021" target="_blank">Halara Flex Pant</a></td><td><b>Push</b> the Foldover Pant and bring back the Wide Leg Pant with best seller seeding</td></tr>
+<tr><td><b>Active sets</b></td><td class="n r">$526K</td><td><a href="https://www.tiktok.com/shop/pdp/1729570368820908464" target="_blank">Pinspark gym set</a>, October up 150%</td><td><b>Develop</b> a Softie Seamless active set for New Year and Pilates creators</td></tr>
+<tr><td><b>Shelf-bra tanks</b></td><td class="n r">$1.56M</td><td><a href="https://www.tiktok.com/shop/pdp/1730863344170209357" target="_blank">Shelf-bra ribbed tank</a></td><td><b>Add</b> a shelf-bra version of the Seamless Tank</td></tr>
+<tr><td><b>Hoodies</b></td><td class="n r">$1.18M</td><td><a href="https://www.tiktok.com/shop/pdp/1729505773514822531" target="_blank">Comfrt Hoodie</a></td><td><b>Sell</b> the Cozy Crush Sweatshirt as a set with the short</td></tr>
+</tbody></table>
+<p class="note">Product links open on TikTok Shop. The active set figure is October 2026.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">09 &middot; Paid media and inventory</div><h2>Put ad dollars and stock behind the products that already sell</h2>
+<div class="twocol">
+<div class="panel trig"><h3>Paid media</h3><ul>
+<li><b>The creator halo effect.</b> Put spend behind FBM's best TikTok creator videos on Meta to drive traffic to your .com.</li>
+<li><b>Give best sellers their own campaigns.</b> Separate the heroes from the rest of the catalog so budget goes to what converts, instead of spreading across the entire catalog.</li>
+<li><b>Raise spend on heroes and new colors.</b> Back each color drop, the Daze Off sleep line and top creator videos as they go live.</li>
+<li><b>Hold spend when sales dip.</b> In 2026, ad spend fell 48% from June to September along with sales. In 2027, spend stays at 15% to 20% of monthly GMV (20% max) to lift the slow months.</li>
+</ul></div>
+<div class="panel obj"><h3>Inventory: plan hero stock ahead, so it doesn't sell out</h3><ul>
+<li><b>Plan hero stock a season ahead.</b> Both Foldovers sold out in April. The Pointelle Set was out until August 26. Cozy Crush was missing small sizes from late July to October. Invest in higher quantities for small sizes.</li>
+<li><b>Develop a contingency plan.</b> When a hero runs low, its samples go to another in-stock hero, so the sampling plan keeps running.</li>
+<li><b>Deep stock before every peak holiday or TikTok Shop campaign.</b> Daze Off for the holidays and Valentine's, Cozy Crush and the Foldovers for spring, and new colors before each drop.</li>
+</ul></div>
+</div>
+<p class="note">Ad spend averaged 21% of monthly GMV in 2026. ROI by campaign to be confirmed with the GMV Max export from Ads Manager.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">10 &middot; TikTok Shop campaigns</div><h2>Smart Promotions and profitability. Every product makes money at a 5% campaign discount</h2>
+<p class="lede">Smart Promotions costs 3.5% of sales, plus a 1% fee during campaigns, and unlocks Flash Sales, Weekly Promos and BFCM. In 2026, the FBM Fam sale lifted sales 15% in a week, and June, with Deals for You Days, was the best month ever.</p>
+<div class="statement"><div class="tag">The math</div><p>$1.37 to $4.99 profit per unit at a 5% campaign discount, after ads.</p><p class="detail">TikTok Shop commits to a minimum 3.5% to 4.5% subsidy. If the subsidy falls short, TikTok makes up the difference in Shop Ads credits. The 2027 subsidy is not yet confirmed.</p></div>
+<table class="tbl dense">
+<thead><tr><th>Per unit, in a campaign</th><th class="r">$19.95</th><th class="r">$39.95</th><th class="r">$44.95</th></tr></thead>
+<tbody>
+<tr><td>Margin (68%)</td><td class="n r">$13.57</td><td class="n r">$27.17</td><td class="n r">$30.57</td></tr>
+<tr><td>Shipping</td><td class="n r">&minus;$1.00</td><td class="n r">&minus;$8.00</td><td class="n r">&minus;$8.00</td></tr>
+<tr><td>TikTok fee (6%)</td><td class="n r">&minus;$1.20</td><td class="n r">&minus;$2.40</td><td class="n r">&minus;$2.70</td></tr>
+<tr><td>Affiliate commission (10%)</td><td class="n r">&minus;$2.00</td><td class="n r">&minus;$4.00</td><td class="n r">&minus;$4.50</td></tr>
+<tr><td>Shop Ads per order (2026)</td><td class="n r">&minus;$6.11</td><td class="n r">&minus;$6.11</td><td class="n r">&minus;$6.11</td></tr>
+<tr><td>5% campaign discount</td><td class="n r">&minus;$1.00</td><td class="n r">&minus;$2.00</td><td class="n r">&minus;$2.25</td></tr>
+<tr class="med"><td>Profit before Smart Promotions and campaign fee</td><td class="n r">$2.27</td><td class="n r">$4.67</td><td class="n r">$7.01</td></tr>
+<tr><td>Smart Promotions (3.5%)</td><td class="n r">&minus;$0.70</td><td class="n r">&minus;$1.40</td><td class="n r">&minus;$1.57</td></tr>
+<tr><td>Campaign fee (1%, campaigns only)</td><td class="n r">&minus;$0.20</td><td class="n r">&minus;$0.40</td><td class="n r">&minus;$0.45</td></tr>
+<tr class="total"><td>Profit after Smart Promotions and campaign fee</td><td class="n r">$1.37</td><td class="n r">$2.87</td><td class="n r">$4.99</td></tr>
+</tbody></table>
+<p class="note">Per-unit profit on a campaign order, from FBM's inputs: 68% margin; TikTok fee, commission, Smart Promotions, campaign fee and discount calculated on list price; Shop Ads cost at the 2026 average per order; shipping $1.00 at $19.95 and $8.00 at $39.95 and $44.95.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">11 &middot; LIVE and the Millie Mega Live</div><h2>Competitors earn up to a quarter of sales on LIVE. FBM has the creators and audience to start</h2>
+<div class="stats">
+<div class="stat"><div class="num">$0</div><div class="lbl">FBM LIVE sales in 2026</div></div>
+<div class="stat"><div class="num">18&ndash;26%</div><div class="lbl">Share of competitor sales from LIVE</div></div>
+<div class="stat"><div class="num">32</div><div class="lbl">Creators already went live with FBM in their showcase, and sold $0</div></div>
+<div class="stat"><div class="num">507K</div><div class="lbl">Followers on FBM Fashion's own TikTok, ready for brand LIVEs</div></div>
+</div>
+<div class="callout"><div class="ct">Two kinds of LIVE, one plan</div><p>Brand LIVEs build a regular audience on FBM's own account. Creator LIVEs put FBM in front of shoppers who already buy on LIVE. The Millie Mega Live is the moment that ties them together.</p></div>
+
+<h3 style="margin-top:30px">The LIVE plan: commit to a set run, give shoppers a reason to watch, and grow from there</h3>
+<div class="cadence">
+<div class="phase"><div class="when">Jan to Feb</div><h3>Ramp up</h3><p>2 to 3 brand LIVEs a week for up to two months, leading into the Mega Live. Led by our hosts; Millie contributes with pre-heat videos.</p></div>
+<div class="phase"><div class="when">Mar or Apr</div><h3>Mega Live</h3><p>Millie on screen for about 2 hours. Our hosts and potentially top-selling LIVE affiliates handle the selling.</p></div>
+<div class="phase"><div class="when">2 to 3 weeks after</div><h3>Cool down</h3><p>1 LIVE a week, led by our hosts.</p></div>
+<div class="phase"><div class="when">Post Mega Live</div><h3>Evaluate</h3><p>Review GMV, viewership, conversion and profitability to decide whether a consistent weekly LIVE schedule makes sense.</p></div>
+</div>
+<p class="body-p" style="margin-top:16px">If results support continued investment, keep a consistent LIVE cadence rather than limiting activity to promotional windows. Reserve larger, dedicated activations for major moments involving Millie (fall Deals for You Days, BFCM).</p>
+<div class="tiers four">
+<div class="tier a"><span class="ctag">A reason to watch</span><h3>LIVE-only offers</h3><p>LIVE-only bundles and first looks at new colors and prints. Margins are thin, so bundles that raise order value work where deeper discounts aren't an option.</p></div>
+<div class="tier b"><span class="ctag">Hosts and format</span><h3>A regular show</h3><p>Trained hosts, the same time slots every week, and hero products in every show.</p></div>
+<div class="tier c"><span class="ctag">Paid media and pre-heats</span><h3>Traffic into every show</h3><p>Additional budget reserved for LIVE ads. Always-on LIVE ads, "we're live now" ads during each show, and a 10-day pre-heat before the big moments.</p></div>
+<div class="tier a"><span class="ctag">How we judge it</span><h3>Read and reset</h3><p>GMV per hour, average viewers and conversion, tracked through the ramp-up. Review after the cool-down to set the cadence for the rest of the year.</p></div>
+</div>
+
+<h3 style="margin-top:30px">The Millie Mega Live, if confirmed: FBM's biggest reach moment of 2027</h3>
+<div class="stats">
+<div class="stat"><div class="num">5.3M</div><div class="lbl">Followers on Florence by Mills Beauty's TikTok</div></div>
+<div class="stat"><div class="num">507K</div><div class="lbl">Followers on Florence by Mills Fashion's TikTok</div></div>
+<div class="stat"><div class="num">Millie sells</div><div class="lbl">Top videos open with "Thanks Millie, selling out again"</div></div>
+</div>
+<div class="twocol">
+<div class="panel trig"><h3>How we make it a moment</h3><ul>
+<li><b>Creators make the noise.</b> Top creators get the exclusive Millie drop first and post before the show, all pointing to one date.</li>
+<li><b>Creator contest.</b> Reward the top 1 to 2 creators with a trip to LA to meet Millie and join her on LIVE.</li>
+<li><b>A reason to tune in.</b> A LIVE-only Millie exclusive, limited drops that keep people watching, and an autograph signing.</li>
+<li><b>Pre-heats.</b> A pre-heat calendar leading up to the event builds the moment and the FOMO.</li>
+</ul></div>
+<div class="panel obj"><h3>Everyone is invited</h3><ul>
+<li>Creators of every size, age and style post about it, so the moment reaches well past FBM's usual shopper.</li>
+</ul></div>
+</div>
+<p class="note">Not yet confirmed. Date, format and product depend on Millie's calendar. If it moves, brand and creator LIVEs still run.</p>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">12 &middot; Brand content</div><h2>Brand content is an open lane for FBM</h2>
+<ul class="qlist">
+<li><b>Post on the brand account every day.</b> The brand account drove under 3% of 2026 sales. Short, shoppable videos of heroes and new colors can sell alongside creator videos.</li>
+<li><b>Reuse what already works.</b> Repost top creator videos with permission, and Millie's "selling out again" moments, on the brand account and in ads.</li>
+<li><b>Show every kind of customer.</b> Different body types, ages and styles wearing the same heroes, matching the broader creator mix.</li>
+<li><b>Pre-heat LIVE and launches.</b> Teasers before every LIVE and color drop, so brand content builds the audience for both.</li>
+</ul>
+</div></section>
+
+<section class="dark"><div class="wrap"><div class="sec-kicker">13 &middot; The 2027 roadmap</div><h2>Set up in December, then one job per quarter</h2>
+<div class="phases">
+<div class="phase"><div class="when">Q1 &middot; $325K</div><h3>Fast start</h3><p>Seed heroes and new colors in December, 60/40 from day one. Daze Off into Valentine's. Brand LIVEs begin. First monthly contest.</p></div>
+<div class="phase"><div class="when">Q2 &middot; $535K</div><h3>Millie and the peak</h3><p>The Millie Mega Live in March or April, if confirmed. Deep stock on Cozy Crush, both Foldovers and the Seamless tanks. Memorial Day and Deals for You Days.</p></div>
+<div class="phase"><div class="when">Q3 &middot; $390K</div><h3>Build into Q4</h3><p>Enroll in TikTok campaigns. Samples on heroes, with a contingency plan for stock-outs. Ads at 15% to 20% of monthly GMV (20% max). Fall colors by late August.</p></div>
+<div class="phase"><div class="when">Q4 &middot; $550K</div><h3>Own the holidays</h3><p>November is the biggest month. Sleep and holiday sets early, with deep stock planned ahead. Brand and creator LIVE through BFCM. Campaign pricing where margin allows.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">14 &middot; Next steps</div><h2>What Third is implementing, ahead of 2027</h2>
+<div class="steps">
+<div class="step"><span class="pill">01 &middot; Affiliate</span>
+<h3>Daze Off past the holidays</h3><p>Sleep is 75% of November so far. Keep samples and creator videos heavy through New Year and into Valentine's.</p>
+<h3>Sample best sellers</h3><p>Sample heroes heavily now, so a large bank of creator content carries FBM into January.</p>
+<h3>Top 100</h3><p>Start with the 35 strong-match creators FBM hasn't captured yet, then scale from there. See the <a href="https://docs.google.com/spreadsheets/d/1ZVTDlHLLOBf3JQHwAFrdLvtKNmxpFLehFbfBUDlyUL8/edit?usp=sharing" target="_blank">Top 100 sheet</a>.</p>
+<h3>Creator LIVEs</h3><p>Start outreach to LIVE creators and lock in creator LIVE schedules for Q1.</p></div>
+<div class="step"><span class="pill">02 &middot; Paid media</span>
+<h3>Spend behind heroes</h3><p>Split best sellers into their own campaign, raise spend on heroes and start Meta spend for halo.</p>
+<h3>Halo measurement</h3><p>Third is partnering with WorkMagic, the leading measurement tool in the space, to measure lift beyond TikTok Shop. We're confirming the test setup with TikTok and will share next steps.</p></div>
+<div class="step"><span class="pill">03 &middot; Shop ops</span>
+<h3>Free shipping and campaigns</h3><p>Keep the $30 free shipping minimum. Stay enrolled in Smart Promotions and TikTok Shop campaigns at 5% off, up to 10% during BFCM. CSM leads both decisions and Shop Ops executes.</p></div>
+</div>
+<div class="scope"><b>In scope:</b> Shop Ops management, Affiliate management, Paid Media services, Creator Agency Partner management and Performance Creative (10 videos a quarter). Livestreaming is out of scope. The Spanish cohort is subject to claim sign-off.</div>
+</div></section>
+
+<section class="dark"><div class="wrap"><div class="sec-kicker">15 &middot; Risks</div><h2>Four things could change this read</h2>
+<div class="risks">
+<div class="risk"><div class="rt">Gross GMV and late-2026 numbers</div><p>All figures are gross TikTok-attributed GMV, before refunds, fees and discounts. November and December are projected at $250K and $125K, based on $90.8K in the first 10 days.</p></div>
+<div class="risk"><div class="rt">Margins and campaign fees</div><p>The campaign model uses FBM's 68% margin and the 2026 Shop Ads cost per order. If ad cost per order rises, the safe discount drops.</p></div>
+<div class="risk"><div class="rt">Competitor estimates</div><p>Marketplace data for the 90 days to November 5, 2026, which splits channels differently from FBM's own data.</p></div>
+<div class="risk"><div class="rt">Millie's calendar and top creators</div><p>If the date moves, brand and creator LIVEs still run. Ten creators drive 42% of sales, so the plan broadens the creator base.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap"><div class="sec-kicker">Companion documents</div><h2>Everything that goes with this plan</h2>
+<div class="steps">
+<div class="step"><span class="pill">Creator</span><h3><a href="https://claude.ai/artifact/JHm6tGMKgsCxTiJG7RQF8t" target="_blank">Commerce Creator Persona</a></h3><p>Which creators convert FBM, five archetypes, how many exist and how to recruit them.</p></div>
+<div class="step"><span class="pill">Buyer</span><h3><a href="https://claude.ai/artifact/JFJNUniSKY1Gh4xih2RhN3" target="_blank">Buyer Persona</a></h3><p>Who buys FBM, what moves them and what stops them.</p></div>
+<div class="step"><span class="pill">Top 100</span><h3><a href="https://docs.google.com/spreadsheets/d/1ZVTDlHLLOBf3JQHwAFrdLvtKNmxpFLehFbfBUDlyUL8/edit?usp=sharing" target="_blank">Top 100 Commerce Creators</a></h3><p>Ranked by likelihood to drive FBM sales in the next 90 days.</p></div>
+</div>
+</div></section>
+
+<footer><div class="wrap"><span>third. &middot; Florence by Mills &middot; 2026 Recap and 2027 Strategy &middot; Prepared for Florence by Mills &middot; Data through November 9, 2026</span><span>Data: TikTok Shop US shop performance data, Jan 1 to Nov 10, 2026 &middot; weekly reporting Apr 2025 to Nov 2026 &middot; marketplace data Aug 8 to Nov 5, 2026. Shop figures are Florence by Mills shop data. Market figures are TikTok Shop US marketplace data at listed price.</span></div></footer>
+
+</body></html>
